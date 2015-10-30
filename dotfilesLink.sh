@@ -2,6 +2,7 @@
 
 echo "making .vimrc"
 ln -sf ~/dotfiles/.vimrc ~/.vimrc
+ln -sf ~/dotfiles/.zshrc ~/.zshrc
 
 echo "making .zshrc"
 ln -sf ~/dotfiles/.zshrc ~/.zshrc
