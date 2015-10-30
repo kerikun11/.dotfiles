@@ -16,14 +16,14 @@ case ${UID} in
   PROMPT2="%B%{${fg[red]}%}%_#%{${reset_color}%}%b "
   SPROMPT="%B%{${fg[red]}%}%r is correct? [n,y,a,e]:%{${reset_color}%}%b "
   [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
-    PROMPT="%{${fg[syan]}%}${HOST%%.*} ${PROMPT}"
+    PROMPT="%{${fg[white]}%}${HOST%%.*} ${PROMPT}"
   ;;
 *)
   PROMPT="%{${fg[green]}%}%~ \$%{${reset_color}%} "
   PROMPT2="%{${fg[green]}%}%_%%%{${reset_color}%} "
   SPROMPT="%{${fg[green]}%}%r is correct? [n,y,a,e]:%{${reset_color}%} "
   [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
-    PROMPT="%{${fg[syan]}%}${HOST%%.*} ${PROMPT}"
+    PROMPT="%{${fg[red]}%}${HOST%%.*} ${PROMPT}"
   ;;
 esac
 
