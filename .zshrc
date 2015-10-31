@@ -146,3 +146,8 @@ esac
 ## load user .zshrc configuration file
 #
 [ -f ~/.zshrc.mine ] && source ~/.zshrc.mine
+
+## My rc
+# ssh-agent
+eval `ssh-agent`
+ssh-add
