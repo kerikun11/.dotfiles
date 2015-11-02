@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/kerikun11/keriweb/jekyll-keriweb/_includes'
+let g:netrw_dirhist_2='/home/kerikun11/keriweb/jekyll-keriweb/css'
+let g:netrw_dirhist_3='/home/kerikun11/keriweb/jekyll-keriweb/_layouts'
+let g:netrw_dirhist_4='/home/kerikun11/keriweb/jekyll-keriweb/_sass'
