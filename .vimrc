@@ -1,22 +1,34 @@
+" syntax hilight
 syntax enable
+
+" display line number
 set number
+" indent
 set autoindent
 set smartindent
+" backspace function
 set backspace=start,eol,indent
+" mouse support
 set mouse=a
-set tabstop=4
+" tab width
+set tabstop=8
 set shiftwidth=4
+" encording
 set encoding=utf-8
+" display ruler
 set cursorline
-
+" error fix
 set nocompatible
-"カッコのハイライトをなくす
+
+
+" カッコのハイライトをなくす
 let loaded_matchparen=1
 
+" color theme
 colorscheme desert
 
+" NeoBundle
 filetype plugin indent off
-
 if has('vim_starting')
 		set runtimepath+=~/.vim/bundle/neobundle.vim
 		call neobundle#begin(expand('~/.vim/bundle'))
@@ -29,18 +41,13 @@ NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'taichouchou2/html5.vim'
 NeoBundle 'taichouchou2/vim-javascript'
 NeoBundle 'vim-latex/vim-latex'
-"NeoBundle 'tomasr/molokai'
-
 
 if has('vim_starting')
 		call neobundle#end()
 endif
-
 filetype plugin indent on
 
-""
-"" Vim-LaTeX
-""
+" Vim-LaTeX
 filetype plugin on
 filetype indent on
 set shellslash
@@ -66,13 +73,14 @@ let g:Tex_CompileRule_dvi = 'uplatex -synctex=1 -interaction=nonstopmode -file-l
 let g:Tex_BibtexFlavor = 'upbibtex'
 let g:Tex_MakeIndexFlavor = 'upmendex $*.idx'
 let g:Tex_UseEditorSettingInDVIViewer = 1
-let g:Tex_ViewRule_pdf = 'xdg-open'
+"let g:Tex_ViewRule_pdf = 'xdg-open'
 "let g:Tex_ViewRule_pdf = 'evince'
 "let g:Tex_ViewRule_pdf = 'okular --unique'
 "let g:Tex_ViewRule_pdf = 'zathura -s -x "vim --servername synctex -n --remote-silent +\%{line} \%{input}"'
 "let g:Tex_ViewRule_pdf = 'qpdfview --unique'
 "let g:Tex_ViewRule_pdf = 'texworks'
 "let g:Tex_ViewRule_pdf = 'mupdf'
-"let g:Tex_ViewRule_pdf = 'firefox -new-window'
+let g:Tex_ViewRule_pdf = '/cygdrive/c/Program\ Files\ \(x86\)/Mozilla\ Firefox/firefox.exe'
 "let g:Tex_ViewRule_pdf = 'chromium --new-window'
+"let g:Tex_ViewRule_pdf = '/cygdrive/c/Program\ Files\ \(x86\)/Adobe/Acrobat\ Reader\ DC/Reader/AcroRd32.exe'
 
