@@ -149,8 +149,8 @@ esac
 
 ## My rc
 # ssh-agent
-eval `ssh-agent`
-ssh-add
+#eval `ssh-agent`
+#ssh-add
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH=$PATH:~/.gem/ruby/gems/jekyll-3.0.1/bin/

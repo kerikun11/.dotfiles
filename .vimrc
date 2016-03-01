@@ -11,7 +11,7 @@ set backspace=start,eol,indent
 " mouse support
 set mouse=a
 " tab width
-set tabstop=8
+set tabstop=4
 set shiftwidth=4
 " encording
 set encoding=utf-8
@@ -30,8 +30,8 @@ colorscheme desert
 " NeoBundle
 filetype plugin indent off
 if has('vim_starting')
-		set runtimepath+=~/.vim/bundle/neobundle.vim
-		call neobundle#begin(expand('~/.vim/bundle'))
+	set runtimepath+=~/.vim/bundle/neobundle.vim
+	call neobundle#begin(expand('~/.vim/bundle'))
 endif
 
 NeoBundle 'mattn/emmet-vim'
@@ -41,9 +41,11 @@ NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'taichouchou2/html5.vim'
 NeoBundle 'taichouchou2/vim-javascript'
 NeoBundle 'vim-latex/vim-latex'
+"NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neocomplete'
 
 if has('vim_starting')
-		call neobundle#end()
+	call neobundle#end()
 endif
 filetype plugin indent on
 
@@ -78,9 +80,40 @@ let g:Tex_UseEditorSettingInDVIViewer = 1
 "let g:Tex_ViewRule_pdf = 'okular --unique'
 "let g:Tex_ViewRule_pdf = 'zathura -s -x "vim --servername synctex -n --remote-silent +\%{line} \%{input}"'
 "let g:Tex_ViewRule_pdf = 'qpdfview --unique'
-"let g:Tex_ViewRule_pdf = 'texworks'
+let g:Tex_ViewRule_pdf = 'texworks'
 "let g:Tex_ViewRule_pdf = 'mupdf'
-let g:Tex_ViewRule_pdf = '/cygdrive/c/Program\ Files\ \(x86\)/Mozilla\ Firefox/firefox.exe'
+"let g:Tex_ViewRule_pdf = '/cygdrive/c/Program\ Files\ \(x86\)/Mozilla\ Firefox/firefox.exe'
 "let g:Tex_ViewRule_pdf = 'chromium --new-window'
 "let g:Tex_ViewRule_pdf = '/cygdrive/c/Program\ Files\ \(x86\)/Adobe/Acrobat\ Reader\ DC/Reader/AcroRd32.exe'
+
+
+
+
+
+" NeoComplete
+
+if neobundle#is_installed('neocomplete')
+	" neocomplete用設定
+	let g:neocomplete#enable_at_startup = 1
+	let g:neocomplete#enable_ignore_case = 1
+	let g:neocomplete#enable_smart_case = 1
+	if !exists('g:neocomplete#keyword_patterns')
+		let g:neocomplete#keyword_patterns = {}
+	endif
+	let g:neocomplete#keyword_patterns._ = '\h\w*'
+elseif neobundle#is_installed('neocomplcache')
+	" neocomplcache用設定
+	let g:neocomplcache_enable_at_startup = 1
+	let g:neocomplcache_enable_ignore_case = 1
+	let g:neocomplcache_enable_smart_case = 1
+	if
+		!exists('g:neocomplcache_keyword_patterns')
+		let g:neocomplcache_keyword_patterns = {}
+	endif
+	let	g:neocomplcache_keyword_patterns._ = '\h\w*'
+	let g:neocomplcache_enable_camel_case_completion = 1
+	let g:neocomplcache_enable_underbar_completion = 1
+endif
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 
