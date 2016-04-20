@@ -57,7 +57,7 @@ colorscheme desert
 " w!! でスーパーユーザーとして保存（sudoが使える環境限定）
 cmap w!! w !sudo tee > /dev/null %
 " 入力モード中に素早くJJと入力した場合はESCとみなす
-inoremap jj <Esc>
+"inoremap jj <Esc>
 " ESCを二回押すことでハイライトを消す
 nmap <silent> <Esc><Esc> :nohlsearch<CR>
 " j, k による移動を折り返されたテキストでも自然に振る舞うように変更
@@ -94,7 +94,10 @@ NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 " ステータスラインのハイライト表示
 NeoBundle 'itchyny/lightline.vim'
-
+" JavaScriptのインデント
+NeoBundle 'pangloss/vim-javascript'
+" 閉じカッコを自動的に挿入
+NeoBundle 'Townk/vim-autoclose'
 
 
 if has('vim_starting')
