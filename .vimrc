@@ -9,8 +9,8 @@ set backspace=start,eol,indent
 " mouse support
 set mouse=a
 " tab width
-set tabstop=4
-set shiftwidth=4
+set tabstop=8
+set shiftwidth=8
 " encording
 set encoding=utf-8
 " display ruler
@@ -57,9 +57,9 @@ colorscheme desert
 " w!! でスーパーユーザーとして保存（sudoが使える環境限定）
 cmap w!! w !sudo tee > /dev/null %
 " 入力モード中に素早くJJと入力した場合はESCとみなす
-"inoremap jj <Esc>
+inoremap jj <Esc>
 " ESCを二回押すことでハイライトを消す
-nmap <silent> <Esc><Esc> :nohlsearch<CR>
+"nmap <silent> <Esc> :nohlsearch<CR>
 " j, k による移動を折り返されたテキストでも自然に振る舞うように変更
 nnoremap j gj
 nnoremap k gk
