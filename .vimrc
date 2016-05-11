@@ -9,8 +9,8 @@ set backspace=start,eol,indent
 " mouse support
 set mouse=a
 " tab width
-set tabstop=8
-set shiftwidth=8
+set tabstop=4
+set shiftwidth=4
 " encording
 set encoding=utf-8
 " display ruler
