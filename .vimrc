@@ -44,6 +44,8 @@ set scrolloff=8
 set clipboard=unnamed,unnamedplus
 " 入力されているテキスト最大幅を無効にする
 set textwidth=0
+" 折り畳み
+set foldmethod=indent
 
 " syntax hilight
 syntax enable
@@ -144,7 +146,8 @@ let g:Tex_UseEditorSettingInDVIViewer = 1
 "let g:Tex_ViewRule_pdf = 'okular --unique'
 "let g:Tex_ViewRule_pdf = 'zathura -s -x "vim --servername synctex -n --remote-silent +\%{line} \%{input}"'
 "let g:Tex_ViewRule_pdf = 'qpdfview --unique'
-let g:Tex_ViewRule_pdf = 'texworks'
+"let g:Tex_ViewRule_pdf = 'texworks'
+let g:Tex_ViewRule_pdf = '/cygdrive/c/Users/kerikun11/Dropbox/Application/SumatraPDF/SumatraPDF.exe'
 "let g:Tex_ViewRule_pdf = 'mupdf'
 "let g:Tex_ViewRule_pdf = '/cygdrive/c/Program\ Files\ \(x86\)/Mozilla\ Firefox/firefox.exe'
 "let g:Tex_ViewRule_pdf = 'chromium --new-window'

@@ -153,4 +153,8 @@ esac
 #ssh-add
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-export PATH=$PATH:~/.gem/ruby/gems/jekyll-3.0.1/bin/
+export PATH=$PATH:~/.gem/ruby/gems/jekyll-3.1.3/bin/
+export PATH=$PATH:~/.gem/ruby/gems/asciidoctor-1.5.4/bin/
+export PATH=$PATH:~/.gem/ruby/gems/asciidoctor-pdf-1.5.0.alpha.11/bin/
+export PATH=$PATH:/usr/bin/easy_install-3.4
+
