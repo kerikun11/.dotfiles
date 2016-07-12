@@ -45,7 +45,7 @@ set clipboard=unnamed,unnamedplus
 " 入力されているテキスト最大幅を無効にする
 set textwidth=0
 " 折り畳み
-set foldmethod=indent
+"set foldmethod=indent
 
 " syntax hilight
 syntax enable
@@ -100,6 +100,9 @@ NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'pangloss/vim-javascript'
 " 閉じカッコを自動的に挿入
 NeoBundle 'Townk/vim-autoclose'
+" Tree
+NeoBundle 'nerdtree'
+map <C-n> :NERDTreeToggle<CR>
 
 
 if has('vim_starting')
