@@ -185,3 +185,46 @@ endif
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 
+"実行コマンド
+command! Run call s:Run()
+nmap <F5> :Run<CR>
+function! s:Run()
+  let e = expand("%:e")
+  if e == "c"
+    :Gcc
+  endif
+  if e == "py"
+    :Python
+  endif
+  if e == "f90" || e == "f95"
+    :Gfortran
+  endif
+endfunction
+
+command! Python call s:Python()
+function! s:Python()
+  :!python %
+endfunction
+
+command! Gcc call s:Gcc()
+function! s:Gcc()
+  if has("win32") || has("win64")
+    :!gcc % -o %:r.exe
+    :!./%:r.exe
+  else
+    :!gcc % -o %:r.out
+    :!./%:r.out
+  endif
+endfunction
+
+command! Gfortran call s:Gfortran()
+function! s:Gfortran()
+  if has("win32") || has("win64")
+    :!gfortran % -o %:r.exe
+    :!./%:r.exe
+  else
+    :!gfortran % -o %:r.out
+    :!./%:r.out
+  endif
+endfunction
+
