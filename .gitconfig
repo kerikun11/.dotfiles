@@ -3,3 +3,9 @@
 	name = kerikun11
 [core]
 	editor = vim
+[color]
+	ui = true
+[alias]
+	co = checkout
+	st = status
+	cm = commit
