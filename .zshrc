@@ -99,7 +99,7 @@ linux*)
   ;;
 esac
 
-alias la="ls -a"
+alias la="ls -al"
 alias lf="ls -F"
 alias ll="ls -l"
 
@@ -159,3 +159,6 @@ export PATH=$PATH:~/.gem/ruby/gems/asciidoctor-pdf-1.5.0.alpha.11/bin/
 export PATH=$PATH:/usr/bin/easy_install-3.4
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+export PATH=$PATH:~/bin/mbed-eclipse/
