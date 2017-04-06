@@ -161,4 +161,6 @@ export PATH=$PATH:/usr/bin/easy_install-3.4
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
-export PATH=$PATH:~/bin/mbed-eclipse/
+export PATH=$PATH:~/bin
+export PATH=$PATH:/home/kerikun11/bin/xtensa-esp32-elf/bin
+export IDF_PATH=/home/kerikun11/bin/esp-idf
