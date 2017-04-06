@@ -152,15 +152,15 @@ esac
 #eval `ssh-agent`
 #ssh-add
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-export PATH=$PATH:~/.gem/ruby/gems/jekyll-3.1.3/bin/
-export PATH=$PATH:~/.gem/ruby/gems/asciidoctor-1.5.4/bin/
-export PATH=$PATH:~/.gem/ruby/gems/asciidoctor-pdf-1.5.0.alpha.11/bin/
-export PATH=$PATH:/usr/bin/easy_install-3.4
+#export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+#export PATH=$PATH:~/.gem/ruby/gems/jekyll-3.1.3/bin/
+#export PATH=$PATH:~/.gem/ruby/gems/asciidoctor-1.5.4/bin/
+#export PATH=$PATH:~/.gem/ruby/gems/asciidoctor-pdf-1.5.0.alpha.11/bin/
+#export PATH=$PATH:/usr/bin/easy_install-3.4
 
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-export PATH=$PATH:~/bin
-export PATH=$PATH:/home/kerikun11/bin/xtensa-esp32-elf/bin
-export IDF_PATH=/home/kerikun11/bin/esp-idf
+#zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+#export PATH="$HOME/.rbenv/bin:$PATH"
+#eval "$(rbenv init -)"
+#export PATH=$PATH:~/bin
+#export PATH=$PATH:/home/kerikun11/bin/xtensa-esp32-elf/bin
+#export IDF_PATH=/home/kerikun11/bin/esp-idf
