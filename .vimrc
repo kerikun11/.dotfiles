@@ -56,12 +56,6 @@ let loaded_matchparen = 1
 " color theme
 colorscheme desert
 
-" w!! でスーパーユーザーとして保存（sudoが使える環境限定）
-cmap w!! w !sudo tee > /dev/null %
-" 入力モード中に素早くJJと入力した場合はESCとみなす
-inoremap jj <Esc>
-" ESCを二回押すことでハイライトを消す
-"nmap <silent> <Esc> :nohlsearch<CR>
 " j, k による移動を折り返されたテキストでも自然に振る舞うように変更
 nnoremap j gj
 nnoremap k gk
@@ -81,7 +75,7 @@ NeoBundle 'scrooloose/nerdcommenter'
 " css3のシンタックスハイライトを表示
 NeoBundle 'hail2u/vim-css3-syntax'
 " HTML5のシンタックスハイライトを表示
-NeoBundle 'taichouchou2/html5.vim'
+"NeoBundle 'taichouchou2/html5.vim'
 " 
 NeoBundle 'taichouchou2/vim-javascript'
 " vim-latexを使用可
@@ -104,7 +98,6 @@ NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'nerdtree'
 map <C-n> :NERDTreeToggle<CR>
 
-
 if has('vim_starting')
 	call neobundle#end()
 endif
@@ -115,47 +108,6 @@ filetype plugin indent on
 " vim-indent-guides
 " *****************************
 let g:indent_guides_enable_on_vim_startup=1
-
-" *****************************
-" Vim-LaTeX
-" *****************************
-filetype plugin on
-filetype indent on
-set shellslash
-set grepprg=grep\ -nH\ $*
-let g:tex_flavor='latex'
-let g:Imap_UsePlaceHolders = 1
-let g:Imap_DeleteEmptyPlaceHolders = 1
-let g:Imap_StickyPlaceHolders = 0
-let g:Tex_DefaultTargetFormat = 'pdf'
-let g:Tex_MultipleCompileFormats='dvi,pdf'
-"let g:Tex_FormatDependency_pdf = 'pdf'
-let g:Tex_FormatDependency_pdf = 'dvi,pdf'
-"let g:Tex_FormatDependency_pdf = 'dvi,ps,pdf'
-let g:Tex_FormatDependency_ps = 'dvi,ps'
-let g:Tex_CompileRule_pdf = 'ptex2pdf -u -l -ot "-synctex=1 -interaction=nonstopmode -file-line-error-style" $*'
-"let g:Tex_CompileRule_pdf = 'pdflatex -synctex=1 -interaction=nonstopmode -file-line-error-style $*'
-"let g:Tex_CompileRule_pdf = 'lualatex -synctex=1 -interaction=nonstopmode -file-line-error-style $*'
-"let g:Tex_CompileRule_pdf = 'luajitlatex -synctex=1 -interaction=nonstopmode -file-line-error-style $*'
-"let g:Tex_CompileRule_pdf = 'xelatex -synctex=1 -interaction=nonstopmode -file-line-error-style $*'
-"let g:Tex_CompileRule_pdf = 'ps2pdf $*.ps'
-let g:Tex_CompileRule_ps = 'dvips -Ppdf -o $*.ps $*.dvi'
-let g:Tex_CompileRule_dvi = 'uplatex -synctex=1 -interaction=nonstopmode -file-line-error-style $*'
-let g:Tex_BibtexFlavor = 'upbibtex'
-let g:Tex_MakeIndexFlavor = 'upmendex $*.idx'
-let g:Tex_UseEditorSettingInDVIViewer = 1
-"let g:Tex_ViewRule_pdf = 'xdg-open'
-"let g:Tex_ViewRule_pdf = 'evince'
-"let g:Tex_ViewRule_pdf = 'okular --unique'
-"let g:Tex_ViewRule_pdf = 'zathura -s -x "vim --servername synctex -n --remote-silent +\%{line} \%{input}"'
-"let g:Tex_ViewRule_pdf = 'qpdfview --unique'
-"let g:Tex_ViewRule_pdf = 'texworks'
-let g:Tex_ViewRule_pdf = '/c/Program\ Files/SumatraPDF/SumatraPDF.exe'
-"let g:Tex_ViewRule_pdf = 'mupdf'
-"let g:Tex_ViewRule_pdf = '/cygdrive/c/Program\ Files\ \(x86\)/Mozilla\ Firefox/firefox.exe'
-"let g:Tex_ViewRule_pdf = 'chromium --new-window'
-"let g:Tex_ViewRule_pdf = '/cygdrive/c/Program\ Files\ \(x86\)/Adobe/Acrobat\ Reader\ DC/Reader/AcroRd32.exe'
-
 
 " *****************************
 " NeoComplete
