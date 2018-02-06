@@ -10,10 +10,6 @@ ROOT_DIR=$HOME/
 for file in ${DOTFILES[@]}; do
 	echo $file
 	ln -sfd $HOME/dotfiles/$file $ROOT_DIR/$file
+	nkf -Lu --overwrite $file
 done
-
-echo "Git clone neobundle"
-mkdir -p ~/.vim/bundle
-git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
-git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
 
