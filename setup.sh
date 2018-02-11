@@ -9,7 +9,7 @@ ROOT_DIR=$HOME/
 
 for file in ${DOTFILES[@]}; do
 	echo $file
-	ln -sfd $HOME/dotfiles/$file $ROOT_DIR/$file
+	ln -sfd $HOME/.dotfiles/$file $HOME/$file
 	nkf -Lu --overwrite $file
 done
 
