@@ -1,10 +1,13 @@
 # dotfiles
 
+## files
+
   * .tmux.conf
   * .vimrc
   * .zshrc
+  * .gitconfig
 
-# setup script
+## install
 
-  * setup.sh
+  * install.sh
 

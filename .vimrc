@@ -57,6 +57,9 @@ set visualbell
 set showmatch
 " コマンドラインの補完
 set wildmode=list:longest
+" カッコのハイライトをなくす
+let loaded_matchparen = 1
+
 
 " *****************************
 " 操作性
