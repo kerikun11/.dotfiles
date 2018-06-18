@@ -1,9 +1,10 @@
 #!/bin/bash
 
-SCRIPT_DIR = $(cd $(dirname $0); pwd)
+cd ~/.dotfiles
 
 for file in .??*
 do
+	[[ "$file" == ".git" ]] && continue
 	echo $file
 	# シンボリックリンクを作成
 	ln -sdf $HOME/.dotfiles/$file $HOME/$file
