@@ -52,7 +52,11 @@ alias la="ls -al --color=auto"
 alias lf="ls -F"
 alias ll="ls -l --color=auto"
 alias make="make -j8"
+alias here="explorer.exe ."
 
 # PATH
 export PATH=$PATH:'/c/Program Files (x86)/Nordic Semiconductor/nrf5x/bin'
 export PATH=$PATH:'/c/Program Files (x86)/SEGGER/JLink_V630k'
+export PATH=$PATH:'/usr/local/bin/xtensa-esp32-elf/bin'
+export PATH=$PATH:'/usr/local/bin/xtensa-lx106-elf/bin'
+export IDF_PATH='/mnt/c/Users/kerikun11/OneDrive/Application/Espressif/esp-idf'
