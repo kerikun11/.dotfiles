@@ -3,6 +3,7 @@
 	name = kerikun11
 [core]
 	editor = vim
+	autocrlf = true
 [color]
 	ui = true
 [alias]
