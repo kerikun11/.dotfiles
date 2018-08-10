@@ -6,6 +6,7 @@
 idf_dir_from_home="Application/Espressif"
 idf_dir="$HOME/$idf_dir_from_home"
 toolchain_filename='xtensa-esp32-elf-linux64-1.22.0-80-g6c4433a-5.2.0.tar.gz'
+esp_idf_url='https://github.com/espressif/esp-idf'
 
 # install software
 sudo apt-get install gcc git wget make libncurses-dev flex bison gperf python python-serial
@@ -23,7 +24,7 @@ if [ -d "$idf_dir/esp-idf" ]; then
 	git pull -f
 	git submodule update --init --recursive --force
 else
-	git clone --recursive 
+	git clone --recursive $esp_idf_url
 fi
 
 # add me to dialout group
@@ -31,7 +32,7 @@ sudo gpasswd -a $USER dialout
 
 # environmental variable
 echo "=== add enviroment variable ==="
-echo "export PATH=\$PATH:\$HOME/$idf_dir_from_home/xtensa-esp32-elf/bin"
-echo "export IDF_PATH=\$HOME/$idf_dir_from_home/esp-idf"
+echo "export PATH=\$PATH:\$HOME/$idf_dir_from_home/xtensa-esp32-elf/bin" >> $HOME/.zshrc
+echo "export IDF_PATH=\$HOME/$idf_dir_from_home/esp-idf" >> $HOME/.zshrc
 echo "==============================="
 
