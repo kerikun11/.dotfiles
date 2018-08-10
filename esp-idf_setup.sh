@@ -1,41 +1,60 @@
-#!/bin/sh
+#!/bin/bash
 
-# see http://esp-idf.readthedocs.io/en/latest/get-started/linux-setup.html
+## see http://esp-idf.readthedocs.io/en/latest/get-started/linux-setup.html
 
-# settings
+## settings
 idf_dir_from_home="Application/Espressif"
 idf_dir="$HOME/$idf_dir_from_home"
 toolchain_filename='xtensa-esp32-elf-linux64-1.22.0-80-g6c4433a-5.2.0.tar.gz'
+toolchain_name='xtensa-esp32-elf'
 esp_idf_url='https://github.com/espressif/esp-idf'
+profiles=("$HOME/.zprofile" "$HOME/.profile")
 
-# install software
+## install software
 echo "sudo apt-get update"
-sudo apt-get update
+#sudo apt-get update
 sudo apt-get install -y gcc git wget make libncurses-dev flex bison gperf python python-serial
 
-# make Espressif directory
+## make Espressif directory
 echo mkdir "\$HOME/$idf_dir_from_home"
 mkdir -p $idf_dir
 cd $idf_dir
-wget --no-clobber "https://dl.espressif.com/dl/$toolchain_filename"
-tar -xzvf $toolchain_filename
+if [ ! -e $toolchain_filename ] || [ ! -d $toolchain_name ]; then 
+	wget --no-clobber "https://dl.espressif.com/dl/$toolchain_filename"
+	tar -xzvf $toolchain_filename
+fi
 
-# get esp-idf
-echo "clone or update esp-idf"
+## get esp-idf
 if [ -d "$idf_dir/esp-idf" ]; then
+	echo "update esp-idf"
 	cd $idf_dir/esp-idf
 	git clean -dxf
 	git pull -f
-	git submodule update --init --recursive --force
+	git submodule update --init --recursive
 else
+	echo "clone esp-idf"
 	git clone --recursive $esp_idf_url
 fi
 
-# add me to dialout group
+## add me to dialout group
 sudo gpasswd -a $USER dialout
 
-# environmental variable
+## environmental variable
 echo "add enviroment variable"
-echo "export PATH=\$PATH:\$HOME/$idf_dir_from_home/xtensa-esp32-elf/bin" >> $HOME/.zshrc
-echo "export IDF_PATH=\$HOME/$idf_dir_from_home/esp-idf" >> $HOME/.zshrc
+export_paths=(
+	"export PATH=\$PATH:\$HOME/$idf_dir_from_home/xtensa-esp32-elf/bin"
+	"export IDF_PATH=\$HOME/$idf_dir_from_home/esp-idf"
+)
+# deal with an array which has some spaces
+IFS_bak=$IFS
+IFS=$'\n'
+for export_path in ${export_paths[@]}; do
+	echo $export_path
+	for profile in ${profiles[@]}; do
+		if ! grep -q $export_path $profile; then
+			echo $export_path >> $profile
+		fi
+	done
+done
+IFS=$IFS_bak
 
