@@ -9,15 +9,19 @@ toolchain_filename='xtensa-esp32-elf-linux64-1.22.0-80-g6c4433a-5.2.0.tar.gz'
 esp_idf_url='https://github.com/espressif/esp-idf'
 
 # install software
-sudo apt-get install gcc git wget make libncurses-dev flex bison gperf python python-serial
+echo "sudo apt-get update"
+sudo apt-get update
+sudo apt-get install -y gcc git wget make libncurses-dev flex bison gperf python python-serial
 
 # make Espressif directory
+echo mkdir "\$HOME/$idf_dir_from_home"
 mkdir -p $idf_dir
 cd $idf_dir
 wget --no-clobber "https://dl.espressif.com/dl/$toolchain_filename"
 tar -xzvf $toolchain_filename
 
 # get esp-idf
+echo "clone or update esp-idf"
 if [ -d "$idf_dir/esp-idf" ]; then
 	cd $idf_dir/esp-idf
 	git clean -dxf
@@ -31,8 +35,7 @@ fi
 sudo gpasswd -a $USER dialout
 
 # environmental variable
-echo "=== add enviroment variable ==="
+echo "add enviroment variable"
 echo "export PATH=\$PATH:\$HOME/$idf_dir_from_home/xtensa-esp32-elf/bin" >> $HOME/.zshrc
 echo "export IDF_PATH=\$HOME/$idf_dir_from_home/esp-idf" >> $HOME/.zshrc
-echo "==============================="
 

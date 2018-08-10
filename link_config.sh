@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dotfilesDir=$HOME/.dotfiles/auto_link
+dotfilesDir=$HOME/.dotfiles/link_config_dir
 
 cd $dotfilesDir
 
