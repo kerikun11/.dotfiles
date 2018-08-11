@@ -1,11 +1,17 @@
 #!/bin/bash
 
-## see http://esp-idf.readthedocs.io/en/latest/get-started/linux-setup.html
+## setup the ESP-IDF environment
+## for details, see http://esp-idf.readthedocs.io/en/latest/get-started/linux-setup.html
+## this is only for Linux Ubuntu
+## this script makes a directory '~/Application/Espressif' and install toolchain and esp-idf there
+## configure PATH and IDF_PATH to .zprofile (zsh) and .profile (bash)
+
+## please update to a latest one
+toolchain_filename='xtensa-esp32-elf-linux64-1.22.0-80-g6c4433a-5.2.0.tar.gz'
 
 ## settings
 idf_dir_from_home="Application/Espressif"
 idf_dir="$HOME/$idf_dir_from_home"
-toolchain_filename='xtensa-esp32-elf-linux64-1.22.0-80-g6c4433a-5.2.0.tar.gz'
 toolchain_name='xtensa-esp32-elf'
 esp_idf_url='https://github.com/espressif/esp-idf'
 profiles=("$HOME/.zprofile" "$HOME/.profile")
@@ -57,4 +63,8 @@ for export_path in ${export_paths[@]}; do
 	done
 done
 IFS=$IFS_bak
+
+## complete
+echo "setup complete"
+echo "please reopen the shell"
 
