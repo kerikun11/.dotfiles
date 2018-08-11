@@ -4,7 +4,7 @@
 ## for details, see http://esp-idf.readthedocs.io/en/latest/get-started/linux-setup.html
 ## this is only for Linux Ubuntu
 ## this script makes a directory '~/Application/Espressif' and install toolchain and esp-idf there
-## configure PATH and IDF_PATH to .zprofile (zsh) and .profile (bash)
+## and configures PATH and IDF_PATH to .zprofile (zsh) and .profile (bash)
 
 ## please update to a latest one
 toolchain_filename='xtensa-esp32-elf-linux64-1.22.0-80-g6c4433a-5.2.0.tar.gz'
@@ -66,5 +66,5 @@ IFS=$IFS_bak
 
 ## complete
 echo "setup complete"
-echo "please reopen the shell"
+echo "please reopen the shell to reflect PATH"
 
