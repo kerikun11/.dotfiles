@@ -6,6 +6,9 @@
 ## this script makes a directory '~/Application/Espressif' and install toolchain and esp-idf there
 ## and configures PATH and IDF_PATH to .zprofile (zsh) and .profile (bash)
 
+## error by undefined variable
+set -u
+
 ## please update to a latest one
 toolchain_filename='xtensa-esp32-elf-linux64-1.22.0-80-g6c4433a-5.2.0.tar.gz'
 
