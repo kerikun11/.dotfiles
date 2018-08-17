@@ -1,0 +1,11 @@
+[Nemo Action]
+
+Name[en]=Open with Code
+Name[ja]=VSCodeで開く
+Comment=Opens VSCode in the current directory
+Exec=code %P
+Icon-Name=code
+Selection=none
+Extensions=any;
+Quote=double
+Dependencies=code;

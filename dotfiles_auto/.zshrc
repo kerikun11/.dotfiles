@@ -56,6 +56,10 @@ alias here="explorer.exe ."
 alias pd="pushd"
 alias pp="popd"
 
+# ESP-IDF
+alias idf-monitor="$IDF_PATH/tools/idf_monitor.py"
+alias esptool="$IDF_PATH/components/esptool_py/esptool/esptool.py"
+
 # PATH
 #export PATH=$PATH:'/c/Program Files (x86)/Nordic Semiconductor/nrf5x/bin'
 #export PATH=$PATH:'/c/Program Files (x86)/SEGGER/JLink_V630k'

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dotfilesDir=$HOME/.dotfiles/dotfiles_dir
+dotfilesDir=$HOME/.dotfiles/dotfiles_auto
 
 cd $dotfilesDir
 
