@@ -22,7 +22,7 @@ profiles=("$HOME/.zprofile" "$HOME/.profile")
 ## install software
 echo "sudo apt-get update"
 #sudo apt-get update
-sudo apt-get install -y gcc git wget make libncurses-dev flex bison gperf python python-serial
+sudo apt-get install -y gcc git wget make libncurses-dev flex bison gperf python python-pip python-setuptools python-serial
 
 ## make Espressif directory
 echo mkdir "\$HOME/$idf_dir_from_home"
