@@ -17,7 +17,7 @@ idf_dir_from_home="Application/Espressif"
 idf_dir="$HOME/$idf_dir_from_home"
 toolchain_name='xtensa-esp32-elf'
 esp_idf_url='https://github.com/espressif/esp-idf'
-profiles=("$HOME/.zprofile" "$HOME/.profile")
+profiles=("$HOME/.zshenv" "$HOME/.profile")
 
 ## install software
 echo "sudo apt-get update"

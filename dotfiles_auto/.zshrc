@@ -67,3 +67,5 @@ alias esptool="$IDF_PATH/components/esptool_py/esptool/esptool.py"
 #export PATH=$PATH:$HOME/Application/Espressif/xtensa-lx106-elf/bin
 #export PATH=$PATH:$HOME/Application/Espressif/xtensa-esp32-elf/bin
 #export IDF_PATH=$HOME/Application/Espressif/esp-idf
+export DISPLAY=:0.0
+export GDK_SCALE=2
