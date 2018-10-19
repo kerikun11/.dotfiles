@@ -36,6 +36,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # 大文字小文字を無�
 #bindkey -e                   # Emacsキーバインドで移動
 bindkey -v                   # Viキーバインドで移動
 setopt auto_cd               # cdを使わずにディレクトリを移動できる
+function chpwd() { ls -l --color=auto }
 setopt auto_pushd            # "cd -"の段階でTabを押すと、ディレクトリの履歴が見れる
 
 # Ctrl+sのロック, Ctrl+qのロック解除を無効にする
