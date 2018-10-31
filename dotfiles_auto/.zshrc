@@ -8,8 +8,9 @@
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+#ZSH_THEME="refined"
 ZSH_THEME="robbyrussell"
-#ZSH_THEME="agnoster"
+DEFAULT_USER="kerikun11"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -104,3 +105,7 @@ alias pd="pushd"
 alias pp="popd"
 
 function chpwd() { ls -l --color=auto }
+
+if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
+	PROMPT="%{${fg[red]}%}$USER@$HOST $PROMPT"
+fi
