@@ -9,7 +9,9 @@
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 #ZSH_THEME="refined"
-ZSH_THEME="robbyrussell"
+#ZSH_THEME="robbyrussell"
+#ZSH_THEME="agnoster"
+ZSH_THEME="ys"
 DEFAULT_USER="kerikun11"
 
 # Set list of themes to pick from when loading at random
@@ -106,6 +108,16 @@ alias pp="popd"
 
 function chpwd() { ls -l --color=auto }
 
+# PROMPT
 if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
 	PROMPT="%{${fg[red]}%}$USER@$HOST $PROMPT"
 fi
+
+# PATH
+#export PATH=$PATH:'/c/Program Files (x86)/Nordic Semiconductor/nrf5x/bin'
+#export PATH=$PATH:'/c/Program Files (x86)/SEGGER/JLink_V630k'
+#export PATH=$PATH:$HOME/Application/Espressif/xtensa-lx106-elf/bin
+#export PATH=$PATH:$HOME/Application/Espressif/xtensa-esp32-elf/bin
+#export IDF_PATH=$HOME/Application/Espressif/esp-idf
+export DISPLAY=:0.0
+export GDK_SCALE=2
