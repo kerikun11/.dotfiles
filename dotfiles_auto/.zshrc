@@ -109,9 +109,9 @@ alias pp="popd"
 function chpwd() { ls -l --color=auto }
 
 # PROMPT
-if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-	PROMPT="%{${fg[red]}%}$USER@$HOST $PROMPT"
-fi
+#if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
+#	PROMPT="%{${fg[red]}%}$USER@$HOST $PROMPT"
+#fi
 
 # PATH
 #export PATH=$PATH:'/c/Program Files (x86)/Nordic Semiconductor/nrf5x/bin'
