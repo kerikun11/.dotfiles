@@ -1,7 +1,19 @@
 #!/bin/bash -x
 
 link_dirs=("Documents" "Downloads" "OneDrive" "Dropbox")
-windows_home_dir="/mnt/c/Users/$USER"
+
+## determine OS
+if [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
+	OS='Linux'
+	windows_home_dir="/mnt/c/Users/$USER"
+elif [ "$(expr substr $(uname -s) 1 7)" == 'MINGW32' ]; then
+	OS='MINGW32'
+	windows_home_dir="/c/Users/$USER"
+else
+	echo "Your platform ($(uname -a)) is not supported."
+	exit 1
+fi
+echo "OS: $OS"
 
 for d in ${link_dirs[@]}; do
 	echo Link: $d

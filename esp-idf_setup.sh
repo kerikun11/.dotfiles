@@ -9,6 +9,17 @@
 ## error by undefined variable
 set -u
 
+## determine OS
+if [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
+  OS='Linux'
+elif [ "$(expr substr $(uname -s) 1 7)" == 'MINGW32' ]; then
+  OS='MINGW32'
+else
+  echo "Your platform ($(uname -a)) is not supported."
+  exit 1
+fi
+echo "OS: $OS"
+
 ## please update to a latest one
 toolchain_filename='xtensa-esp32-elf-linux64-1.22.0-80-g6c4433a-5.2.0.tar.gz'
 
@@ -19,25 +30,36 @@ toolchain_name='xtensa-esp32-elf'
 esp_idf_url='https://github.com/espressif/esp-idf'
 profiles=("$HOME/.zshenv" "$HOME/.profile")
 
-## install software
-echo "sudo apt-get update"
-sudo apt-get update
-sudo apt-get install -y gcc git wget make libncurses-dev flex bison gperf python python-pip python-setuptools python-serial python-cryptography python-future
-
 ## make Espressif directory
 echo mkdir "\$HOME/$idf_dir_from_home"
 mkdir -p $idf_dir
 cd $idf_dir
-if [ ! -e $toolchain_filename ] || [ ! -d $toolchain_name ]; then 
-	wget --no-clobber "https://dl.espressif.com/dl/$toolchain_filename"
-	tar -xzvf $toolchain_filename
+
+## install software
+if [ "$OS" == 'Linux' ]; then
+	echo "sudo apt-get update"
+	sudo apt-get update
+	sudo apt-get install -y gcc git wget make libncurses-dev flex bison gperf python python-pip python-setuptools python-serial python-cryptography python-future
+fi
+
+## add me to dialout group
+if [ "$OS" == 'Linux' ]; then
+	sudo gpasswd -a $USER dialout
+fi
+
+## get toolchain
+if [ "$OS" == 'Linux' ]; then
+	if [ ! -e $toolchain_filename ] || [ ! -d $toolchain_name ]; then 
+		wget --no-clobber "https://dl.espressif.com/dl/$toolchain_filename"
+		tar -xzvf $toolchain_filename
+	fi
 fi
 
 ## get esp-idf
 if [ -d "$idf_dir/esp-idf" ]; then
 	echo "update esp-idf"
 	cd $idf_dir/esp-idf
-	git clean -dxf
+	git clean -ffdx
 	git pull -f
 	git submodule update --init --recursive
 else
@@ -45,8 +67,11 @@ else
 	git clone --recursive $esp_idf_url
 fi
 
-## add me to dialout group
-sudo gpasswd -a $USER dialout
+## for msys
+if [ "$OSTYPE" == "msys" ]; then
+	export IDF_PATH="$idf_dir/esp-idf"
+	$idf_dir/esp-idf/tools/windows/windows_install_prerequisites.sh
+fi
 
 ## environmental variable
 echo "add enviroment variable"
