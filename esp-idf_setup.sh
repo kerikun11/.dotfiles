@@ -66,12 +66,7 @@ else
 	echo "clone esp-idf"
 	git clone --recursive $esp_idf_url
 fi
-
-## for msys
-if [ "$OSTYPE" == "msys" ]; then
-	export IDF_PATH="$idf_dir/esp-idf"
-	$idf_dir/esp-idf/tools/windows/windows_install_prerequisites.sh
-fi
+export IDF_PATH="$idf_dir/esp-idf"
 
 ## environmental variable
 echo "add enviroment variable"
@@ -91,6 +86,14 @@ for export_path in ${export_paths[@]}; do
 	done
 done
 IFS=$IFS_bak
+
+## update requirements
+if [ "$OSTYPE" == "msys" ]; then
+	## for msys
+	$idf_dir/esp-idf/tools/windows/windows_install_prerequisites.sh
+else
+	/usr/bin/python -m pip install --user -r $IDF_PATH/requirements.txt
+fi
 
 ## complete
 echo "setup complete"
