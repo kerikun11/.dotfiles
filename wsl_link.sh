@@ -6,7 +6,7 @@ link_dirs=("Documents" "Downloads" "OneDrive" "Dropbox")
 if [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
 	OS='Linux'
 	windows_home_dir="/mnt/c/Users/$USER"
-elif [ "$(expr substr $(uname -s) 1 7)" == 'MINGW32' ]; then
+elif [ "$(expr substr $(uname -s) 1 5)" == 'MINGW' ]; then
 	OS='MINGW32'
 	windows_home_dir="/c/Users/$USER"
 else
