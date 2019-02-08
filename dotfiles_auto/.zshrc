@@ -99,8 +99,6 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 alias make="make -j8"
 alias here="explorer.exe ."
 alias pd="pushd"
@@ -113,11 +111,9 @@ function chpwd() { ls -l --color=auto }
 #	PROMPT="%{${fg[red]}%}$USER@$HOST $PROMPT"
 #fi
 
+# GUI Display Env
+#export DISPLAY=:0.0
+#export GDK_SCALE=2
+
 # PATH
-#export PATH=$PATH:'/c/Program Files (x86)/Nordic Semiconductor/nrf5x/bin'
-#export PATH=$PATH:'/c/Program Files (x86)/SEGGER/JLink_V630k'
-#export PATH=$PATH:$HOME/Application/Espressif/xtensa-lx106-elf/bin
-#export PATH=$PATH:$HOME/Application/Espressif/xtensa-esp32-elf/bin
-#export IDF_PATH=$HOME/Application/Espressif/esp-idf
-export DISPLAY=:0.0
-export GDK_SCALE=2
+source ~/.zshenv
