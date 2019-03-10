@@ -1,13 +1,11 @@
-# dotfiles
+# .dotfiles
 
-## files
+## Dotfiles Automatically Linked
 
-  * .tmux.conf
-  * .vimrc
-  * .zshrc
-  * .gitconfig
+* .gitconfig
+* .latexmkrc
+* .tmux.conf
+* .vimrc
+* .zshrc
 
-## install
-
-  * install.sh
-
+    ./dotfiles_install.sh

@@ -11,12 +11,12 @@ set -u
 
 ## determine OS
 if [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
-  OS='Linux'
+	OS='Linux'
 elif [ "$(expr substr $(uname -s) 1 7)" == 'MINGW32' ]; then
-  OS='MINGW32'
+	OS='MINGW32'
 else
-  echo "Your platform ($(uname -a)) is not supported."
-  exit 1
+	echo "Your platform ($(uname -a)) is not supported."
+	exit 1
 fi
 echo "OS: $OS"
 
@@ -49,7 +49,7 @@ fi
 
 ## get toolchain
 if [ "$OS" == 'Linux' ]; then
-	if [ ! -e $toolchain_filename ] || [ ! -d $toolchain_name ]; then 
+	if [ ! -e $toolchain_filename ] || [ ! -d $toolchain_name ]; then
 		wget --no-clobber "https://dl.espressif.com/dl/$toolchain_filename"
 		tar -xzvf $toolchain_filename
 	fi
@@ -81,7 +81,7 @@ for export_path in ${export_paths[@]}; do
 	echo $export_path
 	for profile in ${profiles[@]}; do
 		if ! grep -q $export_path $profile; then
-			echo $export_path >> $profile
+			echo $export_path >>$profile
 		fi
 	done
 done
@@ -98,4 +98,3 @@ fi
 ## complete
 echo "setup complete"
 echo "please reopen the shell to reflect PATH"
-
