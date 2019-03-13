@@ -5,8 +5,8 @@ set -x
 
 read -p "フォルダ名の英語化：desktop.ini を書き換えます [y/n] :" YN
 case "$YN" in
-"Y" | "y") ;;
-*) exit 1 ;;
+  "Y" | "y") ;;
+  *) exit 1 ;;
 esac
 
 for FOLDERPATH in '3D Objects' Desktop Documents Downloads Music Pictures Videos Links Contacts Favorites Searches 'Saved Games'; do
