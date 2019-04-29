@@ -39,12 +39,16 @@ cd $idf_dir
 if [ "$OS" == 'Linux' ]; then
 	echo "sudo apt-get update"
 	sudo apt-get update
-	sudo apt-get install -y gcc git wget make libncurses-dev flex bison gperf python python-pip python-setuptools python-serial python-cryptography python-future
+	sudo apt-get upgrade -y
+	# make
+	sudo apt-get install -y gcc git wget make libncurses-dev flex bison gperf python python-pip python-setuptools python-serial python-cryptography python-future python-pyparsing python-pyelftools
+	# cmake
+	sudo apt-get install -y git wget libncurses-dev flex bison gperf python python-pip python-setuptools python-serial python-cryptography python-future python-pyparsing python-pyelftools cmake ninja-build ccache
 fi
 
 ## add me to dialout group
 if [ "$OS" == 'Linux' ]; then
-	sudo gpasswd -a $USER dialout
+	sudo usermod -a -G dialout $USER
 fi
 
 ## get toolchain
@@ -92,7 +96,7 @@ if [ "$OSTYPE" == "msys" ]; then
 	## for msys
 	$idf_dir/esp-idf/tools/windows/windows_install_prerequisites.sh
 else
-	/usr/bin/python -m pip install --user -r $IDF_PATH/requirements.txt
+	/usr/bin/python -m pip install --user -r $idf_dir/esp-idf/requirements.txt
 fi
 
 ## complete
