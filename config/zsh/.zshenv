@@ -14,3 +14,6 @@ export PATH=$PATH:/c/Windows
 export PATH="$PATH:/c/Application/hugo"
 # mconf-idf
 export PATH="$PATH:/c/Program Files/Espressif/ESP-IDF Tools/mconf-idf"
+# inkscape
+export PATH="$PATH:/c/Program Files/Inkscape"
+
