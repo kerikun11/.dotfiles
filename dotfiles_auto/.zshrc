@@ -107,6 +107,9 @@ alias glg="git log --graph --abbrev-commit --decorate --format=format:'%C(bold b
 
 function chpwd() { ls -l --color=auto }
 function svg2pdf() { inkscape -D -z --file=$1 --export-pdf=${1%.*}.pdf }
+function pdfnup2x1() { pdfnup --a4paper --nup 2x1 --scale 1.0 --landscape --batch $1 }
+function pdfnup2x2() { pdfnup --a4paper --nup 2x2 --scale 0.96 --landscape --batch $1 }
+function pdfnup2x4() { pdfnup --a4paper --nup 2x4 --scale 0.96 --no-landscape --batch $1 }
 
 # PROMPT
 #if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
