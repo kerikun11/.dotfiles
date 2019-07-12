@@ -122,3 +122,10 @@ function pdfnup2x4() { pdfnup --a4paper --nup 2x4 --scale 0.96 --no-landscape --
 
 # PATH
 source ~/.zshenv
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/kerikun11/.sdkman"
+[[ -s "/home/kerikun11/.sdkman/bin/sdkman-init.sh" ]] && source "/home/kerikun11/.sdkman/bin/sdkman-init.sh"
+export PATH="/home/kerikun11/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
