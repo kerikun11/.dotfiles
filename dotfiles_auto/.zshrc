@@ -75,8 +75,6 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
-
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -90,15 +88,7 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
+# aliases
 alias make="make -j8"
 alias here="explorer.exe ."
 alias pd="pushd"
@@ -116,16 +106,5 @@ function pdfnup2x4() { pdfnup --a4paper --nup 2x4 --scale 0.96 --no-landscape --
 #	PROMPT="%{${fg[red]}%}$USER@$HOST $PROMPT"
 #fi
 
-# GUI Display Env
-#export DISPLAY=:0.0
-#export GDK_SCALE=2
-
 # PATH
 source ~/.zshenv
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/kerikun11/.sdkman"
-[[ -s "/home/kerikun11/.sdkman/bin/sdkman-init.sh" ]] && source "/home/kerikun11/.sdkman/bin/sdkman-init.sh"
-export PATH="/home/kerikun11/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
