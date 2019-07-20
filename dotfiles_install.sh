@@ -29,7 +29,7 @@ if [ "$OS" == 'Linux' ]; then
     echo "sudo apt-get update"
     sudo apt-get update
     sudo apt-get upgrade -y
-    sudo apt-get install -y git zsh vim
+    sudo apt-get install -y git zsh vim curl
 elif [ "$OS" == 'MINGW' ]; then
     echo "pacman update"
     pacman -S --needed zsh
