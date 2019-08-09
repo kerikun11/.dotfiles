@@ -2,15 +2,13 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH="$HOME/.oh-my-zsh"
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-#ZSH_THEME="refined"
-#ZSH_THEME="robbyrussell"
-#ZSH_THEME="agnoster"
+# ZSH_THEME="robbyrussell"
 ZSH_THEME="ys"
 DEFAULT_USER="kerikun11"
 
@@ -30,8 +28,14 @@ DEFAULT_USER="kerikun11"
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
 
+# Uncomment the following line to automatically update without prompting.
+# DISABLE_UPDATE_PROMPT="true"
+
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS=true
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -66,14 +70,13 @@ DEFAULT_USER="kerikun11"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  git
-  vi-mode
-)
+plugins=(git vi-mode docker)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+
+# export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -88,23 +91,27 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# aliases
-alias make="make -j8"
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
 alias here="explorer.exe ."
 alias pd="pushd"
 alias pp="popd"
 alias glg="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
+alias zshrc="vim ~/.zshrc"
 
+# functions
 function chpwd() { ls -l --color=auto }
 function svg2pdf() { inkscape -D -z --file=$1 --export-pdf=${1%.*}.pdf }
 function pdfnup2x1() { pdfnup --a4paper --nup 2x1 --scale 1.0 --landscape --batch $1 }
 function pdfnup2x2() { pdfnup --a4paper --nup 2x2 --scale 0.96 --landscape --batch $1 }
 function pdfnup2x4() { pdfnup --a4paper --nup 2x4 --scale 0.96 --no-landscape --batch $1 }
 
-# PROMPT
-#if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-#	PROMPT="%{${fg[red]}%}$USER@$HOST $PROMPT"
-#fi
+# ENV
+source $HOME/.zshenv
 
-# PATH
-source ~/.zshenv
+# for docker complementation
+autoload -Uz compinit; compinit
