@@ -109,6 +109,7 @@ function svg2pdf() { inkscape -D -z --file=$1 --export-pdf=${1%.*}.pdf }
 function pdfnup2x1() { pdfnup --a4paper --nup 2x1 --scale 1.0 --landscape --batch $1 }
 function pdfnup2x2() { pdfnup --a4paper --nup 2x2 --scale 0.96 --landscape --batch $1 }
 function pdfnup2x4() { pdfnup --a4paper --nup 2x4 --scale 0.96 --no-landscape --batch $1 }
+function permission_reset() { find $1 -type d -print | xargs chmod 755 && find $1 -type f -print | xargs chmod 644 }
 
 # ENV
 source $HOME/.zshenv
