@@ -75,6 +75,7 @@ plugins=(git vi-mode docker)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+# unsetopt nomatch 
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -95,20 +96,25 @@ source $ZSH/oh-my-zsh.sh
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
-alias here="explorer.exe ."
 alias pd="pushd"
 alias pp="popd"
+
 alias glg="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
+
 alias zshrc="vim ~/.zshrc"
+
+alias idf='docker run --rm -v $PWD:/project -w /project -it -v /etc/group:/etc/group:ro -v /etc/passwd:/etc/passwd:ro -u $(id -u $USER):$(id -g $USER) espressif/idf idf.py'
+
+alias idf='docker run --rm -v $PWD:/project -w /project -it -v /etc/group:/etc/group:ro -v /etc/passwd:/etc/passwd:ro -u $(id -u $USER):$(id -g $USER) espressif/idf idf.py'
+alias idfd='docker run --rm -v $PWD:/project -w /project -it -v /etc/group:/etc/group:ro -v /etc/passwd:/etc/passwd:ro -u $(id -u $USER):$(id -g $USER) --device=$(ls /dev/ttyUSB*) espressif/idf idf.py'
+
+alias pdfnup2x1="pdfnup --a4paper --nup 2x1 --scale 1.0 --landscape --batch"
+alias pdfnup2x2="pdfnup --a4paper --nup 2x2 --scale 0.96 --landscape --batch"
+alias pdfnup2x4="pdfnup --a4paper --nup 2x4 --scale 0.96 --no-landscape --batch"
 
 # functions
 function chpwd() { ls -l --color=auto }
 function svg2pdf() { inkscape -D -z --file=$1 --export-pdf=${1%.*}.pdf }
-function pdfnup2x1() { pdfnup --a4paper --nup 2x1 --scale 1.0 --landscape --batch $1 }
-function pdfnup2x2() { pdfnup --a4paper --nup 2x2 --scale 0.96 --landscape --batch $1 }
-function pdfnup2x4() { pdfnup --a4paper --nup 2x4 --scale 0.96 --no-landscape --batch $1 }
 function permission_reset() { find $1 -type d -print | xargs chmod 755 && find $1 -type f -print | xargs chmod 644 }
 
 # ENV
