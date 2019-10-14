@@ -31,5 +31,5 @@ sudo ln -sf "/usr/share/code/resources/app/resources/linux/code.png" "/usr/local
 
 ## TeX-Live
 sudo apt install -y texlive-full
-rm -r $HOME/.cpan
+rm -rf $HOME/.cpan
 sudo cpan Log::Dispatch::File File::HomeDir
