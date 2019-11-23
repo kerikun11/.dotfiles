@@ -57,3 +57,7 @@ for file in ${dotfiles_auto[@]}; do
     ln -sf $DOTFILES_AUTO_DIR/$file $HOME/$file
 done
 echo "OK Symbolic Links"
+
+## Ending
+echo "Everything has done. Enjoy!"
+
