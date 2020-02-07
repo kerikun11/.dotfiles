@@ -79,6 +79,9 @@ set foldmethod=indent
 nnoremap j gj
 nnoremap k gk
 
+" 行末までヤンク
+nnoremap Y y$
+
 " *****************************
 " 検索関係
 " *****************************
