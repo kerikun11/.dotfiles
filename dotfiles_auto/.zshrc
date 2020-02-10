@@ -70,7 +70,7 @@ DEFAULT_USER="kerikun11"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vi-mode docker pip)
+plugins=(git vi-mode docker pip colorize zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -99,28 +99,38 @@ source $ZSH/oh-my-zsh.sh
 alias pd="pushd"
 alias pp="popd"
 
+alias make="make -j 8"
+
 alias glg="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
 
-alias zshrc="vim ~/.zshrc"
-
 alias upgradeall="sudo apt update && sudo apt upgrade -y && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo apt autoclean"
+alias sp2ub='find . -name "* *" | rename "s/ /_/g"'
 
-alias idf='docker run --rm -v $PWD:/project -w /project -it -v /etc/group:/etc/group:ro -v /etc/passwd:/etc/passwd:ro -u $(id -u $USER):$(id -g $USER) espressif/idf idf.py'
-alias idfd='docker run --rm -v $PWD:/project -w /project -it -v /etc/group:/etc/group:ro -v /etc/passwd:/etc/passwd:ro -u $(id -u $USER):$(id -g $USER) --device=$(ls /dev/ttyUSB*) espressif/idf idf.py'
+alias idf='docker run --rm -v $PWD:/project -w /project -it -v /etc/group:/etc/group:ro -v /etc/passwd:/etc/passwd:ro -u $(id -u $USER):$(id -g $USER) espressif/idf'
+alias idfd='docker run --rm -v $PWD:/project -w /project -it -v /etc/group:/etc/group:ro -v /etc/passwd:/etc/passwd:ro -u $(id -u $USER):$(id -g $USER) --device=$(ls /dev/ttyUSB*) espressif/idf'
 
+# PDF n-up
 alias pdfnup2x1="pdfnup --a4paper --nup 2x1 --scale 1.0 --landscape --batch"
 alias pdfnup2x2="pdfnup --a4paper --nup 2x2 --scale 0.96 --landscape --batch"
 alias pdfnup2x4="pdfnup --a4paper --nup 2x4 --scale 0.96 --no-landscape --batch"
 
-alias make="make -j8"
+# Trash CLI
+if type trash-put &> /dev/null
+then
+    alias rm=trash-put
+fi
 
 # functions
 function chpwd() { ls -l --color=auto }
 function svg2pdf() { inkscape -D -z --file=$1 --export-pdf=${1%.*}.pdf }
 function permission_reset() { find $1 -type d -print | xargs chmod 755 && find $1 -type f -print | xargs chmod 644 }
 
+# bash: command_not_found_handler() -> command_not_found_handle()
+function command_not_found_handler(){ echo "\e[31m" "$(figlet 404)" }
+
 # ENV
 source $HOME/.zshenv
 
 # for docker complementation
 autoload -Uz compinit; compinit
+
