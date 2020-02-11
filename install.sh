@@ -47,6 +47,15 @@ fi
 touch $HOME/.zshenv >/dev/null
 echo "OK oh-my-zsh"
 
+## zsh syntax highlighting; https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
+ZSH_CUSTOM=$OHMYZSH_DIR/custom
+ZSH_SYNTAX_HIGHLIGHTING=$ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+if [ ! -d $ZSH_SYNTAX_HIGHLIGHTING ]; then
+    echo 'installing zsh syntax highlighting'
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_SYNTAX_HIGHLIGHTING
+fi
+echo "OK zsh syntax highlighting"
+
 ## link dotfiles
 cd $DOTFILES_AUTO_DIR
 dotfiles_auto=$(find . -type f)
