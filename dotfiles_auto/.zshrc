@@ -75,7 +75,7 @@ plugins=(git vi-mode docker pip colorize zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-# unsetopt nomatch 
+unsetopt nomatch 
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -125,12 +125,6 @@ function chpwd() { ls -l --color=auto }
 function svg2pdf() { inkscape -D -z --file=$1 --export-pdf=${1%.*}.pdf }
 function permission_reset() { find $1 -type d -print | xargs chmod 755 && find $1 -type f -print | xargs chmod 644 }
 
-# bash: command_not_found_handler() -> command_not_found_handle()
-function command_not_found_handler(){ echo "\e[31m" "$(figlet 404)" }
-
 # ENV
 source $HOME/.zshenv
-
-# for docker complementation
-autoload -Uz compinit; compinit
 
