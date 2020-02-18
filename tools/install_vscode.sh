@@ -11,6 +11,7 @@ sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microso
 sudo apt update
 sudo apt install -y apt-transport-https
 sudo apt install -y code
+
 # vscode icon
 sudo mkdir -p /usr/local/share/icons
 sudo ln -sf "/usr/share/code/resources/app/resources/linux/code.png" "/usr/local/share/icons/code.png"

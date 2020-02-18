@@ -1,20 +1,25 @@
 #!/bin/bash
-## file:    dotfiles installer
-## author:  kerikun11
-
-## option
+##============================================================================##
+## description  UNIX configuration files installer
+## author       kerikun11
+##============================================================================##
+## exec option
 # set -x # show command
 set -e # first error to exit
 set -u # unused variable error
 
-# dotfiles
+##============================================================================##
+## definitions
+
+## dotfiles
 DOTFILES_GITHUB="https://github.com/kerikun11/.dotfiles.git"
 DOTFILES_DIR="$HOME/.dotfiles"
-DOTFILES_AUTO_DIR="$DOTFILES_DIR/dotfiles_auto"
+DOTFILES_LINK_DIR="$DOTFILES_DIR/dotfiles_link"
 
-# oh-my-zsh
+## oh-my-zsh
 OHMYZSH_DIR="$HOME/.oh-my-zsh"
 
+##============================================================================##
 ## opening
 echo '      _       _    __ _ _           '
 echo '   __| | ___ | |_ / _(_) | ___  ___ '
@@ -23,7 +28,7 @@ echo ' | (_| | (_) | |_|  _| | |  __/\__ \'
 echo '(_)__,_|\___/ \__|_| |_|_|\___||___/'
 echo ''
 
-## requred commands
+## required commands
 REQUIRED_COMMANDS=("git" "zsh" "wget")
 for cmd in ${REQUIRED_COMMANDS[@]}; do
     if !(type $cmd >/dev/null 2>&1); then
@@ -47,7 +52,8 @@ fi
 touch $HOME/.zshenv >/dev/null
 echo "OK oh-my-zsh"
 
-## zsh syntax highlighting; https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
+## zsh syntax highlighting
+## https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
 ZSH_CUSTOM=$OHMYZSH_DIR/custom
 ZSH_SYNTAX_HIGHLIGHTING=$ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 if [ ! -d $ZSH_SYNTAX_HIGHLIGHTING ]; then
@@ -57,16 +63,16 @@ fi
 echo "OK zsh syntax highlighting"
 
 ## link dotfiles
-cd $DOTFILES_AUTO_DIR
-dotfiles_auto=$(find . -type f)
-for file in ${dotfiles_auto[@]}; do
+cd $DOTFILES_LINK_DIR
+dotfiles_link=$(find . -type f)
+for file in ${dotfiles_link[@]}; do
     file=${file#./} # remove first "./"
     echo "  $file"
     mkdir -p $HOME/$(dirname $file)
-    ln -sf $DOTFILES_AUTO_DIR/$file $HOME/$file
+    ln -sf $DOTFILES_LINK_DIR/$file $HOME/$file
 done
 echo "OK Symbolic Links"
 
-## Ending
+##============================================================================##
+## ending
 echo "Everything has done. Enjoy!"
-
