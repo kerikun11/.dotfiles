@@ -6,7 +6,7 @@
 ## exec option
 # set -x # show command
 set -e # first error to exit
-set -u # unused variable error
+set -u # undefined variable error
 
 ##============================================================================##
 ## definitions
@@ -52,7 +52,7 @@ fi
 touch $HOME/.zshenv >/dev/null
 echo "OK oh-my-zsh"
 
-## zsh syntax highlighting
+## oh-my-zsh syntax highlighting
 ## https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
 ZSH_CUSTOM=$OHMYZSH_DIR/custom
 ZSH_SYNTAX_HIGHLIGHTING=$ZSH_CUSTOM/plugins/zsh-syntax-highlighting
