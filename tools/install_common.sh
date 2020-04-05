@@ -19,6 +19,6 @@ elif type yum >/dev/null 2>&1; then
     $SUDO yum add $packages
 elif type pacman >/dev/null 2>&1; then
     # pacman
-    $SUDO pacman -Syy --noconfirm
-    $SUDO pacman -S --noconfirm $packages
+    $SUDO pacman -Syy --noconfirm --needed
+    $SUDO pacman -S --noconfirm --needed $packages
 fi

@@ -32,15 +32,15 @@ yay_install_cmd="yay -S --noconfirm --quiet --needed --needed"
 $yay_install_cmd git zsh curl vim
 ## dev
 $yay_install_cmd gcc gcc-multilib cmake valgrind kcachegrind
-$yay_install_cmd arduino code inkscape
+$yay_install_cmd arduino code inkscape kicad
 ## utility
-$yay_install_cmd trash-cli figlet sl
+$yay_install_cmd trash-cli figlet sl hugo asciidoctor doxygen
 ## font
 $yay_install_cmd otf-ipafont
-## Google Chrome
-$yay_install_cmd google-chrome
 ## WPS Office
 $yay_install_cmd wps-office ttf-wps-fonts
+## Google Chrome
+$yay_install_cmd google-chrome
 ## slack
 $yay_install_cmd slack-desktop
 ## Dropbox
