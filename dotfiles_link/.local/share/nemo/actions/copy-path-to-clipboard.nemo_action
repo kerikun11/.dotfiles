@@ -1,0 +1,12 @@
+[Nemo Action]
+Active=true
+Name=Copy Path
+Name[ja]=パスをコピー
+Comment=Copy Path to Clipboard
+Icon-Name=edit-copy
+Exec=<copy-path-to-clipboard.sh %F>
+Selection=any
+Extensions=any
+Quote=double
+Separator=,
+Dependencies=xclip;
