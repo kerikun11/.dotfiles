@@ -21,7 +21,7 @@ wget -O- https://raw.githubusercontent.com/kerikun11/.dotfiles/master/install.sh
 wget -O- https://raw.githubusercontent.com/kerikun11/.dotfiles/master/tools/mint_setup.sh | sh
 ```
 
-## common packages
+## install common packages
 
 ```sh
 wget -O- https://raw.githubusercontent.com/kerikun11/.dotfiles/master/tools/install_common.sh | sh
