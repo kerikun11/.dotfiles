@@ -1,4 +1,7 @@
 [Nemo Action]
+
+Active=true
+
 Name[ja_JP]=Gitkrakenで開く
 Name[en_US]=Open with Gitkraken
 
@@ -6,9 +9,7 @@ Comment[ja_JP]=Gitkrakenで%fを開く
 Comment[en_US]=open %f with Gitkraken
 
 Exec=gitkraken -p '%F'
-
 Icon-Name=gitkraken
-
 Selection=Any
-
-Extensions=any
+Extensions=any;
+Dependencies=gitkraken;

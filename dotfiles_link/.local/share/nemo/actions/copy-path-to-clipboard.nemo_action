@@ -1,7 +1,7 @@
 [Nemo Action]
 Active=true
-Name=Copy Path
-Name[ja]=パスをコピー
+Name=Copy Path(_P)
+Name[ja]=パスをコピー(_P)
 Comment=Copy Path to Clipboard
 Icon-Name=edit-copy
 Exec=<copy-path-to-clipboard.sh %F>

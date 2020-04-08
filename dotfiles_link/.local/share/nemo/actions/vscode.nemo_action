@@ -1,9 +1,12 @@
 [Nemo Action]
 
 Active=true
-Name=Open in vscode
-Name[ja]=VSCodeで開く
-Comment=Opens current folder on vscode
+
+Name=Open in VSCode(_V)
+Name[ja]=VSCodeで開く(_V)
+Comment=Opens current folder in VSCode
+Comment[ja_JP]=VSCodeで%fフォルダを開く
+
 Exec=code %P
 Icon-Name=code
 Selection=any
