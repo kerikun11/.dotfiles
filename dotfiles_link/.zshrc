@@ -99,6 +99,8 @@ unsetopt nomatch
 alias pd="pushd"
 alias pp="popd"
 
+alias p="python"
+
 alias make="make -j 8 --quiet"
 
 alias glg="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
