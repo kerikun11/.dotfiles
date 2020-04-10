@@ -103,11 +103,10 @@ alias p="python"
 
 alias make="make -j 8 --quiet"
 
-alias glg="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
-
 alias upgradeall="sudo apt update && sudo apt upgrade -y && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo apt autoclean"
 alias sp2ub='find . -name "* *" | rename "s/ /_/g"'
 
+# esp-idf docker alias
 alias idf='docker run --rm -v $PWD:/project -w /project -it -v /etc/group:/etc/group:ro -v /etc/passwd:/etc/passwd:ro -u $(id -u $USER):$(id -g $USER) espressif/idf'
 alias idfd='docker run --rm -v $PWD:/project -w /project -it -v /etc/group:/etc/group:ro -v /etc/passwd:/etc/passwd:ro -u $(id -u $USER):$(id -g $USER) --device=$(ls /dev/ttyUSB*) espressif/idf'
 
@@ -121,6 +120,10 @@ if type trash-put &> /dev/null
 then
     alias rm=trash-put
 fi
+
+# clip board
+alias pbcopy='xclip -selection c'
+alias pbpaste='xclip -selection c -o'
 
 # command stack
 show_buffer_stack() {
