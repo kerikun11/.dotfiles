@@ -63,8 +63,6 @@ $yay_install_cmd trash-cli figlet sl hugo asciidoctor doxygen
 $yay_install_cmd dos2unix
 ## font
 $yay_install_cmd otf-ipafont
-## WPS Office
-$yay_install_cmd wps-office
 ## Google Chrome
 $yay_install_cmd google-chrome
 ## slack
@@ -72,23 +70,17 @@ $yay_install_cmd slack-desktop
 ## Dropbox
 $yay_install_cmd dropbox
 $yay_install_cmd nemo-dropbox
-echo "OK packages"
-
+## WPS Office
+$yay_install_cmd wps-office
 ## Theme
 $yay_install_cmd mint-themes
 $yay_install_cmd vimix-gtk-themes vimix-icon-theme
+echo "OK packages"
 
 ## Fcitx and Mozc
 $yay_install_cmd fcitx-mozc fcitx-im
 fcitx-autostart
 echo "OK mozc"
-
-## Change Shell
-myshell="/usr/bin/zsh"
-if [ $SHELL != $myshell ]; then
-    chsh -s /usr/bin/zsh
-    echo "OK Change Shell to Zsh"
-fi
 
 ## ending
 echo "Everything has done."
