@@ -15,7 +15,6 @@ echo "OK capslock"
 # gsettings set org.nemo.desktop show-desktop-icons false
 
 ## Package Source Repository
-## see https://wiki.manjaro.org/index.php?title=Pacman-mirrors%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%81%AB%E3%82%88%E3%82%8B%E3%83%9F%E3%83%A9%E3%83%BC%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%83%AA%E3%82%B9%E3%83%88%E3%81%AE%E6%9B%B4%E6%96%B0
 read -p "update pacman mirrors? [y/N] :" YN
 case "$YN" in "Y" | "y")
     sudo pacman-mirrors --fasttrack && sudo pacman -Syy
@@ -34,8 +33,10 @@ $yay_install_cmd git zsh curl vim
 $yay_install_cmd gcc gcc-multilib cmake valgrind kcachegrind
 $yay_install_cmd arduino code inkscape kicad
 $yay_install_cmd base-devel
+$yay_install_cmd qtcreator qt5-base
 ## utility
 $yay_install_cmd trash-cli figlet sl hugo asciidoctor doxygen
+$yay_install_cmd dos2unix
 ## font
 $yay_install_cmd otf-ipafont
 ## WPS Office
@@ -45,8 +46,22 @@ $yay_install_cmd google-chrome
 ## slack
 $yay_install_cmd slack-desktop
 ## Dropbox
-$yay_install_cmd dropbox nemo-dropbox
+$yay_install_cmd dropbox
 echo "OK packages"
+
+## Nemo
+$yay_install_cmd nemo-dropbox
+gsettings set org.nemo.desktop show-desktop-icons false
+gsettings set org.nemo.preferences default-folder-viewer 'list-view'
+gsettings set org.nemo.window-state start-with-menu-bar false
+## tool bar
+gsettings set org.nemo.preferences show-compact-view-icon-toolbar true
+gsettings set org.nemo.preferences show-open-in-terminal-toolbar true
+gsettings set org.nemo.preferences show-home-icon-toolbar true
+gsettings set org.nemo.preferences show-new-folder-icon-toolbar true
+gsettings set org.nemo.preferences show-edit-icon-toolbar true
+gsettings set org.nemo.preferences show-computer-icon-toolbar true
+echo "OK nemo"
 
 ## Fcitx and Mozc
 $yay_install_cmd fcitx-mozc fcitx-im
