@@ -33,6 +33,7 @@ $yay_install_cmd git zsh curl vim
 ## dev
 $yay_install_cmd gcc gcc-multilib cmake valgrind kcachegrind
 $yay_install_cmd arduino code inkscape kicad
+$yay_install_cmd base-devel
 ## utility
 $yay_install_cmd trash-cli figlet sl hugo asciidoctor doxygen
 ## font
