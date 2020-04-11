@@ -21,6 +21,8 @@ gsettings set org.cinnamon.settings-daemon.plugins.power idle-brightness 5
 gsettings set org.cinnamon.settings-daemon.plugins.power sleep-display-ac 3600               # sleep diplay
 gsettings set org.cinnamon.settings-daemon.plugins.power sleep-display-battery 300           # sleep diplay
 gsettings set org.cinnamon.settings-daemon.plugins.power sleep-inactive-battery-timeout 3600 # sleep PC
+gsettings set org.cinnamon.settings-daemon.plugins.xsettings buttons-have-icons true         # theme -> misc
+gsettings set org.cinnamon.settings-daemon.plugins.xsettings menus-have-icons true           # theme -> misc
 echo "OK Cinnamon"
 
 ## Nemo
@@ -71,6 +73,10 @@ $yay_install_cmd slack-desktop
 $yay_install_cmd dropbox
 $yay_install_cmd nemo-dropbox
 echo "OK packages"
+
+## Theme
+$yay_install_cmd mint-themes
+$yay_install_cmd vimix-gtk-themes vimix-icon-theme
 
 ## Fcitx and Mozc
 $yay_install_cmd fcitx-mozc fcitx-im
