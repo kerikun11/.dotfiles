@@ -39,21 +39,18 @@ $yay_install_cmd trash-cli figlet sl hugo asciidoctor doxygen
 ## font
 $yay_install_cmd otf-ipafont
 ## WPS Office
-$yay_install_cmd wps-office ttf-wps-fonts
+$yay_install_cmd wps-office
 ## Google Chrome
 $yay_install_cmd google-chrome
 ## slack
 $yay_install_cmd slack-desktop
 ## Dropbox
 $yay_install_cmd dropbox nemo-dropbox
-## VirtualBox (have to select current kernel version)
-# $yay_install_cmd virtualbox
 echo "OK packages"
 
-## Fcitx
+## Fcitx and Mozc
 $yay_install_cmd fcitx-mozc fcitx-im
 fcitx-autostart
-
 echo "OK mozc"
 
 ## Change Shell

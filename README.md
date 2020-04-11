@@ -21,6 +21,12 @@ wget -O- https://raw.githubusercontent.com/kerikun11/.dotfiles/master/install.sh
 wget -O- https://raw.githubusercontent.com/kerikun11/.dotfiles/master/tools/mint_setup.sh | sh
 ```
 
+## Manjaro Linux Cinnamon 19.2
+
+```sh
+wget -O- https://raw.githubusercontent.com/kerikun11/.dotfiles/master/tools/manjaro_setup.sh | bash
+```
+
 ## install common packages
 
 ```sh
