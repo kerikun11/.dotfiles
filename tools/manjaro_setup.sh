@@ -59,7 +59,7 @@ $yay_install_cmd arduino code inkscape kicad
 $yay_install_cmd base-devel
 $yay_install_cmd qtcreator qt5-base
 ## utility
-$yay_install_cmd trash-cli figlet sl hugo asciidoctor doxygen
+$yay_install_cmd trash-cli xclip figlet sl hugo asciidoctor doxygen
 $yay_install_cmd dos2unix
 ## font
 $yay_install_cmd otf-ipafont
