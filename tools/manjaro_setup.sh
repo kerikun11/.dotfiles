@@ -61,7 +61,7 @@ $yay_install_cmd kicad kicad-library kicad-library-3d
 $yay_install_cmd qtcreator qt5-base
 ## utility
 $yay_install_cmd trash-cli xclip figlet sl hugo asciidoctor doxygen
-$yay_install_cmd dos2unix
+$yay_install_cmd dos2unix perl-image-exiftool
 ## font
 $yay_install_cmd otf-ipafont
 ## Google Chrome

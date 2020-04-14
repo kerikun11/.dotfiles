@@ -115,6 +115,9 @@ alias pdfnup2x1="pdfnup --a4paper --nup 2x1 --scale 1.0 --landscape --batch"
 alias pdfnup2x2="pdfnup --a4paper --nup 2x2 --scale 0.96 --landscape --batch"
 alias pdfnup2x4="pdfnup --a4paper --nup 2x4 --scale 0.96 --no-landscape --batch"
 
+# Exiftool
+alias rmgeotag="exiftool -overwrite_original -geotag="
+
 # Trash CLI
 if type trash-put &> /dev/null
 then
