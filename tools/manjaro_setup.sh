@@ -53,10 +53,11 @@ sudo pacman -S --noconfirm --needed yay
 yay_install_cmd="yay -S --noconfirm --quiet --needed --needed"
 ## requirements
 $yay_install_cmd git zsh curl vim
+$yay_install_cmd base-devel
 ## dev
 $yay_install_cmd gcc gcc-multilib cmake valgrind kcachegrind
-$yay_install_cmd arduino code inkscape kicad
-$yay_install_cmd base-devel
+$yay_install_cmd arduino code inkscape
+$yay_install_cmd kicad kicad-library kicad-library-3d
 $yay_install_cmd qtcreator qt5-base
 ## utility
 $yay_install_cmd trash-cli xclip figlet sl hugo asciidoctor doxygen
