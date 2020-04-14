@@ -78,8 +78,9 @@ $yay_install_cmd vimix-gtk-themes vimix-icon-theme
 echo "OK packages"
 
 ## Fcitx and Mozc
-$yay_install_cmd fcitx-mozc fcitx-im
-fcitx-autostart
+# $yay_install_cmd fcitx-mozc fcitx-im
+# fcitx-autostart
+$yay_install_cmd ibus-mozc
 echo "OK mozc"
 
 ## ending
