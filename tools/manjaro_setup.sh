@@ -64,7 +64,7 @@ $yay_install_cmd qtcreator qt5-base
 $yay_install_cmd trash-cli xclip figlet sl hugo asciidoctor doxygen graphviz
 $yay_install_cmd dos2unix perl-image-exiftool
 ## font
-$yay_install_cmd otf-ipafont
+$yay_install_cmd otf-ipafont ttf-ubuntu-font-family
 ## Google Chrome
 $yay_install_cmd google-chrome
 ## slack
