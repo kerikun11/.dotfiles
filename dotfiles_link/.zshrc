@@ -75,7 +75,7 @@ plugins=(git vi-mode docker pip colorize zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-unsetopt nomatch 
+unsetopt nomatch
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -100,7 +100,7 @@ alias pd="pushd"
 alias pp="popd"
 
 alias p="python"
-
+alias open="xdg-open"
 alias make="make -j 8 --quiet"
 
 alias upgradeall="sudo apt update && sudo apt upgrade -y && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo apt autoclean"
@@ -119,9 +119,8 @@ alias pdfnup2x4="pdfnup --a4paper --nup 2x4 --scale 0.96 --no-landscape --batch"
 alias rmgeotag="exiftool -overwrite_original -geotag="
 
 # Trash CLI
-if type trash-put &> /dev/null
-then
-    alias rm=trash-put
+if type trash-put &>/dev/null; then
+  alias rm=trash-put
 fi
 
 # clip board
@@ -139,9 +138,19 @@ setopt noflowcontrol
 bindkey '^Q' show_buffer_stack
 
 # functions
-function chpwd() { ls -l --color=auto }
-function svg2pdf() { inkscape -D -z --file=$1 --export-pdf=${1%.*}.pdf }
-function permission_reset() { find $1 -type d -print | xargs chmod 755 && find $1 -type f -print | xargs chmod 644 }
+function chpwd() {
+  ls -l --color=auto
+}
+function svg2pdf() {
+  inkscape -D -z --file=$1 --export-pdf=${1%.*}.pdf
+}
+function permission_reset() {
+  find $1 -type d -print | xargs chmod 755 && find $1 -type f -print | xargs chmod 644
+}
+
+# key map fix in vi-mode
+bindkey -s '^]' '\e'       # escape
+bindkey "e[3~" delete-char # delete
 
 # ENV
 source $HOME/.zshenv
