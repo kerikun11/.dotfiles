@@ -73,17 +73,15 @@ $yay_install_cmd slack-desktop
 $yay_install_cmd dropbox
 $yay_install_cmd nemo-dropbox
 ## WPS Office
-$yay_install_cmd wps-office
+# $yay_install_cmd wps-office
 ## Theme
 $yay_install_cmd mint-themes
 $yay_install_cmd vimix-gtk-themes vimix-icon-theme
 echo "OK packages"
 
 ## Fcitx and Mozc
-# $yay_install_cmd fcitx-mozc fcitx-im
-# fcitx-autostart
-$yay_install_cmd ibus-mozc
-echo "OK mozc"
+$yay_install_cmd fcitx-mozc fcitx-im fcitx-configtool
+echo "OK Mozc"
 
 ## ending
 echo "Everything has done."
