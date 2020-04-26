@@ -40,6 +40,7 @@ gsettings set org.nemo.preferences show-computer-icon-toolbar true
 echo "OK nemo"
 
 ## Package Source Repository
+sudo cp $HOME/.dotfiles/config/manjaro/mirrorlist /etc/pacman.d/mirrorlist
 read -p "update pacman mirrors? [y/N] :" YN
 case "$YN" in "Y" | "y")
     sudo pacman-mirrors --fasttrack && sudo pacman -Syy

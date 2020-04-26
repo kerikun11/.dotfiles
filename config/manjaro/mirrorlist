@@ -1,0 +1,99 @@
+##
+## Manjaro Linux default mirrorlist
+## Generated on 2020-04-26 23:28
+##
+## Please use 'pacman-mirrors -f [NUMBER] [NUMBER]' to modify mirrorlist
+## (Use 0 for all mirrors)
+##
+
+## Country : Japan
+Server = http://ftp.riken.jp/Linux/manjaro/stable/$repo/$arch
+Server = http://ftp.tsukuba.wide.ad.jp/Linux/manjaro/stable/$repo/$arch
+
+## Country : South_Korea
+Server = https://mirror.d-tl.com/manjaro/stable/$repo/$arch
+
+## Country : Indonesia
+Server = https://mirror.deace.id/manjaro/stable/$repo/$arch
+
+## Country : Netherlands
+Server = https://manjaro.mirrors.lavatech.top/stable/$repo/$arch
+
+## Country : Belgium
+Server = https://mirror.futureweb.be/manjaro/stable/$repo/$arch
+
+## Country : New_Zealand
+Server = http://manjaro.mirrors.theom.nz/stable/$repo/$arch
+
+## Country : Taiwan
+Server = http://free.nchc.org.tw/manjaro/stable/$repo/$arch
+
+## Country : Brazil
+Server = https://manjaro.c3sl.ufpr.br/stable/$repo/$arch
+
+## Country : Germany
+Server = https://mirror.23media.com/manjaro/stable/$repo/$arch
+
+## Country : Bulgaria
+Server = https://manjaro.ipacct.com/manjaro/stable/$repo/$arch
+
+## Country : Germany
+Server = https://mirror.alpix.eu/manjaro/stable/$repo/$arch
+
+## Country : Australia
+Server = http://manjaro.mirror.serversaustralia.com.au/stable/$repo/$arch
+
+## Country : Brazil
+Server = https://www.caco.ic.unicamp.br/manjaro/stable/$repo/$arch
+
+## Country : United_States
+Server = https://mirror.math.princeton.edu/pub/manjaro/stable/$repo/$arch
+
+## Country : France
+Server = https://manjaro.mcofficer.me/stable/$repo/$arch
+
+## Country : United_States
+Server = https://repo.ialab.dsu.edu/manjaro/stable/$repo/$arch
+
+## Country : Hungary
+Server = https://quantum-mirror.hu/mirrors/pub/manjaro/stable/$repo/$arch
+
+## Country : Hungary
+Server = https://nova.quantum-mirror.hu/mirrors/pub/manjaro/stable/$repo/$arch
+
+## Country : United_Kingdom
+Server = http://manjaro.mirrors.uk2.net/stable/$repo/$arch
+
+## Country : Canada
+Server = https://osmirror.org/manjaro/stable/$repo/$arch
+
+## Country : Germany
+Server = https://mirror.netzspielplatz.de/manjaro/packages/stable/$repo/$arch
+
+## Country : France
+Server = http://kibo.remi.lu/stable/$repo/$arch
+
+## Country : France
+Server = https://manjaro.ynh.ovh/stable/$repo/$arch
+
+## Country : Germany
+Server = https://manjaro.moson.org/stable/$repo/$arch
+
+## Country : United_States
+Server = https://mirror.dacentec.com/manjaro/stable/$repo/$arch
+
+## Country : Chile
+Server = https://mirror.ufro.cl/manjaro/stable/$repo/$arch
+
+## Country : Austria
+Server = http://mirror.easyname.at/manjaro/stable/$repo/$arch
+
+## Country : Denmark
+Server = https://www.uex.dk/public/manjaro/stable/$repo/$arch
+
+## Country : South_Africa
+Server = http://mirror.is.co.za/mirrors/manjaro.org/stable/$repo/$arch
+
+## Country : Ukraine
+Server = http://mirrors.colocall.net/manjaro/stable/$repo/$arch
+
