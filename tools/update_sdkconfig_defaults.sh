@@ -3,7 +3,11 @@
 # to be the smallest in the current ESP-IDF version.
 
 # command to generate sdkconfig of esp-idf
-IDF_RECONFIGURE="$IDF_PATH/tools/idf.py reconfigure"
+if [ $# -ge 1 ]; then
+    IDF_RECONFIGURE=$@
+else
+    IDF_RECONFIGURE="$IDF_PATH/tools/idf.py reconfigure"
+fi
 
 # update sdkconfig of the project
 $IDF_RECONFIGURE
