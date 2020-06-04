@@ -101,6 +101,7 @@ alias pp="popd"
 
 alias p="python"
 alias n="ninja"
+alias r='source ~/.zshrc' # reload
 alias open="xdg-open"
 alias make="make -j 8 --quiet"
 
@@ -149,6 +150,9 @@ function svg2pdf() {
 }
 function permission_reset() {
   find $1 -type d -print | xargs chmod 755 && find $1 -type f -print | xargs chmod 644
+}
+function gt() {
+  git ls-tree -r --name-only HEAD $1 | tree --fromfile
 }
 
 # key map fix in vi-mode
