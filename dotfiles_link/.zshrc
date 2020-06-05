@@ -52,6 +52,7 @@ alias pp="popd"
 alias p="python"
 alias n="ninja"
 alias d="docker"
+alias c="code"
 alias r='source ~/.zshrc' # reload
 alias open="xdg-open"
 alias make="make -j 8 --quiet"
@@ -77,6 +78,10 @@ alias rmgeotag="exiftool -overwrite_original -geotag="
 if type trash-put &>/dev/null; then
   alias rm=trash-put
 fi
+
+# colorize
+alias cat=ccat
+alias less=cless
 
 # clip board
 alias pbcopy='xclip -selection c'
