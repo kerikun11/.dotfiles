@@ -51,6 +51,7 @@ alias pp="popd"
 
 alias p="python"
 alias n="ninja"
+alias d="docker"
 alias r='source ~/.zshrc' # reload
 alias open="xdg-open"
 alias make="make -j 8 --quiet"

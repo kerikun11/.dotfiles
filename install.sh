@@ -39,7 +39,7 @@ done
 echo "OK ${REQUIRED_COMMANDS[@]}"
 
 ## clone .dotfiles
-if [ ! -d "$DOTFILES_DIR" ]; then
+if [ ! -d $DOTFILES_DIR ]; then
     git clone $DOTFILES_GITHUB $DOTFILES_DIR
 fi
 echo "OK $DOTFILES_DIR"

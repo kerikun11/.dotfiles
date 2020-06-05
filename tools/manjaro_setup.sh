@@ -9,7 +9,7 @@ LANG=C xdg-user-dirs-gtk-update
 
 ## Caps -> Ctrl
 gsettings set org.gnome.libgnomekbd.keyboard options "['ctrl\tctrl:nocaps']"
-echo "OK capslock"
+echo "OK CapsLock"
 
 ## Cinnamon
 gsettings set org.cinnamon.settings-daemon.peripherals.touchpad horizontal-scrolling true
@@ -19,8 +19,8 @@ gsettings set org.cinnamon.settings-daemon.plugins.power lid-close-ac-action 'no
 gsettings set org.cinnamon.settings-daemon.plugins.power lid-close-battery-action 'nothing'
 gsettings set org.cinnamon.settings-daemon.plugins.power idle-dim-time 30
 gsettings set org.cinnamon.settings-daemon.plugins.power idle-brightness 5
-gsettings set org.cinnamon.settings-daemon.plugins.power sleep-display-ac 3600               # diplay off
-gsettings set org.cinnamon.settings-daemon.plugins.power sleep-display-battery 3600          # diplay off
+gsettings set org.cinnamon.settings-daemon.plugins.power sleep-display-ac 3600               # display off
+gsettings set org.cinnamon.settings-daemon.plugins.power sleep-display-battery 3600          # display off
 gsettings set org.cinnamon.settings-daemon.plugins.power sleep-inactive-battery-timeout 3600 # sleep PC
 gsettings set org.cinnamon.settings-daemon.plugins.xsettings buttons-have-icons true         # theme -> misc
 gsettings set org.cinnamon.settings-daemon.plugins.xsettings menus-have-icons true           # theme -> misc
@@ -40,7 +40,7 @@ gsettings set org.nemo.preferences show-computer-icon-toolbar true
 echo "OK nemo"
 
 ## Package Source Repository
-sudo cp $HOME/.dotfiles/config/manjaro/mirrorlist /etc/pacman.d/mirrorlist
+sudo cp $HOME/.dotfiles/tools/manjaro/mirrorlist /etc/pacman.d/mirrorlist
 read -p "update pacman mirrors? [y/N] :" YN
 case "$YN" in "Y" | "y")
     sudo pacman-mirrors --fasttrack && sudo pacman -Syy
@@ -87,4 +87,4 @@ echo "OK Mozc"
 ## ending
 echo "Everything has done."
 figlet -f big Enjoy!
-echo "Please Reboot to apply the configrations"
+echo "Please Reboot to apply the configurations"
