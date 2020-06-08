@@ -80,8 +80,10 @@ if type trash-put &>/dev/null; then
 fi
 
 # colorize
-alias cat=ccat
-alias less=cless
+if type pygments &>/dev/null; then
+  alias cat=ccat
+  alias less=cless
+fi
 
 # clip board
 alias pbcopy='xclip -selection c'

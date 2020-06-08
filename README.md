@@ -47,6 +47,7 @@ Server = http://ftp.tsukuba.wide.ad.jp/Linux/manjaro/stable/$repo/$arch
 # MSYS2
 export PATH="$PATH:/c/Windows"
 alias e="/c/Windows/explorer.exe"
+alias code="'/c/Users/kerikun11/AppData/Local/Programs/Microsoft VS Code/Code.exe'"
 
 # PengWin
 export DISPLAY=localhost:0.0
