@@ -4,7 +4,7 @@
 packages="git wget curl vim bash zsh"
 
 ## sudo necessity
-[ type sudo ] >/dev/null 2>&1 && SUDO= || SUDO=sudo
+[ type sudo ] >/dev/null 2>&1 && SUDO=sudo || SUDO=
 
 ## install according to the OS
 if type apt >/dev/null 2>&1; then
