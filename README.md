@@ -1,6 +1,6 @@
 # .dotfiles @ kerikun11
 
-My UNIX Configuration Files
+My Configuration Files for UNIX Systems
 
 ```
       _       _    __ _ _           
@@ -12,7 +12,7 @@ My UNIX Configuration Files
 ```
 
 > Note that .gitconfig contains my personal information.
-> Don't install it as is, except for me.
+> Don't install it as is, except for me!
 
 ## install .dotfiles @ kerikun11
 
@@ -39,6 +39,14 @@ wget -O- https://raw.githubusercontent.com/kerikun11/.dotfiles/master/tools/mint
 # Manjaro
 Server = http://ftp.riken.jp/Linux/manjaro/stable/$repo/$arch
 Server = http://ftp.tsukuba.wide.ad.jp/Linux/manjaro/stable/$repo/$arch
+
+# Ubuntu 20.04
+deb http://it-mirrors.evowise.com/ubuntu/ focal main
+deb-src http://it-mirrors.evowise.com/ubuntu/ focal main
+
+# Ubuntu 18.04
+deb http://it-mirrors.evowise.com/ubuntu/ bionic main
+deb-src http://it-mirrors.evowise.com/ubuntu/ bionic main
 ```
 
 ## .zshenv
