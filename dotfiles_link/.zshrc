@@ -49,6 +49,7 @@ unsetopt nomatch
 alias pd="pushd"
 alias pp="popd"
 
+alias m="make"
 alias p="python"
 alias n="ninja"
 alias d="docker"

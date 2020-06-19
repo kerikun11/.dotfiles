@@ -56,6 +56,7 @@ deb-src http://it-mirrors.evowise.com/ubuntu/ bionic main
 export PATH="$PATH:/c/Windows"
 alias e="/c/Windows/explorer.exe"
 alias code="'/c/Users/kerikun11/AppData/Local/Programs/Microsoft VS Code/Code.exe'"
+alias m="mingw32-make -j 8"
 
 # PengWin
 export DISPLAY=localhost:0.0
