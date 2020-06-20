@@ -116,7 +116,7 @@ function gt() {
 
 # key map fix in vi-mode
 bindkey -s '^]' '\e'       # escape
-bindkey "e[3~" delete-char # delete
+bindkey "^[[3~" delete-char # delete
 
 # ENV
 source $HOME/.zshenv
