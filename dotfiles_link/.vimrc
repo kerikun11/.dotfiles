@@ -1,6 +1,5 @@
 " *****************************
-" .vimrc
-" kerikun11
+" .vimrc @ kerikun11
 " *****************************
 
 " *****************************
@@ -60,7 +59,6 @@ set wildmode=list:longest
 " カッコのハイライトをなくす
 let loaded_matchparen = 1
 
-
 " *****************************
 " 操作性
 " *****************************
@@ -72,8 +70,6 @@ set smartindent
 set scrolloff=8
 " OSのクリップボードをヤンクと共有
 set clipboard=unnamed,unnamedplus
-" 折り畳み
-set foldmethod=indent
 
 " j, k による移動を折り返されたテキストでも自然に振る舞うように変更
 nnoremap j gj

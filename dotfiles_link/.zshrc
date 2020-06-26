@@ -1,4 +1,4 @@
-# author: Ryotaro Onuki
+# author: Ryotaro Onuki <kerikun11+github@gmail.com>
 # date: 2020.06.04
 
 # Path to your oh-my-zsh installation.
@@ -34,7 +34,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vi-mode docker pip colorize zsh-syntax-highlighting)
+plugins=(git vi-mode docker pip zsh-syntax-highlighting)
 
 # load oh-my-zsh
 source $ZSH/oh-my-zsh.sh
@@ -46,17 +46,16 @@ unsetopt nomatch
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-alias pd="pushd"
-alias pp="popd"
-
+alias g="git"
 alias m="make"
 alias p="python"
 alias n="ninja"
-alias d="docker"
 alias c="code"
 alias r='source ~/.zshrc' # reload
 alias open="xdg-open"
 alias make="make -j 8 --quiet"
+alias d="dirs"
+alias pd="popd"
 
 alias upgradeall="sudo apt update && sudo apt upgrade -y && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo apt autoclean"
 alias sp2ub='find . -name "* *" | rename "s/ /_/g"'
@@ -80,15 +79,17 @@ if type trash-put &>/dev/null; then
   alias rm=trash-put
 fi
 
+# clip board
+if type xclip &>/dev/null; then
+  alias pbcopy='xclip -selection c'
+  alias pbpaste='xclip -selection c -o'
+fi
+
 # colorize
 if type pygments &>/dev/null; then
   alias cat=ccat
   alias less=cless
 fi
-
-# clip board
-alias pbcopy='xclip -selection c'
-alias pbpaste='xclip -selection c -o'
 
 # command stack
 show_buffer_stack() {
@@ -115,7 +116,7 @@ function gt() {
 }
 
 # key map fix in vi-mode
-bindkey -s '^]' '\e'       # escape
+bindkey -s '^]' '\e'        # escape
 bindkey "^[[3~" delete-char # delete
 
 # ENV
