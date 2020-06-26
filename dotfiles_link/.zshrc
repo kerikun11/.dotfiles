@@ -1,5 +1,5 @@
 # author: Ryotaro Onuki <kerikun11+github@gmail.com>
-# date: 2020.06.04
+# date: 2020.06.27
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -8,6 +8,9 @@ export ZSH=$HOME/.oh-my-zsh
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="ys"
 DEFAULT_USER="kerikun11"
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
@@ -19,15 +22,7 @@ COMPLETION_WAITING_DOTS="true"
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
@@ -39,24 +34,28 @@ plugins=(git vi-mode docker pip zsh-syntax-highlighting)
 # load oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
+####
+#### User configuration
+####
+
+# fix * behavior
 unsetopt nomatch
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
+# key map fix in vi-mode
+bindkey -s '^]' '\e'        # escape
+bindkey "^[[3~" delete-char # delete
+
+# custom alias
 alias g="git"
 alias m="make"
 alias p="python"
 alias n="ninja"
 alias c="code"
 alias r='source ~/.zshrc' # reload
-alias open="xdg-open"
+alias open="open_command" # oh-my-zsh function
 alias make="make -j 8 --quiet"
-alias d="dirs"
-alias pd="popd"
 
+# long alias
 alias upgradeall="sudo apt update && sudo apt upgrade -y && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo apt autoclean"
 alias sp2ub='find . -name "* *" | rename "s/ /_/g"'
 
@@ -77,18 +76,6 @@ alias rmgeotag="exiftool -overwrite_original -geotag="
 # Trash CLI
 if type trash-put &>/dev/null; then
   alias rm=trash-put
-fi
-
-# clip board
-if type xclip &>/dev/null; then
-  alias pbcopy='xclip -selection c'
-  alias pbpaste='xclip -selection c -o'
-fi
-
-# colorize
-if type pygments &>/dev/null; then
-  alias cat=ccat
-  alias less=cless
 fi
 
 # command stack
@@ -114,10 +101,3 @@ function permission_reset() {
 function gt() {
   git ls-tree -r --name-only HEAD $1 | tree --fromfile
 }
-
-# key map fix in vi-mode
-bindkey -s '^]' '\e'        # escape
-bindkey "^[[3~" delete-char # delete
-
-# ENV
-source $HOME/.zshenv
