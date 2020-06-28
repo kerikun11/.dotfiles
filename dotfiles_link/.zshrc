@@ -1,49 +1,87 @@
+##============================================================================##
+# .zshrc
 # author: Ryotaro Onuki <kerikun11+github@gmail.com>
 # date: 2020.06.27
+##============================================================================##
+### Added by Zinit's installer
+if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
+  print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
+  command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
+  command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" &&
+    print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" ||
+    print -P "%F{160}▓▒░ The clone has failed.%f%b"
+fi
 
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+source "$HOME/.zinit/bin/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
 
-# Set name of the theme to load
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="ys"
-DEFAULT_USER="kerikun11"
+# Load a few important annexes, without Turbo
+# (this is currently required for annexes)
+zinit light-mode for \
+  zinit-zsh/z-a-rust \
+  zinit-zsh/z-a-as-monitor \
+  zinit-zsh/z-a-patch-dl \
+  zinit-zsh/z-a-bin-gem-node
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-DISABLE_AUTO_UPDATE="true"
+### End of Zinit's installer chunk
+##============================================================================##
+### Added by kerikun11
+# zinit light zsh-users/zsh-autosuggestions
+zinit light zdharma/fast-syntax-highlighting
+zinit load zdharma/history-search-multi-word
+zinit light paulirish/git-open
+zinit light supercrabtree/k
 
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-HYPHEN_INSENSITIVE="true"
+##============================================================================##
+# Load the pure theme, with zsh-async library that's bundled with it.
+zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
+zinit light sindresorhus/pure
 
-# Uncomment the following line to display red dots whilst waiting for completion.
+##============================================================================##
+# Oh-My-Zsh
 COMPLETION_WAITING_DOTS="true"
+zinit snippet OMZL::clipboard.zsh
+zinit snippet OMZL::completion.zsh
+zinit snippet OMZL::directories.zsh
+zinit snippet OMZL::history.zsh
+zinit snippet OMZL::theme-and-appearance.zsh
+zinit snippet OMZP::git
+zinit cdclear -q # <- forget completions provided up to this moment
 
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-DISABLE_UNTRACKED_FILES_DIRTY="true"
+##============================================================================##
+# vi mode
+bindkey -v
+bindkey -s '^]' '\e'        # fix escape
+bindkey "^[[3~" delete-char # fix delete
+KEYTIMEOUT=1                # shorten mode switching delay
+# allow ctrl-h, ctrl-w, ctrl-? for char and word deletion (standard behaviour)
+bindkey '^?' backward-delete-char
+bindkey '^h' backward-delete-char
+bindkey '^w' backward-kill-word
+# allow ctrl-r and ctrl-s to search the history
+bindkey '^r' history-incremental-search-backward
+bindkey '^s' history-incremental-search-forward
+# allow ctrl-a and ctrl-e to move to beginning/end of line
+bindkey '^a' beginning-of-line
+bindkey '^e' end-of-line
+# allow ctrl-u, ctrl-j for navigate history
+bindkey '^u' up-history
+bindkey '^j' down-history
 
-# Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git vi-mode docker pip zsh-syntax-highlighting)
+##============================================================================##
+# completion
+zinit ice blockf
+zinit light zsh-users/zsh-completions
+# zinit creinstall zsh-users/zsh-completions   # install
+# zinit cuninstall zsh-users/zsh-completions   # uninstall
 
-# load oh-my-zsh
-source $ZSH/oh-my-zsh.sh
+autoload -U compinit && compinit -C
 
-####
-#### User configuration
-####
-
-# fix * behavior
-unsetopt nomatch
-
-# key map fix in vi-mode
-bindkey -s '^]' '\e'        # escape
-bindkey "^[[3~" delete-char # delete
+##============================================================================##
+## new alias
+alias ll="k"
+alias la="k -a"
 
 # custom alias
 alias g="git"
@@ -54,6 +92,10 @@ alias c="code"
 alias r='source ~/.zshrc' # reload
 alias open="open_command" # oh-my-zsh function
 alias make="make -j 8 --quiet"
+
+# command replace
+type trash-put &>/dev/null && alias rm=trash-put
+type bat &>/dev/null && alias cat=bat
 
 # long alias
 alias upgradeall="sudo apt update && sudo apt upgrade -y && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo apt autoclean"
@@ -73,24 +115,27 @@ alias pdfnup2x4="pdfnup --a4paper --nup 2x4 --scale 0.96 --no-landscape --batch"
 # Exiftool
 alias rmgeotag="exiftool -overwrite_original -geotag="
 
-# Trash CLI
-if type trash-put &>/dev/null; then
-  alias rm=trash-put
-fi
-
-# command stack
+# stack command
 show_buffer_stack() {
-  POSTDISPLAY="
-stack: $LBUFFER"
+  zle -M "stack: ${BUFFER}"
   zle push-line-or-edit
 }
+setopt noflowcontrol # disable ctrl-s and ctrl-q
 zle -N show_buffer_stack
-setopt noflowcontrol
 bindkey '^Q' show_buffer_stack
+
+# copy command
+clipcopy-buffer(){
+  print -rn $BUFFER | clipcopy
+  zle -M "clipboard: ${BUFFER}"
+  zle kill-whole-line
+}
+zle -N clipcopy-buffer
+bindkey '^x' clipcopy-buffer
 
 # functions
 function chpwd() {
-  ls -l --color=auto
+  ll
 }
 function svg2pdf() {
   inkscape -D -z --file=$1 --export-pdf=${1%.*}.pdf
@@ -98,6 +143,6 @@ function svg2pdf() {
 function permission_reset() {
   find $1 -type d -print | xargs chmod 755 && find $1 -type f -print | xargs chmod 644
 }
-function gt() {
+function tree_git() {
   git ls-tree -r --name-only HEAD $1 | tree --fromfile
 }
