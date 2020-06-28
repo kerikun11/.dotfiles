@@ -16,8 +16,8 @@ DOTFILES_REPOSITORY="https://github.com/kerikun11/.dotfiles.git"
 DOTFILES_DIR="$HOME/.dotfiles"
 DOTFILES_LINK_DIR="$DOTFILES_DIR/dotfiles_link"
 
-## oh-my-zsh directory
-OHMYZSH_DIR="$HOME/.oh-my-zsh"
+## Zinit directory
+ZINIT_DIR="$HOME/.zinit"
 
 ##============================================================================##
 ## opening
@@ -42,22 +42,17 @@ echo "OK ${REQUIRED_COMMANDS[@]}"
 ##============================================================================##
 ## clone .dotfiles if it does not exist
 if [ -d $DOTFILES_DIR ]; then
-    pushd $DOTFILES_DIR
+    pushd $DOTFILES_DIR >/dev/null
     git pull
-    popd
+    popd >/dev/null
 else
     git clone $DOTFILES_REPOSITORY $DOTFILES_DIR
 fi
 echo "OK $DOTFILES_DIR"
 
 ##============================================================================##
-## Zinit
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
-echo "OK Zinit"
-
-##============================================================================##
-## link dotfiles
-cd $DOTFILES_LINK_DIR
+## link .dotfiles
+pushd $DOTFILES_LINK_DIR >/dev/null
 dotfiles_link=$(find . -type f)
 for file in ${dotfiles_link[@]}; do
     file=${file#./} # remove first "./"
@@ -65,14 +60,32 @@ for file in ${dotfiles_link[@]}; do
     mkdir -p $HOME/$(dirname $file)
     ln -sf $DOTFILES_LINK_DIR/$file $HOME/$file
 done
+popd >/dev/null
 echo "OK Symbolic Links"
 
 ##============================================================================##
 ## delete personal information
 if [ $USER != "kerikun11" ]; then
+    echo "unset git user config"
     git config --global --unset user.name
     git config --global --unset user.email
 fi
+echo "OK .gitconfig"
+
+##============================================================================##
+## Zinit
+# sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
+if [ -d $ZINIT_DIR/bin ]; then
+    echo 'pulling Zinit'
+    pushd $ZINIT_DIR/bin >/dev/null
+    git pull
+    popd >/dev/null
+else
+    echo 'installing Zinit'
+    mkdir -p $ZINIT_DIR
+    git clone https://github.com/zdharma/zinit.git $ZINIT_DIR/bin
+fi
+echo "OK Zinit"
 
 ##============================================================================##
 ## ending

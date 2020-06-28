@@ -25,10 +25,8 @@ curl -fsSL https://raw.githubusercontent.com/kerikun11/.dotfiles/master/install.
 ```sh
 ## install common packages
 curl -fsSL https://raw.githubusercontent.com/kerikun11/.dotfiles/master/tools/install_common.sh | sh
-
 # Manjaro Linux Cinnamon 19.2
 curl -fsSL https://raw.githubusercontent.com/kerikun11/.dotfiles/master/tools/manjaro_setup.sh | bash
-
 # Linux Mint 19.3
 curl -fsSL https://raw.githubusercontent.com/kerikun11/.dotfiles/master/tools/mint_setup.sh | sh
 ```
@@ -39,14 +37,12 @@ curl -fsSL https://raw.githubusercontent.com/kerikun11/.dotfiles/master/tools/mi
 # Manjaro
 Server = http://ftp.riken.jp/Linux/manjaro/stable/$repo/$arch
 Server = http://ftp.tsukuba.wide.ad.jp/Linux/manjaro/stable/$repo/$arch
-
 # Ubuntu 20.04
-deb http://it-mirrors.evowise.com/ubuntu/ focal main
-deb-src http://it-mirrors.evowise.com/ubuntu/ focal main
-
+deb https://linux.yz.yamagata-u.ac.jp/ubuntu/ focal main
+deb-src https://linux.yz.yamagata-u.ac.jp/ubuntu/ focal main
 # Ubuntu 18.04
-deb http://it-mirrors.evowise.com/ubuntu/ bionic main
-deb-src http://it-mirrors.evowise.com/ubuntu/ bionic main
+deb https://linux.yz.yamagata-u.ac.jp/ubuntu/ bionic main
+deb-src https://linux.yz.yamagata-u.ac.jp/ubuntu/ bionic main
 ```
 
 ## .zshenv
@@ -57,7 +53,4 @@ export PATH="$PATH:/c/Windows"
 alias e="/c/Windows/explorer.exe"
 alias code="'/c/Users/kerikun11/AppData/Local/Programs/Microsoft VS Code/Code.exe'"
 alias m="mingw32-make -j 8"
-
-# PengWin
-export DISPLAY=localhost:0.0
 ```

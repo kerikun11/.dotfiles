@@ -147,5 +147,3 @@ function permission_reset() {
 function tree_git() {
   git ls-tree -r --name-only HEAD $1 | tree --fromfile
 }
-### End of Zinit's installer chunk
-### End of Zinit's installer chunk
