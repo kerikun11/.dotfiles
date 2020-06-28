@@ -4,7 +4,13 @@
 packages="git wget curl vim bash zsh"
 
 ## sudo necessity
-[ type sudo ] >/dev/null 2>&1 && SUDO=sudo || SUDO=
+if [ "$(whoami)" == "root" ]; then
+    SUDO=
+elif type sudo >/dev/null 2>&1; then
+    SUDO=sudo
+else
+    SUDO=
+fi
 
 ## install according to the OS
 if type apt >/dev/null 2>&1; then
