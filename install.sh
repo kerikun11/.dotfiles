@@ -20,6 +20,15 @@ DOTFILES_LINK_DIR="$DOTFILES_DIR/dotfiles_link"
 OHMYZSH_DIR="$HOME/.oh-my-zsh"
 
 ##============================================================================##
+## opening
+echo '         __      __  _____ __         '
+echo '    ____/ /___  / /_/ __(_) /__  _____'
+echo '   / __  / __ \/ __/ /_/ / / _ \/ ___/'
+echo ' _/ /_/ / /_/ / /_/ __/ / /  __(__  ) '
+echo '(_)__,_/\____/\__/_/ /_/_/\___/____/  '
+echo '                                      '
+
+##============================================================================##
 ## required commands check
 REQUIRED_COMMANDS=("git" "zsh" "curl")
 for cmd in ${REQUIRED_COMMANDS[@]}; do

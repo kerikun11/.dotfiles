@@ -96,6 +96,7 @@ alias make="make -j 8 --quiet"
 # command replace
 type trash-put &>/dev/null && alias rm=trash-put
 type bat &>/dev/null && alias cat=bat
+type batcat &>/dev/null && alias cat=batcat
 
 # long alias
 alias upgradeall="sudo apt update && sudo apt upgrade -y && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo apt autoclean"

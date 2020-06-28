@@ -17,20 +17,20 @@ My Configuration Files for UNIX Systems
 ## install .dotfiles @ kerikun11
 
 ```sh
-wget -O- https://raw.githubusercontent.com/kerikun11/.dotfiles/master/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/kerikun11/.dotfiles/master/install.sh | bash
 ```
 
 ## configure automatically
 
 ```sh
 ## install common packages
-wget -O- https://raw.githubusercontent.com/kerikun11/.dotfiles/master/tools/install_common.sh | sh
+curl -fsSL https://raw.githubusercontent.com/kerikun11/.dotfiles/master/tools/install_common.sh | sh
 
 # Manjaro Linux Cinnamon 19.2
-wget -O- https://raw.githubusercontent.com/kerikun11/.dotfiles/master/tools/manjaro_setup.sh | bash
+curl -fsSL https://raw.githubusercontent.com/kerikun11/.dotfiles/master/tools/manjaro_setup.sh | bash
 
 # Linux Mint 19.3
-wget -O- https://raw.githubusercontent.com/kerikun11/.dotfiles/master/tools/mint_setup.sh | sh
+curl -fsSL https://raw.githubusercontent.com/kerikun11/.dotfiles/master/tools/mint_setup.sh | sh
 ```
 
 ## mirror list
