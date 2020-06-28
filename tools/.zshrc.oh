@@ -101,3 +101,21 @@ function permission_reset() {
 function gt() {
   git ls-tree -r --name-only HEAD $1 | tree --fromfile
 }
+
+##============================================================================##
+## oh-my-zsh
+# if [ ! -d $OHMYZSH_DIR ]; then
+#     echo 'installing oh-my-zsh'
+#     echo exit | sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+# fi
+# echo "OK oh-my-zsh"
+
+# ## oh-my-zsh syntax highlighting
+# ## https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
+# ZSH_CUSTOM=$OHMYZSH_DIR/custom
+# ZSH_SYNTAX_HIGHLIGHTING=$ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+# if [ ! -d $ZSH_SYNTAX_HIGHLIGHTING ]; then
+#     echo 'installing zsh syntax highlighting'
+#     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_SYNTAX_HIGHLIGHTING
+# fi
+# echo "OK zsh syntax highlighting"

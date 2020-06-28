@@ -21,7 +21,7 @@ OHMYZSH_DIR="$HOME/.oh-my-zsh"
 
 ##============================================================================##
 ## required commands check
-REQUIRED_COMMANDS=("git" "zsh" "wget")
+REQUIRED_COMMANDS=("git" "zsh" "curl")
 for cmd in ${REQUIRED_COMMANDS[@]}; do
     if !(type $cmd >/dev/null 2>&1); then
         echo "install $cmd first!"
@@ -38,22 +38,9 @@ fi
 echo "OK $DOTFILES_DIR"
 
 ##============================================================================##
-## oh-my-zsh
-if [ ! -d $OHMYZSH_DIR ]; then
-    echo 'installing oh-my-zsh'
-    echo exit | sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-fi
-echo "OK oh-my-zsh"
-
-## oh-my-zsh syntax highlighting
-## https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
-ZSH_CUSTOM=$OHMYZSH_DIR/custom
-ZSH_SYNTAX_HIGHLIGHTING=$ZSH_CUSTOM/plugins/zsh-syntax-highlighting
-if [ ! -d $ZSH_SYNTAX_HIGHLIGHTING ]; then
-    echo 'installing zsh syntax highlighting'
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_SYNTAX_HIGHLIGHTING
-fi
-echo "OK zsh syntax highlighting"
+## Zinit
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
+echo "OK Zinit"
 
 ##============================================================================##
 ## link dotfiles
