@@ -41,7 +41,11 @@ echo "OK ${REQUIRED_COMMANDS[@]}"
 
 ##============================================================================##
 ## clone .dotfiles if it does not exist
-if [ ! -d $DOTFILES_DIR ]; then
+if [ -d $DOTFILES_DIR ]; then
+    pushd $DOTFILES_DIR
+    git pull
+    popd
+else
     git clone $DOTFILES_REPOSITORY $DOTFILES_DIR
 fi
 echo "OK $DOTFILES_DIR"
@@ -62,6 +66,13 @@ for file in ${dotfiles_link[@]}; do
     ln -sf $DOTFILES_LINK_DIR/$file $HOME/$file
 done
 echo "OK Symbolic Links"
+
+##============================================================================##
+## delete personal information
+if [ $USER != "kerikun11" ]; then
+    git config --global --unset user.name
+    git config --global --unset user.email
+fi
 
 ##============================================================================##
 ## ending
