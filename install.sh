@@ -4,9 +4,7 @@
 ## author       kerikun11
 ##============================================================================##
 ## exec option
-# set -x # show command
 set -e # first error to exit
-set -u # undefined variable error
 
 ##============================================================================##
 ## definitions
