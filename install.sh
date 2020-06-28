@@ -8,15 +8,12 @@ set -e # first error to exit
 
 ##============================================================================##
 ## definitions
-
-## dotfiles
+# .dotfiles
 DOTFILES_REPOSITORY="https://github.com/kerikun11/.dotfiles.git"
 DOTFILES_DIR="$HOME/.dotfiles"
 DOTFILES_LINK_DIR="$DOTFILES_DIR/dotfiles_link"
-
-## Zinit directory
-ZINIT_DIR="$HOME/.zinit"
-
+# Oh My Zsh
+OHMYZSH_DIR="$HOME/.oh-my-zsh"
 ##============================================================================##
 ## opening
 echo '         __      __  _____ __         '
@@ -30,7 +27,7 @@ echo '                                      '
 ## required commands check
 REQUIRED_COMMANDS=("git" "zsh" "curl")
 for cmd in ${REQUIRED_COMMANDS[@]}; do
-    if !(type $cmd >/dev/null 2>&1); then
+    if ! type $cmd >/dev/null 2>&1; then
         echo "install $cmd first!"
         exit 1
     fi
@@ -47,6 +44,24 @@ else
     git clone $DOTFILES_REPOSITORY $DOTFILES_DIR
 fi
 echo "OK $DOTFILES_DIR"
+
+##============================================================================##
+## oh-my-zsh
+if [ ! -d $OHMYZSH_DIR ]; then
+    echo 'installing oh-my-zsh'
+    echo exit | sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+fi
+echo "OK oh-my-zsh"
+
+## Fast Syntax Highlighting (F-Sy-H)
+## see https://github.com/zdharma/fast-syntax-highlighting
+ZSH_CUSTOM=$OHMYZSH_DIR/custom
+ZSH_SYNTAX_HIGHLIGHTING=$ZSH_CUSTOM/plugins/fast-syntax-highlighting
+if [ ! -d $ZSH_SYNTAX_HIGHLIGHTING ]; then
+    echo 'installing zsh syntax highlighting'
+    git clone https://github.com/zdharma/fast-syntax-highlighting $ZSH_SYNTAX_HIGHLIGHTING
+fi
+echo "OK zsh syntax highlighting"
 
 ##============================================================================##
 ## link .dotfiles
@@ -69,21 +84,6 @@ if [ $USER != "kerikun11" ]; then
     git config --global --unset user.email
 fi
 echo "OK .gitconfig"
-
-##============================================================================##
-## Zinit
-# sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
-if [ -d $ZINIT_DIR/bin ]; then
-    echo 'pulling Zinit'
-    pushd $ZINIT_DIR/bin >/dev/null
-    git pull
-    popd >/dev/null
-else
-    echo 'installing Zinit'
-    mkdir -p $ZINIT_DIR
-    git clone https://github.com/zdharma/zinit.git $ZINIT_DIR/bin
-fi
-echo "OK Zinit"
 
 ##============================================================================##
 ## ending
