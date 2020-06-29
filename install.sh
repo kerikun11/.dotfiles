@@ -14,6 +14,7 @@ DOTFILES_DIR="$HOME/.dotfiles"
 DOTFILES_LINK_DIR="$DOTFILES_DIR/dotfiles_link"
 # Oh My Zsh
 OHMYZSH_DIR="$HOME/.oh-my-zsh"
+
 ##============================================================================##
 ## opening
 echo '         __      __  _____ __         '
@@ -53,6 +54,14 @@ if [ ! -d $OHMYZSH_DIR ]; then
 fi
 echo "OK oh-my-zsh"
 
+## Zsh Powerlevel10k theme
+## see https://github.com/romkatv/powerlevel10k#oh-my-zsh
+ZSH_THEME_P10K_DIR=$OHMYZSH_DIR/custom/themes/powerlevel10k
+if [ ! -d $ZSH_THEME_P10K_DIR ]; then
+	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_THEME_P10K_DIR
+fi
+echo "OK zsh Powerlevel10k theme"
+
 ## Fast Syntax Highlighting (F-Sy-H)
 ## see https://github.com/zdharma/fast-syntax-highlighting
 ZSH_CUSTOM=$OHMYZSH_DIR/custom
@@ -78,7 +87,7 @@ echo "OK Symbolic Links"
 
 ##============================================================================##
 ## delete personal information
-if [ $USER != "kerikun11" ]; then
+if [ $(whoami) != "kerikun11" ]; then
     echo "unset git user config"
     git config --global --unset user.name
     git config --global --unset user.email
