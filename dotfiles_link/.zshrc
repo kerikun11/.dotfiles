@@ -83,6 +83,7 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(
     git
     fast-syntax-highlighting
+    pip
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -136,7 +137,13 @@ bindkey '^e' end-of-line
 # allow ctrl-u, ctrl-j for navigate history
 bindkey '^u' up-history
 bindkey '^j' down-history
-
+# Yank to the system clipboard
+function vi-yank-xclip {
+  zle vi-yank
+  echo "$CUTBUFFER" | clipcopy
+}
+zle -N vi-yank-xclip
+bindkey -M vicmd 'y' vi-yank-xclip
 ##============================================================================##
 # custom alias
 alias g="git"
