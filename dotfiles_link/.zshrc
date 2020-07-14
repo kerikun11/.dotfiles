@@ -18,9 +18,9 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 COMPLETION_WAITING_DOTS="true"
 # oh-my-zsh plugins
 plugins=(
-    git
-    fast-syntax-highlighting
-    pip
+  git
+  fast-syntax-highlighting
+  pip
 )
 # to reflect oh-my-zsh configurations
 source $ZSH/oh-my-zsh.sh
