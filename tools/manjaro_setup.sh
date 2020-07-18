@@ -7,18 +7,23 @@ set -u # unused variable error
 ## Rename Home Directory
 LANG=C xdg-user-dirs-gtk-update
 
+# dump gsettings command:
+# gsettings list-recursively > /tmp/prev
+# gsettings list-recursively > /tmp/post
+
 ## Caps -> Ctrl
 gsettings set org.gnome.libgnomekbd.keyboard options "['ctrl\tctrl:nocaps']"
 echo "OK CapsLock"
 
 ## Cinnamon
-gsettings set org.cinnamon.settings-daemon.peripherals.touchpad horizontal-scrolling true
-gsettings set org.cinnamon.muffin placement-mode 'pointer' # new window placement
 gsettings set org.cinnamon.desktop.screensaver lock-enabled false
+gsettings set org.cinnamon.desktop.wm.preferences mouse-button-modifier '<Super>' # windows move key
+gsettings set org.cinnamon.muffin placement-mode 'pointer' # new window placement
+gsettings set org.cinnamon.settings-daemon.peripherals.touchpad horizontal-scrolling true
+gsettings set org.cinnamon.settings-daemon.plugins.power idle-brightness 5
+gsettings set org.cinnamon.settings-daemon.plugins.power idle-dim-time 60
 gsettings set org.cinnamon.settings-daemon.plugins.power lid-close-ac-action 'nothing'
 gsettings set org.cinnamon.settings-daemon.plugins.power lid-close-battery-action 'nothing'
-gsettings set org.cinnamon.settings-daemon.plugins.power idle-dim-time 60
-gsettings set org.cinnamon.settings-daemon.plugins.power idle-brightness 5
 gsettings set org.cinnamon.settings-daemon.plugins.power sleep-display-ac 3600               # display off
 gsettings set org.cinnamon.settings-daemon.plugins.power sleep-display-battery 3600          # display off
 gsettings set org.cinnamon.settings-daemon.plugins.power sleep-inactive-battery-timeout 3600 # sleep PC
@@ -62,17 +67,18 @@ $yay_install_cmd arduino code inkscape
 $yay_install_cmd kicad kicad-library kicad-library-3d
 $yay_install_cmd qtcreator qt5-base
 ## utility
-$yay_install_cmd trash-cli xclip figlet sl hugo asciidoctor doxygen graphviz
+$yay_install_cmd trash-cli xclip figlet sl
+$yay_install_cmd hugo asciidoctor doxygen graphviz
 $yay_install_cmd dos2unix perl-image-exiftool
 ## font
 $yay_install_cmd otf-ipafont ttf-ubuntu-font-family
 ## Google Chrome
-$yay_install_cmd google-chrome
+# $yay_install_cmd google-chrome
 ## slack
-$yay_install_cmd slack-desktop
+# $yay_install_cmd slack-desktop
 ## Dropbox
-$yay_install_cmd dropbox
-$yay_install_cmd nemo-dropbox
+# $yay_install_cmd dropbox
+# $yay_install_cmd nemo-dropbox
 ## WPS Office
 # $yay_install_cmd wps-office
 ## Theme
