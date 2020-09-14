@@ -1,5 +1,7 @@
 #!/bin/sh
 
+## command to find settings: gsettings list-recursively
+
 ## Cinnamon
 gsettings set org.cinnamon.settings-daemon.peripherals.touchpad horizontal-scrolling true
 gsettings set org.cinnamon.muffin placement-mode 'pointer' # new window placement
@@ -21,9 +23,10 @@ gsettings set org.nemo.preferences default-folder-viewer 'list-view'
 gsettings set org.nemo.window-state start-with-menu-bar false
 ## tool bar
 gsettings set org.nemo.preferences show-compact-view-icon-toolbar true
-gsettings set org.nemo.preferences show-open-in-terminal-toolbar true
+gsettings set org.nemo.preferences show-computer-icon-toolbar true
+gsettings set org.nemo.preferences show-edit-icon-toolbar true
 gsettings set org.nemo.preferences show-home-icon-toolbar true
 gsettings set org.nemo.preferences show-new-folder-icon-toolbar true
-gsettings set org.nemo.preferences show-edit-icon-toolbar true
-gsettings set org.nemo.preferences show-computer-icon-toolbar true
+gsettings set org.nemo.preferences show-open-in-terminal-toolbar true
+gsettings set org.nemo.preferences show-reload-icon-toolbar true
 echo "OK nemo"
