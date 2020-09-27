@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# 引数(ホスト:ディレクトリ)は必須
+location="$1"
+if [ "$location" = "" ]; then
+  echo "usage: $0 <host:path>"
+  exit 1
+fi
+
+# ホストとディレクトリに分割(ディレクトリ部がない場合は引数=ホストとみなす)
+host=${location%%:*}
+dir=${location##*:}
+if [ "$host" = "$dir" ]; then
+  dir=""
+fi
+
+# ディレクトリ部が空または/で始まらない場合はホームディレクトリを取得
+home=""
+if [ "$dir" = "" -o "${dir:0:1}" != "/" ]; then
+  home="$(ssh $host pwd)/"
+fi
+
+# vscodeでSSH直接接続
+path="$home$dir"
+code --folder-uri "vscode-remote://ssh-remote+$host$path"
