@@ -37,12 +37,9 @@ curl -fsSL https://raw.githubusercontent.com/kerikun11/.dotfiles/master/tools/mi
 # Manjaro
 Server = http://ftp.riken.jp/Linux/manjaro/stable/$repo/$arch
 Server = http://ftp.tsukuba.wide.ad.jp/Linux/manjaro/stable/$repo/$arch
-# Ubuntu 20.04
-deb https://linux.yz.yamagata-u.ac.jp/ubuntu/ focal main
-deb-src https://linux.yz.yamagata-u.ac.jp/ubuntu/ focal main
-# Ubuntu 18.04
-deb https://linux.yz.yamagata-u.ac.jp/ubuntu/ bionic main
-deb-src https://linux.yz.yamagata-u.ac.jp/ubuntu/ bionic main
+# Ubuntu
+sudo sed -i.bak -e 's%http://[^ ]\+%mirror://mirrors.ubuntu.com/mirrors.txt%g' /etc/apt/sources.list
+cat /etc/apt/sources.list | sed -e '/^#/d' -e '/^$/d'
 ```
 
 ## .zshenv

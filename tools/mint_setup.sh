@@ -36,6 +36,10 @@ echo "OK packages"
 $HOME/.dotfiles/install.sh
 echo "OK .dotfiles"
 
+## cinnamon
+$HOME/.dotfiles/tools/cinnamon_setup.sh
+echo "OK .dotfiles"
+
 ## VSCode
 $HOME/.dotfiles/tools/install_vscode.sh
 echo "OK VSCode"
