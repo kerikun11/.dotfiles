@@ -1,0 +1,132 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+	// Code Format
+	{
+		"key": "ctrl+shift+f",
+		"command": "editor.action.formatDocument",
+		"when": "editorTextFocus && !editorReadonly"
+	},
+	// 履歴移動
+	{
+		"key": "ctrl+alt+oem_minus",
+		"command": "workbench.action.navigateBack"
+	},
+	// エクスプローラーのトグル
+	{
+		"key": "ctrl+[IntlRo]",
+		"command": "workbench.action.toggleSidebarVisibility"
+	},
+	// Ctrl+Shift+P クイックメニューの上下移動
+	{
+		"key": "ctrl+j",
+		"command": "workbench.action.quickOpenSelectNext",
+		"when": "inQuickOpen"
+	},
+	{
+		"key": "ctrl+k",
+		"command": "workbench.action.quickOpenSelectPrevious",
+		"when": "inQuickOpen"
+	},
+	// platform IO
+	{
+		"key": "ctrl+alt+b",
+		"command": "platformio-ide.build",
+	},
+	// latex
+	{
+		"key": "ctrl+alt+b",
+		"command": "latex-workshop.build",
+		"when": "resourceLangId == latex"
+	},
+	{
+		"key": "ctrl+alt+c",
+		"command": "latex-workshop.clean",
+		"when": "resourceLangId == latex"
+	},
+	{
+		"key": "ctrl+alt+s",
+		"command": "latex-workshop.synctex",
+		"when": "resourceLangId == latex"
+	},
+	// Linux
+	{
+		"key": "ctrl+[BracketLeft]",
+		"command": "workbench.action.terminal.toggleTerminal"
+	},
+	{
+		"key": "ctrl+shift+[BracketLeft]",
+		"command": "-workbench.action.terminal.toggleTerminal"
+	},
+	{
+		"key": "ctrl+shift+[BracketLeft]",
+		"command": "workbench.action.terminal.new"
+	},
+	{
+		"key": "ctrl+shift+[Equal]",
+		"command": "-workbench.action.terminal.new"
+	},
+	{
+		"key": "ctrl+b",
+		"command": "-workbench.action.toggleSidebarVisibility"
+	},
+	{
+		"key": "ctrl+[Semicolon]",
+		"command": "workbench.action.zoomIn"
+	},
+	{
+		"key": "ctrl+shift+[Semicolon]",
+		"command": "-workbench.action.zoomIn"
+	},
+	{
+		"key": "ctrl+[Equal]",
+		"command": "workbench.action.zoomIn"
+	},
+	// markdown
+	{
+		"key": "ctrl+alt+b",
+		"command": "markdown.extension.printToHtml",
+		"when": "resourceLangId == markdown"
+	},
+	{
+		"key": "ctrl+alt+v",
+		"command": "markdown-preview-enhanced.openPreviewToTheSide",
+		"when": "editorLangId == 'markdown'"
+	},
+	// replace
+	{
+		"key": "ctrl+g",
+		"command": "editor.action.startFindReplaceAction"
+	},
+	{
+		"key": "ctrl+h",
+		"command": "-editor.action.startFindReplaceAction"
+	},
+	// ctrl+; terminal <-> editor
+	{
+		"key": "ctrl+t",
+		"command": "workbench.action.terminal.focus"
+	},
+	{
+		"key": "ctrl+t",
+		"command": "workbench.action.focusActiveEditorGroup",
+		"when": "terminalFocus"
+	},
+	// terminal Ctrl E
+	{
+		"key": "ctrl+e",
+		"command": "-workbench.action.quickOpen"
+	},
+	{
+		"key": "ctrl+j",
+		"command": "-workbench.action.togglePanel"
+	},
+	// tab move
+	{
+		"key": "ctrl+shift+tab",
+		"command": "workbench.action.previousEditor"
+	},
+	{
+		"key": "ctrl+tab",
+		"command": "workbench.action.nextEditor"
+	},
+]

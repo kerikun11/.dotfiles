@@ -1,0 +1,203 @@
+{
+	// Settings-Sync
+	"sync.gist": "daaa7ed6406a23237d7405f10f7d6b4a",
+	// Terminal
+	"terminal.integrated.shell.windows": "C:\\msys64\\usr\\bin\\zsh.exe",
+	"terminal.integrated.shellArgs.windows": [
+		"--login"
+	],
+	"terminal.integrated.env.windows": {
+		"MSYS": "winsymlinks:nativestrict",
+		"CHERE_INVOKING": "1",
+		"MSYS2_PATH_TYPE": "strict",
+		"MSYSTEM": "MINGW64",
+		"SHELL": "/usr/bin/zsh"
+	},
+	"terminal.integrated.copyOnSelection": true,
+	// Settings
+	"glassit.alpha": 220,
+	"diffEditor.ignoreTrimWhitespace": false,
+	"files.autoSave": "afterDelay",
+	"files.autoGuessEncoding": true,
+	"files.insertFinalNewline": true,
+	"git.autofetch": true,
+	"window.menuBarVisibility": "hidden",
+	"workbench.editor.enablePreviewFromQuickOpen": false,
+	"workbench.iconTheme": "vscode-icons",
+	"workbench.startupEditor": "none",
+	"workbench.statusBar.visible": true,
+	"editor.minimap.enabled": false,
+	"editor.renderWhitespace": "boundary",
+	"editor.suggestSelection": "first",
+	"editor.rulers": [
+		80
+	],
+	// vim
+	"vim.useSystemClipboard": true, // システムのclipboardにコピー
+	"vim.visualstar": true, // カーソル上にあるワードを"*"で検索
+	"vim.hlsearch": true, // 検索結果のハイライト
+	"vim.easymotion": true, // カーソル移動の可視化
+	"vim.leader": "<space>", // Leader キー
+	"vim.normalModeKeyBindingsNonRecursive": [
+		{
+			// yank from cursor position to end of line
+			"before": [
+				"Y"
+			],
+			"after": [
+				"y",
+				"$"
+			]
+		},
+		{
+			// natual cursor move
+			"before": [
+				"j"
+			],
+			"after": [
+				"g",
+				"j"
+			]
+		},
+		{
+			// natual cursor move
+			"before": [
+				"k"
+			],
+			"after": [
+				"g",
+				"k"
+			]
+		},
+		{
+			// easy motion
+			"before": [
+				"f"
+			],
+			"after": [
+				"leader",
+				"leader",
+				"s"
+			]
+		},
+		{
+			// hide hightlight search
+			"before": [
+				"<Esc>",
+				"<Esc>"
+			],
+			"commands": [
+				":nohl"
+			]
+		}
+	],
+	// vim IME disable with single ESC
+	"vim.autoSwitchInputMethod.enable": true,
+	"vim.autoSwitchInputMethod.obtainIMCmd": "/usr/bin/fcitx-remote",
+	"vim.autoSwitchInputMethod.switchIMCmd": "/usr/bin/fcitx-remote {im}",
+	"vim.autoSwitchInputMethod.defaultIM": "-c",
+	// latex
+	"latex-workshop.latex.outDir": "%DIR%/build",
+	"latex-workshop.latex.autoBuild.run": "never",
+	"latex-workshop.view.pdf.zoom": "page-width",
+	"latex-workshop.view.pdf.viewer": "tab",
+	// C/C++
+	"C_Cpp.clang_format_fallbackStyle": "LLVM",
+	"C_Cpp.default.cppStandard": "c++17",
+	// Doxygen
+	"doxdocgen.generic.authorEmail": "kerikun11+github@gmail.com",
+	"doxdocgen.generic.authorName": "Ryotaro Onuki",
+	"doxdocgen.file.copyrightTag": [
+		"@copyright Copyright (c) {year} Ryotaro Onuki"
+	],
+	"doxdocgen.file.fileOrder": [
+		"file",
+		"author",
+		"brief",
+		"date",
+		"copyright",
+		"custom"
+	],
+	// PlatformIO
+	"platformio-ide.activateOnlyOnPlatformIOProject": true,
+	"platformio-ide.disableToolbar": true,
+	// "platformio-ide.customPATH": "$HOME/.platformio/penv/bin",
+	"python.languageServer": "Microsoft",
+	"python.showStartPage": false,
+	"cmake.configureOnOpen": false,
+	// Spell Check
+	"cSpell.enabled": true,
+	"cSpell.userWords": [
+		"AEBS",
+		"CMAKE",
+		"Feedforward",
+		"HSPI",
+		"Inkscape",
+		"KERISE",
+		"LEDC",
+		"MOSI",
+		"MSYS",
+		"Makefiles",
+		"Manjaro",
+		"Onuki",
+		"Ryotaro",
+		"PYBIND",
+		"Powerlevel",
+		"SCLK",
+		"TXDATA",
+		"Tashiro",
+		"UNTRACKED",
+		"accel",
+		"affine",
+		"beamer",
+		"bindkey",
+		"bootloader",
+		"cbegin",
+		"cmpr",
+		"dddq",
+		"dddth",
+		"dddx",
+		"dddy",
+		"ddth",
+		"decel",
+		"dotfiles",
+		"doxygen",
+		"freertospp",
+		"gpio",
+		"graphviz",
+		"kerikun",
+		"kerislab",
+		"loadtxt",
+		"logd",
+		"logi",
+		"logw",
+		"matlab",
+		"matplotlib",
+		"mcpwm",
+		"micromouse",
+		"millis",
+		"mingw",
+		"mkdir",
+		"nargs",
+		"numpy",
+		"odometry",
+		"ostream",
+		"pacman",
+		"pyplot",
+		"strftime",
+		"struct",
+		"subfiles",
+		"toolchain",
+		"tparam",
+		"uniquify",
+		"vstack",
+		"xlabel",
+		"xlim",
+		"xticks",
+		"yaxis",
+		"ylabel",
+		"ylabels",
+		"ylim",
+		"yticks"
+	],
+}
