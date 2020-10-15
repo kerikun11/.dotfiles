@@ -63,6 +63,10 @@ setopt noflowcontrol # disable ctrl-s and ctrl-q
 zle -N show_buffer_stack
 bindkey '^Q' show_buffer_stack
 ##============================================================================##
+bindkey '^z' undo
+bindkey '^y' redo
+setopt extended_glob # enable exclude pattern match
+##============================================================================##
 # custom alias
 alias g="git"
 alias m="make"
