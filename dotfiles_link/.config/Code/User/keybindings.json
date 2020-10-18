@@ -2,7 +2,7 @@
 [
 	// Code Format
 	{
-		"key": "ctrl+shift+f",
+		"key": "ctrl+alt+f",
 		"command": "editor.action.formatDocument",
 		"when": "editorTextFocus && !editorReadonly"
 	},
