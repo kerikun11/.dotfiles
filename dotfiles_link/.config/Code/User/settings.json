@@ -22,6 +22,7 @@
 	"files.insertFinalNewline": true,
 	"git.autofetch": true,
 	"window.menuBarVisibility": "hidden",
+	"window.zoomLevel": 0,
 	"workbench.editor.enablePreviewFromQuickOpen": false,
 	"workbench.iconTheme": "vscode-icons",
 	"workbench.startupEditor": "none",
@@ -50,26 +51,6 @@
 			]
 		},
 		{
-			// natual cursor move
-			"before": [
-				"j"
-			],
-			"after": [
-				"g",
-				"j"
-			]
-		},
-		{
-			// natual cursor move
-			"before": [
-				"k"
-			],
-			"after": [
-				"g",
-				"k"
-			]
-		},
-		{
 			// easy motion
 			"before": [
 				"f"
@@ -81,7 +62,7 @@
 			]
 		},
 		{
-			// hide hightlight search
+			// hide highlight search
 			"before": [
 				"<Esc>",
 				"<Esc>"

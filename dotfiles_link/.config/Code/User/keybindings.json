@@ -6,14 +6,13 @@
 		"command": "editor.action.formatDocument",
 		"when": "editorTextFocus && !editorReadonly"
 	},
-	// 履歴移動
+	// toggle sidebar visibility
 	{
-		"key": "ctrl+alt+oem_minus",
-		"command": "workbench.action.navigateBack"
+		"key": "ctrl+b",
+		"command": "-workbench.action.toggleSidebarVisibility"
 	},
-	// エクスプローラーのトグル
 	{
-		"key": "ctrl+[IntlRo]",
+		"key": "ctrl+[IntlRo]", // ctrl+\
 		"command": "workbench.action.toggleSidebarVisibility"
 	},
 	// Ctrl+Shift+P クイックメニューの上下移動
@@ -48,37 +47,29 @@
 		"command": "latex-workshop.synctex",
 		"when": "resourceLangId == latex"
 	},
-	// Linux
+	// Linux and Windows Compatibility
 	{
-		"key": "ctrl+[BracketLeft]",
+		"key": "ctrl+[BracketLeft]", // ctrl+@
 		"command": "workbench.action.terminal.toggleTerminal"
 	},
 	{
-		"key": "ctrl+shift+[BracketLeft]",
+		"key": "ctrl+shift+[BracketLeft]", // ctrl+shift+@
 		"command": "-workbench.action.terminal.toggleTerminal"
 	},
 	{
-		"key": "ctrl+shift+[BracketLeft]",
+		"key": "ctrl+shift+[BracketLeft]", // ctrl+shift+@
 		"command": "workbench.action.terminal.new"
 	},
 	{
-		"key": "ctrl+shift+[Equal]",
+		"key": "ctrl+shift+[Equal]", // ctrl+shift+^
 		"command": "-workbench.action.terminal.new"
-	},
-	{
-		"key": "ctrl+b",
-		"command": "-workbench.action.toggleSidebarVisibility"
-	},
-	{
-		"key": "ctrl+[Semicolon]",
-		"command": "workbench.action.zoomIn"
 	},
 	{
 		"key": "ctrl+shift+[Semicolon]",
 		"command": "-workbench.action.zoomIn"
 	},
 	{
-		"key": "ctrl+[Equal]",
+		"key": "ctrl+[Equal]", // ctrl+^
 		"command": "workbench.action.zoomIn"
 	},
 	// markdown
@@ -103,16 +94,6 @@
 	},
 	// ctrl+; terminal <-> editor
 	{
-		"key": "ctrl+t",
-		"command": "workbench.action.terminal.focus"
-	},
-	{
-		"key": "ctrl+t",
-		"command": "workbench.action.focusActiveEditorGroup",
-		"when": "terminalFocus"
-	},
-	// terminal Ctrl E
-	{
 		"key": "ctrl+e",
 		"command": "-workbench.action.quickOpen"
 	},
@@ -122,11 +103,25 @@
 	},
 	// tab move
 	{
+		"key": "ctrl+tab",
+		"command": "workbench.action.nextEditor"
+	},
+	{
 		"key": "ctrl+shift+tab",
 		"command": "workbench.action.previousEditor"
 	},
+	// panel size toggle
 	{
-		"key": "ctrl+tab",
-		"command": "workbench.action.nextEditor"
+		"key": "ctrl+t",
+		"command": "workbench.action.toggleMaximizedPanel"
+	},
+	// navigate forward / back
+	{
+		"key": "alt+left",
+		"command": "workbench.action.navigateBack"
+	},
+	{
+		"key": "alt+right",
+		"command": "workbench.action.navigateForward"
 	},
 ]

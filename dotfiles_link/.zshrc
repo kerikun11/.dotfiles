@@ -1,7 +1,7 @@
 ##============================================================================##
 # file:   .zshrc
 # author: Ryotaro Onuki <kerikun11+github@gmail.com>
-# date:   2020.07.04
+# date:   2020.10.24
 ##============================================================================##
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -65,22 +65,28 @@ bindkey '^Q' show_buffer_stack
 ##============================================================================##
 bindkey '^z' undo
 bindkey '^y' redo
-setopt extended_glob # enable exclude pattern match
+# setopt extended_glob # enable exclude pattern match
 ##============================================================================##
 # custom alias
+alias c="code"
+alias e="echo"
 alias g="git"
 alias m="make"
-alias p="python"
 alias n="ninja"
-alias c="code"
+alias p="python"
 alias r='source ~/.zshrc' # reload
-alias open="open_command" # oh-my-zsh function
-alias make="make -j 8 --quiet"
+
+# date string
+alias datestr="date +%Y%m%d"
+alias datetimestr="date +%Y%m%d-%H%M%S"
 
 # command replace
+alias open="open_command" # oh-my-zsh function
+alias make="make -j$(nproc) --quiet"
 type trash-put  &>/dev/null && alias rm=trash-put
 type bat        &>/dev/null && alias cat=bat
 type batcat     &>/dev/null && alias cat=batcat
+type exa        &>/dev/null && alias ls=exa
 
 # long command alias
 alias upgradeall="sudo apt update && sudo apt upgrade -y && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo apt autoclean"
@@ -107,8 +113,7 @@ function permission_reset() {
   find $1 -type d -print | xargs chmod 755 && find $1 -type f -print | xargs chmod 644
 }
 function chmine() {
-  # ${@:1} means the first and subsequent arguments.
-  sudo chown -R `whoami` ${@:1} && sudo chgrp -R `whoami` ${@:1}
+  sudo chown -R $USER:$USER $*
 }
 function tree_git() {
   git ls-tree -r --name-only HEAD $1 | tree --fromfile
@@ -117,7 +122,10 @@ function chpwd() {
   ls
 }
 function mkcd() {
-  \mkdir -p $* && cd $_
+  mkdir -p $* && cd $_
+}
+function gre () {
+    grep -E $1 -rl $2
 }
 ##============================================================================##
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
