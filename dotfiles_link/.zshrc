@@ -19,19 +19,24 @@ COMPLETION_WAITING_DOTS="true"
 # oh-my-zsh plugins
 plugins=(
   git
-  fast-syntax-highlighting
   pip
+  copybuffer # copy command buffer with Ctrl-O
+  fast-syntax-highlighting
 )
 # to reflect oh-my-zsh configurations
 source $ZSH/oh-my-zsh.sh
 ##============================================================================##
-# User configuration
-type vim &>/dev/null && export EDITOR='vim'
+# sshcode
+source $HOME/.dotfiles/tools/zsh/sshcode.zsh
+##============================================================================##
+# editor
+type vim  &>/dev/null && export EDITOR='vim'
+type code &>/dev/null && export EDITOR='code'
 ##============================================================================##
 # vi mode
-bindkey -v
-bindkey -s '^]' '\e'        # fix escape
-bindkey "^[[3~" delete-char # fix delete
+bindkey -v # vi keybind
+bindkey -s '^]' '\e'        # fix escape key
+bindkey "^[[3~" delete-char # fix delete key
 KEYTIMEOUT=1                # shorten mode switching delay
 # allow ctrl-h, ctrl-w, ctrl-? for char and word deletion (standard behaviour)
 bindkey '^?' backward-delete-char
@@ -46,6 +51,9 @@ bindkey '^e' end-of-line
 # allow ctrl-u, ctrl-j for navigate history
 bindkey '^u' up-history
 bindkey '^j' down-history
+# allow ctrl-z, ctrl-y for undo redo
+bindkey '^z' undo
+bindkey '^y' redo
 # Yank to the system clipboard
 function vi-yank-xclip {
   zle vi-yank
@@ -61,41 +69,39 @@ show_buffer_stack() {
 }
 setopt noflowcontrol # disable ctrl-s and ctrl-q
 zle -N show_buffer_stack
-bindkey '^Q' show_buffer_stack
-##============================================================================##
-bindkey '^z' undo
-bindkey '^y' redo
-# setopt extended_glob # enable exclude pattern match
+bindkey '^q' show_buffer_stack
 ##============================================================================##
 # custom alias
 alias c="code"
 alias e="echo"
 alias g="git"
 alias m="make"
+alias o="open"
 alias n="ninja"
 alias p="python"
-alias r='source ~/.zshrc' # reload
+alias r='source ~/.zshrc'
+alias zshrc="$EDITOR $HOME/.zshrc"
+alias open="open_command" # oh-my-zsh function
+alias make="make -j$(nproc) --quiet"
+
+# command replace
+type trash-put  &>/dev/null && alias rm=trash-put
+type bat        &>/dev/null && alias cat=bat
+type batcat     &>/dev/null && alias cat=batcat
+type exa        &>/dev/null && alias ls=exa && alias la="ls -lah"
 
 # date string
 alias datestr="date +%Y%m%d"
 alias datetimestr="date +%Y%m%d-%H%M%S"
-
-# command replace
-alias open="open_command" # oh-my-zsh function
-alias make="make -j$(nproc) --quiet"
-type trash-put  &>/dev/null && alias rm=trash-put
-type bat        &>/dev/null && alias cat=bat
-type batcat     &>/dev/null && alias cat=batcat
-type exa        &>/dev/null && alias ls=exa
 
 # long command alias
 alias upgradeall="sudo apt update && sudo apt upgrade -y && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo apt autoclean"
 alias sp2ub='find . -name "* *" | rename "s/ /_/g"'
 
 # esp-idf docker alias
+alias idf='export IDF_PATH=/usr/local/Espressif/esp-idf && . $IDF_PATH/export.sh'
 alias idf3='export IDF_PATH=/usr/local/Espressif/esp-idf_v3 && . $IDF_PATH/export.sh'
 alias idf4='export IDF_PATH=/usr/local/Espressif/esp-idf_v4 && . $IDF_PATH/export.sh'
-alias idf='export IDF_PATH=/usr/local/Espressif/esp-idf && . $IDF_PATH/export.sh'
 
 # PDF n-up
 alias pdfnup2x1="pdfnup --a4paper --nup 2x1 --scale 1.0 --landscape --batch"
@@ -110,10 +116,8 @@ function svg2pdf() {
   inkscape -D -z --file=$1 --export-pdf=${1%.*}.pdf
 }
 function permission_reset() {
-  find $1 -type d -print | xargs chmod 755 && find $1 -type f -print | xargs chmod 644
-}
-function chmine() {
-  sudo chown -R $USER:$USER $*
+  find $1 -type d -print | xargs chmod 755
+  find $1 -type f -print | xargs chmod 644
 }
 function tree_git() {
   git ls-tree -r --name-only HEAD $1 | tree --fromfile
