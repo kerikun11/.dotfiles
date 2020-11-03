@@ -71,10 +71,6 @@ set scrolloff=8
 " OSのクリップボードをヤンクと共有
 set clipboard=unnamed,unnamedplus
 
-" j, k による移動を折り返されたテキストでも自然に振る舞うように変更
-nnoremap j gj
-nnoremap k gk
-
 " 行末までヤンク
 nnoremap Y y$
 
