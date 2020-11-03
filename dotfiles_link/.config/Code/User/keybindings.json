@@ -6,6 +6,11 @@
 		"command": "editor.action.formatDocument",
 		"when": "editorTextFocus && !editorReadonly"
 	},
+	// Git Graph
+	{
+		"key": "ctrl+alt+g",
+		"command": "git-graph.view"
+	},
 	// toggle sidebar visibility
 	{
 		"key": "ctrl+b",
