@@ -46,8 +46,6 @@ cat /etc/apt/sources.list | sed -e '/^#/d' -e '/^$/d'
 
 ```sh
 # MSYS2
-export PATH="$PATH:/c/Windows"
-alias e="/c/Windows/explorer.exe"
-alias code="'/c/Users/kerikun11/AppData/Local/Programs/Microsoft VS Code/Code.exe'"
-alias m="mingw32-make -j 8"
+alias open="/c/Windows/explorer.exe"
+alias code="'/c/Users/kerikun11/AppData/Local/Programs/Microsoft VS Code/bin/code'"
 ```

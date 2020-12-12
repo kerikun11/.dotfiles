@@ -79,9 +79,10 @@ alias m="make"
 alias o="open"
 alias n="ninja"
 alias p="python"
-alias r='source ~/.zshrc'
+alias r="source $HOME/.zshrc"
 alias zshrc="$EDITOR $HOME/.zshrc"
-alias open="open_command" # oh-my-zsh function
+alias zshenv="$EDITOR $HOME/.zshenv"
+alias open="open_command" # call oh-my-zsh function
 alias make="make -j$(nproc) --quiet"
 
 # command replace
@@ -99,9 +100,10 @@ alias upgradeall="sudo apt update && sudo apt upgrade -y && sudo apt full-upgrad
 alias sp2ub='find . -name "* *" | rename "s/ /_/g"'
 
 # esp-idf docker alias
-alias idf='export IDF_PATH=/usr/local/Espressif/esp-idf && . $IDF_PATH/export.sh'
+alias idf_='export IDF_PATH=/usr/local/Espressif/esp-idf && . $IDF_PATH/export.sh'
 alias idf3='export IDF_PATH=/usr/local/Espressif/esp-idf_v3 && . $IDF_PATH/export.sh'
 alias idf4='export IDF_PATH=/usr/local/Espressif/esp-idf_v4 && . $IDF_PATH/export.sh'
+alias idf="idf.py"
 
 # PDF n-up
 alias pdfnup2x1="pdfnup --a4paper --nup 2x1 --scale 1.0 --landscape --batch"

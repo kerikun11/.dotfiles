@@ -84,6 +84,8 @@
 	"latex-workshop.view.pdf.viewer": "tab",
 	// C/C++
 	"C_Cpp.clang_format_fallbackStyle": "LLVM",
+	// "C_Cpp.clang_format_fallbackStyle": "Visual Studio",
+	// "C_Cpp.clang_format_fallbackStyle": "WebKit",
 	"C_Cpp.default.cppStandard": "c++17",
 	// Doxygen
 	"doxdocgen.generic.authorEmail": "kerikun11+github@gmail.com",
@@ -111,6 +113,7 @@
 	"cSpell.userWords": [
 		"AEBS",
 		"CMAKE",
+		"Espressif",
 		"Feedforward",
 		"HSPI",
 		"Inkscape",
@@ -121,9 +124,9 @@
 		"Makefiles",
 		"Manjaro",
 		"Onuki",
-		"Ryotaro",
 		"PYBIND",
 		"Powerlevel",
+		"Ryotaro",
 		"SCLK",
 		"TXDATA",
 		"Tashiro",
@@ -134,6 +137,7 @@
 		"bindkey",
 		"bootloader",
 		"cbegin",
+		"chrono",
 		"cmpr",
 		"dddq",
 		"dddth",
@@ -143,6 +147,7 @@
 		"decel",
 		"dotfiles",
 		"doxygen",
+		"endmenu",
 		"freertospp",
 		"gpio",
 		"graphviz",
@@ -165,6 +170,7 @@
 		"ostream",
 		"pacman",
 		"pyplot",
+		"ssid",
 		"strftime",
 		"struct",
 		"subfiles",
@@ -180,5 +186,10 @@
 		"ylabels",
 		"ylim",
 		"yticks"
+	],
+	"hediet.vscode-drawio.local-storage": "eyIuZHJhd2lvLWNvbmZpZyI6IntcImxhbmd1YWdlXCI6XCJcIixcImN1c3RvbUZvbnRzXCI6W10sXCJsaWJyYXJpZXNcIjpcImdlbmVyYWxcIixcImN1c3RvbUxpYnJhcmllc1wiOltcIkwuc2NyYXRjaHBhZFwiXSxcInBsdWdpbnNcIjpbXSxcInJlY2VudENvbG9yc1wiOltdLFwiZm9ybWF0V2lkdGhcIjpcIjI0MFwiLFwiY3JlYXRlVGFyZ2V0XCI6ZmFsc2UsXCJwYWdlRm9ybWF0XCI6e1wieFwiOjAsXCJ5XCI6MCxcIndpZHRoXCI6ODI3LFwiaGVpZ2h0XCI6MTE2OX0sXCJzZWFyY2hcIjp0cnVlLFwic2hvd1N0YXJ0U2NyZWVuXCI6dHJ1ZSxcImdyaWRDb2xvclwiOlwiI2QwZDBkMFwiLFwiZGFya0dyaWRDb2xvclwiOlwiIzZlNmU2ZVwiLFwiYXV0b3NhdmVcIjp0cnVlLFwicmVzaXplSW1hZ2VzXCI6bnVsbCxcIm9wZW5Db3VudGVyXCI6MCxcInZlcnNpb25cIjoxOCxcInVuaXRcIjoxLFwiaXNSdWxlck9uXCI6ZmFsc2UsXCJ1aVwiOlwiXCJ9In0=",
+	"cSpell.enableFiletypes": [
+		"shellscript",
+		"*"
 	],
 }
