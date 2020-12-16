@@ -8,7 +8,7 @@ Comment=Opens current folder in VSCode
 Comment[ja_JP]=VSCodeで%fフォルダを開く
 
 Exec=code %P
-Icon-Name=code
+Icon-Name=visual-studio-code
 Selection=any
 Extensions=any;
 Quote=double

@@ -84,6 +84,7 @@ alias zshrc="$EDITOR $HOME/.zshrc"
 alias zshenv="$EDITOR $HOME/.zshenv"
 alias open="open_command" # call oh-my-zsh function
 alias make="make -j$(nproc) --quiet"
+alias takebuild="take build" # call oh-my-zsh function
 
 # command replace
 type trash-put  &>/dev/null && alias rm=trash-put
@@ -126,12 +127,6 @@ function tree_git() {
 }
 function chpwd() {
   ls
-}
-function mkcd() {
-  mkdir -p $* && cd $_
-}
-function gre () {
-    grep -E $1 -rl $2
 }
 ##============================================================================##
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
