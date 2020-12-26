@@ -46,6 +46,7 @@ cat /etc/apt/sources.list | sed -e '/^#/d' -e '/^$/d'
 
 ```sh
 # MSYS2
-alias open="/c/Windows/explorer.exe"
+alias e="/c/Windows/explorer.exe"
 alias code="'/c/Users/kerikun11/AppData/Local/Programs/Microsoft VS Code/bin/code'"
+alias make="mingw32-make -j $(nproc)"
 ```
