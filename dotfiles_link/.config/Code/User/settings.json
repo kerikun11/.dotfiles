@@ -27,6 +27,7 @@
 	"workbench.iconTheme": "vscode-icons",
 	"workbench.startupEditor": "none",
 	"workbench.statusBar.visible": true,
+	"markdown.preview.fontSize": 16,
 	"editor.minimap.enabled": false,
 	"editor.renderWhitespace": "boundary",
 	"editor.suggestSelection": "first",
@@ -128,9 +129,11 @@
 		"Powerlevel",
 		"Ryotaro",
 		"SCLK",
+		"Sassor",
 		"TXDATA",
 		"Tashiro",
 		"UNTRACKED",
+		"WROOM",
 		"accel",
 		"affine",
 		"beamer",
@@ -169,6 +172,8 @@
 		"odometry",
 		"ostream",
 		"pacman",
+		"platformio",
+		"println",
 		"pyplot",
 		"ssid",
 		"strftime",
@@ -178,6 +183,7 @@
 		"tparam",
 		"uniquify",
 		"vstack",
+		"wifi",
 		"xlabel",
 		"xlim",
 		"xticks",
@@ -186,10 +192,5 @@
 		"ylabels",
 		"ylim",
 		"yticks"
-	],
-	"hediet.vscode-drawio.local-storage": "eyIuZHJhd2lvLWNvbmZpZyI6IntcImxhbmd1YWdlXCI6XCJcIixcImN1c3RvbUZvbnRzXCI6W10sXCJsaWJyYXJpZXNcIjpcImdlbmVyYWxcIixcImN1c3RvbUxpYnJhcmllc1wiOltcIkwuc2NyYXRjaHBhZFwiXSxcInBsdWdpbnNcIjpbXSxcInJlY2VudENvbG9yc1wiOltdLFwiZm9ybWF0V2lkdGhcIjpcIjI0MFwiLFwiY3JlYXRlVGFyZ2V0XCI6ZmFsc2UsXCJwYWdlRm9ybWF0XCI6e1wieFwiOjAsXCJ5XCI6MCxcIndpZHRoXCI6ODI3LFwiaGVpZ2h0XCI6MTE2OX0sXCJzZWFyY2hcIjp0cnVlLFwic2hvd1N0YXJ0U2NyZWVuXCI6dHJ1ZSxcImdyaWRDb2xvclwiOlwiI2QwZDBkMFwiLFwiZGFya0dyaWRDb2xvclwiOlwiIzZlNmU2ZVwiLFwiYXV0b3NhdmVcIjp0cnVlLFwicmVzaXplSW1hZ2VzXCI6bnVsbCxcIm9wZW5Db3VudGVyXCI6MCxcInZlcnNpb25cIjoxOCxcInVuaXRcIjoxLFwiaXNSdWxlck9uXCI6ZmFsc2UsXCJ1aVwiOlwiXCJ9In0=",
-	"cSpell.enableFiletypes": [
-		"shellscript",
-		"*"
 	],
 }
