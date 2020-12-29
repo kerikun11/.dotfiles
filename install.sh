@@ -26,7 +26,7 @@ echo '                                      '
 
 ##============================================================================##
 ## required commands check
-REQUIRED_COMMANDS=("git" "zsh" "curl")
+REQUIRED_COMMANDS=("git" "zsh" "curl" "wget")
 for cmd in ${REQUIRED_COMMANDS[@]}; do
     if ! type $cmd >/dev/null 2>&1; then
         echo "install $cmd first!"
