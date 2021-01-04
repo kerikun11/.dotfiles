@@ -111,6 +111,9 @@
 	"cmake.configureOnOpen": false,
 	// Spell Check
 	"cSpell.enabled": true,
+	"cSpell.enableFiletypes": [
+		"cmake"
+	],
 	"cSpell.userWords": [
 		"AEBS",
 		"CMAKE",
