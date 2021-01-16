@@ -178,6 +178,7 @@
 		"ostream",
 		"pacman",
 		"platformio",
+		"printk",
 		"println",
 		"pyplot",
 		"ssid",

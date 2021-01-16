@@ -115,6 +115,9 @@ alias pdfnup2x4="pdfnup --a4paper --nup 2x4 --scale 0.96 --no-landscape --batch"
 alias rmgeotag="exiftool -overwrite_original -geotag="
 
 # functions
+function chpwd() {
+  ls
+}
 function svg2pdf() {
   inkscape -D -z --file=$1 --export-pdf=${1%.*}.pdf
 }
@@ -125,8 +128,9 @@ function permission_reset() {
 function tree_git() {
   git ls-tree -r --name-only HEAD $1 | tree --fromfile
 }
-function chpwd() {
-  ls
+function gclc() {
+  # git clone code, $1: URL, $2: path
+  git clone --recursive $1 $2 && code ${2:-${$(basename $1)%.git}}
 }
 ##============================================================================##
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.

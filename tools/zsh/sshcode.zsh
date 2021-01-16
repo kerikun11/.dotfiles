@@ -1,22 +1,34 @@
-sshcode() {
+# sshcode: a zsh function to open vscode workspace via ssh with zsh completion
+# author: Ryotaro Onuki <kerikun11+github@gmail.com>
+# date: 2021.01.16
+
+# main command
+function sshcode() {
+  # variables to use
+  local port destination host dir
+  # parse option
+  local -A opthash
+  zparseopts -D -E -A opthash -- p:
+  port=${opthash[-p]}
   # check argument
   if [ $# -eq 0 ]; then
-    echo "usage: $0 host[:path]"
+    echo "usage: $0 [-p port] host[:path]"
     return -1
   fi
   # find host and dir
   destination="$1"
-  host=${destination%%:*} # before ':'
-  dir=${destination##*:} # after ':'
-  # fix dir if no ':' exist
+  host="${destination%%:*}" # before ':'
+  dir="${destination##*:}" # after ':'
+  # fix dir if ':' does not exist
   [ "$host" = "$dir" ] && dir=""
   # find abs path if $dir does not start with '/'
-  [ "${dir:0:1}" != "/" ] && dir="$(ssh $host pwd)/$dir"
+  [ "${dir:0:1}" != "/" ] && dir="$(ssh ${port:+-p $port} $host pwd)/$dir"
   # open with code
-  code --folder-uri "vscode-remote://ssh-remote+$host$dir"
+  code --folder-uri "vscode-remote://ssh-remote+$host${port:+:$port}$dir"
 }
 # setup completion
-_sshcode () {
+function _sshcode_completion () {
+  # ref: /usr/share/zsh/functions/Completion/Unix/_ssh
   local expl suf ret=1
   typeset -A opt_args
   if compset -P 1 '[^./][^/]#:'; then
@@ -30,4 +42,4 @@ _sshcode () {
   fi
   return ret
 }
-compdef _sshcode sshcode
+compdef _sshcode_completion sshcode
