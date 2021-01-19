@@ -26,7 +26,7 @@ function sshcode() {
   # open with code
   code --folder-uri "vscode-remote://ssh-remote+$host${port:+:$port}$dir"
 }
-# setup completion
+# sshcode zsh completion
 function _sshcode_completion () {
   # ref: /usr/share/zsh/functions/Completion/Unix/_ssh
   local expl suf ret=1
@@ -42,4 +42,5 @@ function _sshcode_completion () {
   fi
   return ret
 }
+# setup zsh completion
 compdef _sshcode_completion sshcode

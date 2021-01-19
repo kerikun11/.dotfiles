@@ -84,6 +84,7 @@ alias zshrc="$EDITOR $HOME/.zshrc"
 alias zshenv="$EDITOR $HOME/.zshenv"
 alias open="open_command" # call oh-my-zsh function
 alias make="make -j$(nproc) --quiet"
+alias grep="$(alias grep | sed -r "s/^.*'(.*)'.*$/\1/") -n" # append -n
 alias takebuild="take build" # call oh-my-zsh function
 
 # command replace
