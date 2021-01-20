@@ -55,7 +55,7 @@ bindkey '^j' down-history
 bindkey '^z' undo
 bindkey '^y' redo
 # Yank to the system clipboard
-function vi-yank-xclip {
+function vi-yank-xclip() {
   zle vi-yank
   echo "$CUTBUFFER" | clipcopy
 }
@@ -63,7 +63,7 @@ zle -N vi-yank-xclip
 bindkey -M vicmd 'y' vi-yank-xclip
 ##============================================================================##
 # stack command
-show_buffer_stack() {
+function show_buffer_stack() {
   zle -M "stack: ${BUFFER}"
   zle push-line-or-edit
 }
@@ -84,8 +84,8 @@ alias zshrc="$EDITOR $HOME/.zshrc"
 alias zshenv="$EDITOR $HOME/.zshenv"
 alias open="open_command" # call oh-my-zsh function
 alias make="make -j$(nproc) --quiet"
-alias grep="$(alias grep | sed -r "s/^.*'(.*)'.*$/\1/") -n" # append -n
 alias takebuild="take build" # call oh-my-zsh function
+alias copy="clipcopy"
 
 # command replace
 type trash-put  &>/dev/null && alias rm=trash-put
