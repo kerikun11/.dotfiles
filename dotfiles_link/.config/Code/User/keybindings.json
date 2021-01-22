@@ -31,12 +31,12 @@
 		"command": "workbench.action.quickOpenSelectPrevious",
 		"when": "inQuickOpen"
 	},
-	// platform IO
+	// PlatformIO
 	{
 		"key": "ctrl+alt+b",
 		"command": "platformio-ide.build",
 	},
-	// latex
+	// LaTeX
 	{
 		"key": "ctrl+alt+b",
 		"command": "latex-workshop.build",
@@ -81,12 +81,12 @@
 	{
 		"key": "ctrl+alt+b",
 		"command": "markdown.extension.printToHtml",
-		"when": "resourceLangId == markdown"
+		"when": "!notebookEditorFocused && editorLangId == 'markdown'"
 	},
 	{
 		"key": "ctrl+alt+v",
-		"command": "markdown-preview-enhanced.openPreviewToTheSide",
-		"when": "editorLangId == 'markdown'"
+		"command": "markdown.showPreviewToSide",
+		"when": "!notebookEditorFocused && editorLangId == 'markdown'"
 	},
 	// replace
 	{
