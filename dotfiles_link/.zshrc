@@ -10,7 +10,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 ##============================================================================##
-# Path to your oh-my-zsh installation.
+# Path to your oh-my-zsh installation. (required)
 export ZSH="$HOME/.oh-my-zsh"
 # oh-my-zsh Theme, see https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"

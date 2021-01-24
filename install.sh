@@ -14,6 +14,8 @@ DOTFILES_DIR="$HOME/.dotfiles"
 DOTFILES_LINK_DIR="$DOTFILES_DIR/dotfiles_link"
 # Oh My Zsh
 OHMYZSH_DIR="$HOME/.oh-my-zsh"
+# my user name
+DEFAULT_USER="kerikun11"
 
 ##============================================================================##
 ## opening
@@ -58,7 +60,7 @@ echo "OK oh-my-zsh"
 ## see https://github.com/romkatv/powerlevel10k#oh-my-zsh
 ZSH_THEME_P10K_DIR=$OHMYZSH_DIR/custom/themes/powerlevel10k
 if [ ! -d $ZSH_THEME_P10K_DIR ]; then
-	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_THEME_P10K_DIR
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_THEME_P10K_DIR
 fi
 echo "OK zsh Powerlevel10k theme"
 
@@ -87,7 +89,7 @@ echo "OK Symbolic Links"
 
 ##============================================================================##
 ## delete personal information
-if [ $(whoami) != "kerikun11" ]; then
+if [ $(whoami) != "$DEFAULT_USER" ]; then
     echo "unset git user config"
     git config --global --unset user.name
     git config --global --unset user.email
