@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 ##============================================================================##
 ## description  UNIX configuration files installer
 ## author       kerikun11
@@ -116,6 +116,17 @@ if [ $(whoami) != "$DEFAULT_USER" ]; then
     git config --global --unset user.email
 fi
 echo "OK .gitconfig"
+
+##============================================================================##
+## change default shell to zsh
+if [ $(grep $USER </etc/passwd | cut -f 7 -d ":") != $(which zsh) ]; then
+    read -p "Do you want to change default shell to zsh? [Y/n] :" YN
+    case "$YN" in "Y" | "y" | "")
+        chsh -s $(which zsh)
+        echo "OK pacman mirrors"
+        ;;
+    esac
+fi
 
 ##============================================================================##
 ## ending
