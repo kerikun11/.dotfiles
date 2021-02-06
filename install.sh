@@ -119,7 +119,7 @@ echo "OK .gitconfig"
 
 ##============================================================================##
 ## change default shell to zsh
-if [ $(grep $USER </etc/passwd | cut -f 7 -d ":") != $(which zsh) ]; then
+if [ $(grep $(whoami) </etc/passwd | cut -f 7 -d ":") != $(which zsh) ]; then
     read -p "Do you want to change default shell to zsh? [Y/n] :" YN
     case "$YN" in "Y" | "y" | "")
         chsh -s $(which zsh)
