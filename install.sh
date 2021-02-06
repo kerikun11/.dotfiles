@@ -15,7 +15,8 @@ DOTFILES_LINK_DIR="$DOTFILES_DIR/dotfiles_link"
 # Oh My Zsh
 OHMYZSH_DIR="$HOME/.oh-my-zsh"
 # my user name
-DEFAULT_USER="kerikun11"
+GIT_USENAME="Ryotaro Onuki"
+GIT_EMAIL="kerikun11+github@gmail.com"
 
 ##============================================================================##
 ## opening
@@ -112,8 +113,8 @@ echo "OK Symbolic Links"
 ## delete personal information
 if [ $(whoami) != "$DEFAULT_USER" ]; then
     echo "unset git user config"
-    git config --global --unset user.name
-    git config --global --unset user.email
+    sed -i "/email = $GIT_EMAIL/d" $HOME/.gitconfig
+    sed -i "/name = $GIT_USENAME/d" $HOME/.gitconfig
 fi
 echo "OK .gitconfig"
 
@@ -123,7 +124,7 @@ if [ $(grep $(whoami) </etc/passwd | cut -f 7 -d ":") != $(which zsh) ]; then
     read -p "Do you want to change default shell to zsh? [Y/n] :" YN
     case "$YN" in "Y" | "y" | "")
         chsh -s $(which zsh)
-        echo "OK pacman mirrors"
+        echo "OK chsh to zsh"
         ;;
     esac
 fi
