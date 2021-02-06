@@ -27,15 +27,28 @@ echo '(_)__,_/\____/\__/_/ /_/_/\___/____/  '
 echo '                                      '
 
 ##============================================================================##
-## required commands check
-REQUIRED_COMMANDS=("git" "zsh" "curl" "wget")
-for cmd in ${REQUIRED_COMMANDS[@]}; do
-    if ! type $cmd >/dev/null 2>&1; then
-        echo "install $cmd first!"
-        exit 1
+## required commands install
+REQUIRED_COMMANDS="curl zsh git"
+if ! type $REQUIRED_COMMANDS >/dev/null 2>&1; then
+    ## sudo detect
+    type sudo >/dev/null 2>&1 && [ "$(whoami)" != "root" ] && SUDO="sudo" || SUDO=""
+    ## install according to the OS
+    if type apt >/dev/null 2>&1; then
+        $SUDO apt update
+        $SUDO apt install -yq $REQUIRED_COMMANDS
+    elif type pacman >/dev/null 2>&1; then
+        $SUDO pacman -Sy --quiet
+        $SUDO pacman -S --quiet --noconfirm --needed $REQUIRED_COMMANDS
+    elif type apk >/dev/null 2>&1; then
+        $SUDO apk add $REQUIRED_COMMANDS
+    elif type yum >/dev/null 2>&1; then
+        $SUDO yum install -yq $REQUIRED_COMMANDS
+    else
+        echo "NG $REQUIRED_COMMANDS"
+        exit -1
     fi
-done
-echo "OK ${REQUIRED_COMMANDS[@]}"
+fi
+echo "OK $REQUIRED_COMMANDS"
 
 ##============================================================================##
 ## clone .dotfiles if it does not exist
@@ -52,7 +65,7 @@ echo "OK $DOTFILES_DIR"
 ## oh-my-zsh
 if [ ! -d $OHMYZSH_DIR ]; then
     echo 'installing oh-my-zsh'
-    echo exit | sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    echo exit | sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
 echo "OK oh-my-zsh"
 
@@ -60,7 +73,8 @@ echo "OK oh-my-zsh"
 ## see https://github.com/romkatv/powerlevel10k#oh-my-zsh
 ZSH_THEME_P10K_DIR=$OHMYZSH_DIR/custom/themes/powerlevel10k
 if [ ! -d $ZSH_THEME_P10K_DIR ]; then
-    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_THEME_P10K_DIR
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git \
+        $ZSH_THEME_P10K_DIR
 fi
 echo "OK zsh Powerlevel10k theme"
 
@@ -70,7 +84,8 @@ ZSH_CUSTOM=$OHMYZSH_DIR/custom
 ZSH_SYNTAX_HIGHLIGHTING=$ZSH_CUSTOM/plugins/fast-syntax-highlighting
 if [ ! -d $ZSH_SYNTAX_HIGHLIGHTING ]; then
     echo 'installing zsh syntax highlighting'
-    git clone https://github.com/zdharma/fast-syntax-highlighting $ZSH_SYNTAX_HIGHLIGHTING
+    git clone https://github.com/zdharma/fast-syntax-highlighting \
+        $ZSH_SYNTAX_HIGHLIGHTING
 fi
 echo "OK zsh syntax highlighting"
 
@@ -81,8 +96,16 @@ dotfiles_link=$(find . -type f)
 for file in ${dotfiles_link[@]}; do
     file=${file#./} # remove first "./"
     echo "  $file"
-    mkdir -p $HOME/$(dirname $file)
-    ln -sf $DOTFILES_LINK_DIR/$file $HOME/$file
+    link_from="$DOTFILES_LINK_DIR/$file"
+    link_to="$HOME/$file"
+    # If there is a file that is not a symbolic link, back it up.
+    if [ -f $link_to ] && [ ! -L $link_to ]; then
+        echo "  $file -> $file.backup"
+        mv $link_to $link_to.backup
+    fi
+    # make a symbolic link
+    mkdir -p $(dirname $link_to)
+    ln -sf $link_from $link_to
 done
 popd >/dev/null
 echo "OK Symbolic Links"

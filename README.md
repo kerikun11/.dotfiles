@@ -1,4 +1,4 @@
-# .dotfiles @ kerikun11
+# kerikun11.dotfiles
 
 My Configuration Files for UNIX Systems
 
@@ -11,24 +11,18 @@ My Configuration Files for UNIX Systems
                                       
 ```
 
-> Note that .gitconfig contains my personal information.
-> Don't install it as is, except for me!
-
-## install .dotfiles @ kerikun11
+## install .dotfiles
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/kerikun11/.dotfiles/master/install.sh | bash
-```
-
-## configure automatically
-
-```sh
-## install common packages
-curl -fsSL https://raw.githubusercontent.com/kerikun11/.dotfiles/master/tools/install_common.sh | sh
-# Manjaro Linux Cinnamon 19.2
-curl -fsSL https://raw.githubusercontent.com/kerikun11/.dotfiles/master/tools/manjaro_setup.sh | bash
-# Linux Mint 19.3
-curl -fsSL https://raw.githubusercontent.com/kerikun11/.dotfiles/master/tools/mint_setup.sh | sh
+# install requirements
+REQUIREMENTS="curl zsh git"
+type sudo   2>/dev/null && test $(whoami) != "root" && SUDO="sudo" || SUDO=""
+type apt    2>/dev/null && $SUDO apt update -q; $SUDO apt install -yq $REQUIREMENTS
+type pacman 2>/dev/null && $SUDO pacman -Sy -q --noconfirm --needed $REQUIREMENTS
+type apk    2>/dev/null && $SUDO apk add -q $REQUIREMENTS
+type yum    2>/dev/null && $SUDO yum install -yq $REQUIREMENTS
+# install dotfiles
+curl -fsSL https://raw.github.com/kerikun11/.dotfiles/master/install.sh | sh
 ```
 
 ## mirror list
@@ -46,7 +40,12 @@ cat /etc/apt/sources.list | sed -e '/^#/d' -e '/^$/d'
 
 ```sh
 # MSYS2
-alias e="/c/Windows/explorer.exe"
 alias code="'/c/Users/kerikun11/AppData/Local/Programs/Microsoft VS Code/bin/code'"
-alias make="mingw32-make -j $(nproc)"
+alias make="mingw32-make -j $(nproc) -s"
+```
+
+## allow me to run sudo without password
+
+```sh
+echo "$USER ALL=NOPASSWD: ALL" | sudo EDITOR='tee -a' visudo
 ```
