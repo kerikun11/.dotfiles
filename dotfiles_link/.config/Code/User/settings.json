@@ -176,6 +176,7 @@
 		"mingw",
 		"mkdir",
 		"nargs",
+		"noconfirm",
 		"numpy",
 		"odometry",
 		"ostream",

@@ -13,12 +13,12 @@ LANG=C xdg-user-dirs-gtk-update
 
 ## Caps -> Ctrl
 gsettings set org.gnome.libgnomekbd.keyboard options "['ctrl\tctrl:nocaps']"
-echo "OK CapsLock"
+echo "OK Caps -> Ctrl"
 
 ## Cinnamon
 gsettings set org.cinnamon.desktop.screensaver lock-enabled false
 gsettings set org.cinnamon.desktop.wm.preferences mouse-button-modifier '<Super>' # windows move key
-gsettings set org.cinnamon.muffin placement-mode 'pointer' # new window placement
+gsettings set org.cinnamon.muffin placement-mode 'pointer'                        # new window placement
 gsettings set org.cinnamon.settings-daemon.peripherals.touchpad horizontal-scrolling true
 gsettings set org.cinnamon.settings-daemon.plugins.power idle-brightness 5
 gsettings set org.cinnamon.settings-daemon.plugins.power idle-dim-time 60
@@ -59,7 +59,7 @@ sudo pacman -Syuu --noconfirm --needed --quiet
 sudo pacman -S --noconfirm --needed yay
 yay_install_cmd="yay -S --noconfirm --quiet --needed --needed"
 ## requirements
-$yay_install_cmd git zsh curl vim
+$yay_install_cmd git zsh curl gvim
 $yay_install_cmd base-devel
 ## dev
 $yay_install_cmd gcc gcc-multilib gdb cmake valgrind kcachegrind

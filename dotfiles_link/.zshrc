@@ -101,16 +101,20 @@ alias datetimestr="date +%Y%m%d-%H%M%S"
 alias upgradeall="sudo apt update && sudo apt upgrade -y && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo apt autoclean"
 alias sp2ub='find . -name "* *" | rename "s/ /_/g"'
 
-# esp-idf docker alias
-alias idf_='export IDF_PATH=/usr/local/Espressif/esp-idf && . $IDF_PATH/export.sh'
-alias idf3='export IDF_PATH=/usr/local/Espressif/esp-idf_v3 && . $IDF_PATH/export.sh'
+# esp-idf alias
+alias idf_='export IDF_PATH=/usr/local/Espressif/esp-idf    && . $IDF_PATH/export.sh'
+alias idf3='export IDF_PATH=/usr/local/Espressif/esp-idf_v4 && . $IDF_PATH/export.sh'
 alias idf4='export IDF_PATH=/usr/local/Espressif/esp-idf_v4 && . $IDF_PATH/export.sh'
 alias idf="idf.py"
+alias idfbuild="idf.py build"
+alias idfflashmonitor="idf.py -b 2000000 flash monitor"
+alias idfmonitor="idf.py monitor"
+alias idfmenuconfig="idf.py menuconfig"
 
 # PDF n-up
-alias pdfnup2x1="pdfnup --a4paper --nup 2x1 --scale 1.0 --landscape --batch"
-alias pdfnup2x2="pdfnup --a4paper --nup 2x2 --scale 0.96 --landscape --batch"
-alias pdfnup2x4="pdfnup --a4paper --nup 2x4 --scale 0.96 --no-landscape --batch"
+alias pdfnup2x1="pdfnup --batch --a4paper --nup 2x1 --scale 1.0  --landscape"
+alias pdfnup2x2="pdfnup --batch --a4paper --nup 2x2 --scale 0.96 --landscape"
+alias pdfnup2x4="pdfnup --batch --a4paper --nup 2x4 --scale 0.96 --no-landscape"
 
 # Exiftool
 alias rmgeotag="exiftool -overwrite_original -geotag="
@@ -131,7 +135,8 @@ function tree_git() {
 }
 function gclc() {
   # git clone code, $1: URL, $2: path
-  git clone --recursive $1 $2 && code ${2:-${$(basename $1)%.git}}
+  git clone --recursive $1 $2 && code ${2:-${$(basename $1)%.git}} \
+    && exit 0
 }
 ##============================================================================##
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
