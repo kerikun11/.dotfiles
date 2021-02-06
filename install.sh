@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 ##============================================================================##
 ## description  UNIX configuration files installer
 ## author       kerikun11
@@ -91,10 +91,9 @@ echo "OK zsh syntax highlighting"
 
 ##============================================================================##
 ## link .dotfiles
-pushd $DOTFILES_LINK_DIR >/dev/null
-dotfiles_link=$(find . -type f)
+dotfiles_link=$(find $DOTFILES_LINK_DIR -type f)
 for file in ${dotfiles_link[@]}; do
-    file=${file#./} # remove first "./"
+    file=${file#$DOTFILES_LINK_DIR/} # remove first path
     echo "  $file"
     link_from="$DOTFILES_LINK_DIR/$file"
     link_to="$HOME/$file"
@@ -107,7 +106,6 @@ for file in ${dotfiles_link[@]}; do
     mkdir -p $(dirname $link_to)
     ln -sf $link_from $link_to
 done
-popd >/dev/null
 echo "OK Symbolic Links"
 
 ##============================================================================##
