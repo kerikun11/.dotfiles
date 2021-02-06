@@ -92,19 +92,19 @@ echo "OK zsh syntax highlighting"
 ##============================================================================##
 ## link .dotfiles
 dotfiles_link=$(find $DOTFILES_LINK_DIR -type f)
-for file in ${dotfiles_link[@]}; do
-    file=${file#$DOTFILES_LINK_DIR/} # remove first path
+for link_target in $dotfiles_link; do
+    # make link_name
+    file=${link_target#$DOTFILES_LINK_DIR/} # remove first path
+    link_name="$HOME/$file"
     echo "  $file"
-    link_from="$DOTFILES_LINK_DIR/$file"
-    link_to="$HOME/$file"
     # If there is a file that is not a symbolic link, back it up.
-    if [ -f $link_to ] && [ ! -L $link_to ]; then
+    if [ -f $link_name ] && [ ! -L $link_name ]; then
         echo "  $file -> $file.backup"
-        mv $link_to $link_to.backup
+        mv $link_name $link_name.backup
     fi
     # make a symbolic link
-    mkdir -p $(dirname $link_to)
-    ln -sf $link_from $link_to
+    mkdir -p $(dirname $link_name)
+    ln -sf $link_target $link_name
 done
 echo "OK Symbolic Links"
 
