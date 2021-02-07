@@ -71,6 +71,9 @@ setopt noflowcontrol # disable ctrl-s and ctrl-q
 zle -N show_buffer_stack
 bindkey '^q' show_buffer_stack
 ##============================================================================##
+# zsh opts
+# setopt nonomatch # Execute command even if no match with glob
+##============================================================================##
 # custom alias
 alias c="code"
 alias e="echo"
@@ -103,7 +106,7 @@ alias sp2ub='find . -name "* *" | rename "s/ /_/g"'
 
 # esp-idf alias
 alias idf_='export IDF_PATH=/usr/local/Espressif/esp-idf    && . $IDF_PATH/export.sh'
-alias idf3='export IDF_PATH=/usr/local/Espressif/esp-idf_v4 && . $IDF_PATH/export.sh'
+alias idf3='export IDF_PATH=/usr/local/Espressif/esp-idf_v3 && . $IDF_PATH/export.sh'
 alias idf4='export IDF_PATH=/usr/local/Espressif/esp-idf_v4 && . $IDF_PATH/export.sh'
 alias idf="idf.py"
 alias idfbuild="idf.py build"
