@@ -7,6 +7,13 @@ set -u # unused variable error
 ## Rename Home Directory
 LANG=C xdg-user-dirs-gtk-update
 
+## avoid sudo timeout
+while :; do
+    sudo -v
+    sleep 59
+done &
+infiloop=$!
+
 # dump gsettings command:
 # gsettings list-recursively > /tmp/prev
 # gsettings list-recursively > /tmp/post
@@ -63,7 +70,7 @@ $yay_install_cmd git zsh curl gvim
 $yay_install_cmd base-devel
 ## dev
 $yay_install_cmd gcc gcc-multilib gdb cmake valgrind kcachegrind
-$yay_install_cmd arduino code inkscape
+$yay_install_cmd arduino visual-studio-code-bin inkscape
 $yay_install_cmd kicad kicad-library kicad-library-3d
 $yay_install_cmd qtcreator qt5-base
 ## utility
@@ -73,7 +80,7 @@ $yay_install_cmd dos2unix perl-image-exiftool
 ## font
 $yay_install_cmd otf-ipafont ttf-ubuntu-font-family
 ## Google Chrome
-# $yay_install_cmd google-chrome
+$yay_install_cmd google-chrome
 ## slack
 # $yay_install_cmd slack-desktop
 ## Dropbox
@@ -94,3 +101,6 @@ echo "OK Mozc"
 echo "Everything has done."
 figlet -f big Enjoy!
 echo "Please Reboot to apply the configurations"
+
+## cleaning of avoid sudo timeout
+kill "$infiloop"
