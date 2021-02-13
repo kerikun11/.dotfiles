@@ -91,6 +91,7 @@ alias open="open_command" # call oh-my-zsh function
 alias make="make -j$(nproc) --quiet"
 alias takebuild="take build" # call oh-my-zsh function
 alias copy="clipcopy"
+alias serve="python3 -m http.server"
 
 # command replace
 type trash-put  &>/dev/null && alias rm=trash-put
