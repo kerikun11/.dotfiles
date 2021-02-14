@@ -112,9 +112,11 @@ echo "OK Symbolic Links"
 ##============================================================================##
 ## delete personal information
 if [ $(whoami) != "$DEFAULT_USER" ]; then
-    echo "unset git user config"
-    sed -i "/email = $GIT_EMAIL/d" $HOME/.gitconfig
-    sed -i "/name = $GIT_USENAME/d" $HOME/.gitconfig
+    echo "  unset git user config"
+    git config --global --get user.name 2>&1 > /dev/null &&
+        git config --global --unset user.name
+    git config --global --get user.email 2>&1 > /dev/null &&
+        git config --global --unset user.email
 fi
 echo "OK .gitconfig"
 
