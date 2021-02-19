@@ -15,8 +15,7 @@ DOTFILES_LINK_DIR="$DOTFILES_DIR/dotfiles_link"
 # Oh My Zsh
 OHMYZSH_DIR="$HOME/.oh-my-zsh"
 # my user name
-GIT_USENAME="Ryotaro Onuki"
-GIT_EMAIL="kerikun11+github@gmail.com"
+DEFAULT_USER="kerikun11"
 
 ##============================================================================##
 ## opening

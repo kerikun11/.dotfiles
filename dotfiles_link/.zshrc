@@ -92,6 +92,7 @@ alias make="make -j$(nproc) --quiet"
 alias takebuild="take build" # call oh-my-zsh function
 alias copy="clipcopy"
 alias serve="python3 -m http.server"
+alias local_ip="echo $(ip route get 8.8.8.8 | sed -n '/src/{s/.*src *\([^ ]*\).*/\1/p;q}')"
 
 # command replace
 type trash-put  &>/dev/null && alias rm=trash-put
