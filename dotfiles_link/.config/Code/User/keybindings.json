@@ -88,6 +88,12 @@
         "command": "markdown.showPreviewToSide",
         "when": "!notebookEditorFocused && editorLangId == 'markdown'"
     },
+    // plantuml
+    {
+        "key": "ctrl+alt+v",
+        "command": "plantuml.preview",
+        "when": "!notebookEditorFocused && editorLangId == 'plantuml'"
+    },
     // replace
     {
         "key": "ctrl+g",
