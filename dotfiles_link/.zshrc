@@ -92,6 +92,7 @@ alias make="make -j$(nproc) --quiet"
 alias takebuild="take build" # call oh-my-zsh function
 alias copy="clipcopy"
 alias serve="python3 -m http.server"
+alias dcs="docker-compose"
 
 # command replace
 type trash-put  &>/dev/null && alias rm=trash-put
