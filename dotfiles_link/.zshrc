@@ -18,10 +18,11 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 COMPLETION_WAITING_DOTS="true"
 # oh-my-zsh plugins
 plugins=(
+  docker
+  docker-compose
+  fast-syntax-highlighting
   git
   pip
-  copybuffer # copy command buffer with Ctrl-O
-  fast-syntax-highlighting
 )
 # to reflect oh-my-zsh configurations
 source $ZSH/oh-my-zsh.sh
