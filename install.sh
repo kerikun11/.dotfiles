@@ -51,18 +51,19 @@ echo "OK $REQUIRED_COMMANDS"
 
 ##============================================================================##
 ## clone .dotfiles if it does not exist
-if [ -d $DOTFILES_DIR ]; then
-    git -C $DOTFILES_DIR pull
-else
+if [ ! -d $DOTFILES_DIR ]; then
     git clone $DOTFILES_REPOSITORY $DOTFILES_DIR
+else
+    git -C $DOTFILES_DIR pull
 fi
 echo "OK $DOTFILES_DIR"
 
 ##============================================================================##
 ## oh-my-zsh
 if [ ! -d $OHMYZSH_DIR ]; then
-    echo 'installing oh-my-zsh'
-    echo exit | sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    git clone https://github.com/ohmyzsh/ohmyzsh.git $OHMYZSH_DIR
+else
+    git -C $OHMYZSH_DIR pull
 fi
 echo "OK oh-my-zsh"
 
@@ -70,8 +71,9 @@ echo "OK oh-my-zsh"
 ## see https://github.com/romkatv/powerlevel10k#oh-my-zsh
 ZSH_THEME_P10K_DIR=$OHMYZSH_DIR/custom/themes/powerlevel10k
 if [ ! -d $ZSH_THEME_P10K_DIR ]; then
-    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git \
-        $ZSH_THEME_P10K_DIR
+    git clone https://github.com/romkatv/powerlevel10k.git $ZSH_THEME_P10K_DIR
+else
+    git -C $ZSH_THEME_P10K_DIR pull
 fi
 echo "OK zsh Powerlevel10k theme"
 
