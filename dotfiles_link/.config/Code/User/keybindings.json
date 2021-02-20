@@ -150,4 +150,10 @@
         "command": "copyRelativeFilePath",
         "when": "editorFocus"
     },
+    // copy path and line number
+    {
+        "key": "alt+l",
+        "command": "copy-relative-path-and-line-numbers.both",
+        "when": "editorTextFocus"
+    },
 ]
