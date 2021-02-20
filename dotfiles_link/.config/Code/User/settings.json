@@ -1,214 +1,214 @@
 {
-	// Settings-Sync
-	"sync.gist": "daaa7ed6406a23237d7405f10f7d6b4a",
-	// Terminal
-	"terminal.integrated.shell.windows": "C:\\msys64\\usr\\bin\\zsh.exe",
-	"terminal.integrated.shellArgs.windows": [
-		"--login"
-	],
-	"terminal.integrated.env.windows": {
-		"MSYS": "winsymlinks:nativestrict",
-		"CHERE_INVOKING": "1",
-		"MSYS2_PATH_TYPE": "strict",
-		"MSYSTEM": "MINGW64",
-		"SHELL": "/usr/bin/zsh"
-	},
-	"terminal.integrated.copyOnSelection": true,
-	// Settings
-	"glassit.alpha": 220,
-	"diffEditor.ignoreTrimWhitespace": false,
-	"files.autoSave": "afterDelay",
-	"files.autoGuessEncoding": true,
-	"files.insertFinalNewline": true,
-	"git.autofetch": true,
-	"window.menuBarVisibility": "hidden",
-	"window.zoomLevel": 0,
-	"workbench.editor.enablePreviewFromQuickOpen": false,
-	"workbench.iconTheme": "vscode-icons",
-	"workbench.startupEditor": "none",
-	"workbench.statusBar.visible": true,
-	"markdown.preview.fontSize": 16,
-	"editor.minimap.enabled": false,
-	"editor.renderWhitespace": "boundary",
-	"editor.suggestSelection": "first",
-	"editor.rulers": [
-		80
-	],
-	// vim
-	"vim.useSystemClipboard": true, // システムのclipboardにコピー
-	"vim.visualstar": true, // カーソル上にあるワードを"*"で検索
-	"vim.hlsearch": true, // 検索結果のハイライト
-	"vim.easymotion": true, // カーソル移動の可視化
-	"vim.leader": "<space>", // Leader キー
-	"vim.normalModeKeyBindingsNonRecursive": [
-		{
-			// yank from cursor position to end of line
-			"before": [
-				"Y"
-			],
-			"after": [
-				"y",
-				"$"
-			]
-		},
-		{
-			// easy motion
-			"before": [
-				"f"
-			],
-			"after": [
-				"leader",
-				"leader",
-				"s"
-			]
-		},
-		{
-			// hide highlight search
-			"before": [
-				"<Esc>",
-				"<Esc>"
-			],
-			"commands": [
-				":nohl"
-			]
-		}
-	],
-	// vim IME disable with single ESC
-	"vim.autoSwitchInputMethod.enable": true,
-	"vim.autoSwitchInputMethod.obtainIMCmd": "/usr/bin/fcitx-remote",
-	"vim.autoSwitchInputMethod.switchIMCmd": "/usr/bin/fcitx-remote {im}",
-	"vim.autoSwitchInputMethod.defaultIM": "-c",
-	// LaTeX
-	"latex-workshop.latex.outDir": "%DIR%/build",
-	"latex-workshop.latex.autoBuild.run": "never",
-	"latex-workshop.view.pdf.zoom": "page-width",
-	"latex-workshop.view.pdf.viewer": "tab",
-	// C/C++
-	"C_Cpp.clang_format_fallbackStyle": "LLVM",
-	// "C_Cpp.clang_format_fallbackStyle": "Visual Studio",
-	// "C_Cpp.clang_format_fallbackStyle": "WebKit",
-	"C_Cpp.default.cppStandard": "c++17",
-	"cmake.configureOnOpen": false,
-	// Doxygen
-	"doxdocgen.generic.authorEmail": "kerikun11+github@gmail.com",
-	"doxdocgen.generic.authorName": "Ryotaro Onuki",
-	"doxdocgen.file.copyrightTag": [
-		"@copyright Copyright (c) {year} Ryotaro Onuki"
-	],
-	"doxdocgen.file.fileOrder": [
-		"file",
-		"author",
-		"brief",
-		"date",
-		"copyright",
-		"custom"
-	],
-	// PlatformIO
-	"platformio-ide.activateOnlyOnPlatformIOProject": true,
-	"platformio-ide.disableToolbar": true,
-	// Python
-	"python.languageServer": "Microsoft",
-	"python.showStartPage": false,
-	// PlantUML
-	"plantuml.server": "https://www.plantuml.com/plantuml",
-	// Spell Check
-	"cSpell.enabled": true,
-	"cSpell.enableFiletypes": [
-		"cmake"
-	],
-	"cSpell.userWords": [
-		"AEBS",
-		"CMAKE",
-		"COLMAP",
-		"Espressif",
-		"Feedforward",
-		"HSPI",
-		"Inkscape",
-		"Jetson",
-		"KERISE",
-		"Kubernetes",
-		"LEDC",
-		"MOSI",
-		"MSYS",
-		"Mainroad",
-		"Makefiles",
-		"Manjaro",
-		"OHMYZSH",
-		"Onuki",
-		"PYBIND",
-		"Powerlevel",
-		"Ryotaro",
-		"SCLK",
-		"Sassor",
-		"Submodule",
-		"TXDATA",
-		"Tashiro",
-		"UNTRACKED",
-		"WROOM",
-		"accel",
-		"affine",
-		"asciidoctor",
-		"beamer",
-		"bindkey",
-		"bootloader",
-		"cbegin",
-		"chrono",
-		"cmpr",
-		"dddq",
-		"dddth",
-		"dddx",
-		"dddy",
-		"ddth",
-		"decel",
-		"dotfiles",
-		"doxygen",
-		"endmenu",
-		"freertospp",
-		"gpio",
-		"graphviz",
-		"kerikun",
-		"kerislab",
-		"loadtxt",
-		"logd",
-		"logi",
-		"logw",
-		"matlab",
-		"matplotlib",
-		"mcpwm",
-		"micromouse",
-		"millis",
-		"mingw",
-		"mkdir",
-		"nargs",
-		"noconfirm",
-		"numpy",
-		"odometry",
-		"opensfm",
-		"ostream",
-		"pacman",
-		"plantuml",
-		"platformio",
-		"printk",
-		"println",
-		"pyplot",
-		"ssid",
-		"strftime",
-		"struct",
-		"subfiles",
-		"submodules",
-		"tensorflow",
-		"toolchain",
-		"tparam",
-		"uniquify",
-		"vstack",
-		"wifi",
-		"xlabel",
-		"xlim",
-		"xticks",
-		"yaxis",
-		"ylabel",
-		"ylabels",
-		"ylim",
-		"yticks"
-	],
+    // Settings-Sync
+    "sync.gist": "daaa7ed6406a23237d7405f10f7d6b4a",
+    // Terminal
+    "terminal.integrated.shell.windows": "C:\\msys64\\usr\\bin\\zsh.exe",
+    "terminal.integrated.shellArgs.windows": [
+        "--login"
+    ],
+    "terminal.integrated.env.windows": {
+        "MSYS": "winsymlinks:nativestrict",
+        "CHERE_INVOKING": "1",
+        "MSYS2_PATH_TYPE": "strict",
+        "MSYSTEM": "MINGW64",
+        "SHELL": "/usr/bin/zsh"
+    },
+    "terminal.integrated.copyOnSelection": true,
+    // Settings
+    "glassit.alpha": 220,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "files.autoSave": "afterDelay",
+    "files.autoGuessEncoding": true,
+    "files.insertFinalNewline": true,
+    "git.autofetch": true,
+    "window.menuBarVisibility": "hidden",
+    "window.zoomLevel": 0,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.startupEditor": "none",
+    "workbench.statusBar.visible": true,
+    "markdown.preview.fontSize": 16,
+    "editor.minimap.enabled": false,
+    "editor.renderWhitespace": "boundary",
+    "editor.suggestSelection": "first",
+    "editor.rulers": [
+        80
+    ],
+    // vim
+    "vim.useSystemClipboard": true, // システムのclipboardにコピー
+    "vim.visualstar": true, // カーソル上にあるワードを"*"で検索
+    "vim.hlsearch": true, // 検索結果のハイライト
+    "vim.easymotion": true, // カーソル移動の可視化
+    "vim.leader": "<space>", // Leader キー
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            // yank from cursor position to end of line
+            "before": [
+                "Y"
+            ],
+            "after": [
+                "y",
+                "$"
+            ]
+        },
+        {
+            // easy motion
+            "before": [
+                "f"
+            ],
+            "after": [
+                "leader",
+                "leader",
+                "s"
+            ]
+        },
+        {
+            // hide highlight search
+            "before": [
+                "<Esc>",
+                "<Esc>"
+            ],
+            "commands": [
+                ":nohl"
+            ]
+        }
+    ],
+    // vim IME disable with single ESC
+    "vim.autoSwitchInputMethod.enable": true,
+    "vim.autoSwitchInputMethod.obtainIMCmd": "/usr/bin/fcitx-remote",
+    "vim.autoSwitchInputMethod.switchIMCmd": "/usr/bin/fcitx-remote {im}",
+    "vim.autoSwitchInputMethod.defaultIM": "-c",
+    // LaTeX
+    "latex-workshop.latex.outDir": "%DIR%/build",
+    "latex-workshop.latex.autoBuild.run": "never",
+    "latex-workshop.view.pdf.zoom": "page-width",
+    "latex-workshop.view.pdf.viewer": "tab",
+    // C/C++
+    "C_Cpp.clang_format_fallbackStyle": "LLVM",
+    // "C_Cpp.clang_format_fallbackStyle": "Visual Studio",
+    // "C_Cpp.clang_format_fallbackStyle": "WebKit",
+    "C_Cpp.default.cppStandard": "c++17",
+    "cmake.configureOnOpen": false,
+    // Doxygen
+    "doxdocgen.generic.authorEmail": "kerikun11+github@gmail.com",
+    "doxdocgen.generic.authorName": "Ryotaro Onuki",
+    "doxdocgen.file.copyrightTag": [
+        "@copyright Copyright (c) {year} Ryotaro Onuki"
+    ],
+    "doxdocgen.file.fileOrder": [
+        "file",
+        "author",
+        "brief",
+        "date",
+        "copyright",
+        "custom"
+    ],
+    // PlatformIO
+    "platformio-ide.activateOnlyOnPlatformIOProject": true,
+    "platformio-ide.disableToolbar": true,
+    // Python
+    "python.languageServer": "Microsoft",
+    "python.showStartPage": false,
+    // PlantUML
+    "plantuml.server": "https://www.plantuml.com/plantuml",
+    // Spell Check
+    "cSpell.enabled": true,
+    "cSpell.enableFiletypes": [
+        "cmake"
+    ],
+    "cSpell.userWords": [
+        "AEBS",
+        "CMAKE",
+        "COLMAP",
+        "Espressif",
+        "Feedforward",
+        "HSPI",
+        "Inkscape",
+        "Jetson",
+        "KERISE",
+        "Kubernetes",
+        "LEDC",
+        "MOSI",
+        "MSYS",
+        "Mainroad",
+        "Makefiles",
+        "Manjaro",
+        "OHMYZSH",
+        "Onuki",
+        "PYBIND",
+        "Powerlevel",
+        "Ryotaro",
+        "SCLK",
+        "Sassor",
+        "Submodule",
+        "TXDATA",
+        "Tashiro",
+        "UNTRACKED",
+        "WROOM",
+        "accel",
+        "affine",
+        "asciidoctor",
+        "beamer",
+        "bindkey",
+        "bootloader",
+        "cbegin",
+        "chrono",
+        "cmpr",
+        "dddq",
+        "dddth",
+        "dddx",
+        "dddy",
+        "ddth",
+        "decel",
+        "dotfiles",
+        "doxygen",
+        "endmenu",
+        "freertospp",
+        "gpio",
+        "graphviz",
+        "kerikun",
+        "kerislab",
+        "loadtxt",
+        "logd",
+        "logi",
+        "logw",
+        "matlab",
+        "matplotlib",
+        "mcpwm",
+        "micromouse",
+        "millis",
+        "mingw",
+        "mkdir",
+        "nargs",
+        "noconfirm",
+        "numpy",
+        "odometry",
+        "opensfm",
+        "ostream",
+        "pacman",
+        "plantuml",
+        "platformio",
+        "printk",
+        "println",
+        "pyplot",
+        "ssid",
+        "strftime",
+        "struct",
+        "subfiles",
+        "submodules",
+        "tensorflow",
+        "toolchain",
+        "tparam",
+        "uniquify",
+        "vstack",
+        "wifi",
+        "xlabel",
+        "xlim",
+        "xticks",
+        "yaxis",
+        "ylabel",
+        "ylabels",
+        "ylim",
+        "yticks"
+    ],
 }

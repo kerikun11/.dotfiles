@@ -1,132 +1,143 @@
 // Place your key bindings in this file to overwrite the defaults
 [
-	// Code Format
-	{
-		"key": "ctrl+alt+f",
-		"command": "editor.action.formatDocument",
-		"when": "editorTextFocus && !editorReadonly"
-	},
-	// Git Graph
-	{
-		"key": "ctrl+alt+g",
-		"command": "git-graph.view"
-	},
-	// toggle sidebar visibility
-	{
-		"key": "ctrl+b",
-		"command": "-workbench.action.toggleSidebarVisibility"
-	},
-	{
-		"key": "ctrl+[IntlRo]", // ctrl+\
-		"command": "workbench.action.toggleSidebarVisibility"
-	},
-	// Ctrl+Shift+P クイックメニューの上下移動
-	{
-		"key": "ctrl+j",
-		"command": "workbench.action.quickOpenSelectNext",
-		"when": "inQuickOpen"
-	},
-	{
-		"key": "ctrl+k",
-		"command": "workbench.action.quickOpenSelectPrevious",
-		"when": "inQuickOpen"
-	},
-	// PlatformIO
-	{
-		"key": "ctrl+alt+b",
-		"command": "platformio-ide.build",
-	},
-	// LaTeX
-	{
-		"key": "ctrl+alt+b",
-		"command": "latex-workshop.build",
-		"when": "resourceLangId == latex"
-	},
-	{
-		"key": "ctrl+alt+c",
-		"command": "latex-workshop.clean",
-		"when": "resourceLangId == latex"
-	},
-	{
-		"key": "ctrl+alt+s",
-		"command": "latex-workshop.synctex",
-		"when": "resourceLangId == latex"
-	},
-	// Linux and Windows Compatibility
-	{
-		"key": "ctrl+[BracketLeft]", // ctrl+@
-		"command": "workbench.action.terminal.toggleTerminal"
-	},
-	{
-		"key": "ctrl+shift+[BracketLeft]", // ctrl+shift+@
-		"command": "-workbench.action.terminal.toggleTerminal"
-	},
-	{
-		"key": "ctrl+shift+[BracketLeft]", // ctrl+shift+@
-		"command": "workbench.action.terminal.new"
-	},
-	{
-		"key": "ctrl+shift+[Equal]", // ctrl+shift+^
-		"command": "-workbench.action.terminal.new"
-	},
-	{
-		"key": "ctrl+shift+[Semicolon]",
-		"command": "-workbench.action.zoomIn"
-	},
-	{
-		"key": "ctrl+[Equal]", // ctrl+^
-		"command": "workbench.action.zoomIn"
-	},
-	// markdown
-	{
-		"key": "ctrl+alt+b",
-		"command": "markdown.extension.printToHtml",
-		"when": "!notebookEditorFocused && editorLangId == 'markdown'"
-	},
-	{
-		"key": "ctrl+alt+v",
-		"command": "markdown.showPreviewToSide",
-		"when": "!notebookEditorFocused && editorLangId == 'markdown'"
-	},
-	// replace
-	{
-		"key": "ctrl+g",
-		"command": "editor.action.startFindReplaceAction"
-	},
-	{
-		"key": "ctrl+h",
-		"command": "-editor.action.startFindReplaceAction"
-	},
-	// ctrl+; terminal <-> editor
-	{
-		"key": "ctrl+e",
-		"command": "-workbench.action.quickOpen"
-	},
-	{
-		"key": "ctrl+j",
-		"command": "-workbench.action.togglePanel"
-	},
-	// tab move
-	{
-		"key": "ctrl+tab",
-		"command": "workbench.action.nextEditor"
-	},
-	{
-		"key": "ctrl+shift+tab",
-		"command": "workbench.action.previousEditor"
-	},
-	// panel size toggle
-	{
-		"key": "ctrl+t",
-		"command": "workbench.action.toggleMaximizedPanel"
-	},
-	// navigate forward / back
-	{
-		"key": "alt+left",
-		"command": "workbench.action.navigateBack"
-	},
-	{
-		"key": "alt+right",
-		"command": "workbench.action.navigateForward"
-	},
+    // Code Format
+    {
+        "key": "ctrl+alt+f",
+        "command": "editor.action.formatDocument",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    // Git Graph
+    {
+        "key": "ctrl+alt+g",
+        "command": "git-graph.view"
+    },
+    // toggle sidebar visibility
+    {
+        "key": "ctrl+b",
+        "command": "-workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "ctrl+[IntlRo]", // ctrl+\
+        "command": "workbench.action.toggleSidebarVisibility"
+    },
+    // Ctrl+Shift+P クイックメニューの上下移動
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.quickOpenSelectNext",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.quickOpenSelectPrevious",
+        "when": "inQuickOpen"
+    },
+    // PlatformIO
+    {
+        "key": "ctrl+alt+b",
+        "command": "platformio-ide.build",
+    },
+    // LaTeX
+    {
+        "key": "ctrl+alt+b",
+        "command": "latex-workshop.build",
+        "when": "resourceLangId == latex"
+    },
+    {
+        "key": "ctrl+alt+c",
+        "command": "latex-workshop.clean",
+        "when": "resourceLangId == latex"
+    },
+    {
+        "key": "ctrl+alt+s",
+        "command": "latex-workshop.synctex",
+        "when": "resourceLangId == latex"
+    },
+    // Linux and Windows Compatibility
+    {
+        "key": "ctrl+[BracketLeft]", // ctrl+@
+        "command": "workbench.action.terminal.toggleTerminal"
+    },
+    {
+        "key": "ctrl+shift+[BracketLeft]", // ctrl+shift+@
+        "command": "-workbench.action.terminal.toggleTerminal"
+    },
+    {
+        "key": "ctrl+shift+[BracketLeft]", // ctrl+shift+@
+        "command": "workbench.action.terminal.new"
+    },
+    {
+        "key": "ctrl+shift+[Equal]", // ctrl+shift+^
+        "command": "-workbench.action.terminal.new"
+    },
+    {
+        "key": "ctrl+shift+[Semicolon]",
+        "command": "-workbench.action.zoomIn"
+    },
+    {
+        "key": "ctrl+[Equal]", // ctrl+^
+        "command": "workbench.action.zoomIn"
+    },
+    // markdown
+    {
+        "key": "ctrl+alt+b",
+        "command": "markdown.extension.printToHtml",
+        "when": "!notebookEditorFocused && editorLangId == 'markdown'"
+    },
+    {
+        "key": "ctrl+alt+v",
+        "command": "markdown.showPreviewToSide",
+        "when": "!notebookEditorFocused && editorLangId == 'markdown'"
+    },
+    // replace
+    {
+        "key": "ctrl+g",
+        "command": "editor.action.startFindReplaceAction"
+    },
+    {
+        "key": "ctrl+h",
+        "command": "-editor.action.startFindReplaceAction"
+    },
+    // ctrl+; terminal <-> editor
+    {
+        "key": "ctrl+e",
+        "command": "-workbench.action.quickOpen"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "-workbench.action.togglePanel"
+    },
+    // tab move
+    {
+        "key": "ctrl+tab",
+        "command": "workbench.action.nextEditor"
+    },
+    {
+        "key": "ctrl+shift+tab",
+        "command": "workbench.action.previousEditor"
+    },
+    // panel size toggle
+    {
+        "key": "ctrl+t",
+        "command": "workbench.action.toggleMaximizedPanel"
+    },
+    // navigate forward / back
+    {
+        "key": "alt+left",
+        "command": "workbench.action.navigateBack"
+    },
+    {
+        "key": "alt+right",
+        "command": "workbench.action.navigateForward"
+    },
+    // Copy File Path
+    {
+        "key": "alt+c",
+        "command": "copyFilePath",
+        "when": "editorFocus"
+    },
+    {
+        "key": "shift+alt+c",
+        "command": "copyRelativeFilePath",
+        "when": "editorFocus"
+    },
 ]
