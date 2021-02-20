@@ -14,7 +14,7 @@ while :; do
 done &
 infiloop=$!
 
-# dump gsettings command:
+## dump gsettings command:
 # gsettings list-recursively > /tmp/prev
 # gsettings list-recursively > /tmp/post
 
@@ -44,21 +44,15 @@ gsettings set org.nemo.preferences default-folder-viewer 'list-view'
 gsettings set org.nemo.window-state start-with-menu-bar false
 ## tool bar
 gsettings set org.nemo.preferences show-compact-view-icon-toolbar true
-gsettings set org.nemo.preferences show-open-in-terminal-toolbar true
+gsettings set org.nemo.preferences show-computer-icon-toolbar true
+gsettings set org.nemo.preferences show-edit-icon-toolbar true
 gsettings set org.nemo.preferences show-home-icon-toolbar true
 gsettings set org.nemo.preferences show-new-folder-icon-toolbar true
-gsettings set org.nemo.preferences show-edit-icon-toolbar true
-gsettings set org.nemo.preferences show-computer-icon-toolbar true
+gsettings set org.nemo.preferences show-open-in-terminal-toolbar true
 echo "OK nemo"
 
 ## Package Source Repository
 sudo cp $HOME/.dotfiles/tools/manjaro/mirrorlist /etc/pacman.d/mirrorlist
-read -p "update pacman mirrors? [y/N] :" YN
-case "$YN" in "Y" | "y")
-    sudo pacman-mirrors --fasttrack && sudo pacman -Syy
-    echo "OK pacman mirrors"
-    ;;
-esac
 
 ## Packages
 sudo pacman -Syuu --noconfirm --needed --quiet
