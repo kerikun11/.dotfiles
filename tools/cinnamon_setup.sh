@@ -2,16 +2,23 @@
 
 ## command to find settings: gsettings list-recursively
 
+## find settings with GUI:
+## gsettings list-recursively > /tmp/prev
+## (change settings with GUI)
+## gsettings list-recursively > /tmp/post
+## diff /tmp/prev /tmp/post
+
 ## Cinnamon
 gsettings set org.cinnamon.desktop.screensaver lock-enabled false
-gsettings set org.cinnamon.muffin placement-mode 'pointer' # new window placement
+gsettings set org.cinnamon.desktop.wm.preferences mouse-button-modifier '<Super>' # windows move key
+gsettings set org.cinnamon.muffin placement-mode 'pointer'                        # new window placement
 gsettings set org.cinnamon.settings-daemon.peripherals.touchpad horizontal-scrolling true
 gsettings set org.cinnamon.settings-daemon.plugins.power idle-brightness 5
-gsettings set org.cinnamon.settings-daemon.plugins.power idle-dim-time 30
+gsettings set org.cinnamon.settings-daemon.plugins.power idle-dim-time 60
 gsettings set org.cinnamon.settings-daemon.plugins.power lid-close-ac-action 'nothing'
 gsettings set org.cinnamon.settings-daemon.plugins.power lid-close-battery-action 'nothing'
-gsettings set org.cinnamon.settings-daemon.plugins.power sleep-display-ac 3600               # diplay off
-gsettings set org.cinnamon.settings-daemon.plugins.power sleep-display-battery 3600          # diplay off
+gsettings set org.cinnamon.settings-daemon.plugins.power sleep-display-ac 3600               # display off
+gsettings set org.cinnamon.settings-daemon.plugins.power sleep-display-battery 3600          # display off
 gsettings set org.cinnamon.settings-daemon.plugins.power sleep-inactive-battery-timeout 3600 # sleep PC
 gsettings set org.cinnamon.settings-daemon.plugins.xsettings buttons-have-icons true         # theme -> misc
 gsettings set org.cinnamon.settings-daemon.plugins.xsettings menus-have-icons true           # theme -> misc
@@ -28,5 +35,4 @@ gsettings set org.nemo.preferences show-edit-icon-toolbar true
 gsettings set org.nemo.preferences show-home-icon-toolbar true
 gsettings set org.nemo.preferences show-new-folder-icon-toolbar true
 gsettings set org.nemo.preferences show-open-in-terminal-toolbar true
-gsettings set org.nemo.preferences show-reload-icon-toolbar true
 echo "OK nemo"

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 IFS=$'\n'
 echo -n "$*" | xclip -sel clipboard

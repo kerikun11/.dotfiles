@@ -8,48 +8,20 @@ set -u # unused variable error
 LANG=C xdg-user-dirs-gtk-update
 
 ## avoid sudo timeout
+sudo -v
 while :; do
     sudo -v
     sleep 59
 done &
 infiloop=$!
 
-## dump gsettings command:
-# gsettings list-recursively > /tmp/prev
-# gsettings list-recursively > /tmp/post
-
 ## Caps -> Ctrl
 gsettings set org.gnome.libgnomekbd.keyboard options "['ctrl\tctrl:nocaps']"
 echo "OK Caps -> Ctrl"
 
 ## Cinnamon
-gsettings set org.cinnamon.desktop.screensaver lock-enabled false
-gsettings set org.cinnamon.desktop.wm.preferences mouse-button-modifier '<Super>' # windows move key
-gsettings set org.cinnamon.muffin placement-mode 'pointer'                        # new window placement
-gsettings set org.cinnamon.settings-daemon.peripherals.touchpad horizontal-scrolling true
-gsettings set org.cinnamon.settings-daemon.plugins.power idle-brightness 5
-gsettings set org.cinnamon.settings-daemon.plugins.power idle-dim-time 60
-gsettings set org.cinnamon.settings-daemon.plugins.power lid-close-ac-action 'nothing'
-gsettings set org.cinnamon.settings-daemon.plugins.power lid-close-battery-action 'nothing'
-gsettings set org.cinnamon.settings-daemon.plugins.power sleep-display-ac 3600               # display off
-gsettings set org.cinnamon.settings-daemon.plugins.power sleep-display-battery 3600          # display off
-gsettings set org.cinnamon.settings-daemon.plugins.power sleep-inactive-battery-timeout 3600 # sleep PC
-gsettings set org.cinnamon.settings-daemon.plugins.xsettings buttons-have-icons true         # theme -> misc
-gsettings set org.cinnamon.settings-daemon.plugins.xsettings menus-have-icons true           # theme -> misc
-echo "OK Cinnamon"
-
-## Nemo
-gsettings set org.nemo.desktop show-desktop-icons false
-gsettings set org.nemo.preferences default-folder-viewer 'list-view'
-gsettings set org.nemo.window-state start-with-menu-bar false
-## tool bar
-gsettings set org.nemo.preferences show-compact-view-icon-toolbar true
-gsettings set org.nemo.preferences show-computer-icon-toolbar true
-gsettings set org.nemo.preferences show-edit-icon-toolbar true
-gsettings set org.nemo.preferences show-home-icon-toolbar true
-gsettings set org.nemo.preferences show-new-folder-icon-toolbar true
-gsettings set org.nemo.preferences show-open-in-terminal-toolbar true
-echo "OK nemo"
+$HOME/.dotfiles/tools/cinnamon_setup.sh
+echo "OK Cinnamon Settings"
 
 ## Package Source Repository
 sudo cp $HOME/.dotfiles/tools/manjaro/mirrorlist /etc/pacman.d/mirrorlist

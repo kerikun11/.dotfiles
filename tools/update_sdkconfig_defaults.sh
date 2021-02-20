@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # A script that updates sdkconfig.defaults
 # to be the smallest in the current ESP-IDF version.
 
