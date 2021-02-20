@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 ##============================================================================##
 ## description  UNIX configuration files installer
 ## author       kerikun11
@@ -28,23 +28,22 @@ echo '                                      '
 
 ##============================================================================##
 ## required commands install
-REQUIRED_COMMANDS="curl zsh git"
+REQUIRED_COMMANDS="curl git zsh"
 if ! type $REQUIRED_COMMANDS >/dev/null 2>&1; then
-    ## sudo detect
+    ## sudo detection
     type sudo >/dev/null 2>&1 && [ "$(whoami)" != "root" ] && SUDO="sudo" || SUDO=""
-    ## install according to the OS
-    if type apt >/dev/null 2>&1; then
+    ## install required packages using an existing package manager
+    if type apt >/dev/null 2>&1; then # ubuntu, debian
         $SUDO apt update
         $SUDO apt install -yq $REQUIRED_COMMANDS
-    elif type pacman >/dev/null 2>&1; then
-        $SUDO pacman -Sy --quiet
-        $SUDO pacman -S --quiet --noconfirm --needed $REQUIRED_COMMANDS
-    elif type apk >/dev/null 2>&1; then
+    elif type pacman >/dev/null 2>&1; then # arch, manjaro, MSYS2
+        $SUDO pacman -Sy --quiet --noconfirm --needed $REQUIRED_COMMANDS
+    elif type apk >/dev/null 2>&1; then # alpine
         $SUDO apk add $REQUIRED_COMMANDS
-    elif type yum >/dev/null 2>&1; then
+    elif type yum >/dev/null 2>&1; then # centos
         $SUDO yum install -yq $REQUIRED_COMMANDS
-    else
-        echo "NG $REQUIRED_COMMANDS"
+    else # can't detect package manager
+        echo "Error. install $REQUIRED_COMMANDS first!"
         exit -1
     fi
 fi
@@ -53,9 +52,7 @@ echo "OK $REQUIRED_COMMANDS"
 ##============================================================================##
 ## clone .dotfiles if it does not exist
 if [ -d $DOTFILES_DIR ]; then
-    pushd $DOTFILES_DIR >/dev/null
-    git pull
-    popd >/dev/null
+    git -C $DOTFILES_DIR pull
 else
     git clone $DOTFILES_REPOSITORY $DOTFILES_DIR
 fi
@@ -112,9 +109,9 @@ echo "OK Symbolic Links"
 ## delete personal information
 if [ $(whoami) != "$DEFAULT_USER" ]; then
     echo "  unset git user config"
-    git config --global --get user.name 2>&1 > /dev/null &&
+    git config --global --get user.name 2>&1 >/dev/null &&
         git config --global --unset user.name
-    git config --global --get user.email 2>&1 > /dev/null &&
+    git config --global --get user.email 2>&1 >/dev/null &&
         git config --global --unset user.email
 fi
 echo "OK .gitconfig"
@@ -133,3 +130,7 @@ fi
 ##============================================================================##
 ## ending
 echo "Everything has done. Enjoy!"
+
+##============================================================================##
+## start (or reload) zsh
+exec $(which zsh) -l
