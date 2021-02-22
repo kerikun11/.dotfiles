@@ -86,6 +86,7 @@ alias p="python"
 alias p2="python2"
 alias p3="python3"
 alias r="source $HOME/.zshrc"
+alias s="serve"
 alias zshrc="$EDITOR $HOME/.zshrc"
 alias zshenv="$EDITOR $HOME/.zshenv"
 alias open="open_command" # call oh-my-zsh function
@@ -145,6 +146,9 @@ function gclc() {
   # git clone code, $1: URL, $2: path
   git clone --recursive $1 $2 && code ${2:-${$(basename $1)%.git}} \
     && exit 0
+}
+function local_ip(){
+  echo $(ip route get 8.8.8.8 | sed -n '/src/{s/.*src *\([^ ]*\).*/\1/p;q}')
 }
 ##============================================================================##
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.

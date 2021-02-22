@@ -211,4 +211,5 @@
         "ylim",
         "yticks"
     ],
+    "pasteImage.defaultName": "${currentFileName}-Y-MM-DD-HH-mm-ss",
 }
