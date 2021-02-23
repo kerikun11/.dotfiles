@@ -97,10 +97,9 @@ alias serve="python3 -m http.server"
 alias dcs="docker-compose"
 
 # command replace
-type trash-put  &>/dev/null && alias rm=trash-put
 type bat        &>/dev/null && alias cat=bat
-type batcat     &>/dev/null && alias cat=batcat
 type exa        &>/dev/null && alias ls=exa && alias la="ls -lah"
+type trash-put  &>/dev/null && alias rm=trash-put
 
 # date string
 alias datestr="date +%Y%m%d"
@@ -147,7 +146,7 @@ function gclc() {
   git clone --recursive $1 $2 && code ${2:-${$(basename $1)%.git}} \
     && exit 0
 }
-function local_ip(){
+function local_ip() {
   echo $(ip route get 8.8.8.8 | sed -n '/src/{s/.*src *\([^ ]*\).*/\1/p;q}')
 }
 ##============================================================================##
