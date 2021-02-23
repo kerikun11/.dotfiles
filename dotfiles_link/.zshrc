@@ -92,7 +92,6 @@ alias zshenv="$EDITOR $HOME/.zshenv"
 alias open="open_command" # call oh-my-zsh function
 alias make="make -j$(nproc) --quiet"
 alias takebuild="take build" # call oh-my-zsh function
-alias copy="clipcopy"
 alias serve="python3 -m http.server"
 alias dcs="docker-compose"
 
@@ -100,6 +99,17 @@ alias dcs="docker-compose"
 type bat        &>/dev/null && alias cat=bat
 type exa        &>/dev/null && alias ls=exa && alias la="ls -lah"
 type trash-put  &>/dev/null && alias rm=trash-put
+
+# global aliases
+alias -g A='| awk'
+alias -g C='| clipcopy'
+alias -g W='| wc -l'
+alias -g G='| grep'
+alias -g H='| head'
+alias -g T='| tail'
+alias -g L='| less -R'
+alias -g X='| xargs'
+alias -g E='2>&1 | tee -a'
 
 # date string
 alias datestr="date +%Y%m%d"
