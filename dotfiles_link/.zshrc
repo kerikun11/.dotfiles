@@ -160,14 +160,16 @@ function gclc() {
 function local_ip() {
   echo $(ip route get 8.8.8.8 | sed -n '/src/{s/.*src *\([^ ]*\).*/\1/p;q}')
 }
-function diffdt() {
+function datetimediff() {
   echo start time:
   read ts
   echo end time:
   read te
+  ts=$(date -d "${ts:0:19}" +%s)
+  te=$(date -d "${te:0:19}" +%s)
   echo ""
-  echo "$(date --utc +%s -d @$(($(date -d "${te:0:19}" +%s) - $(date -d "${ts:0:19}" +%s)))) [s]"
-  echo "$(date --utc +"%H:%M:%S" -d @$(($(date -d "${te:0:19}" +%s) - $(date -d "${ts:0:19}" +%s))))"
+  echo "$((te - ts)) [s]"
+  echo "$(((te - ts)/3600)):$(date --utc +"%M:%S" -d @$(($te - $ts)))"
 }
 ##============================================================================##
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
