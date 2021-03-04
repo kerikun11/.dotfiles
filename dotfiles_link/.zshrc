@@ -75,7 +75,7 @@ bindkey '^q' show_buffer_stack
 # zsh opts
 # setopt nonomatch # Execute command even if no match with glob
 ##============================================================================##
-# custom alias
+# custom aliases
 alias c="code"
 alias e="echo"
 alias g="git"
@@ -94,6 +94,7 @@ alias make="make -j$(nproc) --quiet"
 alias takebuild="take build" # call oh-my-zsh function
 alias serve="python3 -m http.server"
 alias dcs="docker-compose"
+alias od_ascii="od -tx1z -Ax"
 
 # command replace
 type bat        &>/dev/null && alias cat=bat
@@ -158,6 +159,15 @@ function gclc() {
 }
 function local_ip() {
   echo $(ip route get 8.8.8.8 | sed -n '/src/{s/.*src *\([^ ]*\).*/\1/p;q}')
+}
+function diffdt() {
+  echo start time:
+  read ts
+  echo end time:
+  read te
+  echo ""
+  echo "$(date --utc +%s -d @$(($(date -d "${te:0:19}" +%s) - $(date -d "${ts:0:19}" +%s)))) [s]"
+  echo "$(date --utc +"%H:%M:%S" -d @$(($(date -d "${te:0:19}" +%s) - $(date -d "${ts:0:19}" +%s))))"
 }
 ##============================================================================##
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
