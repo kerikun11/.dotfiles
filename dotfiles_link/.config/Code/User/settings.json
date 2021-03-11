@@ -14,6 +14,7 @@
         "SHELL": "/usr/bin/zsh"
     },
     "terminal.integrated.copyOnSelection": true,
+    "terminal.integrated.scrollback": 20000,
     // Settings
     "glassit.alpha": 220,
     "diffEditor.ignoreTrimWhitespace": false,
@@ -189,9 +190,11 @@
         "pacman",
         "plantuml",
         "platformio",
+        "pointcloud",
         "printk",
         "println",
         "pyplot",
+        "quadtree",
         "ssid",
         "strftime",
         "struct",
@@ -200,6 +203,7 @@
         "tensorflow",
         "toolchain",
         "tparam",
+        "undistortion",
         "uniquify",
         "vstack",
         "wifi",
@@ -213,4 +217,10 @@
         "yticks"
     ],
     "pasteImage.defaultName": "${currentFileName}-Y-MM-DD-HH-mm-ss",
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
 }

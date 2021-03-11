@@ -171,6 +171,9 @@ function datetimediff() {
   echo "$((te - ts)) [s]"
   echo "$(((te - ts)/3600)):$(date --utc +"%M:%S" -d @$(($te - $ts)))"
 }
+function kerislabd() {
+  printf 'curl -fsSL kerislab.jp/d | sh && zsh' | clipcopy
+}
 ##============================================================================##
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

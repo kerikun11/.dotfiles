@@ -15,6 +15,9 @@ while :; do
 done &
 infiloop=$!
 
+## NTP
+sudo timedatectl set-ntp true
+
 ## Caps -> Ctrl
 gsettings set org.gnome.libgnomekbd.keyboard options "['ctrl\tctrl:nocaps']"
 echo "OK Caps -> Ctrl"
