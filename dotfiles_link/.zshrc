@@ -118,7 +118,7 @@ alias datetimestr="date +%Y%m%d-%H%M%S"
 
 # long command alias
 alias upgradeall="sudo apt update && sudo apt upgrade -y && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo apt autoclean"
-alias sp2ub='find . -name "* *" | rename "s/ /_/g"'
+alias sp2ub='find . -name "* *" | rename -v "s/ /_/g"'
 
 # esp-idf alias
 alias idf_='export IDF_PATH=/usr/local/Espressif/esp-idf    && . $IDF_PATH/export.sh'
