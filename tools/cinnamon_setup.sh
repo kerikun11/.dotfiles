@@ -10,6 +10,7 @@
 
 ## Cinnamon
 gsettings set org.cinnamon.desktop.screensaver lock-enabled false
+gsettings set org.cinnamon.desktop.wm.preferences action-scroll-titlebar 'opacity'
 gsettings set org.cinnamon.desktop.wm.preferences mouse-button-modifier '<Super>' # windows move key
 gsettings set org.cinnamon.muffin placement-mode 'pointer'                        # new window placement
 gsettings set org.cinnamon.settings-daemon.peripherals.touchpad horizontal-scrolling true

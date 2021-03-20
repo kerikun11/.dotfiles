@@ -19,6 +19,8 @@ infiloop=$!
 sudo timedatectl set-ntp true
 
 ## Caps -> Ctrl
+gsettings set org.gnome.libgnomekbd.keyboard model pc105
+gsettings set org.gnome.libgnomekbd.keyboard layouts "['jp']"
 gsettings set org.gnome.libgnomekbd.keyboard options "['ctrl\tctrl:nocaps']"
 echo "OK Caps -> Ctrl"
 
