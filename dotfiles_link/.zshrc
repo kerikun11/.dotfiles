@@ -93,7 +93,8 @@ alias open="open_command" # call oh-my-zsh function
 alias make="make -j$(nproc) --quiet"
 alias takebuild="take build" # call oh-my-zsh function
 alias serve="python3 -m http.server"
-alias dcs="docker-compose"
+alias dr="docker"
+alias dr-cs="docker-compose"
 alias od_ascii="od -tx1z -Ax"
 
 # command replace
