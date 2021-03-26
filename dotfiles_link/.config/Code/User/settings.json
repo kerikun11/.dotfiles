@@ -118,6 +118,7 @@
     ],
     "cSpell.userWords": [
         "AEBS",
+        "ARCHS",
         "CMAKE",
         "COLMAP",
         "EEPROM",
@@ -211,6 +212,7 @@
         "pyplot",
         "quadtree",
         "raspberrypi",
+        "reconstructor",
         "ssid",
         "strftime",
         "struct",
@@ -239,4 +241,7 @@
             "filenamePattern": "*.ipynb"
         }
     ],
+    "[dockerfile]": {
+        "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+    },
 }
