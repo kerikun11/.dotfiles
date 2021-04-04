@@ -23,6 +23,7 @@ plugins=(
   fast-syntax-highlighting
   git
   pip
+  # zsh-vi-mode
 )
 # to reflect oh-my-zsh configurations
 source $ZSH/oh-my-zsh.sh
@@ -76,42 +77,46 @@ bindkey '^q' show_buffer_stack
 # setopt nonomatch # Execute command even if no match with glob
 ##============================================================================##
 # custom aliases
+alias od_ascii="od -tx1z -Ax"
+alias serve="python3 -m http.server"
+alias takebuild="take build" # call oh-my-zsh function
+alias zshenv="$EDITOR $HOME/.zshenv"
+alias zshrc="$EDITOR $HOME/.zshrc"
+# initial aliases
 alias c="code"
+alias dr-cs="docker-compose"
+alias dr="docker"
 alias e="echo"
 alias g="git"
+alias kd="echo -n 'source <(curl -fsSL kerislab.jp/d)' | clipcopy"
+alias la="ls -lha"
+alias ll="ls -lh"
 alias m="make"
-alias o="open"
 alias n="ninja"
+alias o="open"
 alias p="python"
 alias p2="python2"
 alias p3="python3"
-alias r="source $HOME/.zshrc"
+alias r="source $HOME/.zshrc" # reload
 alias s="serve"
-alias zshrc="$EDITOR $HOME/.zshrc"
-alias zshenv="$EDITOR $HOME/.zshenv"
-alias open="open_command" # call oh-my-zsh function
-alias make="make -j$(nproc)"
-alias takebuild="take build" # call oh-my-zsh function
-alias serve="python3 -m http.server"
-alias dr="docker"
-alias dr-cs="docker-compose"
-alias od_ascii="od -tx1z -Ax"
+alias tb="take build" # call oh-my-zsh function
 
 # command replace
+alias make="make -j$(nproc)"
+alias open="open_command" # call oh-my-zsh function
 type bat        &>/dev/null && alias cat=bat
 type exa        &>/dev/null && alias ls=exa && alias la="ls -lah"
 type trash-put  &>/dev/null && alias rm=trash-put
 
 # global aliases
-alias -g A='| awk'
-alias -g C='| clipcopy'
-alias -g W='| wc -l'
+alias -g A='2>&1 | tee -a'
+alias -g C='| clipcopy' # call oh-my-zsh function
 alias -g G='| grep'
 alias -g H='| head'
-alias -g T='| tail'
 alias -g L='| less -R'
+alias -g T='| tail'
+alias -g W='| wc -l'
 alias -g X='| xargs'
-alias -g E='2>&1 | tee -a'
 
 # date string
 alias datestr="date +%Y%m%d"
@@ -171,9 +176,6 @@ function datetimediff() {
   echo ""
   echo "$((te - ts)) [s]"
   echo "$(((te - ts)/3600)):$(date --utc +"%M:%S" -d @$(($te - $ts)))"
-}
-function kerislabd() {
-  printf 'curl -fsSL kerislab.jp/d | sh && zsh' | clipcopy
 }
 ##============================================================================##
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.

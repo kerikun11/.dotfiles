@@ -11,7 +11,6 @@ set -e # first error to exit
 # .dotfiles
 DOTFILES_REPOSITORY="https://github.com/kerikun11/.dotfiles.git"
 DOTFILES_DIR="$HOME/.dotfiles"
-DOTFILES_LINK_DIR="$DOTFILES_DIR/dotfiles_link"
 # Oh My Zsh
 OHMYZSH_DIR="$HOME/.oh-my-zsh"
 # my user name
@@ -79,23 +78,33 @@ echo "OK zsh Powerlevel10k theme"
 
 ## Fast Syntax Highlighting (F-Sy-H)
 ## see https://github.com/zdharma/fast-syntax-highlighting
-ZSH_CUSTOM=$OHMYZSH_DIR/custom
-ZSH_SYNTAX_HIGHLIGHTING=$ZSH_CUSTOM/plugins/fast-syntax-highlighting
+ZSH_SYNTAX_HIGHLIGHTING=$OHMYZSH_DIR/custom/plugins/fast-syntax-highlighting
 if [ ! -d $ZSH_SYNTAX_HIGHLIGHTING ]; then
-    echo 'installing zsh syntax highlighting'
     git clone https://github.com/zdharma/fast-syntax-highlighting \
         $ZSH_SYNTAX_HIGHLIGHTING
+else
+    git -C $ZSH_SYNTAX_HIGHLIGHTING pull
 fi
 echo "OK zsh syntax highlighting"
 
+## zsh-vi-mode plugin
+ZSH_VI_MODE_DIR=$OHMYZSH_DIR/custom/plugins/zsh-vi-mode
+if [ ! -d $ZSH_VI_MODE_DIR ]; then
+    git clone https://github.com/jeffreytse/zsh-vi-mode.git $ZSH_VI_MODE_DIR
+else
+    git -C $ZSH_VI_MODE_DIR pull
+fi
+echo "OK zsh vi mode"
+
 ##============================================================================##
 ## link .dotfiles
+DOTFILES_LINK_DIR="$DOTFILES_DIR/dotfiles_link"
 dotfiles_link=$(find $DOTFILES_LINK_DIR -type f)
 for link_target in $dotfiles_link; do
     # make link_name
     file=${link_target#$DOTFILES_LINK_DIR/} # remove first path
     link_name="$HOME/$file"
-    echo "  $file"
+    echo "link: $file"
     # If there is a file that is not a symbolic link, back it up.
     if [ -f $link_name ] && [ ! -L $link_name ]; then
         echo "  $file -> $file.backup"
@@ -120,7 +129,8 @@ echo "OK .gitconfig"
 
 ##============================================================================##
 ## change default shell to zsh
-if [ $(grep $(whoami) </etc/passwd | cut -f 7 -d ":") != $(which zsh) ]; then
+if [ -f /etc/passwd ] &&
+    [ $(grep $(whoami) </etc/passwd | cut -f 7 -d ":") != $(which zsh) ]; then
     read -p "Do you want to change default shell to zsh? [Y/n] :" YN
     case "$YN" in "Y" | "y" | "")
         chsh -s $(which zsh)
