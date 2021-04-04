@@ -32,9 +32,9 @@ if ! type $REQUIRED_COMMANDS >/dev/null 2>&1; then
     ## sudo detection
     type sudo >/dev/null 2>&1 && [ "$(whoami)" != "root" ] && SUDO="sudo" || SUDO=""
     ## install required packages using an existing package manager
-    if type apt >/dev/null 2>&1; then # ubuntu, debian
-        $SUDO apt update
-        $SUDO apt install -yq $REQUIRED_COMMANDS
+    if type apt-get >/dev/null 2>&1; then # ubuntu, debian
+        $SUDO apt-get update
+        $SUDO apt-get install -yq $REQUIRED_COMMANDS
     elif type pacman >/dev/null 2>&1; then # arch, manjaro, MSYS2
         $SUDO pacman -Sy --quiet --noconfirm --needed $REQUIRED_COMMANDS
     elif type apk >/dev/null 2>&1; then # alpine
