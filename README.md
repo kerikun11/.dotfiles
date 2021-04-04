@@ -11,21 +11,25 @@ My Configuration Files for UNIX Systems
                                       
 ```
 
-## install .dotfiles
+## Install .dotfiles
 
 ```sh
-# install requirements
-REQUIREMENTS="curl git zsh"
-type sudo   2>/dev/null && test "$(whoami)" != "root" && SUDO="sudo" || SUDO=""
-type apt    2>/dev/null && $SUDO apt update -q && $SUDO apt install -yq $REQUIREMENTS
-type pacman 2>/dev/null && $SUDO pacman -Sy -q --noconfirm --needed $REQUIREMENTS
-type apk    2>/dev/null && $SUDO apk add -q $REQUIREMENTS
-type yum    2>/dev/null && $SUDO yum install -yq $REQUIREMENTS
 # install dotfiles
 curl -fsSL https://raw.github.com/kerikun11/.dotfiles/master/install.sh | sh
 ```
 
-## useful commands
+```sh
+# install automatically
+REQUIREMENTS="curl git zsh"
+type sudo    2>/dev/null && test "$(whoami)" != "root" && SUDO="sudo" || SUDO=""
+type apt-get 2>/dev/null && $SUDO apt-get update -q && $SUDO apt-get install -yq $REQUIREMENTS
+type pacman  2>/dev/null && $SUDO pacman -Sy -q --noconfirm --needed $REQUIREMENTS
+type apk     2>/dev/null && $SUDO apk add -q $REQUIREMENTS
+type yum     2>/dev/null && $SUDO yum install -yq $REQUIREMENTS
+source <(curl -fsSL https://raw.github.com/kerikun11/.dotfiles/master/install.sh)
+```
+
+## Useful Commands
 
 ```sh
 # Ubuntu Mirror Lists
@@ -42,5 +46,24 @@ echo "$USER ALL=NOPASSWD: ALL" | sudo EDITOR='tee -a' visudo
 ```sh
 # MSYS2
 alias code="'/c/Users/kerikun11/AppData/Local/Programs/Microsoft VS Code/bin/code'"
-alias make="mingw32-make -j $(nproc) -s"
+alias make="mingw32-make -j $(nproc)"
+```
+
+## Dockerfile
+
+```dockerfile
+# base image
+FROM ubuntu
+# install packages
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    ca-certificates \
+    curl \
+    git \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+# personal shell settings
+RUN echo y | sh -c "$(curl -fsSL https://raw.github.com/kerikun11/.dotfiles/master/install.sh)"
+CMD [ "zsh" ]
 ```
