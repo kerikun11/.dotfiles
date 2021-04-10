@@ -39,6 +39,9 @@ cat /etc/apt/sources.list | sed -e '/^#/d' -e '/^$/d'
 sudo pacman-mirrors -c Japan
 # allow me to run sudo without password
 echo "$USER ALL=NOPASSWD: ALL" | sudo EDITOR='tee -a' visudo
+# Ubuntu Desktop
+gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps']"
+LANG=C xdg-user-dirs-gtk-update
 ```
 
 ## .zshenv
