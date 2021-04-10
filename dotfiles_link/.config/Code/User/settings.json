@@ -155,6 +155,7 @@
         "UART",
         "UNTRACKED",
         "WROOM",
+        "aarch",
         "accel",
         "affine",
         "alloc",
@@ -246,4 +247,5 @@
     "[dockerfile]": {
         "editor.defaultFormatter": "ms-azuretools.vscode-docker"
     },
+    "vsicons.dontShowNewVersionMessage": true,
 }
