@@ -177,6 +177,12 @@ function datetimediff() {
   echo "$((te - ts)) [s]"
   echo "$(((te - ts)/3600)):$(date --utc +"%M:%S" -d @$(($te - $ts)))"
 }
+function make_dockerfile_runnable() {
+  alias ARG="export"
+  alias ENV="export"
+  alias RUN=""
+  alias COPY="rsync -av"
+}
 ##============================================================================##
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
