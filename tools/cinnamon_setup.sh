@@ -37,3 +37,7 @@ gsettings set org.nemo.preferences show-home-icon-toolbar true
 gsettings set org.nemo.preferences show-new-folder-icon-toolbar true
 gsettings set org.nemo.preferences show-open-in-terminal-toolbar true
 echo "OK nemo"
+
+## GNOME Terminal
+gsettings set org.gnome.Terminal.Legacy.Settings default-show-menubar false
+echo "OK gnome terminal"
