@@ -82,10 +82,12 @@ alias serve="python3 -m http.server"
 alias takebuild="take build" # call oh-my-zsh function
 alias zshenv="$EDITOR $HOME/.zshenv"
 alias zshrc="$EDITOR $HOME/.zshrc"
+alias gsettings_list="gsettings list-recursively"
 # initial aliases
 alias c="code"
 alias dr-cs="docker-compose"
 alias dr="docker"
+alias dri="docker images"
 alias e="echo"
 alias g="git"
 alias kd="echo -n 'source <(curl -fsSL kerislab.jp/d)' | clipcopy"
