@@ -44,11 +44,5 @@ echo "OK Cinnamon"
 $HOME/.dotfiles/tools/install_vscode.sh
 echo "OK VSCode"
 
-## Inkscape
-sudo add-apt-repository -y ppa:inkscape.dev/stable
-sudo apt-get update
-sudo apt install -y inkscape
-echo "OK Inkscape"
-
 ## ending
 echo "Everything has done. Enjoy!"
