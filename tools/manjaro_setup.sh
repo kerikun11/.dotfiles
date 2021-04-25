@@ -41,7 +41,7 @@ $yay_install_cmd git zsh curl gvim
 $yay_install_cmd base-devel
 ## dev
 $yay_install_cmd gcc gcc-multilib gdb cmake valgrind kcachegrind
-$yay_install_cmd arduino visual-studio-code-bin inkscape
+$yay_install_cmd visual-studio-code-bin inkscape
 $yay_install_cmd kicad kicad-library kicad-library-3d
 $yay_install_cmd qtcreator qt5-base
 ## utility
@@ -53,14 +53,14 @@ $yay_install_cmd otf-ipafont ttf-ubuntu-font-family
 ## Google Chrome
 $yay_install_cmd google-chrome
 ## slack
-# $yay_install_cmd slack-desktop
+$yay_install_cmd slack-desktop
 ## Dropbox
-# $yay_install_cmd dropbox
-# $yay_install_cmd nemo-dropbox
+$yay_install_cmd dropbox
+$yay_install_cmd nemo-dropbox
 ## WPS Office
 # $yay_install_cmd wps-office
 ## Theme
-$yay_install_cmd mint-themes
+# $yay_install_cmd mint-themes
 $yay_install_cmd vimix-gtk-themes vimix-icon-theme
 echo "OK packages"
 
