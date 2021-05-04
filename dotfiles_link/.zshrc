@@ -185,6 +185,17 @@ function make_dockerfile_runnable() {
   alias RUN=""
   alias COPY="rsync -av"
 }
+function periodic_open() {
+  while true; do
+    open $@
+    seconds=$((30 * 60))
+    while [ $seconds -gt 0 ]; do
+      echo -ne "\t$seconds\033[0K\r"
+      sleep 1
+      : $((seconds--))
+    done
+  done
+}
 ##============================================================================##
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
