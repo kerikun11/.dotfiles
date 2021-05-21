@@ -21,3 +21,13 @@ function periodic_open($url) {
         Start-Sleep -s 10
     }
 }
+
+# switch to msys terminal
+function zsh() {
+    $env:MSYS="winsymlinks:nativestrict"
+    $env:CHERE_INVOKING=1
+    $env:MSYS2_PATH_TYPE="strict"
+    $env:MSYSTEM="MINGW64"
+    $env:SHELL="/usr/bin/zsh"
+    C:/msys64/usr/bin/zsh.exe --login
+}
