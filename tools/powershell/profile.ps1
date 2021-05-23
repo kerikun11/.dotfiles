@@ -8,6 +8,7 @@ Set-Alias o open
 Set-Alias p python
 Set-Alias e echo
 Set-Alias c code
+Set-Alias dr docker
 
 # open this file
 function profile.ps1() {
