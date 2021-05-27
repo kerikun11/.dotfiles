@@ -86,6 +86,7 @@ alias gsettings_list="gsettings list-recursively"
 # initial aliases
 alias c="code"
 alias dr="docker"
+alias drb="docker build"
 alias drcs="docker-compose"
 alias dri="docker images"
 alias drr="docker run --rm -it"
