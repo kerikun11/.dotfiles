@@ -88,13 +88,13 @@ fi
 echo "OK zsh syntax highlighting"
 
 ## zsh-vi-mode plugin
-ZSH_VI_MODE_DIR=$OHMYZSH_DIR/custom/plugins/zsh-vi-mode
-if [ ! -d $ZSH_VI_MODE_DIR ]; then
-    git clone https://github.com/jeffreytse/zsh-vi-mode.git $ZSH_VI_MODE_DIR
-else
-    git -C $ZSH_VI_MODE_DIR pull
-fi
-echo "OK zsh vi mode"
+# ZSH_VI_MODE_DIR=$OHMYZSH_DIR/custom/plugins/zsh-vi-mode
+# if [ ! -d $ZSH_VI_MODE_DIR ]; then
+#     git clone https://github.com/jeffreytse/zsh-vi-mode.git $ZSH_VI_MODE_DIR
+# else
+#     git -C $ZSH_VI_MODE_DIR pull
+# fi
+# echo "OK zsh vi mode"
 
 ##============================================================================##
 ## link .dotfiles
