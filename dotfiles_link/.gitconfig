@@ -7,12 +7,21 @@
 	symlinks = true
 [color]
 	ui = true
-[alias]
-	st = status
-	co = checkout
-	cm = commit
-	br = branch
-	rt = reset
-	lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
 [pull]
 	ff = only
+[alias]
+	b = branch
+	cm = commit
+	co = checkout
+	cp = cherry-pick
+	d = diff
+	dca = diff --cached
+	exec = !zsh -i -c "$@" $(which zsh)
+	lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+	rb = rebase
+	rbi = rebase -i
+	rst = reset
+	rsth = reset --hard
+	st = status
+	tags = tag --list
+	unstage = reset HEAD

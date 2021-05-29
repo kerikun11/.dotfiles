@@ -122,6 +122,7 @@
         "CMAKE",
         "COLMAP",
         "EEPROM",
+        "EVAL",
         "Elecrow",
         "Espressif",
         "Feedforward",

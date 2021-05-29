@@ -3,13 +3,6 @@
 ## author: Ryotaro Onuki <kerikun11+github@gmail.com>
 ## date:   2021.05.29
 ##============================================================================##
-## Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-# fi
-##============================================================================##
 ## Path to your oh-my-zsh installation. (required)
 export ZSH="$HOME/.oh-my-zsh"
 ## oh-my-zsh Theme, see https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
@@ -23,7 +16,8 @@ VI_MODE_RESET_PROMPT_ON_MODE_CHANGE="true"
 plugins=(
   docker
   docker-compose
-  fast-syntax-highlighting
+  extract
+  fast-syntax-highlighting # .oh-my-zsh/custom/plugins/fast-syntax-highlighting
   git
   pip
   vi-mode
@@ -97,6 +91,7 @@ alias zshrc="$EDITOR $HOME/.zshrc"
 alias gsettings_list="gsettings list-recursively"
 ## initial aliases
 alias c="code"
+alias cdg="cd $(git rev-parse --show-toplevel)"
 alias dr="docker"
 alias drb="docker build"
 alias drcs="docker-compose"
@@ -104,6 +99,7 @@ alias dri="docker images"
 alias drr="docker run --rm -it"
 alias e="echo"
 alias g="git"
+alias gst="git status"
 alias kd="echo -n 'source <(curl -fsSL kerislab.jp/d)' | clipcopy"
 alias la="ls -lha"
 alias ll="ls -lh"
@@ -113,7 +109,7 @@ alias o="open"
 alias p="python"
 alias p2="python2"
 alias p3="python3"
-alias r="source $HOME/.zshrc" # reload
+alias r="exec zsh" # reload
 alias s="serve"
 alias tb="take build" # call oh-my-zsh function
 
@@ -160,18 +156,17 @@ alias pdfnup2x4="pdfnup --batch --a4paper --nup 2x4 --scale 0.96 --no-landscape"
 ## Exiftool
 alias rmgeotag="exiftool -overwrite_original -geotag="
 
+## directory alias
+hash -d dot=~/.dotfiles
+
 ## functions
 function chpwd() { ls; }
-function svg2pdf() {
-  inkscape -D -z --file=$1 --export-pdf=${1%.*}.pdf
-}
-function permission_reset() {
+function svg2pdf() { inkscape -D -z --file=$1 --export-pdf=${1%.*}.pdf; }
+function permission-reset() {
   find $1 -type d -print | xargs chmod 755
   find $1 -type f -print | xargs chmod 644
 }
-function tree-git() {
-  git ls-tree -r --name-only HEAD $1 | tree --fromfile
-}
+function tree-git() { git ls-tree -r --name-only HEAD $1 | tree --fromfile; }
 function local-ip() {
   echo $(ip route get 8.8.8.8 | sed -n '/src/{s/.*src *\([^ ]*\).*/\1/p;q}')
 }
@@ -204,7 +199,4 @@ function periodic-open() {
     done
   done
 }
-##============================================================================##
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 ##============================================================================##
