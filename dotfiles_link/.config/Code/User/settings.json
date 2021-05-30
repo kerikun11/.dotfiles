@@ -283,4 +283,5 @@
     },
     "dailyNotes.filePath": "/home/kerikun11/Dropbox/Documents/daily-notes.md",
     "dailyNotes.dateFormat": "YYYY.MM.DD ddd",
+    "terminal.integrated.allowChords": false,
 }

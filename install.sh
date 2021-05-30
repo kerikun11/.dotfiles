@@ -59,33 +59,33 @@ echo "OK $DOTFILES_DIR"
 
 ##============================================================================##
 ## oh-my-zsh
-if [ ! -d $OHMYZSH_DIR ]; then
-    git clone https://github.com/ohmyzsh/ohmyzsh.git $OHMYZSH_DIR
-else
-    git -C $OHMYZSH_DIR pull
-fi
-echo "OK oh-my-zsh"
+# if [ ! -d $OHMYZSH_DIR ]; then
+#     git clone https://github.com/ohmyzsh/ohmyzsh.git $OHMYZSH_DIR
+# else
+#     git -C $OHMYZSH_DIR pull
+# fi
+# echo "OK oh-my-zsh"
 
 ## Zsh Powerlevel10k theme
 ## see https://github.com/romkatv/powerlevel10k#oh-my-zsh
-ZSH_THEME_P10K_DIR=$OHMYZSH_DIR/custom/themes/powerlevel10k
-if [ ! -d $ZSH_THEME_P10K_DIR ]; then
-    git clone https://github.com/romkatv/powerlevel10k.git $ZSH_THEME_P10K_DIR
-else
-    git -C $ZSH_THEME_P10K_DIR pull
-fi
-echo "OK zsh Powerlevel10k theme"
+# ZSH_THEME_P10K_DIR=$OHMYZSH_DIR/custom/themes/powerlevel10k
+# if [ ! -d $ZSH_THEME_P10K_DIR ]; then
+#     git clone https://github.com/romkatv/powerlevel10k.git $ZSH_THEME_P10K_DIR
+# else
+#     git -C $ZSH_THEME_P10K_DIR pull
+# fi
+# echo "OK zsh Powerlevel10k theme"
 
 ## Fast Syntax Highlighting (F-Sy-H)
 ## see https://github.com/zdharma/fast-syntax-highlighting
-ZSH_SYNTAX_HIGHLIGHTING=$OHMYZSH_DIR/custom/plugins/fast-syntax-highlighting
-if [ ! -d $ZSH_SYNTAX_HIGHLIGHTING ]; then
-    git clone https://github.com/zdharma/fast-syntax-highlighting \
-        $ZSH_SYNTAX_HIGHLIGHTING
-else
-    git -C $ZSH_SYNTAX_HIGHLIGHTING pull
-fi
-echo "OK zsh syntax highlighting"
+# ZSH_SYNTAX_HIGHLIGHTING=$OHMYZSH_DIR/custom/plugins/fast-syntax-highlighting
+# if [ ! -d $ZSH_SYNTAX_HIGHLIGHTING ]; then
+#     git clone https://github.com/zdharma/fast-syntax-highlighting \
+#         $ZSH_SYNTAX_HIGHLIGHTING
+# else
+#     git -C $ZSH_SYNTAX_HIGHLIGHTING pull
+# fi
+# echo "OK zsh fast syntax highlighting"
 
 ## zsh-vi-mode plugin
 # ZSH_VI_MODE_DIR=$OHMYZSH_DIR/custom/plugins/zsh-vi-mode
