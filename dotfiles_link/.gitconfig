@@ -11,17 +11,26 @@
 	ff = only
 [alias]
 	b = branch
+	br = branch --remotes
+	cfg = config
 	cm = commit
 	co = checkout
 	cp = cherry-pick
 	d = diff
+	dw = diff --word-diff
 	dca = diff --cached
+	dcaw = diff --cached --word-diff
 	exec = !zsh -i -c "$@" $(which zsh)
-	lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+	f = fetch
+	lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''           %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
+	lga = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''           %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
 	rb = rebase
+	rba = rebase --abort
+	rbc = rebase --continue
 	rbi = rebase -i
 	rst = reset
 	rsth = reset --hard
+	sw = switch
 	st = status
 	tags = tag --list
 	unstage = reset HEAD

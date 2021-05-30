@@ -6,7 +6,6 @@
 ## Path to your oh-my-zsh installation. (required)
 export ZSH="$HOME/.oh-my-zsh"
 ## oh-my-zsh Theme, see https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="powerlevel10k/powerlevel10k"
 ZSH_THEME="ys"
 ## to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -83,7 +82,7 @@ bindkey '^q' show_buffer_stack
 # setopt nonomatch # Execute command even if no match with glob
 ##============================================================================##
 ## custom aliases
-alias od_ascii="od -tx1z -Ax"
+alias od-ascii="od -tx1z -Ax"
 alias serve="python3 -m http.server"
 alias takebuild="take build" # call oh-my-zsh function
 alias zshenv="$EDITOR $HOME/.zshenv"
@@ -91,15 +90,14 @@ alias zshrc="$EDITOR $HOME/.zshrc"
 alias gsettings_list="gsettings list-recursively"
 ## initial aliases
 alias c="code"
-alias cdg="cd $(git rev-parse --show-toplevel)"
+alias cdg='cd $(git rev-parse --show-toplevel)'
 alias dr="docker"
 alias drb="docker build"
 alias drcs="docker-compose"
 alias dri="docker images"
 alias drr="docker run --rm -it"
 alias e="echo"
-alias g="git"
-alias gst="git status"
+alias gu='echo "$(git config --get user.name) <$(git config --get user.email)>"'
 alias kd="echo -n 'source <(curl -fsSL kerislab.jp/d)' | clipcopy"
 alias la="ls -lha"
 alias ll="ls -lh"
@@ -159,14 +157,15 @@ alias rmgeotag="exiftool -overwrite_original -geotag="
 ## directory alias
 hash -d dot=~/.dotfiles
 
+##============================================================================##
 ## functions
 function chpwd() { ls; }
+function tree-git() { git ls-tree -r --name-only HEAD $1 | tree --fromfile; }
 function svg2pdf() { inkscape -D -z --file=$1 --export-pdf=${1%.*}.pdf; }
 function permission-reset() {
   find $1 -type d -print | xargs chmod 755
   find $1 -type f -print | xargs chmod 644
 }
-function tree-git() { git ls-tree -r --name-only HEAD $1 | tree --fromfile; }
 function local-ip() {
   echo $(ip route get 8.8.8.8 | sed -n '/src/{s/.*src *\([^ ]*\).*/\1/p;q}')
 }
