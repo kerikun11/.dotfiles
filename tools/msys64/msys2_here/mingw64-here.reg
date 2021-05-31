@@ -3,5 +3,5 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Classes\Directory\Background\shell\MINGW64\command]
 @="C:\\msys64\\mingw64.exe zsh"
 [HKEY_CURRENT_USER\Software\Classes\Directory\Background\shell\MINGW64]
-@="MinGW64 here"
+@="MinGW64 Here"
 "icon"="C:\\msys64\\mingw64.exe"
