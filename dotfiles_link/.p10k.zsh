@@ -54,6 +54,7 @@
     dir                       # current directory
     vcs                       # git status
     command_execution_time    # previous command duration
+    # time                    # current time
     # =========================[ Line #2 ]=========================
     newline                   # \n
     virtualenv                # python virtual environment
@@ -66,9 +67,9 @@
     # command_execution_time  # previous command duration
     # virtualenv              # python virtual environment
     # context                 # user@host
-    time                      # current time
+    # time                    # current time
     # =========================[ Line #2 ]=========================
-    newline                   # \n
+    # newline                 # \n
   )
 
   # Basic style options that define the overall prompt look.
@@ -83,15 +84,20 @@
   typeset -g POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 
   # Magenta prompt symbol if the last command succeeded.
-  typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_{VIINS,VICMD,VIVIS}_FOREGROUND=$cyan
+  typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_{VIINS,VICMD,VIVIS}_FOREGROUND=$blue
   # Red prompt symbol if the last command failed.
   typeset -g POWERLEVEL9K_PROMPT_CHAR_ERROR_{VIINS,VICMD,VIVIS}_FOREGROUND=$red
+  # Yellow prompt symbol in command mode.
+  typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VICMD_FOREGROUND=$yellow
   # Default prompt symbol.
-  typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIINS_CONTENT_EXPANSION='❯'
+  # typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIINS_CONTENT_EXPANSION='❯'
+  typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIINS_CONTENT_EXPANSION='$'
   # Prompt symbol in command vi mode.
-  typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VICMD_CONTENT_EXPANSION='❮'
+  # typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VICMD_CONTENT_EXPANSION='❮'
+  typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VICMD_CONTENT_EXPANSION='$'
   # Prompt symbol in visual vi mode is the same as in command mode.
-  typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIVIS_CONTENT_EXPANSION='❮'
+  # typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIVIS_CONTENT_EXPANSION='❮'
+  typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIVIS_CONTENT_EXPANSION='$'
   # Prompt symbol in overwrite vi mode is the same as in command mode.
   typeset -g POWERLEVEL9K_PROMPT_CHAR_OVERWRITE_STATE=false
 
@@ -105,9 +111,9 @@
   typeset -g POWERLEVEL9K_DIR_FOREGROUND=$green
 
   # Context format when root: user@host. The first part white, the rest grey.
-  typeset -g POWERLEVEL9K_CONTEXT_ROOT_TEMPLATE="%F{$white}%n%f%F{$grey}@%m%f"
+  typeset -g POWERLEVEL9K_CONTEXT_ROOT_TEMPLATE="%F{$white}# %n%f%F{$grey}@%m%f"
   # Context format when not root: user@host. The whole thing grey.
-  typeset -g POWERLEVEL9K_CONTEXT_TEMPLATE="%F{$grey}%n@%m%f"
+  typeset -g POWERLEVEL9K_CONTEXT_TEMPLATE="%F{$grey}# %n@%m%f"
   # Don't show context unless root or in SSH.
   typeset -g POWERLEVEL9K_CONTEXT_{DEFAULT,SUDO}_CONTENT_EXPANSION=
 
