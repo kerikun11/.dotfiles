@@ -8,7 +8,7 @@ test ! -f $HOME/.zinit/bin/zinit.zsh &&
   sh -c "$(curl -fsSL https://raw.github.com/zdharma/zinit/master/doc/install.sh)"
 source "$HOME/.zinit/bin/zinit.zsh"
 autoload -Uz _zinit
-# (( ${+_comps} )) && _comps[zinit]=_zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
 ##============================================================================##
 zinit light mollifier/anyframe                     # https://github.com/mollifier/anyframe
 zinit light paulirish/git-open                     # https://github.com/paulirish/git-open
@@ -43,6 +43,7 @@ bindkey "^[[3~" delete-char # fix delete key
 bindkey '^z' undo           # undo
 bindkey '^y' redo           # redo
 bindkey "^o" copybuffer     # copy
+bindkey '^r' peco_select_history
 ## vi-mode
 KEYTIMEOUT=1 # shorten vi-mode switching delay
 ## pushd
@@ -58,14 +59,3 @@ source $HOME/.dotfiles/tools/zsh/sshcode.zsh
 source $HOME/.dotfiles/tools/zsh/extension.zsh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 ##============================================================================##
-function peco-src() {
-  local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
-  if [ -n "$selected_dir" ]; then
-    BUFFER="cd ${selected_dir}"
-    zle accept-line
-  fi
-  zle clear-screen
-}
-zle -N peco-src
-bindkey '^g' peco-src
-bindkey '^R' peco_select_history

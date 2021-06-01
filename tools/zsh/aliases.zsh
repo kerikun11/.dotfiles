@@ -1,4 +1,7 @@
 ##============================================================================##
+## author: Ryotaro Onuki <kerikun11+github@gmail.com>
+## date: 2021.06.01
+##============================================================================##
 ## custom aliases
 alias od-ascii="od -tx1z -Ax"
 alias serve="python3 -m http.server"
@@ -50,6 +53,7 @@ alias -g L='| less -R'
 alias -g T='| tail'
 alias -g W='| wc -l'
 alias -g X='| xargs'
+alias -g P='| peco'
 
 ## date string
 alias datestr="date +%Y%m%d"

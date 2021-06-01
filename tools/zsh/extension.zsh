@@ -27,3 +27,15 @@ function vi-yank-xclip() {
 zle -N vi-yank-xclip
 bindkey -M vicmd 'y' vi-yank-xclip
 ##============================================================================##
+## peco ghq
+function peco-src() {
+  local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
+  if [ -n "$selected_dir" ]; then
+    BUFFER="cd ${selected_dir}"
+    zle accept-line
+  fi
+  zle clear-screen
+}
+zle -N peco-src
+bindkey '^g' peco-src
+##============================================================================##
