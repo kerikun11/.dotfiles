@@ -54,6 +54,8 @@ cdpath=(~)
 autoload -Uz compinit
 compinit
 ##============================================================================##
+type vim &>/dev/null && export EDITOR='vim'
+type code &>/dev/null && export EDITOR='code'
 source $HOME/.dotfiles/tools/zsh/aliases.zsh
 source $HOME/.dotfiles/tools/zsh/sshcode.zsh
 source $HOME/.dotfiles/tools/zsh/extension.zsh
