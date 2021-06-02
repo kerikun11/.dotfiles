@@ -10,6 +10,7 @@ source "$HOME/.zinit/bin/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 ##============================================================================##
+zinit light jimeh/zsh-peco-history                 # https://github.com/jimeh/zsh-peco-history
 zinit light mollifier/anyframe                     # https://github.com/mollifier/anyframe
 zinit light paulirish/git-open                     # https://github.com/paulirish/git-open
 zinit light supercrabtree/k                        # https://github.com/supercrabtree/k
@@ -17,7 +18,6 @@ zinit light zdharma/fast-syntax-highlighting       # https://github.com/zdharma/
 zinit light zsh-users/zsh-autosuggestions          # https://github.com/zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions              # https://github.com/zsh-users/zsh-completions
 zinit light zsh-users/zsh-history-substring-search # https://github.com/zsh-users/zsh-history-substring-search
-zinit light jimeh/zsh-peco-history                 # https://github.com/jimeh/zsh-peco-history
 ##============================================================================##
 zinit ice depth=1
 zinit light romkatv/powerlevel10k # https://github.com/romkatv/powerlevel10k
