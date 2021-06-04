@@ -10,10 +10,8 @@ source "$HOME/.zinit/bin/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 ##============================================================================##
-zinit light jimeh/zsh-peco-history                 # https://github.com/jimeh/zsh-peco-history
 zinit light mollifier/anyframe                     # https://github.com/mollifier/anyframe
 zinit light paulirish/git-open                     # https://github.com/paulirish/git-open
-zinit light supercrabtree/k                        # https://github.com/supercrabtree/k
 zinit light zdharma/fast-syntax-highlighting       # https://github.com/zdharma/fast-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions          # https://github.com/zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions              # https://github.com/zsh-users/zsh-completions
@@ -43,7 +41,7 @@ bindkey "^[[3~" delete-char # fix delete key
 bindkey '^z' undo           # undo
 bindkey '^y' redo           # redo
 bindkey "^o" copybuffer     # copy
-bindkey '^r' peco_select_history
+bindkey '^r' anyframe-widget-put-history
 ## vi-mode
 KEYTIMEOUT=1 # shorten vi-mode switching delay
 ## pushd
