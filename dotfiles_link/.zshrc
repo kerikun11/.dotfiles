@@ -44,7 +44,8 @@ bindkey '^z' undo           # undo
 bindkey '^y' redo           # redo
 bindkey "^o" copybuffer     # copy
 bindkey '^r' anyframe-widget-put-history
-bindkey '^g' anyframe-widget-cd-ghq-repository
+type anyframe-widget-cd-ghq-repository &>/dev/null && 
+  bindkey '^g' anyframe-widget-cd-ghq-repository
 ## vi-mode
 KEYTIMEOUT=1 # shorten vi-mode switching delay
 ## pushd
