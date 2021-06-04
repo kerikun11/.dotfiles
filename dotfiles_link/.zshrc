@@ -17,6 +17,9 @@ zinit light zsh-users/zsh-autosuggestions          # https://github.com/zsh-user
 zinit light zsh-users/zsh-completions              # https://github.com/zsh-users/zsh-completions
 zinit light zsh-users/zsh-history-substring-search # https://github.com/zsh-users/zsh-history-substring-search
 ##============================================================================##
+zinit ice from"gh-r" as"program"
+zinit load junegunn/fzf-bin
+zstyle ":anyframe:selector:fzf:" command 'fzf --layout=reverse'
 zinit ice depth=1
 zinit light romkatv/powerlevel10k # https://github.com/romkatv/powerlevel10k
 ##============================================================================##
@@ -42,6 +45,7 @@ bindkey '^z' undo           # undo
 bindkey '^y' redo           # redo
 bindkey "^o" copybuffer     # copy
 bindkey '^r' anyframe-widget-put-history
+bindkey '^g' anyframe-widget-cd-ghq-repository
 ## vi-mode
 KEYTIMEOUT=1 # shorten vi-mode switching delay
 ## pushd
