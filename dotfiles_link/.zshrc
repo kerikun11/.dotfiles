@@ -34,7 +34,6 @@ zinit snippet OMZP::archlinux
 zinit snippet OMZP::copybuffer
 zinit snippet OMZP::extract
 zinit snippet OMZP::git
-zinit snippet OMZP::tmux
 zinit snippet OMZP::ubuntu
 zinit snippet OMZP::vi-mode
 ##============================================================================##
