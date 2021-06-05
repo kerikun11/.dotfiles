@@ -8,12 +8,8 @@ set -e # first error to exit
 
 ##============================================================================##
 ## definitions
-# .dotfiles
 DOTFILES_REPOSITORY="https://github.com/kerikun11/.dotfiles.git"
 DOTFILES_DIR="$HOME/.dotfiles"
-# Oh My Zsh
-OHMYZSH_DIR="$HOME/.oh-my-zsh"
-# my user name
 DEFAULT_USER="kerikun11"
 
 ##============================================================================##
@@ -33,8 +29,8 @@ if ! type $REQUIRED_COMMANDS >/dev/null 2>&1; then
     type sudo >/dev/null 2>&1 && [ "$(whoami)" != "root" ] && SUDO="sudo" || SUDO=""
     ## install required packages using an existing package manager
     if type apt-get >/dev/null 2>&1; then # ubuntu, debian
-        $SUDO apt-get update
-        $SUDO apt-get install -yq $REQUIRED_COMMANDS
+        $SUDO apt-get -qq update
+        $SUDO apt-get -qq install -yqq $REQUIRED_COMMANDS
     elif type pacman >/dev/null 2>&1; then # arch, manjaro, MSYS2
         $SUDO pacman -Sy --quiet --noconfirm --needed $REQUIRED_COMMANDS
     elif type apk >/dev/null 2>&1; then # alpine
@@ -58,49 +54,10 @@ fi
 echo "OK $DOTFILES_DIR"
 
 ##============================================================================##
-## oh-my-zsh
-# if [ ! -d $OHMYZSH_DIR ]; then
-#     git clone https://github.com/ohmyzsh/ohmyzsh.git $OHMYZSH_DIR
-# else
-#     git -C $OHMYZSH_DIR pull
-# fi
-# echo "OK oh-my-zsh"
-
-## Zsh Powerlevel10k theme
-## see https://github.com/romkatv/powerlevel10k#oh-my-zsh
-# ZSH_THEME_P10K_DIR=$OHMYZSH_DIR/custom/themes/powerlevel10k
-# if [ ! -d $ZSH_THEME_P10K_DIR ]; then
-#     git clone https://github.com/romkatv/powerlevel10k.git $ZSH_THEME_P10K_DIR
-# else
-#     git -C $ZSH_THEME_P10K_DIR pull
-# fi
-# echo "OK zsh Powerlevel10k theme"
-
-## Fast Syntax Highlighting (F-Sy-H)
-## see https://github.com/zdharma/fast-syntax-highlighting
-# ZSH_SYNTAX_HIGHLIGHTING=$OHMYZSH_DIR/custom/plugins/fast-syntax-highlighting
-# if [ ! -d $ZSH_SYNTAX_HIGHLIGHTING ]; then
-#     git clone https://github.com/zdharma/fast-syntax-highlighting \
-#         $ZSH_SYNTAX_HIGHLIGHTING
-# else
-#     git -C $ZSH_SYNTAX_HIGHLIGHTING pull
-# fi
-# echo "OK zsh fast syntax highlighting"
-
-## zsh-vi-mode plugin
-# ZSH_VI_MODE_DIR=$OHMYZSH_DIR/custom/plugins/zsh-vi-mode
-# if [ ! -d $ZSH_VI_MODE_DIR ]; then
-#     git clone https://github.com/jeffreytse/zsh-vi-mode.git $ZSH_VI_MODE_DIR
-# else
-#     git -C $ZSH_VI_MODE_DIR pull
-# fi
-# echo "OK zsh vi mode"
-
-##============================================================================##
 ## link .dotfiles
 DOTFILES_LINK_DIR="$DOTFILES_DIR/dotfiles_link"
-dotfiles_link=$(find $DOTFILES_LINK_DIR -type f)
-for link_target in $dotfiles_link; do
+dotfiles_link_files=$(find $DOTFILES_LINK_DIR -type f)
+for link_target in $dotfiles_link_files; do
     # make link_name
     file=${link_target#$DOTFILES_LINK_DIR/} # remove first path
     link_name="$HOME/$file"
