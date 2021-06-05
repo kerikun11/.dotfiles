@@ -30,9 +30,9 @@ zinit light zsh-users/zsh-autosuggestions    # https://github.com/zsh-users/zsh-
 zinit light zsh-users/zsh-completions        # https://github.com/zsh-users/zsh-completions
 zle_highlight=('paste:none')                 # https://github.com/zdharma/fast-syntax-highlighting/issues/105
 ##============================================================================##
-## zsh theme
-zinit ice depth=1                 # since powerlevel10k is large
-zinit light romkatv/powerlevel10k # https://github.com/romkatv/powerlevel10k
+## zsh theme; see ~/.p10k.zsh
+zinit ice depth=1 && zinit light romkatv/powerlevel10k # https://github.com/romkatv/powerlevel10k
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 ##============================================================================##
 ## anyframe
 zinit ice from"gh-r" as"program"
@@ -66,5 +66,4 @@ type code &>/dev/null && export EDITOR='code'
 source $HOME/.dotfiles/tools/zsh/aliases.zsh
 source $HOME/.dotfiles/tools/zsh/sshcode.zsh
 source $HOME/.dotfiles/tools/zsh/extension.zsh
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 ##============================================================================##

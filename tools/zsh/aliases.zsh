@@ -9,6 +9,7 @@ alias takebuild="take build" # call oh-my-zsh function
 alias zshenv="$EDITOR $HOME/.zshenv"
 alias zshrc="$EDITOR $HOME/.zshrc"
 alias gsettings_list="gsettings list-recursively"
+
 ## initial aliases
 alias c="code"
 alias cdg='cd $(git rev-parse --show-toplevel)'
@@ -20,6 +21,8 @@ alias drr="docker run --rm -it"
 alias e="echo"
 alias g="git"
 alias gu='echo "$(git config --get user.name) <$(git config --get user.email)>"'
+alias h="history"
+alias hs="history | grep -i"
 alias kd="echo -n 'source <(curl -fsSL kerislab.jp/d)' | clipcopy"
 alias l="ls -lha"
 alias la="ls -la"
@@ -32,8 +35,8 @@ alias o="open"
 alias p="python"
 alias p2="python2"
 alias p3="python3"
-alias r="exec zsh" # reload
-alias s="serve"
+alias r="exec zsh" # reload zsh
+alias sv="serve"
 alias tb="take build" # call oh-my-zsh function
 alias wh="which"
 
@@ -47,13 +50,14 @@ type trash-put &>/dev/null && alias rm="trash-put"
 ## global aliases
 alias -g A='2>&1 | tee -a'
 alias -g C='| clipcopy' # call oh-my-zsh function
+alias -g F='| fzf'
 alias -g G='| grep'
 alias -g H='| head'
 alias -g L='| less -R'
+alias -g P='| peco'
 alias -g T='| tail'
 alias -g W='| wc -l'
 alias -g X='| xargs'
-alias -g P='| peco'
 
 ## date string
 alias datestr="date +%Y%m%d"
@@ -81,6 +85,7 @@ alias pdfnup2x4="pdfnup --batch --a4paper --nup 2x4 --scale 0.96 --no-landscape"
 ## Exiftool
 alias rmgeotag="exiftool -overwrite_original -geotag="
 
+##============================================================================##
 ## directory alias
 # hash -d dot=~/.dotfiles
 
@@ -97,6 +102,7 @@ function local-ip() {
   echo $(ip route get 8.8.8.8 | sed -n '/src/{s/.*src *\([^ ]*\).*/\1/p;q}')
 }
 function datetimediff() {
+  # format: "2021.02.03 12:34:56 xxx"
   echo start time:
   read ts
   echo end time:
