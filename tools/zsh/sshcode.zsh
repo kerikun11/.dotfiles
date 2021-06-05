@@ -44,5 +44,5 @@ function _sshcode_completion () {
 }
 # setup zsh completion
 type compdef &>/dev/null ||
-  autoload -Uz compinit && compinit
+  { autoload -Uz compinit && compinit }
 compdef _sshcode_completion sshcode
