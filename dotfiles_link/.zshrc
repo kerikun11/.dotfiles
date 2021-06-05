@@ -59,8 +59,6 @@ setopt auto_pushd pushd_ignore_dups pushdminus auto_cd
 cdpath=(~)
 # setopt nonomatch # Execute command even if no match with glob
 ##============================================================================##
-autoload -Uz compinit && compinit
-##============================================================================##
 type vim &>/dev/null && export EDITOR='vim'
 type code &>/dev/null && export EDITOR='code'
 source $HOME/.dotfiles/tools/zsh/aliases.zsh
