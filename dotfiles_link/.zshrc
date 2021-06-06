@@ -16,11 +16,9 @@ zinit snippet OMZL::functions.zsh   # https://github.com/ohmyzsh/ohmyzsh/blob/ma
 zinit snippet OMZL::git.zsh         # https://github.com/ohmyzsh/ohmyzsh/blob/master/lib/git.zsh
 zinit snippet OMZL::grep.zsh        # https://github.com/ohmyzsh/ohmyzsh/blob/master/lib/grep.zsh
 zinit snippet OMZL::history.zsh     # https://github.com/ohmyzsh/ohmyzsh/blob/master/lib/history.zsh
-zinit snippet OMZP::archlinux       # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/archlinux
 zinit snippet OMZP::copybuffer      # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copybuffer
 zinit snippet OMZP::extract         # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/extract
 zinit snippet OMZP::git             # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git
-zinit snippet OMZP::ubuntu          # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ubuntu
 zinit snippet OMZP::vi-mode         # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vi-mode
 ##============================================================================##
 ## one-line plugins
@@ -39,11 +37,17 @@ zinit ice from"gh-r" as"program"
 zinit load junegunn/fzf-bin    # https://github.com/junegunn/fzf/releases
 zinit light mollifier/anyframe # https://github.com/mollifier/anyframe
 zstyle ":anyframe:selector:" use fzf
-zstyle ":anyframe:selector:fzf:" command 'fzf --layout=reverse --no-sort'
+zstyle ":anyframe:selector:fzf:" command 'fzf --reverse --no-sort --exact --info=inline'
 if type fzf &>/dev/null; then
-  bindkey '^r' anyframe-widget-put-history
   bindkey '^g' anyframe-widget-cd-ghq-repository
   bindkey '^k' anyframe-widget-kill
+  # bindkey '^h' anyframe-widget-put-history
+  function select-history() {
+    BUFFER=$(history -n -r 1 | fzf --reverse --no-sort --exact --query "$LBUFFER" | sed 's/\\n/\n/g')
+    CURSOR=$#BUFFER
+  }
+  zle -N select-history
+  bindkey '^h' select-history
 fi
 ##============================================================================##
 ## key bind
