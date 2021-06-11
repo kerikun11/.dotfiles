@@ -2,17 +2,17 @@
     // Settings-Sync
     "sync.gist": "daaa7ed6406a23237d7405f10f7d6b4a",
     // Terminal
-    "terminal.integrated.shell.windows": "C:\\msys64\\usr\\bin\\zsh.exe",
-    "terminal.integrated.shellArgs.windows": [
-        "--login"
-    ],
-    "terminal.integrated.env.windows": {
-        "MSYS": "winsymlinks:nativestrict",
-        "CHERE_INVOKING": "1",
-        "MSYS2_PATH_TYPE": "strict",
-        "MSYSTEM": "MINGW64",
-        "SHELL": "/usr/bin/zsh"
-    },
+    // "terminal.integrated.shell.windows": "C:\\msys64\\usr\\bin\\zsh.exe",
+    // "terminal.integrated.shellArgs.windows": [
+    //     "--login"
+    // ],
+    // "terminal.integrated.env.windows": {
+    //     "MSYS": "winsymlinks:nativestrict",
+    //     "CHERE_INVOKING": "1",
+    //     "MSYS2_PATH_TYPE": "strict",
+    //     "MSYSTEM": "MINGW64",
+    //     "SHELL": "/usr/bin/zsh"
+    // },
     "terminal.integrated.copyOnSelection": true,
     "terminal.integrated.scrollback": 20000,
     // Settings
@@ -239,15 +239,6 @@
         "yticks"
     ],
     "pasteImage.defaultName": "${currentFileName}-Y-MM-DD-HH-mm-ss",
-    "workbench.editorAssociations": [
-        {
-            "viewType": "jupyter.notebook.ipynb",
-            "filenamePattern": "*.ipynb"
-        }
-    ],
-    "[dockerfile]": {
-        "editor.defaultFormatter": "ms-azuretools.vscode-docker"
-    },
     "vsicons.dontShowNewVersionMessage": true,
     "editor.tokenColorCustomizations": {
         "textMateRules": [
