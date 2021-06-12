@@ -47,7 +47,7 @@ if type fzf &>/dev/null; then
     CURSOR=$#BUFFER
   }
   zle -N select-history
-  bindkey '^h' select-history
+  bindkey '^j' select-history
 fi
 ##============================================================================##
 ## key bind
