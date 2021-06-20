@@ -145,7 +145,7 @@
         "key": "alt+right",
         "command": "workbench.action.navigateForward"
     },
-    // Copy File Path
+    // Copy Current File Path (abs and rel)
     {
         "key": "alt+c",
         "command": "copyFilePath",
@@ -156,7 +156,7 @@
         "command": "copyRelativeFilePath",
         "when": "editorFocus"
     },
-    // copy path and line number
+    // copy relative path and line numbers (plugin)
     {
         "key": "alt+l",
         "command": "copy-relative-path-and-line-numbers.both",

@@ -20,10 +20,10 @@ zle -N show_buffer_stack
 bindkey '^q' show_buffer_stack
 ##============================================================================##
 ## yank to the system clipboard
-function vi-yank-xclip() {
+function vi-yank-clipboard() {
   zle vi-yank
   echo "$CUTBUFFER" | clipcopy
 }
-zle -N vi-yank-xclip
-bindkey -M vicmd 'y' vi-yank-xclip
+zle -N vi-yank-clipboard
+bindkey -M vicmd 'y' vi-yank-clipboard
 ##============================================================================##

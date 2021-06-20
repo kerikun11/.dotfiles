@@ -13,8 +13,11 @@
     //     "MSYSTEM": "MINGW64",
     //     "SHELL": "/usr/bin/zsh"
     // },
+    "terminal.integrated.allowChords": false, // to send ctrl+k to terminal
     "terminal.integrated.copyOnSelection": true,
-    "terminal.integrated.scrollback": 20000,
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.scrollback": 50000, // buffer line size
+    "terminal.integrated.showExitAlert": false,
     // Settings
     "glassit.alpha": 220,
     "diffEditor.ignoreTrimWhitespace": false,
@@ -74,10 +77,10 @@
         }
     ],
     // vim IME disable with single ESC
-    "vim.autoSwitchInputMethod.enable": true,
-    "vim.autoSwitchInputMethod.obtainIMCmd": "/usr/bin/fcitx-remote",
-    "vim.autoSwitchInputMethod.switchIMCmd": "/usr/bin/fcitx-remote {im}",
-    "vim.autoSwitchInputMethod.defaultIM": "-c",
+    // "vim.autoSwitchInputMethod.enable": true,
+    // "vim.autoSwitchInputMethod.obtainIMCmd": "/usr/bin/fcitx-remote",
+    // "vim.autoSwitchInputMethod.switchIMCmd": "/usr/bin/fcitx-remote {im}",
+    // "vim.autoSwitchInputMethod.defaultIM": "-c",
     // LaTeX
     "latex-workshop.latex.outDir": "%DIR%/build",
     "latex-workshop.latex.autoBuild.run": "never",
@@ -273,6 +276,5 @@
         ]
     },
     "dailyNotes.filePath": "/home/kerikun11/Dropbox/Documents/daily-notes.md",
-    "dailyNotes.dateFormat": "YYYY.MM.DD ddd",
-    "terminal.integrated.allowChords": false,
+    "dailyNotes.dateFormat": "YYYY.MM.DD ddd"
 }

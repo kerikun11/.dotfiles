@@ -9,4 +9,4 @@ Selection=any
 Extensions=any
 Quote=double
 Separator=,
-Dependencies=xclip;
+Dependencies=xsel;
