@@ -162,4 +162,9 @@
         "command": "copy-relative-path-and-line-numbers.both",
         "when": "editorTextFocus"
     },
+    // unbind ctrl-q on windows
+    {
+        "key": "ctrl+q",
+        "command": "-workbench.action.quickOpenView"
+    },
 ]

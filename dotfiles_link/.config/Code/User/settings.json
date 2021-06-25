@@ -122,6 +122,7 @@
     "cSpell.userWords": [
         "AEBS",
         "ARCHS",
+        "BUILDKIT",
         "CMAKE",
         "COLMAP",
         "EEPROM",
@@ -232,6 +233,7 @@
         "uniquify",
         "vstack",
         "wifi",
+        "workdir",
         "xlabel",
         "xlim",
         "xticks",
@@ -276,5 +278,8 @@
         ]
     },
     "dailyNotes.filePath": "/home/kerikun11/Dropbox/Documents/daily-notes.md",
-    "dailyNotes.dateFormat": "YYYY.MM.DD ddd"
+    "dailyNotes.dateFormat": "YYYY.MM.DD ddd",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    }
 }
