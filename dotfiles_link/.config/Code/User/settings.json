@@ -136,6 +136,7 @@
         "Inkscape",
         "Jetson",
         "KERISE",
+        "Kanagawa",
         "Kubernetes",
         "LEDC",
         "MOSI",
@@ -146,6 +147,7 @@
         "NTFS",
         "OHMYZSH",
         "Onuki",
+        "POSTROUTING",
         "PYBIND",
         "Powerlevel",
         "QEMU",
@@ -186,6 +188,7 @@
         "freertospp",
         "gpio",
         "graphviz",
+        "htpasswd",
         "kerikun",
         "kerislab",
         "loadtxt",
@@ -233,6 +236,7 @@
         "uniquify",
         "vstack",
         "wifi",
+        "wlan",
         "workdir",
         "xlabel",
         "xlim",
@@ -281,5 +285,9 @@
     "dailyNotes.dateFormat": "YYYY.MM.DD ddd",
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "terminal.integrated.tabs.enabled": false,
+    "[dockerfile]": {
+        "editor.defaultFormatter": "ms-azuretools.vscode-docker"
     }
 }

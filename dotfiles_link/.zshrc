@@ -62,9 +62,10 @@ KEYTIMEOUT=1 # shorten vi-mode switching delay
 setopt auto_pushd pushd_ignore_dups pushdminus auto_cd
 cdpath=(~)
 # setopt nonomatch # Execute command even if no match with glob
+setopt hist_ignore_dups
+setopt interactivecomments
 ##============================================================================##
 type vim &>/dev/null && export EDITOR='vim'
-type code &>/dev/null && export EDITOR='code'
 source $HOME/.dotfiles/tools/zsh/aliases.zsh
 source $HOME/.dotfiles/tools/zsh/sshcode.zsh
 source $HOME/.dotfiles/tools/zsh/extension.zsh
