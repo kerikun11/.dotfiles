@@ -36,3 +36,5 @@
 	unstage = reset HEAD
 [ghq]
 	root = /home/kerikun11/.ghq
+[init]
+	defaultBranch = main
