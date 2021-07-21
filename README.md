@@ -15,7 +15,7 @@ My Configuration Files for UNIX Systems
 
 ```sh
 # install dotfiles
-curl -fsSL https://raw.github.com/kerikun11/.dotfiles/master/install.sh | sh
+curl -fsSL https://raw.github.com/kerikun11/.dotfiles/main/install.sh | sh
 ```
 
 ```sh
@@ -26,7 +26,7 @@ type apt-get 2>/dev/null && $SUDO apt-get update -q && $SUDO apt-get install -yq
 type pacman  2>/dev/null && $SUDO pacman -Sy -q --noconfirm --needed $REQUIREMENTS
 type apk     2>/dev/null && $SUDO apk add -q $REQUIREMENTS
 type yum     2>/dev/null && $SUDO yum install -yq $REQUIREMENTS
-source <(curl -fsSL https://raw.github.com/kerikun11/.dotfiles/master/install.sh)
+source <(curl -fsSL https://raw.github.com/kerikun11/.dotfiles/main/install.sh)
 ```
 
 ## Useful Commands
@@ -55,9 +55,9 @@ alias make="mingw32-make -j $(nproc)"
 ## Dockerfile
 
 ```dockerfile
-# base image
+## base image
 FROM ubuntu
-# install packages
+## install packages
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
@@ -66,7 +66,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-# personal shell settings
-RUN echo y | sh -c "$(curl -fsSL https://raw.github.com/kerikun11/.dotfiles/master/install.sh)"
+## personal shell settings
+RUN echo y | sh -c "$(curl -fsSL https://raw.github.com/kerikun11/.dotfiles/main/install.sh)"
 CMD [ "zsh" ]
 ```
