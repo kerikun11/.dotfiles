@@ -20,6 +20,10 @@
         "key": "ctrl+[IntlRo]", // ctrl+\
         "command": "workbench.action.toggleSidebarVisibility"
     },
+    {
+        "key": "ctrl+\\",
+        "command": "workbench.action.toggleSidebarVisibility"
+    },
     // Ctrl+Shift+P クイックメニューの上下移動
     {
         "key": "ctrl+j",
@@ -54,7 +58,7 @@
     },
     // Linux and Windows Compatibility
     {
-        "key": "ctrl+[BracketLeft]", // ctrl+@
+        "key": "ctrl+;",
         "command": "workbench.action.terminal.toggleTerminal"
     },
     {
@@ -62,8 +66,9 @@
         "command": "-workbench.action.terminal.toggleTerminal"
     },
     {
-        "key": "ctrl+shift+[BracketLeft]", // ctrl+shift+@
-        "command": "workbench.action.terminal.new"
+        "key": "ctrl+shift+;",
+        "command": "workbench.action.terminal.new",
+        "when": "terminalProcessSupported"
     },
     {
         "key": "ctrl+shift+[Equal]", // ctrl+shift+^
