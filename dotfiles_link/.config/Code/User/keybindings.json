@@ -11,6 +11,54 @@
         "key": "ctrl+alt+g",
         "command": "git-graph.view"
     },
+    // QuickOpenNavigation
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.quickOpenSelectNext",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.quickOpenSelectPrevious",
+        "when": "inQuickOpen"
+    },
+    // navigate forward / back
+    {
+        "key": "alt+left",
+        "command": "workbench.action.navigateBack"
+    },
+    {
+        "key": "alt+right",
+        "command": "workbench.action.navigateForward"
+    },
+    // Ctrl + Tab
+    {
+        "key": "ctrl+tab",
+        "command": "workbench.action.nextEditor"
+    },
+    {
+        "key": "ctrl+shift+tab",
+        "command": "workbench.action.previousEditor"
+    },
+    {
+        "key": "ctrl+tab",
+        "command": "workbench.action.terminal.focusNext",
+        "when": "terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "ctrl+shift+tab",
+        "command": "workbench.action.terminal.focusPrevious",
+        "when": "terminalFocus && terminalProcessSupported"
+    },
+    // replace
+    {
+        "key": "ctrl+g",
+        "command": "editor.action.startFindReplaceAction"
+    },
+    {
+        "key": "ctrl+h",
+        "command": "-editor.action.startFindReplaceAction"
+    },
     // toggle sidebar visibility
     {
         "key": "ctrl+b",
@@ -24,16 +72,38 @@
         "key": "ctrl+\\",
         "command": "workbench.action.toggleSidebarVisibility"
     },
-    // Ctrl+Shift+P クイックメニューの上下移動
+    // terminal
     {
-        "key": "ctrl+j",
-        "command": "workbench.action.quickOpenSelectNext",
-        "when": "inQuickOpen"
+        "key": "ctrl+t",
+        "command": "workbench.action.terminal.toggleTerminal"
     },
     {
-        "key": "ctrl+k",
-        "command": "workbench.action.quickOpenSelectPrevious",
-        "when": "inQuickOpen"
+        "key": "ctrl+shift+t",
+        "command": "workbench.action.terminal.new",
+        "when": "terminalProcessSupported"
+    },
+    {
+        "key": "ctrl+.",
+        "command": "workbench.action.toggleMaximizedPanel",
+        "when": "terminalFocus"
+    },
+    // Zoom
+    {
+        "key": "ctrl+[Equal]", // ctrl+^
+        "command": "workbench.action.zoomIn"
+    },
+    // fix vim conflict
+    {
+        "key": "ctrl+q",
+        "command": "-workbench.action.quickOpenView"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "-workbench.action.quickOpen"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "-workbench.action.togglePanel"
     },
     // PlatformIO
     {
@@ -56,33 +126,7 @@
         "command": "latex-workshop.synctex",
         "when": "resourceLangId == latex"
     },
-    // Linux and Windows Compatibility
-    {
-        "key": "ctrl+;",
-        "command": "workbench.action.terminal.toggleTerminal"
-    },
-    {
-        "key": "ctrl+shift+[BracketLeft]", // ctrl+shift+@
-        "command": "-workbench.action.terminal.toggleTerminal"
-    },
-    {
-        "key": "ctrl+shift+;",
-        "command": "workbench.action.terminal.new",
-        "when": "terminalProcessSupported"
-    },
-    {
-        "key": "ctrl+shift+[Equal]", // ctrl+shift+^
-        "command": "-workbench.action.terminal.new"
-    },
-    {
-        "key": "ctrl+shift+[Semicolon]",
-        "command": "-workbench.action.zoomIn"
-    },
-    {
-        "key": "ctrl+[Equal]", // ctrl+^
-        "command": "workbench.action.zoomIn"
-    },
-    // markdown
+    // Markdown
     {
         "key": "ctrl+alt+b",
         "command": "markdown.extension.printToHtml",
@@ -93,62 +137,11 @@
         "command": "markdown.showPreviewToSide",
         "when": "!notebookEditorFocused && editorLangId == 'markdown'"
     },
-    // plantuml
+    // PlantUML
     {
         "key": "ctrl+alt+v",
         "command": "plantuml.preview",
         "when": "!notebookEditorFocused && editorLangId == 'plantuml'"
-    },
-    // replace
-    {
-        "key": "ctrl+g",
-        "command": "editor.action.startFindReplaceAction"
-    },
-    {
-        "key": "ctrl+h",
-        "command": "-editor.action.startFindReplaceAction"
-    },
-    // ctrl+; terminal <-> editor
-    {
-        "key": "ctrl+e",
-        "command": "-workbench.action.quickOpen"
-    },
-    {
-        "key": "ctrl+j",
-        "command": "-workbench.action.togglePanel"
-    },
-    // Ctrl + Tab
-    {
-        "key": "ctrl+tab",
-        "command": "workbench.action.nextEditor"
-    },
-    {
-        "key": "ctrl+shift+tab",
-        "command": "workbench.action.previousEditor"
-    },
-    {
-        "key": "ctrl+tab",
-        "command": "workbench.action.terminal.focusNext",
-        "when": "terminalFocus && terminalProcessSupported"
-    },
-    {
-        "key": "ctrl+shift+tab",
-        "command": "workbench.action.terminal.focusPrevious",
-        "when": "terminalFocus && terminalProcessSupported"
-    },
-    // panel size toggle
-    {
-        "key": "ctrl+t",
-        "command": "workbench.action.toggleMaximizedPanel"
-    },
-    // navigate forward / back
-    {
-        "key": "alt+left",
-        "command": "workbench.action.navigateBack"
-    },
-    {
-        "key": "alt+right",
-        "command": "workbench.action.navigateForward"
     },
     // Copy Current File Path (abs and rel)
     {
@@ -166,10 +159,5 @@
         "key": "alt+l",
         "command": "copy-relative-path-and-line-numbers.both",
         "when": "editorTextFocus"
-    },
-    // unbind ctrl-q on windows
-    {
-        "key": "ctrl+q",
-        "command": "-workbench.action.quickOpenView"
     },
 ]
