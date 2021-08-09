@@ -31,9 +31,9 @@ TriggerKey= ZENKAKUHANKAKU
 # カスタム切り替えキー
 #CustomSwitchKey=
 # 入力メソッドをオンに
-ActivateKey=HENKANMODE
+ActivateKey=HENKANMODE HANGULHANJA
 # 入力メソッドをオフに
-InactivateKey=MUHENKAN
+InactivateKey=MUHENKAN HANGUL
 # 入力メソッドの切換をホットキーで
 # Available Value:
 # True False
