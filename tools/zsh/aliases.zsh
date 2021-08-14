@@ -75,9 +75,9 @@ alias upgradeall='sudo apt update && sudo apt upgrade -y && sudo apt full-upgrad
 alias sp2ub='find . -name "* *" | rename -v "s/ /_/g"'
 
 ## esp-idf alias
-alias idf_='export IDF_PATH=/usr/local/Espressif/esp-idf    && . $IDF_PATH/export.sh'
-alias idf3='export IDF_PATH=/usr/local/Espressif/esp-idf_v3 && . $IDF_PATH/export.sh'
-alias idf4='export IDF_PATH=/usr/local/Espressif/esp-idf_v4 && . $IDF_PATH/export.sh'
+alias idf_='export IDF_PATH=/opt/espressif/esp-idf    && . $IDF_PATH/export.sh'
+alias idf3='export IDF_PATH=/opt/espressif/esp-idf_v3 && . $IDF_PATH/export.sh'
+alias idf4='export IDF_PATH=/opt/espressif/esp-idf_v4 && . $IDF_PATH/export.sh'
 alias idf='idf.py'
 alias idfbuild='idf.py build'
 alias idfflashmonitor='idf.py -b 2000000 flash monitor'
