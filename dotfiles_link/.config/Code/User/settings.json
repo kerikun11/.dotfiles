@@ -110,15 +110,13 @@
     // PlatformIO
     "platformio-ide.activateOnlyOnPlatformIOProject": true,
     "platformio-ide.disableToolbar": true,
-    // Python
-    "python.languageServer": "Microsoft",
-    "python.showStartPage": false,
     // PlantUML
     "plantuml.server": "https://www.plantuml.com/plantuml",
     // Spell Check
     "cSpell.enabled": true,
     "cSpell.enableFiletypes": [
-        "cmake"
+        "cmake",
+        "shellscript"
     ],
     "cSpell.userWords": [
         "AEBS",

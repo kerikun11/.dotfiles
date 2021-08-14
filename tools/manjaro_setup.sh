@@ -1,6 +1,7 @@
 #!/bin/sh
+# Manjaro Cinnamon Setup Script
 
-# set -x # show command
+set -x # show command
 set -e # first error to exit
 set -u # unused variable error
 
@@ -13,7 +14,7 @@ while :; do
     sudo -v
     sleep 59
 done &
-infiloop=$!
+sudo_process=$!
 
 ## NTP
 sudo timedatectl set-ntp true
@@ -37,31 +38,29 @@ sudo pacman -Syuu --noconfirm --needed --quiet
 sudo pacman -S --noconfirm --needed yay
 yay_install_cmd="yay -S --noconfirm --quiet --needed --needed"
 ## requirements
-$yay_install_cmd git zsh curl gvim
+$yay_install_cmd git zsh curl gvim tmux
 $yay_install_cmd base-devel
 ## dev
+$yay_install_cmd docker
 $yay_install_cmd gcc gcc-multilib gdb cmake valgrind kcachegrind
 $yay_install_cmd visual-studio-code-bin inkscape
 $yay_install_cmd kicad kicad-library kicad-library-3d
-$yay_install_cmd qtcreator qt5-base
+# $yay_install_cmd qtcreator qt5-base
 ## utility
-$yay_install_cmd trash-cli xsel figlet sl exa bat fd tldr peco ghq jq
+$yay_install_cmd trash-cli xsel figlet sl exa bat fd tldr ghq jq
 $yay_install_cmd hugo asciidoctor doxygen graphviz
 $yay_install_cmd dos2unix perl-image-exiftool
+$yay_install_cmd xorg-xinput bluez-utils zsa-wally
 ## font
 $yay_install_cmd otf-ipafont ttf-ubuntu-font-family
-## Google Chrome
-$yay_install_cmd google-chrome
-## slack
-$yay_install_cmd slack-desktop
-## Dropbox
-$yay_install_cmd dropbox
-$yay_install_cmd nemo-dropbox
-## WPS Office
-# $yay_install_cmd wps-office
 ## Theme
-# $yay_install_cmd mint-themes
 $yay_install_cmd vimix-gtk-themes vimix-icon-theme
+## Desktop Applications
+$yay_install_cmd google-chrome
+$yay_install_cmd discord
+$yay_install_cmd slack-desktop
+$yay_install_cmd dropbox nemo-dropbox
+# $yay_install_cmd wps-office
 echo "OK packages"
 
 ## Fcitx and Mozc
@@ -74,4 +73,4 @@ figlet -f big Enjoy!
 echo "Please Reboot to apply the configurations"
 
 ## cleaning of avoid sudo timeout
-kill "$infiloop"
+kill "$sudo_process"
