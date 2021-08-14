@@ -45,7 +45,7 @@ $yay_install_cmd visual-studio-code-bin inkscape
 $yay_install_cmd kicad kicad-library kicad-library-3d
 $yay_install_cmd qtcreator qt5-base
 ## utility
-$yay_install_cmd trash-cli xsel figlet sl exa bat fd tldr peco ghq
+$yay_install_cmd trash-cli xsel figlet sl exa bat fd tldr peco ghq jq
 $yay_install_cmd hugo asciidoctor doxygen graphviz
 $yay_install_cmd dos2unix perl-image-exiftool
 ## font
