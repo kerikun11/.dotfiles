@@ -6,7 +6,7 @@
 ## gsettings list-recursively > /tmp/prev
 ## (change settings with GUI)
 ## gsettings list-recursively > /tmp/post
-## diff /tmp/prev /tmp/post
+## diff -U0 /tmp/prev /tmp/post
 
 ## Cinnamon
 gsettings set org.cinnamon.desktop.interface clock-show-date true

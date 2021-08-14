@@ -65,6 +65,14 @@ $yay_install_cmd kicad kicad-library kicad-library-3d
 # $yay_install_cmd wps-office
 echo "OK packages"
 
+## Fonts
+gsettings set org.cinnamon.desktop.interface font-name 'IPA Pゴシック 10'
+gsettings set org.cinnamon.desktop.wm.preferences titlebar-font 'IPA Pゴシック 10'
+gsettings set org.gnome.desktop.interface document-font-name 'IPA P明朝 11'
+gsettings set org.gnome.desktop.interface monospace-font-name 'IPAゴシック 10'
+gsettings set org.nemo.desktop font 'IPA Pゴシック 10'
+echo "OK Fonts"
+
 ## Fcitx and Mozc
 $yay_install_cmd fcitx-mozc fcitx-im fcitx-configtool
 echo "OK Mozc"
