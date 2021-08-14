@@ -39,12 +39,11 @@ sudo pacman -S --noconfirm --needed yay
 yay_install_cmd="yay -S --noconfirm --quiet --needed --needed"
 ## requirements
 $yay_install_cmd git zsh curl gvim tmux
-$yay_install_cmd base-devel
+$yay_install_cmd base-devel # for yay build and install
 ## dev
+$yay_install_cmd gcc-multilib gdb cmake ninja
 $yay_install_cmd docker
-$yay_install_cmd gcc gcc-multilib gdb cmake valgrind kcachegrind
-$yay_install_cmd visual-studio-code-bin inkscape
-$yay_install_cmd kicad kicad-library kicad-library-3d
+# $yay_install_cmd valgrind kcachegrind
 # $yay_install_cmd qtcreator qt5-base
 ## utility
 $yay_install_cmd trash-cli xsel figlet sl exa bat fd tldr ghq jq
@@ -56,10 +55,13 @@ $yay_install_cmd otf-ipafont ttf-ubuntu-font-family
 ## Theme
 $yay_install_cmd vimix-gtk-themes vimix-icon-theme
 ## Desktop Applications
+$yay_install_cmd visual-studio-code-bin
+$yay_install_cmd inkscape
 $yay_install_cmd google-chrome
 $yay_install_cmd discord
 $yay_install_cmd slack-desktop
 $yay_install_cmd dropbox nemo-dropbox
+$yay_install_cmd kicad kicad-library kicad-library-3d
 # $yay_install_cmd wps-office
 echo "OK packages"
 
