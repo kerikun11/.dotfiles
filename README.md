@@ -14,8 +14,10 @@ My Configuration Files for UNIX Systems
 ## Install .dotfiles
 
 ```sh
-# install dotfiles
+# install dotfiles with curl
 curl -fsSL https://raw.github.com/kerikun11/.dotfiles/main/install.sh | sh
+# install dotfiles with wget
+wget -qO- https://raw.github.com/kerikun11/.dotfiles/main/install.sh | sh
 ```
 
 ```sh
@@ -42,14 +44,6 @@ echo "$USER ALL=NOPASSWD: ALL" | sudo EDITOR='tee -a' visudo
 # Ubuntu Desktop
 gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps']"
 LANG=C xdg-user-dirs-gtk-update
-```
-
-## .zshenv
-
-```sh
-# MSYS2
-alias code="'/c/Users/kerikun11/AppData/Local/Programs/Microsoft VS Code/bin/code'"
-alias make="mingw32-make -j $(nproc)"
 ```
 
 ## Dockerfile
