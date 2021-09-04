@@ -61,7 +61,7 @@ KEYTIMEOUT=1 # shorten vi-mode switching delay
 ## pushd
 setopt auto_pushd pushd_ignore_dups pushdminus auto_cd
 cdpath=(~)
-# setopt nonomatch # Execute command even if no match with glob
+setopt nonomatch # Execute command even if no match with glob
 setopt hist_ignore_dups
 setopt interactivecomments
 ##============================================================================##

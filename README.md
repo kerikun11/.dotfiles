@@ -14,14 +14,14 @@ My Configuration Files for UNIX Systems
 ## Install .dotfiles
 
 ```sh
-# install dotfiles with curl
+## install dotfiles with curl
 curl -fsSL https://raw.github.com/kerikun11/.dotfiles/main/install.sh | sh
-# install dotfiles with wget
-wget -qO- https://raw.github.com/kerikun11/.dotfiles/main/install.sh | sh
+## install dotfiles with wget
+wget -qO - https://raw.github.com/kerikun11/.dotfiles/main/install.sh | sh
 ```
 
 ```sh
-# install automatically
+## install requirements
 REQUIREMENTS="curl git zsh"
 type sudo    2>/dev/null && test "$(whoami)" != "root" && SUDO="sudo" || SUDO=""
 type apt-get 2>/dev/null && $SUDO apt-get update -q && $SUDO apt-get install -yq $REQUIREMENTS
@@ -34,16 +34,16 @@ source <(curl -fsSL https://raw.github.com/kerikun11/.dotfiles/main/install.sh)
 ## Useful Commands
 
 ```sh
-# Ubuntu Mirror Lists
+## Ubuntu Mirror Lists
 sudo sed -i.bak -e 's%http://[^ ]\+%mirror://mirrors.ubuntu.com/mirrors.txt%g' /etc/apt/sources.list
-cat /etc/apt/sources.list | sed -e '/^#/d' -e '/^$/d'
-# Manjaro Mirror Lists
+cat /etc/apt/sources.list | sed -e '/^#/d' -e '/^$/d' # show entries
+## Manjaro Mirror Lists
 sudo pacman-mirrors -c Japan
-# allow me to run sudo without password
+## allow me to run sudo without password
 echo "$USER ALL=NOPASSWD: ALL" | sudo EDITOR='tee -a' visudo
-# Ubuntu Desktop
+## Ubuntu Desktop
 gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps']"
-LANG=C xdg-user-dirs-gtk-update
+LANG=C xdg-user-dirs-gtk-update # rename home dirs in English
 ```
 
 ## Dockerfile
