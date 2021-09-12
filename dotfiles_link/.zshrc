@@ -66,7 +66,7 @@ setopt hist_ignore_dups
 setopt interactivecomments
 ##============================================================================##
 type vim &>/dev/null && export EDITOR='vim'
-source $HOME/.dotfiles/tools/zsh/aliases.zsh
-source $HOME/.dotfiles/tools/zsh/sshcode.zsh
-source $HOME/.dotfiles/tools/zsh/extension.zsh
+source $HOME/.config/zsh/aliases.zsh
+source $HOME/.config/zsh/sshcode.zsh
+source $HOME/.config/zsh/extension.zsh
 ##============================================================================##

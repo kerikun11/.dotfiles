@@ -1,4 +1,4 @@
-# kerikun11.dotfiles
+# kerikun11/.dotfiles
 
 My Configuration Files for UNIX Systems
 
@@ -14,21 +14,21 @@ My Configuration Files for UNIX Systems
 ## Install .dotfiles
 
 ```sh
-## install dotfiles with curl
+## Install .dotfiles with curl
 curl -fsSL https://raw.github.com/kerikun11/.dotfiles/main/install.sh | sh
-## install dotfiles with wget
+## Install .dotfiles with wget
 wget -qO - https://raw.github.com/kerikun11/.dotfiles/main/install.sh | sh
 ```
 
 ```sh
-## install requirements
+## Install Requirements
 REQUIREMENTS="curl git zsh"
 type sudo    2>/dev/null && test "$(whoami)" != "root" && SUDO="sudo" || SUDO=""
 type apt-get 2>/dev/null && $SUDO apt-get update -q && $SUDO apt-get install -yq $REQUIREMENTS
 type pacman  2>/dev/null && $SUDO pacman -Sy -q --noconfirm --needed $REQUIREMENTS
 type apk     2>/dev/null && $SUDO apk add -q $REQUIREMENTS
 type yum     2>/dev/null && $SUDO yum install -yq $REQUIREMENTS
-source <(curl -fsSL https://raw.github.com/kerikun11/.dotfiles/main/install.sh)
+curl -fsSL https://raw.github.com/kerikun11/.dotfiles/main/install.sh | sh && zsh
 ```
 
 ## Useful Commands
