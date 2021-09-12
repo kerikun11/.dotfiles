@@ -5,11 +5,13 @@
 ##============================================================================##
 ## exec option
 set -e # first error to exit
+set -u # referencing undefined variables as an error
 
 ##============================================================================##
 ## definitions
 DOTFILES_REPOSITORY="https://github.com/kerikun11/.dotfiles.git"
 DOTFILES_DIR="$HOME/.dotfiles"
+DOTFILES_LINK_DIR="$DOTFILES_DIR/dotfiles_link"
 DEFAULT_USER="kerikun11"
 
 ##============================================================================##
@@ -55,19 +57,19 @@ echo "OK $DOTFILES_DIR"
 
 ##============================================================================##
 ## link .dotfiles
-DOTFILES_LINK_DIR="$DOTFILES_DIR/dotfiles_link"
 dotfiles_link_files=$(find $DOTFILES_LINK_DIR -type f)
 for link_target in $dotfiles_link_files; do
-    # make link_name
+    ## make link_name
     file=${link_target#$DOTFILES_LINK_DIR/} # remove first path
     link_name="$HOME/$file"
-    echo "link: $file"
-    # If there is a file that is not a symbolic link, back it up.
+    echo "  link: $file"
+    ## If there is a file that is not a symbolic link, back it up.
     if [ -f $link_name ] && [ ! -L $link_name ]; then
-        echo "  $file -> $file.backup"
-        mv $link_name $link_name.backup
+        file_backup=$file.backup-$(date +%Y%m%d-%H%M%S)
+        echo "        $file -> $file_backup"
+        mv $HOME/$file $HOME/$file_backup
     fi
-    # make a symbolic link
+    ## make a symbolic link
     mkdir -p $(dirname $link_name)
     ln -sf $link_target $link_name
 done
