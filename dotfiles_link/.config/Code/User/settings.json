@@ -1,6 +1,4 @@
 {
-    // Settings-Sync
-    "sync.gist": "daaa7ed6406a23237d7405f10f7d6b4a",
     // Terminal
     // "terminal.integrated.shell.windows": "C:\\msys64\\usr\\bin\\zsh.exe",
     // "terminal.integrated.shellArgs.windows": [
@@ -116,6 +114,7 @@
     "cSpell.enabled": true,
     "cSpell.enableFiletypes": [
         "cmake",
+        "dockercompose",
         "shellscript"
     ],
     "cSpell.userWords": [
@@ -150,6 +149,7 @@
         "Elecrow",
         "elif",
         "endmenu",
+        "entrypoint",
         "Espressif",
         "EVAL",
         "Feedforward",
@@ -157,6 +157,7 @@
         "Gmail",
         "gpio",
         "graphviz",
+        "gsettings",
         "HHKB",
         "HSPI",
         "htpasswd",
@@ -193,6 +194,7 @@
         "mydns",
         "nargs",
         "netmask",
+        "nextcloud",
         "nmcli",
         "noconfirm",
         "nproc",

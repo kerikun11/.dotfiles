@@ -16,6 +16,9 @@ My Configuration Files for UNIX Systems
 ```sh
 ## Install .dotfiles with curl
 curl -fsSL https://raw.github.com/kerikun11/.dotfiles/main/install.sh | sh
+```
+
+```sh
 ## Install .dotfiles with wget
 wget -qO - https://raw.github.com/kerikun11/.dotfiles/main/install.sh | sh
 ```
@@ -34,16 +37,18 @@ curl -fsSL https://raw.github.com/kerikun11/.dotfiles/main/install.sh | sh && zs
 ## Useful Commands
 
 ```sh
+## allow me to run sudo without password
+echo "$USER ALL=NOPASSWD: ALL" | sudo EDITOR='tee -a' visudo
+## Manjaro Mirror Lists
+sudo pacman-mirrors -c Japan
 ## Ubuntu Mirror Lists
 sudo sed -i.bak -e 's%http://[^ ]\+%mirror://mirrors.ubuntu.com/mirrors.txt%g' /etc/apt/sources.list
 cat /etc/apt/sources.list | sed -e '/^#/d' -e '/^$/d' # show entries
-## Manjaro Mirror Lists
-sudo pacman-mirrors -c Japan
-## allow me to run sudo without password
-echo "$USER ALL=NOPASSWD: ALL" | sudo EDITOR='tee -a' visudo
 ## Ubuntu Desktop
 gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps']"
 LANG=C xdg-user-dirs-gtk-update # rename home dirs in English
+## Open GNOME Control Center in SSH X11 Forwarding
+sudo -E XDG_CURRENT_DESKTOP=GNOME gnome-control-center
 ```
 
 ## Dockerfile
