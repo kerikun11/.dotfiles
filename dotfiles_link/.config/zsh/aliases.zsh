@@ -42,7 +42,8 @@ alias p='python'
 alias p2='python2'
 alias p3='python3'
 alias r='exec zsh' # reload zsh
-alias sc='systemctl'
+alias ssc='sudo systemctl'
+alias sst='sudo systemctl status'
 alias se='sudoedit'
 alias sv='serve'
 alias tb='take build' # call oh-my-zsh function
@@ -94,7 +95,7 @@ alias pdfnup2x4='pdfnup --batch --a4paper --nup 2x4 --scale 0.96 --no-landscape'
 alias rmgeotag='exiftool -overwrite_original -geotag='
 
 ##============================================================================##
-## directory alias
+## directory aliases
 # hash -d dot=~/.dotfiles
 
 ##============================================================================##
@@ -138,5 +139,9 @@ function periodic-open() {
       : $((seconds--))
     done
   done
+}
+function speed-test-ssh() {
+  [ "$#" -ne 1 ] && echo "usage: $ $0 hostname" && return 1
+  yes | pv | ssh $1 "cat >/dev/null"
 }
 ##============================================================================##
