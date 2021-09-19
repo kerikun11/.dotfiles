@@ -48,7 +48,7 @@ $yay_install_cmd docker
 # $yay_install_cmd qtcreator qt5-base
 # $yay_install_cmd qemu-user-static
 ## utility
-$yay_install_cmd trash-cli xsel figlet sl exa bat fd tldr ghq jq
+$yay_install_cmd trash-cli xsel figlet sl exa bat fd tldr ghq jq pv
 $yay_install_cmd hugo asciidoctor doxygen graphviz
 $yay_install_cmd dos2unix perl-image-exiftool
 $yay_install_cmd xorg-xinput bluez-utils zsa-wally
