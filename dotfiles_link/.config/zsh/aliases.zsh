@@ -141,7 +141,7 @@ function periodic-open() {
     done
   done
 }
-function speed-test-ssh() {
+function ssh-speed-test() {
   [ "$#" -ne 1 ] && echo "usage: $ $0 hostname" && return 1
   yes | pv | ssh $1 "cat >/dev/null"
 }
