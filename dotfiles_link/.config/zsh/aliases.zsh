@@ -3,13 +3,13 @@
 ## date: 2021.06.01
 ##============================================================================##
 ## custom aliases
+alias gsettings_list='gsettings list-recursively'
 alias od-ascii='od -tx1z -Ax'
 alias serve='python3 -m http.server'
 alias takebuild='take build' # call oh-my-zsh function
+alias tree-git='tree -a -I .git'
 alias zshenv='$EDITOR $HOME/.zshenv'
 alias zshrc='$EDITOR $HOME/.zshrc'
-alias gsettings_list='gsettings list-recursively'
-alias tree-git='tree -a -I .git'
 
 ## initial aliases
 alias c='code'
@@ -142,8 +142,8 @@ function periodic-open() {
   done
 }
 function ssh-speed-test() {
-  [ "$#" -ne 1 ] && echo "usage: $ $0 hostname" && return 1
-  yes | pv | ssh $1 "cat >/dev/null"
+  [ "$#" -lt 1 ] && echo "usage: $ $0 hostname" && return 1
+  yes | pv | ssh $* "cat >/dev/null"
 }
 function ssh-del-known_hosts-line() {
   sed -i ${1}d $HOME/.ssh/known_hosts
