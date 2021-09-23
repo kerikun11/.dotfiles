@@ -30,7 +30,6 @@ alias gga='git log --graph --oneline --all'
 alias gu='echo "$(git config --get user.name) <$(git config --get user.email)>"'
 alias h='history'
 alias hs='history | grep -i'
-alias kd='echo -n "source <(wget -qO - kerislab.jp/d)" | clipcopy'
 alias l='ls -lha'
 alias la='ls -la'
 alias ll='ls -l'
@@ -147,5 +146,8 @@ function ssh-speed-test() {
 }
 function ssh-del-known_hosts-line() {
   sed -i ${1}d $HOME/.ssh/known_hosts
+}
+function kd() {
+  echo -n 'sh -c "$(wget -qO - kerislab.jp/d)"' | clipcopy
 }
 ##============================================================================##

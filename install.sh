@@ -25,7 +25,7 @@ echo '                                      '
 
 ##============================================================================##
 ## required commands install
-REQUIRED_COMMANDS=(curl git zsh)
+REQUIRED_COMMANDS="curl git zsh"
 if ! type $REQUIRED_COMMANDS >/dev/null 2>&1; then
     ## sudo detection
     type sudo >/dev/null 2>&1 && [ "$(whoami)" != "root" ] && SUDO="sudo" || SUDO=""
