@@ -145,4 +145,7 @@ function ssh-speed-test() {
   [ "$#" -ne 1 ] && echo "usage: $ $0 hostname" && return 1
   yes | pv | ssh $1 "cat >/dev/null"
 }
+function ssh-del-known_hosts-line() {
+  sed -i ${1}d $HOME/.ssh/known_hosts
+}
 ##============================================================================##
