@@ -9,6 +9,7 @@ alias takebuild='take build' # call oh-my-zsh function
 alias zshenv='$EDITOR $HOME/.zshenv'
 alias zshrc='$EDITOR $HOME/.zshrc'
 alias gsettings_list='gsettings list-recursively'
+alias tree-git='tree -a -I .git'
 
 ## initial aliases
 alias c='code'
@@ -50,6 +51,7 @@ alias tb='take build' # call oh-my-zsh function
 alias wh='which'
 
 ## command replace
+alias grep='grep --color=auto'
 alias make='make -j$(nproc)'
 alias open='open_command' # call oh-my-zsh function
 type bat &>/dev/null && alias cat='bat'
@@ -101,7 +103,6 @@ alias rmgeotag='exiftool -overwrite_original -geotag='
 ##============================================================================##
 ## functions
 function chpwd() { ls; }
-function tree-git() { git ls-tree -r --name-only HEAD $1 | tree --fromfile; }
 function svg2pdf() { inkscape -D -z --file=$1 --export-pdf=${1%.*}.pdf; }
 function permission-reset() {
   find $1 -type d -print | xargs chmod 755
@@ -111,7 +112,7 @@ function local-ip() {
   echo $(ip route get 8.8.8.8 | sed -n '/src/{s/.*src *\([^ ]*\).*/\1/p;q}')
 }
 function datetimediff() {
-  # format: "2021.02.03 12:34:56 xxx"
+  # log format: "2021.02.03 12:34:56 xxx"
   echo start time:
   read ts
   echo end time:

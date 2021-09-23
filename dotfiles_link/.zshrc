@@ -22,17 +22,19 @@ zinit snippet OMZP::git             # https://github.com/ohmyzsh/ohmyzsh/tree/ma
 zinit snippet OMZP::vi-mode         # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vi-mode
 ##============================================================================##
 ## one-line plugins
-zinit light paulirish/git-open               # https://github.com/paulirish/git-open
+zinit light paulirish/git-open            # https://github.com/paulirish/git-open
+zinit light zsh-users/zsh-autosuggestions # https://github.com/zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-completions     # https://github.com/zsh-users/zsh-completions
+##============================================================================##
+## zsh syntax highlighting
 zinit light zdharma/fast-syntax-highlighting # https://github.com/zdharma/fast-syntax-highlighting
-zinit light zsh-users/zsh-autosuggestions    # https://github.com/zsh-users/zsh-autosuggestions
-zinit light zsh-users/zsh-completions        # https://github.com/zsh-users/zsh-completions
 zle_highlight=('paste:none')                 # https://github.com/zdharma/fast-syntax-highlighting/issues/105
 ##============================================================================##
 ## zsh theme; see ~/.p10k.zsh
 zinit ice depth=1 && zinit light romkatv/powerlevel10k # https://github.com/romkatv/powerlevel10k
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 ##============================================================================##
-## anyframe
+## anyframe; interactive command/file search
 zinit ice from"gh-r" as"program"
 zinit load junegunn/fzf-bin    # https://github.com/junegunn/fzf/releases
 zinit light mollifier/anyframe # https://github.com/mollifier/anyframe
@@ -51,19 +53,18 @@ if type fzf &>/dev/null; then
 fi
 ##============================================================================##
 ## key bind
-bindkey -s '^]' '\e'        # fix escape key
+bindkey -s '^]' '\e'        # fix escape key in vscode terminal
 bindkey "^[[3~" delete-char # fix delete key
 bindkey '^z' undo           # undo
 bindkey '^y' redo           # redo
-bindkey "^o" copybuffer     # copy
+bindkey "^o" copybuffer     # calls omz function
 ## vi-mode
 KEYTIMEOUT=1 # shorten vi-mode switching delay
-## pushd
+## other options
 setopt auto_pushd pushd_ignore_dups pushdminus auto_cd
-cdpath=(~)
 setopt nonomatch # Execute command even if no match with glob
 setopt hist_ignore_dups
-setopt interactivecomments
+setopt interactivecomments # allow comments when interactive mode
 ##============================================================================##
 type vim &>/dev/null && export EDITOR='vim'
 source $HOME/.config/zsh/aliases.zsh

@@ -53,8 +53,8 @@
     context                   # user@host
     dir                       # current directory
     vcs                       # git status
+    time                      # current time
     command_execution_time    # previous command duration
-    # time                    # current time
     # =========================[ Line #2 ]=========================
     newline                   # \n
     virtualenv                # python virtual environment

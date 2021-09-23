@@ -25,9 +25,9 @@ sh -c "$(wget -qO - https://raw.github.com/kerikun11/.dotfiles/main/install.sh)"
 
 ```sh
 ## Install Requirements
-REQUIREMENTS=(curl git zsh)
+REQUIREMENTS="curl git zsh"
 type sudo   2>/dev/null && test "$(whoami)" != "root" && SUDO="sudo" || SUDO=""
-type apt    2>/dev/null && $SUDO apt update -qq && $SUDO apt install -yqq $REQUIREMENTS
+type apt    2>/dev/null && $SUDO apt update -q && $SUDO apt install -yq $REQUIREMENTS
 type pacman 2>/dev/null && $SUDO pacman -Sy -q --noconfirm --needed     $REQUIREMENTS
 type apk    2>/dev/null && $SUDO apk add -q                             $REQUIREMENTS
 type yum    2>/dev/null && $SUDO yum install -yq                        $REQUIREMENTS
