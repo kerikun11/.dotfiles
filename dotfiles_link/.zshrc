@@ -30,9 +30,9 @@ zinit light zsh-users/zsh-completions     # https://github.com/zsh-users/zsh-com
 zinit light zdharma/fast-syntax-highlighting # https://github.com/zdharma/fast-syntax-highlighting
 zle_highlight=('paste:none')                 # https://github.com/zdharma/fast-syntax-highlighting/issues/105
 ##============================================================================##
-## zsh theme; see ~/.p10k.zsh
-zinit ice depth=1 && zinit light romkatv/powerlevel10k # https://github.com/romkatv/powerlevel10k
+## zsh theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+zinit ice depth=1 && zinit light romkatv/powerlevel10k # https://github.com/romkatv/powerlevel10k
 ##============================================================================##
 ## anyframe; interactive command/file search
 zinit ice from"gh-r" as"program"

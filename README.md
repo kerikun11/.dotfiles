@@ -4,6 +4,8 @@ My Configuration Files for UNIX Systems
 
 ## Install .dotfiles Automatically
 
+See [install.sh](install.sh) for detail.
+
 ```sh
 ## Install .dotfiles with curl
 sh -c "$(curl -fsSL https://raw.github.com/kerikun11/.dotfiles/main/install.sh)"
@@ -46,11 +48,13 @@ sudo -E XDG_CURRENT_DESKTOP=GNOME gnome-control-center
 
 ```sh
 # first install zsh git curl
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.powerlevel10k
 curl -fsSL https://raw.github.com/kerikun11/.dotfiles/main/dotfiles_link/.p10k.zsh > ~/.p10k.zsh
-echo 'source ~/.powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
 echo 'source ~/.p10k.zsh' >>~/.zshrc
-exec zsh -l
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.powerlevel10k
+echo 'source ~/.powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+git clone --depth=1 https://github.com/zdharma/fast-syntax-highlighting ~/.fast-syntax-highlighting
+echo 'source ~/.fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh' >>~/.zshrc
+zsh -l
 ```
 
 ## Dockerfile
