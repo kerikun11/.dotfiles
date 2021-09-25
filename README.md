@@ -44,17 +44,26 @@ LANG=C xdg-user-dirs-gtk-update # rename home dirs in English
 sudo -E XDG_CURRENT_DESKTOP=GNOME gnome-control-center
 ```
 
-## Apply Only Zsh Theme
+## Instant Prompt Theme
 
 ```sh
-# first install zsh git curl
-curl -fsSL https://raw.github.com/kerikun11/.dotfiles/main/dotfiles_link/.p10k.zsh > ~/.p10k.zsh
-echo 'source ~/.p10k.zsh' >>~/.zshrc
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.powerlevel10k
-echo 'source ~/.powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+## Bash Instant Prompt Theme
+export PS1='
+\[\e[0;31m\]# \[\e[0;32m\]\u \[\e[0m\]@ \[\e[0;36m\]\h \[\e[0m\]in \[\e[0;33m\]\w \[\e[1;30m\]\t (bash)
+\[\e[0;34m\]\$ \[\e[0m\]'
+```
+
+```sh
+## Zsh Instant Prompt Theme
+export PROMPT='
+%F{red}# %F{green}%n %F{white}@ %F{cyan}%m %F{white}in %F{yellow}%~ %F{240}%*
+%F{blue}$ %f'
+```
+
+```sh
+## Zsh Syntax Highlighting
 git clone --depth=1 https://github.com/zdharma/fast-syntax-highlighting ~/.fast-syntax-highlighting
-echo 'source ~/.fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh' >>~/.zshrc
-zsh -l
+source ~/.fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 ```
 
 ## Dockerfile
