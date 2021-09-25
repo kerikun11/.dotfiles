@@ -2,16 +2,7 @@
 
 My Configuration Files for UNIX Systems
 
-```
-         __      __  _____ __         
-    ____/ /___  / /_/ __(_) /__  _____
-   / __  / __ \/ __/ /_/ / / _ \/ ___/
- _/ /_/ / /_/ / /_/ __/ / /  __(__  ) 
-(_)__,_/\____/\__/_/ /_/_/\___/____/  
-                                      
-```
-
-## Install .dotfiles
+## Install .dotfiles Automatically
 
 ```sh
 ## Install .dotfiles with curl
@@ -24,7 +15,7 @@ sh -c "$(wget -qO - https://raw.github.com/kerikun11/.dotfiles/main/install.sh)"
 ```
 
 ```sh
-## Install Requirements
+## Install Requirements before Install
 REQUIREMENTS="curl git zsh"
 type sudo   2>/dev/null && test "$(whoami)" != "root" && SUDO="sudo" || SUDO=""
 type apt    2>/dev/null && $SUDO apt update -q && $SUDO apt install -yq $REQUIREMENTS
@@ -49,6 +40,17 @@ gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps']"
 LANG=C xdg-user-dirs-gtk-update # rename home dirs in English
 ## Open GNOME Control Center in SSH X11 Forwarding
 sudo -E XDG_CURRENT_DESKTOP=GNOME gnome-control-center
+```
+
+## Apply Only Zsh Theme
+
+```sh
+# first install zsh git curl
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.powerlevel10k
+curl -fsSL https://raw.github.com/kerikun11/.dotfiles/main/dotfiles_link/.p10k.zsh > ~/.p10k.zsh
+echo 'source ~/.powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+echo 'source ~/.p10k.zsh' >>~/.zshrc
+exec zsh -l
 ```
 
 ## Dockerfile

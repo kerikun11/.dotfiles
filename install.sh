@@ -1,7 +1,7 @@
 #!/bin/sh
 ##============================================================================##
-## description  UNIX configuration files installer
-## author       kerikun11
+## UNIX configuration files installer
+## Copyright (c) 2021 Ryotaro Onuki <kerikun11+github@gmail.com>
 ##============================================================================##
 ## exec option
 set -e # first error to exit
@@ -16,15 +16,17 @@ DEFAULT_USER="kerikun11"
 
 ##============================================================================##
 ## opening
-echo '         __      __  _____ __         '
-echo '    ____/ /___  / /_/ __(_) /__  _____'
-echo '   / __  / __ \/ __/ /_/ / / _ \/ ___/'
-echo ' _/ /_/ / /_/ / /_/ __/ / /  __(__  ) '
-echo '(_)__,_/\____/\__/_/ /_/_/\___/____/  '
-echo '                                      '
+echo "
+         __      __  _____ __         
+    ____/ /___  / /_/ __(_) /__  _____
+   / __  / __ \/ __/ /_/ / / _ \/ ___/
+ _/ /_/ / /_/ / /_/ __/ / /  __(__  ) 
+(_)__,_/\____/\__/_/ /_/_/\___/____/  
+                                      
+"
 
 ##============================================================================##
-## required commands install
+## install required commands
 REQUIRED_COMMANDS="curl git zsh"
 if ! type $REQUIRED_COMMANDS >/dev/null 2>&1; then
     ## sudo detection
@@ -61,7 +63,7 @@ dotfiles_link_files=$(find $DOTFILES_LINK_DIR -type f)
 for link_target in $dotfiles_link_files; do
     ## make link_name
     file=${link_target#$DOTFILES_LINK_DIR/} # remove first path
-    link_name="$HOME/$file"
+    link_name=$HOME/$file
     echo "  link: $file"
     ## If there is a file that is not a symbolic link, back it up.
     if [ -f $link_name ] && [ ! -L $link_name ]; then
@@ -83,8 +85,8 @@ if [ $(whoami) != "$DEFAULT_USER" ]; then
         git config --global --unset user.name
     git config --global --get user.email 2>&1 >/dev/null &&
         git config --global --unset user.email
+    echo "OK unset user in .gitconfig"
 fi
-echo "OK .gitconfig"
 
 ##============================================================================##
 ## change default shell to zsh
@@ -93,14 +95,22 @@ if [ -f /etc/passwd ] &&
     read -p "Do you want to change default shell to zsh? [Y/n] :" YN
     case "$YN" in "Y" | "y" | "")
         chsh -s $(which zsh)
-        echo "OK chsh to zsh"
+        echo "OK change default shell to zsh"
         ;;
     esac
 fi
 
 ##============================================================================##
 ## ending
-echo "Everything has done. Enjoy!"
+echo "Everything has done."
+echo '
+    ______        _             __
+   / ____/___    (_)___  __  __/ /
+  / __/ / __ \  / / __ \/ / / / / 
+ / /___/ / / / / / /_/ / /_/ /_/  
+/_____/_/ /_/_/ /\____/\__, (_)   
+           /___/      /____/      
+'
 
 ##============================================================================##
 ## start (or reload) zsh
