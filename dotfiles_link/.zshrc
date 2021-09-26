@@ -14,17 +14,17 @@ zinit snippet OMZL::completion.zsh  # https://github.com/ohmyzsh/ohmyzsh/blob/ma
 zinit snippet OMZL::directories.zsh # https://github.com/ohmyzsh/ohmyzsh/blob/master/lib/directories.zsh
 zinit snippet OMZL::functions.zsh   # https://github.com/ohmyzsh/ohmyzsh/blob/master/lib/functions.zsh
 zinit snippet OMZL::git.zsh         # https://github.com/ohmyzsh/ohmyzsh/blob/master/lib/git.zsh
-zinit snippet OMZL::grep.zsh        # https://github.com/ohmyzsh/ohmyzsh/blob/master/lib/grep.zsh
 zinit snippet OMZL::history.zsh     # https://github.com/ohmyzsh/ohmyzsh/blob/master/lib/history.zsh
 zinit snippet OMZP::copybuffer      # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copybuffer
 zinit snippet OMZP::extract         # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/extract
 zinit snippet OMZP::git             # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git
 zinit snippet OMZP::vi-mode         # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vi-mode
 ##============================================================================##
-## one-line plugins
-zinit light paulirish/git-open            # https://github.com/paulirish/git-open
-zinit light zsh-users/zsh-autosuggestions # https://github.com/zsh-users/zsh-autosuggestions
-zinit light zsh-users/zsh-completions     # https://github.com/zsh-users/zsh-completions
+## zinit plugins
+zinit light paulirish/git-open             # https://github.com/paulirish/git-open
+zinit light zsh-users/zsh-autosuggestions  # https://github.com/zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-completions      # https://github.com/zsh-users/zsh-completions
+zinit light ael-code/zsh-colored-man-pages # https://github.com/ael-code/zsh-colored-man-pages
 ##============================================================================##
 ## zsh syntax highlighting
 zinit light zdharma/fast-syntax-highlighting # https://github.com/zdharma/fast-syntax-highlighting
@@ -34,40 +34,23 @@ zle_highlight=('paste:none')                 # https://github.com/zdharma/fast-s
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 zinit ice depth=1 && zinit light romkatv/powerlevel10k # https://github.com/romkatv/powerlevel10k
 ##============================================================================##
-## anyframe; interactive command/file search
-zinit ice from"gh-r" as"program"
-zinit load junegunn/fzf-bin    # https://github.com/junegunn/fzf/releases
-zinit light mollifier/anyframe # https://github.com/mollifier/anyframe
-zstyle ":anyframe:selector:" use fzf
-zstyle ":anyframe:selector:fzf:" command 'fzf --reverse --no-sort --exact --info=inline'
-if type fzf &>/dev/null; then
-  bindkey '^g' anyframe-widget-cd-ghq-repository
-  bindkey '^k' anyframe-widget-kill
-  # bindkey '^h' anyframe-widget-put-history
-  function select-history() {
-    BUFFER=$(history -n -r 1 | fzf --reverse --no-sort --exact --query "$LBUFFER" | sed 's/\\n/\n/g')
-    CURSOR=$#BUFFER
-  }
-  zle -N select-history
-  bindkey '^j' select-history
-fi
+## zsh options; see $ man zshoptions
+setopt auto_cd             # execute only directory name to change dir
+setopt nonomatch           # avoid error when no match with glob
+setopt interactivecomments # allow comments when interactive mode
+function chpwd() { ls; }   # run ls after cd
 ##============================================================================##
 ## key bind
 bindkey -s '^]' '\e'        # fix escape key in vscode terminal
-bindkey "^[[3~" delete-char # fix delete key
-bindkey '^z' undo           # undo
-bindkey '^y' redo           # redo
-bindkey "^o" copybuffer     # calls omz function
-## vi-mode
+bindkey '^[[3~' delete-char # fix delete key
+bindkey '^z' undo
+bindkey '^y' redo
+## vi-mode option
 KEYTIMEOUT=1 # shorten vi-mode switching delay
-## other options
-setopt auto_pushd pushd_ignore_dups pushdminus auto_cd
-setopt nonomatch # Execute command even if no match with glob
-setopt hist_ignore_dups
-setopt interactivecomments # allow comments when interactive mode
+##============================================================================##
+source $HOME/.config/zsh/aliases.zsh 2>/dev/null
+source $HOME/.config/zsh/sshcode.zsh 2>/dev/null
+source $HOME/.config/zsh/extension.zsh 2>/dev/null
 ##============================================================================##
 type vim &>/dev/null && export EDITOR='vim'
-source $HOME/.config/zsh/aliases.zsh
-source $HOME/.config/zsh/sshcode.zsh
-source $HOME/.config/zsh/extension.zsh
 ##============================================================================##

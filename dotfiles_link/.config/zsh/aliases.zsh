@@ -2,62 +2,6 @@
 ## author: Ryotaro Onuki <kerikun11+github@gmail.com>
 ## date: 2021.06.01
 ##============================================================================##
-## custom aliases
-alias gsettings_list='gsettings list-recursively'
-alias od-ascii='od -tx1z -Ax'
-alias serve='python3 -m http.server'
-alias takebuild='take build' # call oh-my-zsh function
-alias tree-git='tree -a -I .git'
-alias zshenv='$EDITOR $HOME/.zshenv'
-alias zshrc='$EDITOR $HOME/.zshrc'
-
-## initial aliases
-alias c='code'
-alias cdg='cd $(git rev-parse --show-toplevel)'
-alias dr='docker'
-alias drb='docker build'
-alias drc='docker container'
-alias drcs='docker-compose'
-alias dri='docker images'
-alias drr='docker run'
-alias drrme='docker run --rm -i -t --network host -u $(id -u):$(id -g) -v /etc/passwd:/etc/passwd:ro -v /etc/group:/etc/group:ro -v $PWD:/w -w /w'
-alias drrmex11='docker run --rm -i -t --network host -u $(id -u):$(id -g) -v /etc/passwd:/etc/passwd:ro -v /etc/group:/etc/group:ro -v $PWD:/w -w /w --tmpfs $HOME -v $HOME/.Xauthority:$HOME/.Xauthority:ro -e DISPLAY'
-alias drrrm='docker run --rm -i -t'
-alias drv='docker volume'
-alias e='echo'
-alias g='git'
-alias gg='git log --graph --oneline'
-alias gga='git log --graph --oneline --all'
-alias gu='echo "$(git config --get user.name) <$(git config --get user.email)>"'
-alias h='history'
-alias hs='history | grep -i'
-alias l='ls -lha'
-alias la='ls -la'
-alias ll='ls -l'
-alias ls='ls --color=auto'
-alias lsa='ls -a'
-alias m='make'
-alias n='ninja'
-alias o='open'
-alias p='python'
-alias p2='python2'
-alias p3='python3'
-alias r='exec zsh' # reload zsh
-alias ssc='sudo systemctl'
-alias sst='sudo systemctl status'
-alias se='sudoedit'
-alias sv='serve'
-alias tb='take build' # call oh-my-zsh function
-alias wh='which'
-
-## command replace
-alias grep='grep --color=auto'
-alias make='make -j$(nproc)'
-alias open='open_command' # call oh-my-zsh function
-type bat &>/dev/null && alias cat='bat'
-type exa &>/dev/null && alias ls='exa -g'
-type trash-put &>/dev/null && alias rm='trash-put'
-
 ## global aliases
 alias -g A='2>&1 | tee -a'
 alias -g C='| clipcopy' # call oh-my-zsh function
@@ -67,12 +11,70 @@ alias -g H='| head'
 alias -g L='| less -R'
 alias -g P='| peco'
 alias -g T='| tail'
+alias -g V='| vim -R -'
 alias -g W='| wc -l'
 alias -g X='| xargs'
 
-## date string
+## command replace
+alias diff='diff --color=auto'
+alias grep='grep --color=auto'
+alias ip='ip -color=auto'
+alias ls='ls --color=auto'
+alias make='make -j$(nproc)'
+alias view="vim -R"
+type trash-put &>/dev/null && alias rm='trash-put'
+
+## initial aliases
+alias c='code'
+alias cdgtop='cd $(git rev-parse --show-toplevel)'
+alias dr='docker'
+alias drb='docker build'
+alias drc='docker container'
+alias drcs='docker-compose'
+alias dri='docker images'
+alias drr='docker run'
+alias drrrmit='docker run --rm -i -t'
+alias drrrmitme='docker run --rm -i -t --network host -u $(id -u):$(id -g) -v /etc/passwd:/etc/passwd:ro -v /etc/group:/etc/group:ro -v $PWD:/w -w /w'
+alias drrrmitmex11='docker run --rm -i -t --network host -u $(id -u):$(id -g) -v /etc/passwd:/etc/passwd:ro -v /etc/group:/etc/group:ro -v $PWD:/w -w /w --tmpfs $HOME -v $HOME/.Xauthority:$HOME/.Xauthority:ro -e DISPLAY'
+alias drv='docker volume'
+alias e='echo'
+alias g='git'
+alias gg='git log --graph --oneline'
+alias gga='git log --graph --oneline --all'
+alias gu='echo "$(git config --get user.name) <$(git config --get user.email)>"'
+alias h='history'
+alias hs='history | grep -i'
+alias ip4='ip -4'
+alias ip6='ip -6'
+alias l='ls'
+alias la='ls -a'
+alias ll='ls -l'
+alias lla='ls -la'
+alias m='make'
+alias n='ninja'
+alias o='open'
+alias p='python'
+alias p2='python2'
+alias p3='python3'
+alias r='exec zsh' # reload zsh
+alias se='sudoedit'
+alias ssc='sudo systemctl'
+alias sst='sudo systemctl status'
+alias sv='serve'
+alias tb='take build' # call oh-my-zsh function
+alias v='vim'
+alias wh='which'
+
+## custom aliases
 alias datestr='date +%Y%m%d'
 alias datetimestr='date +%Y%m%d-%H%M%S'
+alias gsettings_list='gsettings list-recursively'
+alias od-ascii='od -tx1z -Ax'
+alias open='open_command' # call oh-my-zsh function
+alias serve='python3 -m http.server'
+alias tree-git='tree -a -I .git'
+alias zshenv='$EDITOR $HOME/.zshenv'
+alias zshrc='$EDITOR $HOME/.zshrc'
 
 ## long command alias
 alias upgradeall='sudo apt update && sudo apt upgrade -y && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo apt autoclean'
@@ -102,7 +104,6 @@ alias rmgeotag='exiftool -overwrite_original -geotag='
 
 ##============================================================================##
 ## functions
-function chpwd() { ls; }
 function svg2pdf() { inkscape -D -z --file=$1 --export-pdf=${1%.*}.pdf; }
 function permission-reset() {
   find $1 -type d -print | xargs chmod 755
