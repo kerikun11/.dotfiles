@@ -49,7 +49,7 @@ sudo -E XDG_CURRENT_DESKTOP=GNOME gnome-control-center
 ```sh
 ## Bash Instant Prompt Theme
 export PS1='
-\[\e[0;31m\]# \[\e[0;32m\]\u \[\e[0m\]@ \[\e[0;36m\]\h \[\e[0m\]in \[\e[0;33m\]\w \[\e[1;30m\]\t (bash)
+\[\e[0;31m\]# \[\e[0;32m\]\u \[\e[0m\]@ \[\e[0;36m\]\h \[\e[0m\]in \[\e[0;33m\]\w \[\e[0;37m\]\t (bash)
 \[\e[0;34m\]\$ \[\e[0m\]'
 ```
 

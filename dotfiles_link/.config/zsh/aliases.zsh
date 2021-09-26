@@ -34,8 +34,8 @@ alias drcs='docker-compose'
 alias dri='docker images'
 alias drr='docker run'
 alias drrrmit='docker run --rm -i -t'
-alias drrrmitme='docker run --rm -i -t --network host -u $(id -u):$(id -g) -v /etc/passwd:/etc/passwd:ro -v /etc/group:/etc/group:ro -v $PWD:/w -w /w'
-alias drrrmitmex11='docker run --rm -i -t --network host -u $(id -u):$(id -g) -v /etc/passwd:/etc/passwd:ro -v /etc/group:/etc/group:ro -v $PWD:/w -w /w --tmpfs $HOME -v $HOME/.Xauthority:$HOME/.Xauthority:ro -e DISPLAY'
+alias drrrmitme='docker run --rm -i -t --network=host -u=$(id -u):$(id -g) -v /etc/passwd:/etc/passwd:ro -v /etc/group:/etc/group:ro -v $PWD:/w -w /w --tmpfs=$HOME'
+alias drrrmitmex11='docker run --rm -i -t --network=host -u=$(id -u):$(id -g) -v /etc/passwd:/etc/passwd:ro -v /etc/group:/etc/group:ro -v $PWD:/w -w /w --tmpfs=$HOME -v $HOME/.Xauthority:$HOME/.Xauthority:ro -e DISPLAY'
 alias drv='docker volume'
 alias e='echo'
 alias g='git'
@@ -150,6 +150,6 @@ function ssh-del-known_hosts-line() {
   sed -i ${1}d $HOME/.ssh/known_hosts
 }
 function kd() {
-  echo -n 'sh -c "$(wget -qO - kerislab.jp/d)"' | clipcopy
+  echo -n 'sh -c "$(curl -fsSL kerislab.jp/d || wget -qO - kerislab.jp/d)"' | clipcopy
 }
 ##============================================================================##
