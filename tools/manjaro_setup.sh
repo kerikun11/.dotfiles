@@ -29,10 +29,6 @@ echo "OK Caps -> Ctrl"
 $HOME/.dotfiles/tools/cinnamon_setup.sh
 echo "OK Cinnamon Settings"
 
-## Package Source Repository
-sudo cp $HOME/.dotfiles/tools/manjaro/mirrorlist /etc/pacman.d/mirrorlist
-echo "OK Manjaro Mirror"
-
 ## Packages
 sudo pacman -Syuu --noconfirm --needed --quiet
 ## Arch User Repository

@@ -56,7 +56,7 @@ alias o='open'
 alias p='python'
 alias p2='python2'
 alias p3='python3'
-alias r='exec zsh' # reload zsh
+alias r='touch $HOME/.zshrc && exec zsh' # reload zsh
 alias se='sudoedit'
 alias ssc='sudo systemctl'
 alias sst='sudo systemctl status'
@@ -75,6 +75,7 @@ alias serve='python3 -m http.server'
 alias tree-git='tree -a -I .git'
 alias zshenv='$EDITOR $HOME/.zshenv'
 alias zshrc='$EDITOR $HOME/.zshrc'
+alias zsh-startup='for i in $(seq 1 10); do time zsh -i -c exit; done'
 
 ## long command alias
 alias upgradeall='sudo apt update && sudo apt upgrade -y && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo apt autoclean'

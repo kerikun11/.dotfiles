@@ -48,9 +48,8 @@ bindkey '^y' redo
 ## vi-mode option
 KEYTIMEOUT=1 # shorten vi-mode switching delay
 ##============================================================================##
+type vim &>/dev/null && export EDITOR='vim'
 source $HOME/.config/zsh/aliases.zsh 2>/dev/null
 source $HOME/.config/zsh/sshcode.zsh 2>/dev/null
 source $HOME/.config/zsh/extension.zsh 2>/dev/null
-##============================================================================##
-type vim &>/dev/null && export EDITOR='vim'
 ##============================================================================##

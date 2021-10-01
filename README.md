@@ -57,7 +57,7 @@ export PS1='
 ## Zsh Instant Prompt Theme
 export PROMPT='
 %F{red}# %F{green}%n %F{white}@ %F{cyan}%m %F{white}in %F{yellow}%~ %F{240}%*
-%F{blue}$ %f'
+%F{blue}%# %f'
 ```
 
 ```sh
