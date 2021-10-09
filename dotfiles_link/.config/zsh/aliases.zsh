@@ -145,7 +145,7 @@ function periodic-open() {
 }
 function ssh-speed-test() {
   [ "$#" -lt 1 ] && echo "usage: $ $0 hostname" && return 1
-  yes | pv | ssh $* "cat >/dev/null"
+  yes | pv | ssh "$@" "cat >/dev/null"
 }
 function ssh-del-known_hosts-line() {
   sed -i ${1}d $HOME/.ssh/known_hosts

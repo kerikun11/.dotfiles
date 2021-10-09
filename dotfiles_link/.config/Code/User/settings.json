@@ -16,6 +16,7 @@
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.scrollback": 50000, // buffer line size
     "terminal.integrated.showExitAlert": false,
+    "terminal.integrated.tabs.enabled": false,
     // Settings
     "glassit.alpha": 220,
     "diffEditor.ignoreTrimWhitespace": false,
@@ -29,6 +30,7 @@
     "workbench.startupEditor": "none",
     "workbench.statusBar.visible": true,
     "markdown.preview.fontSize": 16,
+    "editor.bracketPairColorization.enabled": true,
     "editor.minimap.enabled": false,
     "editor.renderWhitespace": "boundary",
     "editor.suggestSelection": "first",
@@ -307,7 +309,6 @@
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter.notebook.ipynb"
     },
-    "terminal.integrated.tabs.enabled": false,
     "[dockerfile]": {
         "editor.defaultFormatter": "ms-azuretools.vscode-docker"
     }
