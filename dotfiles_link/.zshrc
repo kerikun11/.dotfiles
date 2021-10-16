@@ -21,10 +21,10 @@ zinit snippet OMZP::git             # https://github.com/ohmyzsh/ohmyzsh/tree/ma
 zinit snippet OMZP::vi-mode         # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vi-mode
 ##============================================================================##
 ## zinit plugins
-zinit light paulirish/git-open             # https://github.com/paulirish/git-open
+zinit light ael-code/zsh-colored-man-pages # https://github.com/ael-code/zsh-colored-man-pages
+zinit light peterhurford/git-it-on.zsh     # https://github.com/peterhurford/git-it-on.zsh
 zinit light zsh-users/zsh-autosuggestions  # https://github.com/zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions      # https://github.com/zsh-users/zsh-completions
-zinit light ael-code/zsh-colored-man-pages # https://github.com/ael-code/zsh-colored-man-pages
 ##============================================================================##
 ## zsh syntax highlighting
 zinit light zdharma/fast-syntax-highlighting # https://github.com/zdharma/fast-syntax-highlighting

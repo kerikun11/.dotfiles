@@ -3,8 +3,8 @@
 ## date: 2021.06.01
 ##============================================================================##
 ## global aliases
-alias -g A='2>&1 | tee -a'
-alias -g C='| clipcopy' # call oh-my-zsh function
+alias -g A='2>&1 | tee -a' # append
+alias -g C='| clipcopy'    # call oh-my-zsh function
 alias -g F='| fzf'
 alias -g G='| grep'
 alias -g H='| head'
@@ -16,17 +16,18 @@ alias -g W='| wc -l'
 alias -g X='| xargs'
 
 ## command replace
+alias cp='cp -i' # interactive
 alias diff='diff --color=auto'
 alias grep='grep --color=auto'
 alias ip='ip -color=auto'
 alias ls='ls --color=auto'
 alias make='make -j$(nproc)'
+alias mv='mv -i' # interactive
 alias view="vim -R"
 type trash-put &>/dev/null && alias rm='trash-put'
 
 ## initial aliases
 alias c='code'
-alias cdgtop='cd $(git rev-parse --show-toplevel)'
 alias dr='docker'
 alias drb='docker build'
 alias drc='docker container'
@@ -41,7 +42,6 @@ alias e='echo'
 alias g='git'
 alias gg='git log --graph --oneline'
 alias gga='git log --graph --oneline --all'
-alias gu='echo "$(git config --get user.name) <$(git config --get user.email)>"'
 alias h='history'
 alias hs='history | grep -i'
 alias ip4='ip -4'
@@ -56,7 +56,7 @@ alias o='open'
 alias p='python'
 alias p2='python2'
 alias p3='python3'
-alias r='touch $HOME/.zshrc && exec zsh' # reload zsh
+alias r='exec zsh' # reload zsh
 alias se='sudoedit'
 alias ssc='sudo systemctl'
 alias sst='sudo systemctl status'
@@ -66,16 +66,18 @@ alias v='vim'
 alias wh='which'
 
 ## custom aliases
+alias cd-git-top='cd $(git rev-parse --show-toplevel)'
 alias datestr='date +%Y%m%d'
 alias datetimestr='date +%Y%m%d-%H%M%S'
+alias git-user='echo "$(git config --get user.name) <$(git config --get user.email)>"'
 alias gsettings_list='gsettings list-recursively'
 alias od-ascii='od -tx1z -Ax'
 alias open='open_command' # call oh-my-zsh function
 alias serve='python3 -m http.server'
 alias tree-git='tree -a -I .git'
+alias zsh-startup='for i in $(seq 1 10); do time zsh -i -c exit; done'
 alias zshenv='$EDITOR $HOME/.zshenv'
 alias zshrc='$EDITOR $HOME/.zshrc'
-alias zsh-startup='for i in $(seq 1 10); do time zsh -i -c exit; done'
 
 ## long command alias
 alias upgradeall='sudo apt update && sudo apt upgrade -y && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo apt autoclean'

@@ -160,4 +160,8 @@
         "command": "copy-relative-path-and-line-numbers.both",
         "when": "editorTextFocus"
     },
+    {
+        "key": "alt+t",
+        "command": "openInTerminal"
+    },
 ]
