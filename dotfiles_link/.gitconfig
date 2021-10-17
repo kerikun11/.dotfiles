@@ -12,7 +12,6 @@
 [alias]
 	b = branch
 	br = branch --remotes
-	cfg = config
 	cm = commit
 	co = checkout
 	cp = cherry-pick
@@ -34,7 +33,5 @@
 	st = status
 	tags = tag --list
 	unstage = reset HEAD
-[ghq]
-	root = /home/kerikun11/.ghq
 [init]
 	defaultBranch = main

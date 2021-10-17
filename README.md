@@ -32,15 +32,22 @@ sh -c "$(curl -fsSL https://raw.github.com/kerikun11/.dotfiles/main/install.sh)"
 ```sh
 ## allow me to run sudo without password
 echo "$USER ALL=NOPASSWD: ALL" | sudo EDITOR='tee -a' visudo
-## Manjaro Mirror Lists
-sudo pacman-mirrors -c Japan
+```
+
+```sh
 ## Ubuntu Mirror Lists
 sudo sed -i.bak -e 's%http://[^ ]\+%mirror://mirrors.ubuntu.com/mirrors.txt%g' /etc/apt/sources.list
 cat /etc/apt/sources.list | sed -e '/^#/d' -e '/^$/d' # show entries
-## Ubuntu Desktop
+```
+
+```sh
+## Ubuntu Desktop Settings
 gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps']"
 LANG=C xdg-user-dirs-gtk-update # rename home dirs in English
-## Open GNOME Control Center in SSH X11 Forwarding
+```
+
+```sh
+## Open GNOME Control Center in SSH X11 Forwarding Env
 sudo -E XDG_CURRENT_DESKTOP=GNOME gnome-control-center
 ```
 
