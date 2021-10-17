@@ -35,12 +35,6 @@ echo "$USER ALL=NOPASSWD: ALL" | sudo EDITOR='tee -a' visudo
 ```
 
 ```sh
-## Ubuntu Mirror Lists
-sudo sed -i.bak -e 's%http://[^ ]\+%mirror://mirrors.ubuntu.com/mirrors.txt%g' /etc/apt/sources.list
-cat /etc/apt/sources.list | sed -e '/^#/d' -e '/^$/d' # show entries
-```
-
-```sh
 ## Ubuntu Desktop Settings
 gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps']"
 LANG=C xdg-user-dirs-gtk-update # rename home dirs in English
@@ -51,7 +45,7 @@ LANG=C xdg-user-dirs-gtk-update # rename home dirs in English
 sudo -E XDG_CURRENT_DESKTOP=GNOME gnome-control-center
 ```
 
-## Instant Prompt Theme
+## Instant Shell Theme
 
 ```sh
 ## Bash Instant Prompt Theme
