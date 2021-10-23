@@ -68,7 +68,9 @@ alias gca='git commit --amend'
 alias gco='git checkout'
 alias gcob='git checkout -b'
 alias gd='git diff'
+alias gdw='git diff --word-diff'
 alias gdca='git diff --cached'
+alias gdcaw='git diff --cached --word-diff'
 alias gf='git fetch'
 alias gg='git log --all --graph'
 alias gg1="git log --all --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'"
@@ -79,7 +81,9 @@ alias git-user='echo "$(git config --get user.name) <$(git config --get user.ema
 alias glg='git log'
 alias gph='git push'
 alias gpl='git pull'
+alias gre='git restore'
 alias gst='git status'
+alias gsu='git submodule update --init --recursive'
 alias gsw='git switch'
 
 ## docker aliases
