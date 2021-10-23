@@ -4,7 +4,7 @@ My Configuration Files for UNIX Systems
 
 ## Install .dotfiles Automatically
 
-See [install.sh](install.sh) for detail.
+See [install.sh](./install.sh) for detail.
 
 ```sh
 ## Install .dotfiles with curl
@@ -18,12 +18,12 @@ sh -c "$(wget -qO - https://raw.github.com/kerikun11/.dotfiles/main/install.sh)"
 
 ```sh
 ## Install Requirements before Install
-REQUIREMENTS="curl git zsh"
-type sudo   2>/dev/null && test "$(whoami)" != "root" && SUDO="sudo" || SUDO=""
-type apt    2>/dev/null && $SUDO apt update -q && $SUDO apt install -yq $REQUIREMENTS
-type pacman 2>/dev/null && $SUDO pacman -Sy -q --noconfirm --needed     $REQUIREMENTS
-type apk    2>/dev/null && $SUDO apk add -q                             $REQUIREMENTS
-type yum    2>/dev/null && $SUDO yum install -yq                        $REQUIREMENTS
+REQUIREMENTS="curl git zsh";\
+type sudo   &>/dev/null && test "$(whoami)" != "root" && SUDO="sudo" || SUDO="";\
+type apt    &>/dev/null && $SUDO apt update -q && $SUDO apt install -yq $REQUIREMENTS;\
+type pacman &>/dev/null && $SUDO pacman -Sy -q --noconfirm --needed     $REQUIREMENTS;\
+type apk    &>/dev/null && $SUDO apk add -q                             $REQUIREMENTS;\
+type yum    &>/dev/null && $SUDO yum install -yq                        $REQUIREMENTS;\
 sh -c "$(curl -fsSL https://raw.github.com/kerikun11/.dotfiles/main/install.sh)"
 ```
 
