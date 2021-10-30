@@ -4,7 +4,7 @@ My Configuration Files for UNIX Systems
 
 ## Install .dotfiles Automatically
 
-See [install.sh](./install.sh) for detail.
+See [install.sh](./install.sh) for details.
 
 ```sh
 ## Install .dotfiles with curl
@@ -43,6 +43,11 @@ LANG=C xdg-user-dirs-gtk-update # rename home dirs in English
 ```sh
 ## Open GNOME Control Center in SSH X11 Forwarding Env
 sudo -E XDG_CURRENT_DESKTOP=GNOME gnome-control-center
+```
+
+```sh
+# setup qemu-user-static
+sudo docker run --rm --privileged multiarch/qemu-user-static --reset --persistent yes
 ```
 
 ## Instant Shell Theme
