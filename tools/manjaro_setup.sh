@@ -42,7 +42,7 @@ yay_install_cmd="yay -S --noconfirm --quiet --needed --needed"
 ## requirements
 $yay_install_cmd base-devel # for yay build and install
 $yay_install_cmd git zsh tmux
-$yay_install_cmd gvim trash-cli xsel figlet sl tldr jq pv
+$yay_install_cmd gvim trash-cli xsel figlet sl tldr jq pv fzf
 ## dev
 $yay_install_cmd gcc-multilib cmake ninja gdb docker
 # $yay_install_cmd valgrind kcachegrind

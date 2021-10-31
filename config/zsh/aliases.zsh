@@ -39,7 +39,9 @@ alias l='ls'
 alias la='ls -a'
 alias ll='ls -l'
 alias lla='ls -la'
+alias lsa='ls -a'
 alias m='make'
+alias md='mkdir -p'
 alias n='ninja'
 alias o='open'
 alias p='python'
@@ -98,6 +100,19 @@ alias drrrmit='docker run --rm -i -t'
 alias drrrmitme='docker run --rm -i -t --network=host -u=$(id -u):$(id -g) -v /etc/passwd:/etc/passwd:ro -v /etc/group:/etc/group:ro -v $PWD:/w -w /w --tmpfs=$HOME'
 alias drrrmitmex11='docker run --rm -i -t --network=host -u=$(id -u):$(id -g) -v /etc/passwd:/etc/passwd:ro -v /etc/group:/etc/group:ro -v $PWD:/w -w /w --tmpfs=$HOME -v $HOME/.Xauthority:$HOME/.Xauthority:ro -e DISPLAY'
 alias drv='docker volume'
+
+## dirs
+alias d='dirs -v'
+alias -- -='cd -'
+alias 1='cd -'
+alias 2='cd -2'
+alias 3='cd -3'
+alias 4='cd -4'
+alias 5='cd -5'
+alias 6='cd -6'
+alias 7='cd -7'
+alias 8='cd -8'
+alias 9='cd -9'
 
 ## custom aliases
 alias datestr='date +%Y%m%d'
@@ -174,9 +189,7 @@ function ssh-speed-test() {
   [ "$#" -lt 1 ] && echo "usage: $ $0 hostname" && return 1
   yes | pv | ssh "$@" "cat >/dev/null"
 }
-function ssh-del-known_hosts-line() {
-  sed -i ${1}d $HOME/.ssh/known_hosts
-}
+function ssh-del-known_hosts-line() { sed -i ${1}d $HOME/.ssh/known_hosts; }
 function kd() {
   echo -n 'sh -c "$(curl -fsSL kerislab.jp/d || wget -qO - kerislab.jp/d)"' | clipcopy
 }
