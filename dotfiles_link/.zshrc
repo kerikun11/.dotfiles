@@ -3,9 +3,9 @@
 ## author: Ryotaro Onuki <kerikun11+github@gmail.com>
 ## date:   2021.06.05
 ##============================================================================##
-## zsh plugin manager: zinit https://github.com/zdharma/zinit
+## zsh plugin manager: zinit https://github.com/zdharma-continuum/zinit
 test ! -f $HOME/.zinit/bin/zinit.zsh &&
-  sh -c "$(curl -fsSL https://raw.github.com/zdharma/zinit/master/doc/install.sh)"
+  sh -c "$(curl -fsSL https://raw.github.com/zdharma-continuum/zinit/master/doc/install.sh)"
 source "$HOME/.zinit/bin/zinit.zsh"
 ##============================================================================##
 ## oh-my-zsh snippets
@@ -24,8 +24,8 @@ zinit light zsh-users/zsh-autosuggestions  # https://github.com/zsh-users/zsh-au
 zinit light zsh-users/zsh-completions      # https://github.com/zsh-users/zsh-completions
 ##============================================================================##
 ## zsh syntax highlighting
-zinit light zdharma/fast-syntax-highlighting # https://github.com/zdharma/fast-syntax-highlighting
-zle_highlight=('paste:none')                 # https://github.com/zdharma/fast-syntax-highlighting/issues/105
+zinit light zdharma-continuum/fast-syntax-highlighting # https://github.com/zdharma-continuum/fast-syntax-highlighting
+zle_highlight=('paste:none')                           # https://github.com/zdharma-continuum/fast-syntax-highlighting/issues/105
 ##============================================================================##
 ## zsh theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

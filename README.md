@@ -66,12 +66,6 @@ export PROMPT='
 %F{blue}%# %f'
 ```
 
-```sh
-## Zsh Syntax Highlighting
-git clone --depth=1 https://github.com/zdharma/fast-syntax-highlighting ~/.fast-syntax-highlighting
-source ~/.fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-```
-
 ## Dockerfile
 
 ```dockerfile
