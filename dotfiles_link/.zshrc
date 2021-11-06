@@ -1,7 +1,6 @@
 ##============================================================================##
-## file:   $HOME/.zshrc
-## author: Ryotaro Onuki <kerikun11+github@gmail.com>
-## date:   2021.10.31
+## Zsh Configuration File. $HOME/.zshrc
+## Copyright 2021 Ryotaro Onuki <kerikun11+github@gmail.com>
 ##============================================================================##
 ## zsh plugin manager https://github.com/tarjoilija/zgen
 [ ! -d $HOME/.zgen ] && git clone https://github.com/tarjoilija/zgen $HOME/.zgen
@@ -16,7 +15,6 @@ if ! zgen saved; then
     zgen oh-my-zsh lib/functions.zsh  # https://github.com/ohmyzsh/ohmyzsh/blob/master/lib/functions.zsh
     zgen oh-my-zsh lib/history.zsh    # https://github.com/ohmyzsh/ohmyzsh/blob/master/lib/history.zsh
     zgen oh-my-zsh plugins/copybuffer # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copybuffer
-    # zgen oh-my-zsh plugins/vi-mode    # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vi-mode
     ## other plugins
     zgen load ael-code/zsh-colored-man-pages             # https://github.com/ael-code/zsh-colored-man-pages
     zgen load peterhurford/git-it-on.zsh                 # https://github.com/peterhurford/git-it-on.zsh

@@ -1,7 +1,7 @@
 ##============================================================================##
-## description: zsh aliases
-## author: Ryotaro Onuki <kerikun11+github@gmail.com>
-## date: 2021.06.01
+## Description: Zsh Aliases
+## Copyright 2021 Ryotaro Onuki <kerikun11+github@gmail.com>
+## Last Modified: 2021.06.01
 ##============================================================================##
 ## global aliases
 alias -g A='2>&1 | tee -a' # append

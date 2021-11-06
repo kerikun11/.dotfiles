@@ -46,7 +46,7 @@ sudo -E XDG_CURRENT_DESKTOP=GNOME gnome-control-center
 ```
 
 ```sh
-# setup qemu-user-static
+# Configure qemu-user-static
 sudo docker run --rm --privileged multiarch/qemu-user-static --reset --persistent yes
 ```
 

@@ -1,4 +1,4 @@
-# file: $env:userprofile/Documents/WindowsPowerShell/profile.ps1
+# filepath: $env:userprofile/Documents/WindowsPowerShell/profile.ps1
 # description: configration file for PowerShell
 # author: kerikun11
 

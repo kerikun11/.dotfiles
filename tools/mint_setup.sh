@@ -1,4 +1,6 @@
 #!/bin/sh
+## Linux Mint Cinnamon Setup Script
+## Copyright 2021 Ryotaro Onuki <kerikun11+github@gmail.com>
 
 # set -x # show command
 set -e # first error to exit

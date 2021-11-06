@@ -1,5 +1,5 @@
 # sshcode: a zsh function to open vscode workspace via ssh with zsh completion
-# author: Ryotaro Onuki <kerikun11+github@gmail.com>
+# Copyright 2021 Ryotaro Onuki <kerikun11+github@gmail.com>
 # date: 2021.01.16
 
 # main command

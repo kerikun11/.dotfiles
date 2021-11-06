@@ -18,26 +18,26 @@
     "terminal.integrated.showExitAlert": false,
     "terminal.integrated.tabs.enabled": false,
     // Settings
-    "glassit.alpha": 220,
     "diffEditor.ignoreTrimWhitespace": false,
-    "files.autoSave": "afterDelay",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.fontFamily": "'IPAゴシック', 'BIZ UDゴシック', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.minimap.enabled": false,
+    "editor.renderWhitespace": "boundary",
+    "editor.suggestSelection": "first",
+    "editor.rulers": [
+        80
+    ],
     "files.autoGuessEncoding": true,
+    "files.autoSave": "afterDelay",
     "files.insertFinalNewline": true,
     "git.autofetch": true,
+    "glassit.alpha": 220,
+    "markdown.preview.fontSize": 16,
     "window.menuBarVisibility": "hidden",
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "workbench.iconTheme": "vscode-icons",
     "workbench.startupEditor": "none",
     "workbench.statusBar.visible": true,
-    "markdown.preview.fontSize": 16,
-    "editor.bracketPairColorization.enabled": true,
-    "editor.minimap.enabled": false,
-    "editor.renderWhitespace": "boundary",
-    "editor.suggestSelection": "first",
-    "editor.fontFamily": "'IPAゴシック', 'BIZ UDゴシック', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-    "editor.rulers": [
-        80
-    ],
     // vim
     "vim.useSystemClipboard": true, // システムのclipboardにコピー
     "vim.visualstar": true, // カーソル上にあるワードを"*"で検索
@@ -83,15 +83,16 @@
     // "vim.autoSwitchInputMethod.switchIMCmd": "/usr/bin/fcitx-remote {im}",
     // "vim.autoSwitchInputMethod.defaultIM": "-c",
     // LaTeX
-    "latex-workshop.latex.outDir": "%DIR%/build",
     "latex-workshop.latex.autoBuild.run": "never",
-    "latex-workshop.view.pdf.zoom": "page-width",
+    "latex-workshop.latex.outDir": "%DIR%/build",
     "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.view.pdf.zoom": "page-width",
     // C/C++
     "C_Cpp.clang_format_fallbackStyle": "LLVM",
     // "C_Cpp.clang_format_fallbackStyle": "Visual Studio",
     // "C_Cpp.clang_format_fallbackStyle": "WebKit",
     "C_Cpp.default.cppStandard": "c++17",
+    // CMake
     "cmake.configureOnOpen": false,
     // Doxygen
     "doxdocgen.generic.authorEmail": "kerikun11+github@gmail.com",
@@ -244,6 +245,7 @@
         "Sassor",
         "SCLK",
         "SRAM",
+        "sshcode",
         "ssid",
         "steveltn",
         "strftime",
@@ -278,6 +280,8 @@
     ],
     "pasteImage.defaultName": "${currentFileName}-Y-MM-DD-HH-mm-ss",
     "vsicons.dontShowNewVersionMessage": true,
+    "dailyNotes.filePath": "/home/kerikun11/Dropbox/Documents/daily-notes.md",
+    "dailyNotes.dateFormat": "YYYY.MM.DD ddd",
     "editor.tokenColorCustomizations": {
         "textMateRules": [
             {
@@ -309,13 +313,5 @@
                 }
             }
         ]
-    },
-    "dailyNotes.filePath": "/home/kerikun11/Dropbox/Documents/daily-notes.md",
-    "dailyNotes.dateFormat": "YYYY.MM.DD ddd",
-    "workbench.editorAssociations": {
-        "*.ipynb": "jupyter.notebook.ipynb"
-    },
-    "[dockerfile]": {
-        "editor.defaultFormatter": "ms-azuretools.vscode-docker"
     }
 }

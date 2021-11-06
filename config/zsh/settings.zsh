@@ -1,5 +1,7 @@
 ##============================================================================##
-## author: Ryotaro Onuki <kerikun11+github@gmail.com>
+## Description: Zsh Additional Configurations
+## Copyright 2021 Ryotaro Onuki <kerikun11+github@gmail.com>
+## Last Modified: 2021.06.01
 ##============================================================================##
 ## env
 type vim &>/dev/null && export EDITOR='vim'
