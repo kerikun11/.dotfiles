@@ -50,6 +50,21 @@ sudo -E XDG_CURRENT_DESKTOP=GNOME gnome-control-center
 sudo docker run --rm --privileged multiarch/qemu-user-static --reset --persistent yes
 ```
 
+```sh
+# Add an user to a group
+sudo gpasswd --add $USER docker
+sudo grpconv
+```
+
+```sh
+# Configure swap file
+SWAP_SIZE=16G
+sudo fallocate -l $SWAP_SIZE /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+echo '/swapfile none swap defaults 0 0' | sudo tee -a /etc/fstab
+```
+
 ## Instant Shell Theme
 
 ```sh
