@@ -52,8 +52,7 @@ sudo docker run --rm --privileged multiarch/qemu-user-static --reset --persisten
 
 ```sh
 # Add an user to a group
-sudo gpasswd --add $USER docker
-sudo grpconv
+sudo gpasswd --add $USER docker && newgrp docker
 ```
 
 ```sh
