@@ -52,7 +52,7 @@ $yay_install_cmd gcc-multilib cmake ninja gdb docker
 # $yay_install_cmd kicad kicad-library kicad-library-3d
 $yay_install_cmd hugo asciidoctor doxygen graphviz
 $yay_install_cmd dos2unix perl-image-exiftool
-$yay_install_cmd xorg-xinput bluez-utils zsa-wally
+$yay_install_cmd xorg-xinput bluez-utils zsa-wally-bin
 ## Desktop Applications
 $yay_install_cmd visual-studio-code-bin
 $yay_install_cmd google-chrome

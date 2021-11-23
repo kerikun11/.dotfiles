@@ -191,6 +191,6 @@ function ssh-speed-test() {
 }
 function ssh-del-known_hosts-line() { sed -i ${1}d $HOME/.ssh/known_hosts; }
 function kd() {
-  echo -n 'sh -c "$(curl -fsSL kerislab.jp/d || wget -qO - kerislab.jp/d)"' | clipcopy
+  echo -n 'sh -c "$(D=kerislab.jp/d; curl -fsSL $D || wget -qO - $D)"' | clipcopy
 }
 ##============================================================================##

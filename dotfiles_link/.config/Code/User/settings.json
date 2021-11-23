@@ -97,15 +97,15 @@
     // Doxygen
     "doxdocgen.generic.authorEmail": "kerikun11+github@gmail.com",
     "doxdocgen.generic.authorName": "Ryotaro Onuki",
+    "doxdocgen.generic.authorTag": "@author {author} <{email}>",
     "doxdocgen.file.copyrightTag": [
-        "@copyright Copyright (c) {year} Ryotaro Onuki"
+        "@copyright Copyright {year} Ryotaro Onuki <kerikun11+github@gmail.com>"
     ],
     "doxdocgen.file.fileOrder": [
         "file",
-        "author",
         "brief",
-        "date",
         "copyright",
+        "date",
         "custom"
     ],
     // PlatformIO
@@ -118,6 +118,7 @@
     "cSpell.enableFiletypes": [
         "cmake",
         "dockercompose",
+        "ini",
         "shellscript"
     ],
     "cSpell.userWords": [
@@ -222,6 +223,7 @@
         "opensfm",
         "ostream",
         "pacman",
+        "PICO",
         "plantuml",
         "platformio",
         "pointcloud",
@@ -313,5 +315,5 @@
                 }
             }
         ]
-    }
+    },
 }
