@@ -1,18 +1,24 @@
 # filepath: $env:userprofile/Documents/WindowsPowerShell/profile.ps1
 # description: configration file for PowerShell
 # author: kerikun11
+# gsudo Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
+# symlink
+#   https://kokufu.blogspot.com/2018/03/symbolic-link-privilege-not-held.html
 
 # aliases
-Set-Alias open start
-Set-Alias o open
-Set-Alias p python
-Set-Alias e echo
 Set-Alias c code
 Set-Alias dr docker
+Set-Alias e echo
+Set-Alias g git
+Set-Alias o open
+Set-Alias open start
+Set-Alias p python
+Set-Alias ll ls
 
 # open this file
 function profile.ps1() {
-    code $env:userprofile/Documents/WindowsPowerShell/profile.ps1
+    # code $env:userprofile/Documents/WindowsPowerShell/profile.ps1
+    code $PROFILE
 }
 
 # for google colab session
