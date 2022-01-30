@@ -9,14 +9,24 @@
 #   New-Item -Type SymbolicLink $PROFILE -Value $HOME/.dotfiles/config/powershell/Microsoft.PowerShell_profile.ps1
 
 # aliases
+function ga { git add $args }
+function gad { git add . $args }
+function gcl { git clone $args }
+function gd { git diff $args }
+function gf { git fetch $args }
+function gph { git push $args }
+function gpl { git pull $args }
+function gst { git status $args }
+function gsu { git submodule update --init --recursive $args }
+function m { wsl -d Manjaro $args }
 Set-Alias c code
 Set-Alias dr docker
 Set-Alias e echo
 Set-Alias g git
+Set-Alias ll ls
 Set-Alias o open
 Set-Alias open start
 Set-Alias p python
-Set-Alias ll ls
 Set-Alias u ubuntu
 
 # open this file
