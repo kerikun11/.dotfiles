@@ -80,6 +80,19 @@ export PROMPT='
 %F{blue}%# %f'
 ```
 
+## SSH-Agent
+
+```sh
+## ssh-agent
+SSH_AGENT_FILE=/tmp/.ssh-agent
+source $SSH_AGENT_FILE &> /dev/null
+if ! ssh-add -l &> /dev/null; then
+    ssh-agent > $SSH_AGENT_FILE
+    source $SSH_AGENT_FILE &> /dev/null
+    ssh-add
+fi
+```
+
 ## Dockerfile
 
 ```dockerfile
