@@ -6,7 +6,7 @@
 # allow symlink to general user
 #   https://kokufu.blogspot.com/2018/03/symbolic-link-privilege-not-held.html
 # make symlink
-#   New-Item -Type SymbolicLink $PROFILE -Value $env:userprofile/.dotfiles/config/powershell/Microsoft.PowerShell_profile.ps1 
+#   New-Item -Type SymbolicLink $PROFILE -Value $HOME/.dotfiles/config/powershell/Microsoft.PowerShell_profile.ps1
 
 # aliases
 Set-Alias c code
@@ -27,7 +27,7 @@ function profile.ps1() {
 # for google colab session
 function periodic_open($url) {
     for ($i=0; $i -lt 10; $i++){
-        start chrome $url
+        Start chrome $url
         Start-Sleep -s 10
     }
 }

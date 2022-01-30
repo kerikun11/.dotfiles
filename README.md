@@ -111,3 +111,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN echo y | sh -c "$(curl -fsSL https://raw.github.com/kerikun11/.dotfiles/main/install.sh)"
 CMD [ "zsh" ]
 ```
+
+## PowerShell
+
+```ps1
+New-Item -Type SymbolicLink $PROFILE -Value $HOME/.dotfiles/config/powershell/Microsoft.PowerShell_profile.ps1
+```
