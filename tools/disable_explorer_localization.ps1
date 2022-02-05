@@ -1,5 +1,5 @@
 # Windows のディレクトリの表示名を英語にする PowerShell スクリプト
-# desktop.ini の LocalizedResourceName をコメントアウトする
+# 各ディレクトリの desktop.ini の LocalizedResourceName をコメントアウトする
 
 Get-ChildItem $HOME -Depth 2 -filter desktop.ini -Hidden -ErrorAction silentlycontinue | ForEach-Object {
     $file = $_.FullName
