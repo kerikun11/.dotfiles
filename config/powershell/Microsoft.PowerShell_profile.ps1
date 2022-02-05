@@ -1,16 +1,20 @@
-## filepath: $PROFILE
+## filepath: $PROFILE (PoserShell Variable)
 ## description: configration file for PowerShell
 ## author: kerikun11
 ## setup:
-##   1. allow script execution
+##   1. clone .dotfiles
+##      $ git clone git@github.com:kerikun11/.dotfiles.git $HOME/.dotfiles
+##   2. allow script execution
 ##      $ gsudo Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
-##   2. allow symlink to general user
+##   3. allow symlink to general user
 ##      see https://kokufu.blogspot.com/2018/03/symbolic-link-privilege-not-held.html
-##   3. make symlink
+##   4. make symlink
 ##      $ New-Item -Force -Type SymbolicLink $PROFILE -Value $HOME/.dotfiles/config/powershell/Microsoft.PowerShell_profile.ps1
-##   4. make VSCode Settings
+##   5. make VSCode Settings link
 ##      $ New-Item -Force -Type SymbolicLink $HOME/AppData/Roaming/Code/User/keybindings.json -Value $HOME/.dotfiles/dotfiles_link/.config/Code/User/keybindings.json
 ##      $ New-Item -Force -Type SymbolicLink $HOME/AppData/Roaming/Code/User/settings.json -Value $HOME/.dotfiles/dotfiles_link/.config/Code/User/settings.json
+##   6. enable git completion
+##      $ Install-Module -Name posh-git -Scope CurrentUser -Force
 
 ## env vars
 $env:DISPLAY = "localhost:0.0"
@@ -49,12 +53,33 @@ Set-Alias p python
 Set-Alias u ubuntu
 
 ## open this file
-function profile.ps1() {
+function profile () {
     code $PROFILE
 }
 
+## sshcode
+function sshcode ($target_host, $target_path) {
+    ## usage
+    function usage () {
+        Write-Host "usage:    sshcode target_host [target_path]"
+        Write-Host ""
+        Write-Host "example:  sshcode user@host           # brank window"
+        Write-Host "example:  sshcode user@host Documents # rel path to $HOME"
+        Write-Host "example:  sshcode user@host /foo/bar  # abs path"
+    }
+    ## check host
+    if ($target_host -eq $null) { usage ; return }
+    ## convert path if path does not start with "/" (regarded as relative to home dir)
+    if (!($target_path -eq $null) -and (!$target_path.StartsWith("/"))) {
+        $target_home = ssh -x $target_host pwd # get home dir
+        $target_path = "$target_home/$target_path"
+    }
+    ## open ssh-remote code
+    code --remote ssh-remote+$target_host $target_path
+}
+
 ## for google colab session keep
-function periodic_open($url) {
+function periodic_open ($url) {
     for ($i=0; $i -lt 10; $i++){
         Start chrome $url
         Start-Sleep -s 10
@@ -62,7 +87,7 @@ function periodic_open($url) {
 }
 
 ## switch to msys terminal
-function zsh() {
+function zsh () {
     $env:CHERE_INVOKING=1
     $env:MSYS="winsymlinks:nativestrict"
     # $env:MSYS2_PATH_TYPE="strict"
