@@ -64,12 +64,13 @@ $yay_install_cmd google-chrome
 echo "OK packages"
 
 ## Fonts
-$yay_install_cmd otf-ipafont
-gsettings set org.cinnamon.desktop.interface font-name 'IPA Pゴシック 10'
-gsettings set org.cinnamon.desktop.wm.preferences titlebar-font 'IPA Pゴシック 10'
-gsettings set org.gnome.desktop.interface document-font-name 'IPA P明朝 11'
-gsettings set org.gnome.desktop.interface monospace-font-name 'IPAゴシック 10'
-gsettings set org.nemo.desktop font 'IPA Pゴシック 10'
+$yay_install_cmd ttf-hackgen
+FONT_NAME="HackGen"
+gsettings set org.cinnamon.desktop.interface font-name "$FONT_NAME 10"
+gsettings set org.cinnamon.desktop.wm.preferences titlebar-font "$FONT_NAME 10"
+gsettings set org.gnome.desktop.interface document-font-name "$FONT_NAME 11"
+gsettings set org.gnome.desktop.interface monospace-font-name "$FONT_NAME 10"
+gsettings set org.nemo.desktop font "$FONT_NAME 10"
 echo "OK Fonts"
 
 ## Theme

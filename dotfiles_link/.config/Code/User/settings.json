@@ -24,7 +24,7 @@
     "terminal.integrated.tabs.enabled": false,
     // Editor
     "editor.bracketPairColorization.enabled": true,
-    "editor.fontFamily": "HackGen, Consolas",
+    "editor.fontFamily": "HackGen, Consolas, monospace",
     // abcdefghijklmnopqrstuvwxyz
     // ABCDEFGHIJKLMNOPQRSTUVWXYZ
     // あいうえお→←〇◇□△ー一
