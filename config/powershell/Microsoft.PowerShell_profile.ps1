@@ -75,7 +75,12 @@ function sshcode ($target_host, $target_path) {
         $target_path = "$target_home/$target_path"
     }
     ## open ssh-remote code
-    code --remote ssh-remote+$target_host $target_path
+    ## https://code.visualstudio.com/docs/remote/troubleshooting#_connect-to-a-remote-host-from-the-terminal
+    if ($target_path -eq $null) {
+        code --remote ssh-remote+$target_host
+    } else {
+        code --folder-uri vscode-remote://ssh-remote+$target_host$target_path
+    }
 }
 
 ## for google colab session keep
