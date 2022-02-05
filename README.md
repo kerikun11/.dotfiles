@@ -30,7 +30,7 @@ sh -c "$(curl -fsSL https://raw.github.com/kerikun11/.dotfiles/main/install.sh)"
 ## Useful Commands
 
 ```sh
-## allow me to run sudo without password
+## Allow me to run sudo without password
 echo "$USER ALL=NOPASSWD: ALL" | sudo EDITOR='tee -a' visudo
 ```
 
@@ -115,5 +115,15 @@ CMD [ "zsh" ]
 ## PowerShell
 
 ```ps1
-New-Item -Type SymbolicLink $PROFILE -Value $HOME/.dotfiles/config/powershell/Microsoft.PowerShell_profile.ps1
+## Link PowerShell Profile
+New-Item -Force -Type SymbolicLink `
+    $PROFILE `
+    -Value $HOME/.dotfiles/config/powershell/Microsoft.PowerShell_profile.ps1
+## Link VSCode Settings
+New-Item -Force -Type SymbolicLink `
+    $HOME/AppData/Roaming/Code/User/keybindings.json `
+    -Value $HOME/.dotfiles/dotfiles_link/.config/Code/User/keybindings.json
+New-Item -Force -Type SymbolicLink `
+    $HOME/AppData/Roaming/Code/User/settings.json `
+    -Value $HOME/.dotfiles/dotfiles_link/.config/Code/User/settings.json
 ```

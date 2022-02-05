@@ -1,26 +1,33 @@
 {
     // Terminal
-    // "terminal.integrated.shell.windows": "C:\\msys64\\usr\\bin\\zsh.exe",
-    // "terminal.integrated.shellArgs.windows": [
-    //     "--login"
-    // ],
-    // "terminal.integrated.env.windows": {
-    //     "MSYS": "winsymlinks:nativestrict",
-    //     "CHERE_INVOKING": "1",
-    //     "MSYS2_PATH_TYPE": "strict",
-    //     "MSYSTEM": "MINGW64",
-    //     "SHELL": "/usr/bin/zsh"
-    // },
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "terminal.integrated.profiles.windows": {
+        "MSYS": {
+            "path": "C:\\msys64\\usr\\zsh.exe",
+            "args": [
+                "--login"
+            ],
+            "env": {
+                "MSYS": "winsymlinks:nativestrict",
+                "CHERE_INVOKING": "1",
+                "MSYS2_PATH_TYPE": "inherit",
+                "MSYSTEM": "MINGW64",
+                "SHELL": "/usr/bin/zsh"
+            }
+        }
+    },
     "terminal.integrated.allowChords": false, // to send ctrl+k to terminal
     "terminal.integrated.copyOnSelection": true,
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.scrollback": 50000, // buffer line size
     "terminal.integrated.showExitAlert": false,
     "terminal.integrated.tabs.enabled": false,
-    // Settings
-    "diffEditor.ignoreTrimWhitespace": false,
+    // Editor
     "editor.bracketPairColorization.enabled": true,
-    "editor.fontFamily": "'IPAゴシック', 'BIZ UDゴシック', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontFamily": "HackGen, Consolas",
+    // abcdefghijklmnopqrstuvwxyz
+    // ABCDEFGHIJKLMNOPQRSTUVWXYZ
+    // あいうえお→←〇◇□△ー一
     "editor.minimap.enabled": false,
     "editor.renderWhitespace": "boundary",
     "editor.suggestSelection": "first",
@@ -30,6 +37,7 @@
     "files.autoGuessEncoding": true,
     "files.autoSave": "afterDelay",
     "files.insertFinalNewline": true,
+    "diffEditor.ignoreTrimWhitespace": false,
     "git.autofetch": true,
     "glassit.alpha": 220,
     "markdown.preview.fontSize": 16,
@@ -89,8 +97,6 @@
     "latex-workshop.view.pdf.zoom": "page-width",
     // C/C++
     "C_Cpp.clang_format_fallbackStyle": "LLVM",
-    // "C_Cpp.clang_format_fallbackStyle": "Visual Studio",
-    // "C_Cpp.clang_format_fallbackStyle": "WebKit",
     "C_Cpp.default.cppStandard": "c++17",
     // CMake
     "cmake.configureOnOpen": false,
@@ -165,6 +171,7 @@
         "Feedforward",
         "freertospp",
         "Gmail",
+        "gpasswd",
         "gpio",
         "graphviz",
         "growi",
@@ -261,6 +268,7 @@
         "subfiles",
         "Submodule",
         "submodules",
+        "swapfile",
         "Tashiro",
         "TEGRA",
         "tensorflow",
@@ -279,6 +287,7 @@
         "Xauthority",
         "xlabel",
         "xlim",
+        "XPSKERI",
         "xticks",
         "yaxis",
         "ylabel",
@@ -288,7 +297,9 @@
     ],
     "pasteImage.defaultName": "${currentFileName}-Y-MM-DD-HH-mm-ss",
     "vsicons.dontShowNewVersionMessage": true,
-    "dailyNotes.filePath": "/home/kerikun11/Dropbox/Documents/daily-notes.md",
+    "powershell.startAutomatically": false,
+    // Daily Notes
+    "dailyNotes.filePath": "C:/Users/kerikun11/Dropbox/Documents/daily-notes.md",
     "dailyNotes.dateFormat": "YYYY.MM.DD ddd",
     "editor.tokenColorCustomizations": {
         "textMateRules": [
@@ -321,5 +332,8 @@
                 }
             }
         ]
+    },
+    "remote.SSH.remotePlatform": {
+        "frga": "linux"
     },
 }
