@@ -81,20 +81,19 @@ echo "OK Symbolic Links"
 ## delete personal information
 if [ $(whoami) != "$DEFAULT_USER" ]; then
     echo "  unset git user config"
-    git config --global --get user.name 2>&1 >/dev/null &&
+    git config --global --get user.name &>/dev/null &&
         git config --global --unset user.name
-    git config --global --get user.email 2>&1 >/dev/null &&
+    git config --global --get user.email &>/dev/null &&
         git config --global --unset user.email
     echo "OK unset user in .gitconfig"
 fi
 
 ##============================================================================##
 ## change default shell to zsh
-if [ -f /etc/passwd ] &&
-    [ $(grep $(whoami) </etc/passwd | cut -f 7 -d ":") != $(which zsh) ]; then
+if [ -f /etc/passwd ] && ! grep -e "$(whoami).*zsh" /etc/passwd &>/dev/null; then
     read -p "Do you want to change default shell to zsh? [Y/n] :" YN
     case "$YN" in "Y" | "y" | "")
-        chsh -s $(which zsh)
+        chsh -s $(chsh -l | grep zsh | head -n 1)
         echo "OK change default shell to zsh"
         ;;
     esac
