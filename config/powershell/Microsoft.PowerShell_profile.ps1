@@ -95,7 +95,7 @@ function periodic_open ($url) {
 function zsh () {
     $env:CHERE_INVOKING=1
     $env:MSYS="winsymlinks:nativestrict"
-    # $env:MSYS2_PATH_TYPE="strict"
+    $env:MSYS2_PATH_TYPE="inherit" # strict or inherit
     $env:MSYSTEM="MINGW64"
     $env:SHELL="/usr/bin/zsh"
     C:/msys64/usr/bin/zsh.exe --login
