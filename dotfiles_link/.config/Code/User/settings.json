@@ -28,6 +28,7 @@
     // abcdefghijklmnopqrstuvwxyz
     // ABCDEFGHIJKLMNOPQRSTUVWXYZ
     // あいうえお→←〇◇□△ー一
+    // ├│―└
     "editor.minimap.enabled": false,
     "editor.renderWhitespace": "boundary",
     "editor.suggestSelection": "first",
@@ -299,7 +300,10 @@
     "vsicons.dontShowNewVersionMessage": true,
     "powershell.startAutomatically": false,
     // Daily Notes
+    // @sync os=windows
     "dailyNotes.filePath": "C:/Users/kerikun11/Dropbox/Documents/daily-notes.md",
+    // @sync os=linux
+    // "dailyNotes.filePath": "/home/kerikun11/Dropbox/Documents/daily-notes.md",
     "dailyNotes.dateFormat": "YYYY.MM.DD ddd",
     "editor.tokenColorCustomizations": {
         "textMateRules": [
