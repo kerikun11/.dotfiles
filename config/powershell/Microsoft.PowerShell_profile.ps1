@@ -17,7 +17,6 @@
 ##      $ Install-Module -Name posh-git -Scope CurrentUser -Force
 
 ## env vars
-$env:DISPLAY = "localhost:0.0"
 $env:PATH = "C:/opt/ManjaroWSL;$env:PATH"
 $env:PATH = "C:/opt/Arch;$env:PATH"
 

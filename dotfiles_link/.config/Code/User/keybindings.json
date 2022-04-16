@@ -164,4 +164,12 @@
         "key": "alt+t",
         "command": "openInTerminal"
     },
+    {
+        "key": "ctrl+o",
+        "command": "workbench.action.showAllSymbols"
+    },
+    {
+        "key": "ctrl+t",
+        "command": "-workbench.action.showAllSymbols"
+    },
 ]
