@@ -48,6 +48,8 @@ alias p='python'
 alias p2='python2'
 alias p3='python3'
 alias r='exec zsh' # reload zsh
+alias rl='readlink'
+alias rf='readlink -f'
 alias se='sudoedit'
 alias ssc='sudo systemctl'
 alias sst='sudo systemctl status'
@@ -88,6 +90,7 @@ alias gre='git restore'
 alias gst='git status'
 alias gsu='git submodule update --init --recursive'
 alias gsw='git switch'
+alias gts='git tags'
 
 ## docker aliases
 alias dr='docker'
