@@ -76,9 +76,9 @@ echo "OK Fonts"
 
 ## Theme
 $yay_install_cmd vimix-gtk-themes vimix-icon-theme
-gsettings set org.cinnamon.desktop.interface gtk-theme 'vimix-dark-laptop-doder'
-gsettings set org.cinnamon.desktop.wm.preferences theme 'vimix-dark-laptop-doder'
-gsettings set org.cinnamon.theme name 'vimix-dark-laptop-doder'
+gsettings set org.cinnamon.desktop.interface gtk-theme 'vimix-dark-doder'
+gsettings set org.cinnamon.desktop.wm.preferences theme 'vimix-dark-doder'
+gsettings set org.cinnamon.theme name 'vimix-dark-doder'
 gsettings set org.cinnamon.desktop.interface icon-theme 'Vimix-Doder-dark'
 echo "OK Theme"
 
