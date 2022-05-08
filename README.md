@@ -63,12 +63,12 @@ echo '/swapfile none swap defaults 0 0' | sudo tee -a /etc/fstab
 
 ```sh
 ## Bash Instant Prompt Theme
-PS1='\n\[\e[0;31m\]# \[\e[0;32m\]\u \[\e[0m\]@ \[\e[0;36m\]\h \[\e[0m\]in \[\e[0;33m\]\w \[\e[0;37m\]\t\n\[\e[0;34m\]\$ \[\e[0m\]'
+PS1='\n\[\e[0;31m\]# \[\e[0;32m\]\u \[\e[0m\]@ \[\e[0;36m\]\h \[\e[0m\]in \[\e[0;33m\]\w \[\e[0;37m\]\D{%Y/%m/%d} \t\n\[\e[0;34m\]\$ \[\e[0m\]'
 ```
 
 ```sh
 ## Zsh Instant Prompt Theme
-PROMPT=$'\n''%F{red}# %F{green}%n %F{white}@ %F{cyan}%m %F{white}in %F{yellow}%~ %F{240}%*'$'\n''%F{blue}%# %f'
+PROMPT=$'\n''%F{red}# %F{green}%n %F{white}@ %F{cyan}%m %F{white}in %F{yellow}%~ %F{240}%D{%Y/%m/%d} %*'$'\n''%F{blue}%# %f'
 ```
 
 ## Bash
@@ -80,7 +80,7 @@ S="set completion-ignore-case on" F="$HOME/.inputrc" && grep "$S" $F &>/dev/null
 S="HISTFILESIZE=10000" F="$HOME/.bashrc" && grep "$S" $F &>/dev/null || echo "$S" >> $F
 S="PROMPT_COMMAND='history -a; history -r'" F="$HOME/.bashrc" && grep "$S" $F &>/dev/null || echo "$S" >> $F
 ## prompt customize
-S="PS1='\n\[\e[0;31m\]# \[\e[0;32m\]\u \[\e[0m\]@ \[\e[0;36m\]\h \[\e[0m\]in \[\e[0;33m\]\w \[\e[0;37m\]\t\n\[\e[0;34m\]\$ \[\e[0m\]'" F="$HOME/.bashrc" && grep "$S" $F &>/dev/null || echo "$S" >> $F
+S="PS1='\n\[\e[0;31m\]# \[\e[0;32m\]\u \[\e[0m\]@ \[\e[0;36m\]\h \[\e[0m\]in \[\e[0;33m\]\w \[\e[0;37m\]\D{%Y/%m/%d} \t\n\[\e[0;34m\]\$ \[\e[0m\]'" F="$HOME/.bashrc" && grep "$S" $F &>/dev/null || echo "$S" >> $F
 ```
 
 ## SSH-Agent
