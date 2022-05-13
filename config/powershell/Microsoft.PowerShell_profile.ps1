@@ -60,17 +60,17 @@ function profile () {
 function sshcode ($target_host, $target_path) {
     ## usage
     function usage () {
-        Write-Host "usage:    sshcode target_host [target_path]"
-        Write-Host ""
-        Write-Host "example:  sshcode user@host           # brank window"
-        Write-Host "example:  sshcode user@host Documents # rel path to $HOME"
-        Write-Host "example:  sshcode user@host /foo/bar  # abs path"
+        Write-Host 'usage:    sshcode target_host [target_path]'
+        Write-Host ''
+        Write-Host 'example:  sshcode user@host           # brank window'
+        Write-Host 'example:  sshcode user@host Documents # rel path to $HOME'
+        Write-Host 'example:  sshcode user@host /foo/bar  # abs path'
     }
     ## check host
     if ($target_host -eq $null) { usage ; return }
     ## convert path if path does not start with "/" (regarded as relative to home dir)
     if (!($target_path -eq $null) -and (!$target_path.StartsWith("/"))) {
-        $target_home = ssh -x $target_host pwd # get home dir
+        $target_home = ssh -x $target_host pwd # get remote home dir
         $target_path = "$target_home/$target_path"
     }
     ## open ssh-remote code
