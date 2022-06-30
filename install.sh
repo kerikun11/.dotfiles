@@ -28,18 +28,18 @@ echo "
 ##============================================================================##
 ## install required commands
 REQUIRED_COMMANDS="curl git zsh"
-if ! type $REQUIRED_COMMANDS >/dev/null 2>&1; then
+if ! type $REQUIRED_COMMANDS 2>&1 >/dev/null; then
     ## sudo detection
-    type sudo >/dev/null 2>&1 && [ "$(whoami)" != "root" ] && SUDO="sudo" || SUDO=""
+    type sudo 2>&1 >/dev/null && [ "$(whoami)" != "root" ] && SUDO="sudo" || SUDO=""
     ## install required packages using an existing package manager
-    if type apt-get >/dev/null 2>&1; then # ubuntu, debian
+    if type apt-get 2>&1 >/dev/null; then # ubuntu, debian
         $SUDO apt-get -qq update
         $SUDO apt-get -qq install -yqq $REQUIRED_COMMANDS
-    elif type pacman >/dev/null 2>&1; then # arch, manjaro, MSYS2
+    elif type pacman 2>&1 >/dev/null; then # arch, manjaro, MSYS2
         $SUDO pacman -Sy --quiet --noconfirm --needed $REQUIRED_COMMANDS
-    elif type apk >/dev/null 2>&1; then # alpine
+    elif type apk 2>&1 >/dev/null; then # alpine
         $SUDO apk add $REQUIRED_COMMANDS
-    elif type yum >/dev/null 2>&1; then # centos
+    elif type yum 2>&1 >/dev/null; then # centos
         $SUDO yum install -yq $REQUIRED_COMMANDS
     else # can't detect package manager
         echo "Error. install $REQUIRED_COMMANDS first!"
@@ -81,16 +81,16 @@ echo "OK Symbolic Links"
 ## delete personal information
 if [ $(whoami) != "$DEFAULT_USER" ]; then
     echo "  unset git user config"
-    git config --global --get user.name &>/dev/null &&
+    git config --global --get user.name 2>&1 >/dev/null &&
         git config --global --unset user.name
-    git config --global --get user.email &>/dev/null &&
+    git config --global --get user.email 2>&1 >/dev/null &&
         git config --global --unset user.email
     echo "OK unset user in .gitconfig"
 fi
 
 ##============================================================================##
 ## change default shell to zsh
-if [ -f /etc/passwd ] && ! grep -e "$(whoami).*zsh" /etc/passwd &>/dev/null; then
+if [ -f /etc/passwd ] && ! grep -e "$(whoami).*zsh" /etc/passwd 2>&1 >/dev/null; then
     read -p "Do you want to change default shell to zsh? [Y/n] :" YN
     case "$YN" in "Y" | "y" | "")
         chsh -s $(chsh -l | grep zsh | head -n 1)
