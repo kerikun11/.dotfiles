@@ -22,7 +22,7 @@ alias ls='ls --color=auto'
 alias make='make -j$(nproc)'
 alias mv='mv -i' # ask if overwrite
 alias view="vim -R"
-type trash-put &>/dev/null && alias rm='trash-put'
+type gio &>/dev/null && alias rm='gio trash'
 
 ## short aliases
 alias c='code'
@@ -60,6 +60,7 @@ alias wh='which'
 
 ## git aliases
 alias cd-git-top='cd $(git rev-parse --show-toplevel)'
+alias gt='git rev-parse --show-toplevel'
 alias g='git'
 alias ga='git add'
 alias gad='git add .'
@@ -70,7 +71,7 @@ alias gcar='git commit --amend --reset-author'
 alias gcarn='git commit --amend --reset-author --no-edit'
 alias gcl='git clone'
 alias gclr='git clone --recursive'
-alias gcls='git clone --depth=1'
+alias gcld='git clone --depth=1'
 alias gco='git checkout'
 alias gcob='git checkout -b'
 alias gd='git diff'
@@ -95,7 +96,6 @@ alias gre='git restore'
 alias gst='git status'
 alias gsu='git submodule update --init --recursive'
 alias gsw='git switch'
-alias gts='git tags'
 
 ## docker aliases
 alias dr='docker'
@@ -113,7 +113,7 @@ alias drv='docker volume'
 ## dirs
 alias d='dirs -v'
 alias -- -='cd -'
-alias 1='cd -'
+alias 1='cd -1'
 alias 2='cd -2'
 alias 3='cd -3'
 alias 4='cd -4'
@@ -123,9 +123,13 @@ alias 7='cd -7'
 alias 8='cd -8'
 alias 9='cd -9'
 
+## date string
+alias ds='date +%Y%m%d'             # date string
+alias dt='date +%Y%m%d-%H%M%S'      # date time
+alias dtu='date +%s.%N'             # UNIX
+alias dti='date --iso-8601=seconds' # ISO
+
 ## custom aliases
-alias datestr='date +%Y%m%d'
-alias datetimestr='date +%Y%m%d-%H%M%S'
 alias gsettings_list='gsettings list-recursively'
 alias od-ascii='od -tx1z -Ax'
 alias open='open_command' # call oh-my-zsh function
@@ -198,7 +202,6 @@ function ssh-speed-test() {
   [ "$#" -lt 1 ] && echo "usage: $ $0 hostname" && return 1
   yes | pv | ssh "$@" "cat >/dev/null"
 }
-function ssh-del-known_hosts-line() { sed -i ${1}d $HOME/.ssh/known_hosts; }
 function kd() {
   echo -n 'sh -c "$(D=kerislab.jp/d; curl -fsSL $D || wget -qO - $D)"' | clipcopy
 }
