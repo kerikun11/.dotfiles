@@ -1,6 +1,6 @@
 {
     // Terminal
-    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
     "terminal.integrated.profiles.windows": {
         "MSYS": {
             "path": "C:\\msys64\\usr\\zsh.exe",
@@ -32,6 +32,7 @@
     "editor.minimap.enabled": false,
     "editor.renderWhitespace": "boundary",
     "editor.suggestSelection": "first",
+    "editor.stickyScroll.enabled": true,
     "editor.rulers": [
         80
     ],
@@ -97,7 +98,7 @@
     "latex-workshop.view.pdf.viewer": "tab",
     "latex-workshop.view.pdf.zoom": "page-width",
     // C/C++
-    "C_Cpp.clang_format_fallbackStyle": "Chromium",
+    "C_Cpp.clang_format_fallbackStyle": "Google",
     "C_Cpp.default.cppStandard": "c++17",
     // CMake
     "cmake.configureOnOpen": false,
@@ -132,12 +133,15 @@
     "cSpell.userWords": [
         "aarch",
         "accel",
+        "Adafruit",
         "AEBS",
         "affine",
+        "Akizuki",
         "alloc",
         "archlinux",
         "ARCHS",
         "asciidoctor",
+        "ASUS",
         "atten",
         "BAUDRATE",
         "beamer",
@@ -197,6 +201,7 @@
         "kerislab",
         "kicad",
         "Kubernetes",
+        "ldscript",
         "LEDC",
         "linaro",
         "loadtxt",
@@ -209,6 +214,7 @@
         "Manjaro",
         "matlab",
         "matplotlib",
+        "mazedata",
         "mbed",
         "mcpwm",
         "micromouse",
@@ -231,6 +237,7 @@
         "numpy",
         "odometry",
         "OHMYZSH",
+        "OLED",
         "oneline",
         "Onuki",
         "openmvg",
@@ -263,6 +270,7 @@
         "Ryotaro",
         "Sassor",
         "SCLK",
+        "SOFTAP",
         "SRAM",
         "sshcode",
         "ssid",
@@ -275,6 +283,7 @@
         "swapfile",
         "Tashiro",
         "TEGRA",
+        "TENKEY",
         "tensorflow",
         "toolchain",
         "tparam",
@@ -341,6 +350,12 @@
         ]
     },
     "remote.SSH.remotePlatform": {
-        "frga": "linux"
+        "frga": "linux",
+        "k2": "linux",
+        "gk": "linux",
+        "keriberrypi3.local": "linux"
+    },
+    "[dockerfile]": {
+        "editor.defaultFormatter": "ms-azuretools.vscode-docker"
     },
 }

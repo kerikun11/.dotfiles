@@ -4,8 +4,7 @@
 ## Last Modified: 2021.06.01
 ##============================================================================##
 ## global aliases
-alias -g A='2>&1 | tee -a' # append
-alias -g C='| clipcopy'    # call oh-my-zsh function
+alias -g C='| clipcopy' # call oh-my-zsh function
 alias -g G='| grep'
 alias -g H='| head'
 alias -g L='| less -R'
@@ -27,6 +26,7 @@ type trash-put &>/dev/null && alias rm='trash-put'
 
 ## short aliases
 alias c='code'
+alias dfr='df -h /'
 alias e='echo'
 alias f='find'
 alias fd='find . -type d -name'
@@ -41,15 +41,15 @@ alias ll='ls -l'
 alias lla='ls -la'
 alias lsa='ls -a'
 alias m='make'
-alias md='mkdir -p'
+alias mdp='mkdir -p'
 alias n='ninja'
-alias o='open'
+alias o='open' # call oh-my-zsh function
 alias p='python'
 alias p2='python2'
 alias p3='python3'
 alias r='exec zsh' # reload zsh
-alias rl='readlink'
 alias rf='readlink -f'
+alias s='sudo'
 alias se='sudoedit'
 alias ssc='sudo systemctl'
 alias sst='sudo systemctl status'
@@ -66,6 +66,8 @@ alias gad='git add .'
 alias gb='git branch'
 alias gc='git commit'
 alias gca='git commit --amend'
+alias gcar='git commit --amend --reset-author'
+alias gcarn='git commit --amend --reset-author --no-edit'
 alias gcl='git clone'
 alias gclr='git clone --recursive'
 alias gcls='git clone --depth=1'
@@ -76,6 +78,9 @@ alias gdca='git diff --cached'
 alias gdcaw='git diff --cached --word-diff'
 alias gdw='git diff --word-diff'
 alias gf='git fetch'
+alias grh='git reset --hard'
+alias grs='git reset --soft'
+alias gfp='git fetch --prune'
 alias gg='git log --all --graph'
 alias gg1="git log --all --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'"
 alias gg2="git log --all --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'"
