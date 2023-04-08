@@ -93,7 +93,7 @@ fi
 if [ -f /etc/passwd ] && ! grep -e "$(whoami).*zsh" /etc/passwd 2>&1 >/dev/null; then
     read -p "Do you want to change default shell to zsh? [Y/n] :" YN
     case "$YN" in "Y" | "y" | "")
-        chsh -s $(chsh -l | grep zsh | head -n 1)
+        chsh -s $(which zsh)
         echo "OK change default shell to zsh"
         ;;
     esac
