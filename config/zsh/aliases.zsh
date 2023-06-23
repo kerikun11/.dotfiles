@@ -22,7 +22,6 @@ alias ls='ls --color=auto'
 alias make='make -j$(nproc)'
 alias mv='mv -i' # ask if overwrite
 alias view="vim -R"
-type gio &>/dev/null && alias rm='gio trash'
 
 ## short aliases
 alias c='code'
