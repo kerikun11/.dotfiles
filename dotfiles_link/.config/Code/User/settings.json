@@ -37,13 +37,11 @@
         80
     ],
     "files.autoGuessEncoding": true,
-    "files.autoSave": "afterDelay",
     "files.insertFinalNewline": true,
     "diffEditor.ignoreTrimWhitespace": false,
     "git.autofetch": true,
     "glassit.alpha": 220,
     "markdown.preview.fontSize": 16,
-    "window.menuBarVisibility": "hidden",
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "workbench.iconTheme": "vscode-icons",
     "workbench.startupEditor": "none",
@@ -157,6 +155,8 @@
         "CMAKE",
         "cmpr",
         "COLMAP",
+        "Consolas",
+        "cppcheck",
         "cuda",
         "dddq",
         "dddth",
@@ -174,6 +174,7 @@
         "elif",
         "endmenu",
         "entrypoint",
+        "espidf",
         "Espressif",
         "EVAL",
         "Fcitx",
@@ -316,47 +317,11 @@
         "ylim",
         "yticks"
     ],
-    "pasteImage.defaultName": "${currentFileName}-Y-MM-DD-HH-mm-ss",
     "vsicons.dontShowNewVersionMessage": true,
     "powershell.startAutomatically": false,
     // Daily Notes
-    // @sync os=windows
-    "dailyNotes.filePath": "C:/Users/kerikun11/Dropbox/Documents/daily-notes.md",
-    // @sync os=linux
-    // "dailyNotes.filePath": "/home/kerikun11/Dropbox/Documents/daily-notes.md",
     "dailyNotes.dateFormat": "YYYY.MM.DD ddd",
-    "editor.tokenColorCustomizations": {
-        "textMateRules": [
-            {
-                "scope": "text.notes.info",
-                "settings": {
-                    "foreground": "#17a2b8",
-                    "fontStyle": "bold"
-                }
-            },
-            {
-                "scope": "text.notes.success",
-                "settings": {
-                    "foreground": "#28a745",
-                    "fontStyle": "bold"
-                }
-            },
-            {
-                "scope": "text.notes.warning",
-                "settings": {
-                    "foreground": "#ffc107",
-                    "fontStyle": "bold"
-                }
-            },
-            {
-                "scope": "text.notes.danger",
-                "settings": {
-                    "foreground": "#dc3545",
-                    "fontStyle": "bold"
-                }
-            }
-        ]
-    },
+    "dailyNotes.filePath": "C:/Users/kerikun11/Dropbox/Documents/daily-notes.md",
     "remote.SSH.remotePlatform": {
         "frga": "linux",
         "k2": "linux",
