@@ -14,14 +14,11 @@ alias -g W='| wc -l'
 alias -g X='| xargs'
 
 ## command replace
-alias cp='cp -i' # ask if overwrite
 alias diff='diff --color=auto'
 alias grep='grep --color=auto'
 alias ip='ip -color=auto'
 alias ls='ls --color=auto'
 alias make='make -j$(nproc)'
-alias mv='mv -i' # ask if overwrite
-alias view="vim -R"
 
 ## short aliases
 alias c='code'
@@ -121,6 +118,8 @@ alias 6='cd -6'
 alias 7='cd -7'
 alias 8='cd -8'
 alias 9='cd -9'
+alias ..='cd ..'
+alias ...='cd ...'
 
 ## date string
 alias ds='date +%Y%m%d'             # date string
@@ -140,6 +139,7 @@ alias zshenv='$EDITOR $HOME/.zshenv'
 alias zshrc='$EDITOR $HOME/.zshrc'
 alias rmgeotag='exiftool -overwrite_original -geotag='
 alias local-ip='ip route get 8.8.8.8 | sed -n "/src/{s/.*src *\([^ ]*\).*/\1/p;q}"'
+alias trim-comment-lines="sed -e '/^\s*$/d' -e '/^\s*#.*/d"
 
 ## esp-idf alias
 alias idf_='export IDF_PATH=/opt/espressif/esp-idf    && . $IDF_PATH/export.sh'
