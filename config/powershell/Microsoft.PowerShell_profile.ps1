@@ -10,10 +10,7 @@
 ##      see https://kokufu.blogspot.com/2018/03/symbolic-link-privilege-not-held.html
 ##   4. make symlink
 ##      $ New-Item -Force -Type SymbolicLink $PROFILE -Value $HOME/.dotfiles/config/powershell/Microsoft.PowerShell_profile.ps1
-##   5. make VSCode Settings link
-##      $ New-Item -Force -Type SymbolicLink $HOME/AppData/Roaming/Code/User/keybindings.json -Value $HOME/.dotfiles/dotfiles_link/.config/Code/User/keybindings.json
-##      $ New-Item -Force -Type SymbolicLink $HOME/AppData/Roaming/Code/User/settings.json -Value $HOME/.dotfiles/dotfiles_link/.config/Code/User/settings.json
-##   6. enable git completion
+##   5. enable git completion
 ##      $ Install-Module -Name posh-git -Scope CurrentUser -Force
 
 ## env vars
