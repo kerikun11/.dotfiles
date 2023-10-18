@@ -58,8 +58,8 @@ $yay_install_cmd xorg-xinput bluez-utils zsa-wally
 $yay_install_cmd visual-studio-code-bin
 $yay_install_cmd google-chrome
 $yay_install_cmd dropbox nemo-dropbox
-# $yay_install_cmd remmina freerdp
-# $yay_install_cmd discord
+$yay_install_cmd remmina freerdp
+$yay_install_cmd discord
 # $yay_install_cmd slack-desktop
 # $yay_install_cmd inkscape
 # $yay_install_cmd wps-office
