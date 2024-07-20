@@ -10,13 +10,10 @@ set -u # unused variable error
 ## Rename Home Directory in English
 LANG=C xdg-user-dirs-gtk-update
 
-## avoid sudo timeout
-sudo -v
-while :; do
-    sudo -v
-    sleep 59
-done &
-sudo_process=$!
+## Allow me to run sudo without password
+if ! sudo cat /etc/sudoers | grep $USER >/dev/null; then
+    echo "$USER ALL=NOPASSWD: ALL" | sudo EDITOR='tee -a' visudo
+fi
 
 ## NTP
 sudo timedatectl set-ntp true
@@ -92,6 +89,3 @@ echo "OK Mozc"
 echo "Everything has done."
 figlet -f big Enjoy!
 echo "Please Reboot to apply the configurations"
-
-## cleaning of avoid sudo timeout
-kill "$sudo_process"
