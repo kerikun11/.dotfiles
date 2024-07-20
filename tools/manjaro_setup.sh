@@ -25,13 +25,17 @@ echo "OK NTP"
 gsettings set org.gnome.libgnomekbd.keyboard options "['ctrl\tctrl:nocaps']"
 echo "OK Caps -> Ctrl"
 
+## SSH Agent (.xprofile)
+systemctl --user enable gcr-ssh-agent.socket
+echo "OK SSH Agent"
+
 ## Cinnamon
 $HOME/.dotfiles/tools/cinnamon_setup.sh
 echo "OK Cinnamon Settings"
 
-## Manjaro Mirror Lists
+## Manjaro Mirrors
 sudo pacman-mirrors -c Japan
-echo "OK Manjaro Mirror List"
+echo "OK Manjaro Mirrors"
 
 ## Packages
 sudo pacman --quiet --noconfirm --sync --refresh --sysupgrade --sysupgrade --needed
@@ -55,8 +59,9 @@ $yay_install_cmd xorg-xinput bluez-utils zsa-wally
 $yay_install_cmd visual-studio-code-bin
 $yay_install_cmd google-chrome
 $yay_install_cmd dropbox nemo-dropbox
-$yay_install_cmd remmina freerdp
 $yay_install_cmd discord
+$yay_install_cmd ulauncher
+# $yay_install_cmd remmina freerdp
 # $yay_install_cmd slack-desktop
 # $yay_install_cmd inkscape
 # $yay_install_cmd wps-office
@@ -81,7 +86,7 @@ gsettings set org.cinnamon.theme name 'vimix-dark-doder'
 gsettings set org.cinnamon.desktop.interface icon-theme 'Vimix-Doder-dark'
 echo "OK Theme"
 
-## Fcitx and Mozc
+## Fcitx and Mozc ($HOME/.xprofile)
 $yay_install_cmd fcitx-mozc fcitx-im fcitx-configtool
 echo "OK Mozc"
 
